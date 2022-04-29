@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('//locations.thecheesecakefactory.com/2014/assets/icons/icomoon1.eot');
+  src: url('//locations.thecheesecakefactory.com/2014/assets/icons/icomoon1.eot?#iefix') format('embedded-opentype'), url('//locations.thecheesecakefactory.com/2014/assets/icons/icomoon.svg#icomoon') format('svg'), url('//locations.thecheesecakefactory.com/2014/assets/icons/icomoon1.woff') format('woff'), url('//locations.thecheesecakefactory.com/2014/assets/icons/icomoon1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 13, C:\Users\jon.uleis\Documents\Sites\TheCheesecakeFactory\FED\assets\sass\/icons */
+[data-icon], .icon {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }

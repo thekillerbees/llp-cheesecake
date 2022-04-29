@@ -1,0 +1,535 @@
+* {
+	margin:0; padding:0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0; padding: 0;
+	background: #fff;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+img {
+	border:0;
+}
+
+#submit {
+	text-align: center;
+}
+
+#container-home,
+#container-find,
+#container-nutrition,
+#container-careers,
+#container-havinfun,
+#container-wifi,
+#container-rmhc,
+#container-archcard
+{
+	position: relative;
+	font-family: Arial, Helvetica;
+	color: #fff;
+	width: 320px;
+}
+
+#container-home {
+	background: #FFF ;
+	margin: 0 auto;
+}
+#container-home #header a {
+	display:block;
+	background:url("http://hosted.where2getit.com/cheesecake/images/logomobile.jpg") no-repeat scroll center center transparent;
+	text-indent: -2000px;
+	height: 50px;
+}
+
+
+
+
+
+		
+
+#content, #irhp {
+	padding: 15px;
+	padding-bottom: 8px;
+}
+#content a, #irhp a {
+	color: #fff;
+}
+#content div a, #irhp div a {
+	color: #008;
+}
+
+#content h1 {
+	font-size: 1.3em;
+	margin-bottom: 0.5em;
+}
+
+#content h2 {
+	font-size: 1.2em;
+	margin: 0.5em 0;
+}
+
+#content p {
+	margin-bottom: 0.6em;
+	line-height: 1.4;
+}
+
+#content ul li {
+	margin-left: 2.25em;
+	line-height: 1.4em;
+}
+
+#content blockquote {
+	font-size: 1.1em;
+	margin: 0.5em 0;
+	font-weight: bold;
+	line-height:1;
+}
+
+
+/* IRHP SETTINGS */
+
+
+#irhp p {
+	margin: 0.3em 0;
+}
+
+#storeinfo a {
+	font-size: 1.2em;
+}
+
+#storephoto {
+width: 110px; float:left; margin-right: 10px;
+}
+#storeinfo {
+/*	margin-left:120px;
+	margin-bottom: 10px;
+*/}
+
+.hourstable td, .hourstable th {
+	padding: 5px;
+}
+
+.hourstable caption {
+	font-size: 1.2em;
+}
+
+#hours, #apply, #irhpheader, #benefits, #nutritioninfo {
+	border: 1px solid #999;
+	-webkit-border-radius: 8px;
+	background:#fff;
+	padding: 15px;
+	margin: 0.5em 0;
+	color: #000;
+}
+#hours p {
+	margin:0;
+}
+
+#applylink {
+	margin: 0.6em 0;
+}
+
+#applylink a {
+	display:block;
+	padding:10px;
+	background: #fff;
+	border: 3px solid #666;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#irhpheader {
+	color: #000;
+	padding: 10px;
+}
+
+
+/* SEARCH STYLES */
+
+/*
+#search {
+	text-align: center;
+}
+#search input {
+	padding: 8px;
+	font-size: 1.75em;
+	width: 225px;
+	border: 1px solid #999;
+	-webkit-border-radius: 5px;
+}
+#search button {
+	font-size: 1.75em;
+	padding: 10px;
+}
+*/
+
+#search {
+	text-align: center;
+	color: #888;
+}
+#careersearch {
+	text-align: center;
+	color: #fff;
+}
+#search p, #careersearch p {
+	margin-bottom: 3px;
+}
+
+#search .search, #careersearch .search {
+    box-sizing: border-box;
+    margin: 8px 0 0 0;
+    padding: 6px;
+    font-size: 18px;
+    font-weight: normal;
+	
+}
+#search input, #careersearch input {
+	padding: 1px;
+	font-size: 1.5em;
+	width: 225px;
+	border: 1px solid #999;
+	-webkit-border-radius: 5px;
+}
+
+#search .submit, #careersearch .submit {
+	font-size: 1.25em;
+}
+#search .submit, #careersearch .submit {
+}
+#search a, #careersearch a {
+	color:#888;
+}
+
+
+/*NAVIGATION STYLES */
+
+#nav ul, #jobs ul {
+	margin-top: 10px;
+	background: #fff;
+	list-style: none;
+	border: 1px solid #999;
+	-webkit-border-radius: 8px;
+}
+#nav  ul li, #jobs ul li {
+	margin:0;
+	list-style-type: none;
+}
+#nav ul li a, #jobs ul li a {
+	display:block;
+	padding: 12px 15px;
+	border-bottom: 1px solid #999;
+	color: #333;
+	text-decoration: none;
+	line-height:1;
+	background: url('images/chevron.png') no-repeat;
+	background-position: 260px 50%;
+	padding-right: 50px;
+}
+
+#nav ul li a.last, #jobs ul li a.last {
+	border-bottom: 0;
+}
+
+#ad img {
+	display:block;
+}
+
+/* OTHER STYLES */
+
+
+#searchresults {
+	
+}
+#searchresults h2 {
+	text-align: center;
+	font-weight:normal;
+	font-size: 1.6em;
+}
+#searchresults img {
+	border: 1px solid #999; float:left; width: 45px; margin-right: 5px;
+}
+#searchresults .search-info {
+	margin-left:60px;
+}
+
+.irhpimg {
+	float:left;
+	padding-right:10px;
+}
+
+.clearer {
+	clear:both;
+}
+
+
+/*.resulttable {*/
+#panel table{
+	background: #fff;
+	color: #000;
+	border-collapse: collapse;
+	width: 100%;
+}
+/*.resulttable caption {*/
+#panel table caption{	
+font-size: 1.3em;
+	padding-bottom: 0.5em;
+}
+/*.resulttable th {*/
+#panel table th {
+	text-align:right;
+}
+/*.resulttable td, .resulttable th {*/
+#panel table td, #panel table th{
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+/*.resulttable .altrow {*/
+#panel table altrow{
+	background: #eee;
+}
+
+
+/* EMPLOYMENT */
+
+.disclaimer {
+	font-size: 0.65em;
+	clear: left;
+	margin: 0;
+	padding: 0.5em 0;
+}
+
+#apply {
+	color:#000;
+}
+
+#apply a {
+	display:block;
+	padding: 10px;
+	margin: 10px 0;
+	background: #555;
+	border: 1px solid #000;
+	text-align:center;
+	text-decoration:none;
+	font-size:1.5em;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#apply label {
+	display:block;
+	float:left;
+	width: 50px;
+	text-align:right;
+	margin-right:10px;
+	padding: 5px;
+	font-size: 1.2em;
+}
+#apply input {
+	width: 160px;
+	float:left;
+	padding: 5px;
+	font-size: 1.3em;
+	margin-bottom: 8px;
+	
+	
+}
+#apply #submitapp {
+	float:none;
+	padding: 5px;
+	font-size: 1.4em;
+	width: 225px;
+	border: 1px solid #999;
+	margin: 0 auto;
+}
+#apply p {
+	clear:both;
+}
+
+
+
+
+
+
+
+
+
+/*#careersearch {
+	display:block;
+	color:#fff;
+	border: 3px solid #240;
+	background: #336600;
+	padding: 8px;
+	text-decoration: none;
+	text-align:center;
+	text-transform:uppercase;
+}
+*/
+
+
+
+#benefits li {
+	list-style-type: none;
+	font-weight: normal;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+	margin-bottom: 0.5em;
+}
+
+#benefits blockquote {
+	font-weight:normal;
+}
+
+
+
+
+
+#header {text-align:center;}
+#header img {
+	margin: 50px 0 25px 0;
+}
+
+#navigation {
+	width: 320px;
+}
+#navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#navigation ul li {
+	margin: 0;
+	padding:0;
+	display: block;
+	float:left;
+	line-height: 32px;
+	list-style-type: none;
+}
+#navigation ul li a {
+	font-size: 14px;
+	display: block;
+	margin: 0;
+	margin-bottom: 10px;
+	color: #000;
+	text-decoration: none;
+	padding: 0 12px;
+	
+}
+
+#navigation .find {
+	background: url('images/find_tab_right.gif') top right no-repeat;
+}
+
+
+#navigation .find a {
+	background: url('images/find_tab_left.gif') top left no-repeat;
+}
+
+
+#footer {
+	clear:both;
+	background: url('');
+	font-size: 11px;
+	font-family: Verdana;
+	text-align: center;
+	padding-bottom: 25px;
+	margin-top: 15px;
+
+}
+
+#copyright {
+	padding: 10px;
+	clear:both;
+}
+
+#copyright a {
+	color: #888;
+	text-decoration:none;
+}
+
+/* MOBILE APP FORM ELEMENTS */
+#link_list li{
+	list-style:none;
+	margin:.5em .5em .5em .75em;
+}
+
+#appcontainer div.requiredinfo{
+	margin:0 .5em .5em .75em;
+}
+
+#appcontainer form input{
+	margin:0 .5em .5em .75em;
+}
+
+#appcontainer h2.header{
+	text-align:center;
+	
+	margin:.5em 0 .5em 0;
+	border-top:1px solid #66a92f;
+	border-bottom:1px solid #66a92f;
+}
+
+#appcontainer form p{
+	margin:0 .5em .5em .75em;
+}
+
+#appcontainer form input {
+	padding: 3px;
+}
+
+#legal li{
+	font-size:.85em;
+	margin:0 .5em .5em .75em;
+}
+
+#appcontainer form p input{
+	margin:0 .5em .5em 0em;
+}
+
+#progress h3{
+	text-align:center;
+	
+	margin:.5em 0 .5em 0;
+}
+#errors{
+	color:#000;
+	font-size:.75em;
+	background-color:#ffcc44;
+	text-transform:uppercase;
+	
+	padding:0.5em .5em .5em .75em;
+}
+#errors ul{
+	color:#000;
+	font-size:.95em;
+	background-color:#ffcc44;
+	text-transform:uppercase;
+	
+	padding:0.5em .5em .5em .75em;
+}
+
+#ajax_activity {
+        position:                       absolute;
+        top:                            20px;
+        right:                          20px;
+        width:                          32px;
+        height:                         32px;
+        z-index:                        99;
+}
+
+.hourroom {
+	margin-bottom: 15px;
+}

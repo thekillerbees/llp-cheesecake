@@ -1,0 +1,19 @@
+// START : /modules/content-header.html
+// TODO: Add .navigation-anchors-only class to hide on mobile (if the navigation consists of only anchor links)
+#contentNavigation.content-navigation.navigation-anchors-only
+	ul
+		li
+			a(href="#restaurantdetails") Restaurant Details
+		li
+			a(href="#ourmenu") Our Menu
+		li
+			a(href="#togo") To Go
+		li
+			a(href="#takeout") Take Out
+		li
+			a(href="#catering") Catering
+script.
+	require(["modules/fixedNavigation"], function(FixedNavigation) {
+		return new FixedNavigation();
+	});
+// END : /modules/content-header.html

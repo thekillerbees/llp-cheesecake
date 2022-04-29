@@ -1,0 +1,318 @@
+// START : /modules/content-contactform.html
+form.contact-form#contactUsForm
+	fieldset
+		.content-contactform
+			legend.content-subheading Contact Form
+
+			label(for="contactCategory") <span class="required">*</span>Contact Category
+			.field-wrapper
+				select#contactCategory(name="contactCategory")
+					option(value="") Select your reason for contacting us...
+					option(value="RestExp") Restaurant Experience
+					option(value="RestLocSug") Restaurant Location Suggestion
+					option(value="InvstRel") Investor Relations
+					option(value="PublicRelations") Media Inquiries
+					option(value="General") General Information/Comment
+
+			label(for="firstName") <span class="required">*</span>First Name
+			.field-wrapper
+				input#firstName(type="text",name="firstName")
+
+			label(for="lastName") <span class="required">*</span>Last Name
+			.field-wrapper
+				input#lastName(type="text",name="lastName")
+
+			label(for="emailAddress") <span class="required">*</span>Email Address
+			.field-wrapper
+				input#emailAddress(type="email",name="emailAddress")
+
+			label(for="phoneNumber") <span class="required">*</span>Telephone Number
+			.field-wrapper
+				input#phoneNumber(type="tel",name="phoneNumber")
+
+			label(for="streetAddress") <span class="required">*</span>Street Address
+			.field-wrapper
+				input#streetAddress(type="text",name="streetAddress")
+
+			label(for="city") <span class="required">*</span>City
+			.field-wrapper
+				input#city(type="text",name="city")
+
+			label(for="state") <span class="required">*</span>State
+			.field-wrapper
+				select#state(name="state")
+					option(value="") Select a State
+					option(value="AL") Alabama
+					option(value="AK") Alaska
+					option(value="AZ") Arizona
+					option(value="AR") Arkansas
+					option(value="CA") California
+					option(value="CO") Colorado
+					option(value="CT") Connecticut
+					option(value="DE") Delaware
+					option(value="DC") District of Columbia
+					option(value="FL") Florida
+					option(value="GA") Georgia
+					option(value="HI") Hawaii
+					option(value="ID") Idaho
+					option(value="IL") Illinois
+					option(value="IN") Indiana
+					option(value="IA") Iowa
+					option(value="KS") Kansas
+					option(value="KY") Kentucky
+					option(value="LA") Louisiana
+					option(value="ME") Maine
+					option(value="MD") Maryland
+					option(value="MA") Massachusetts
+					option(value="MI") Michigan
+					option(value="MN") Minnesota
+					option(value="MS") Mississippi
+					option(value="MO") Missouri
+					option(value="MT") Montana
+					option(value="NE") Nebraska
+					option(value="NV") Nevada
+					option(value="NH") New Hampshire
+					option(value="NJ") New Jersey
+					option(value="NM") New Mexico
+					option(value="NY") New York
+					option(value="NC") North Carolina
+					option(value="ND") North Dakota
+					option(value="OH") Ohio
+					option(value="OK") Oklahoma
+					option(value="OR") Oregon
+					option(value="PA") Pennsylvania
+					option(value="RI") Rhode Island
+					option(value="SC") South Carolina
+					option(value="SD") South Dakota
+					option(value="TN") Tennessee
+					option(value="TX") Texas
+					option(value="UT") Utah
+					option(value="VT") Vermont
+					option(value="VA") Virginia
+					option(value="WA") Washington
+					option(value="WV") West Virginia
+					option(value="WI") Wisconsin
+					option(value="WY") Wyoming
+					option(value="PR") Puerto Rico
+
+			label(for="zipCode") <span class="required">*</span>ZIP Code
+			.field-wrapper
+				input#zipCode(type="text",name="zipCode")
+
+			label(for="restaurantLocation") Location Visited
+			.field-wrapper
+				select#restaurantLocation(name="restaurantLocation")
+					option(value="") Select a Restaurant
+					option(value="0001 - Beverly Hills") Beverly Hills, CA
+					option(value="0002 - Marina Del Rey") Marina Del Rey, CA
+					option(value="0003 - Redondo Beach") Redondo Beach, CA
+					option(value="0005 - Washington, DC") Washington, DC - Chevy Chase Pavilion
+					option(value="0006 - Newport Beach") Newport Beach, CA - Fashion Island
+					option(value="0010 - Coconut Grove") Coconut Grove, FL - CocoWalk
+					option(value="0011 - Boca Raton") Boca Raton, FL
+					option(value="0012 - Chicago") Chicago, IL - John Hancock Center
+					option(value="0013 - Houston") Houston, TX - Galleria Mall
+					option(value="0015 - Old Orchard") Skokie, IL - Westfield Shoppingtown Old Orchard Center
+					option(value="0016 - Baltimore") Baltimore, MD - Pratt Street Pavilion
+					option(value="0017 - Kansas City") Kansas City, MO - The Country Club Plaza
+					option(value="0018 - Pasadena") Pasadena, CA - Old Town Pasadena
+					option(value="0019 - Denver") Denver, CO - Tabor Center
+					option(value="0020 - Westbury") Westbury, NY - The Mall at The Source
+					option(value="0021 - Las Vegas- Caesars") Las Vegas, NV - The Forum Shops at Caesars Palace
+					option(value="0022 - Dadeland") Miami, FL - Dadeland Mall
+					option(value="0023 - Cambridge") Cambridge, MA - CambridgeSide Galleria
+					option(value="0024 - Aventura") Aventura, FL - Aventura Mall
+					option(value="0025 - Irvine") Irvine, CA - Irvine Spectrum
+					option(value="0026 - Dallas") Dallas, TX
+					option(value="0027 - Sawgrass Mills") Sunrise, FL - Sawgrass Mills
+					option(value="0028 - San Diego") San Diego, CA - Fashion Valley Mall
+					option(value="0029 - Thousand Oaks") Thousand Oaks, CA - The Oaks Mall
+					option(value="0030 - Columbus") Columbus, OH - Easton Town Center
+					option(value="0031 - Boulder") Boulder, CO - Pearl Street Mall
+					option(value="0032 - Providence") Providence, RI - Providence Place
+					option(value="0033 - Mission Viejo") Mission Viejo, CA - The Shops at Mission Viejo
+					option(value="0034 - San Francisco") San Francisco, CA - Union Square
+					option(value="0035 - Perimeter") Atlanta, GA - Perimeter Mall
+					option(value="0036 - Scottsdale") Scottsdale, AZ - Kierland Commons
+					option(value="0037 - Indianapolis") Indianapolis, IN - The Fashion Mall at Keystone
+					option(value="0038 - Hackensack") Hackensack, NJ - Riverside Square
+					option(value="0039 - Frisco-Stonebriar") Frisco, TX - Stonebriar Centre
+					option(value="0040 - Schaumburg") Schaumburg, IL - Woodfield Mall
+					option(value="0041 - West Palm Beach") West Palm Beach, FL - Palladium at City Place
+					option(value="0042 - Phoenix") Phoenix, AZ - Biltmore Fashion Park
+					option(value="0043 - Seattle- Pike Street") Seattle, WA - Pike Street
+					option(value="0044 - Sherman Oaks") Sherman Oaks, CA - Sherman Oaks Galleria
+					option(value="0045 - Winter Park") Winter Park, FL - Winter Park Village
+					option(value="0046 - King of Prussia") King of Prussia, PA - The Pavilion at the King of Prussia Mall
+					option(value="0047 - Bellevue") Bellevue, WA - Bellevue Square
+					option(value="0048 - Austin") Austin, TX - Arboretum Mall
+					option(value="0049 - Chandler") Chandler, AZ - Chandler Fashion Center
+					option(value="0050 - Tampa") Tampa, FL - International Plaza
+					option(value="0051 - San Antonio") San Antonio, TX - North Star Mall
+					option(value="0052 - Boston") Boston, MA - The Shops at Prudential Center
+					option(value="0053 - Minneapolis") Edina, MN - Southdale Center
+					option(value="0054 - Fort Lauderdale") Fort Lauderdale, FL
+					option(value="0055 - Las Vegas- Summerlin") Las Vegas, NV - The Shops at Boca Park
+					option(value="0056 - Orlando") Orlando, FL - The Mall at Millenia
+					option(value="0057 - St. Louis") St. Louis, MO - St. Louis Galleria
+					option(value="0058 - San Jose") Santa Clara, CA - Westfield Shoppingtown Valley Fair
+					option(value="0059 - Edison") Edison, NJ - Menlo Park Mall
+					option(value="0060 - Charlotte") Charlotte, NC - SouthPark Mall
+					option(value="0061 - Park Meadows") Littleton, CO - Park Meadows
+					option(value="0062 - West Nyack") West Nyack, NY - Palisades Center
+					option(value="0063 - Overland Park") Overland Park, KS - The Fountains Shopping Center
+					option(value="0064 - Sugar Land") Sugar Land, TX
+					option(value="0065 - Palo Alto") Palo Alto, CA
+					option(value="0066 - Tysons Corner") McLean, VA - Tysons Corner
+					option(value="0067 - Raleigh") Raleigh, NC - Crabtree Valley Mall
+					option(value="0068 - Honolulu") Honolulu, HI - Royal Hawaiian Shopping Center
+					option(value="0069 - White Plains") White Plains, NY - The Source at White Plains
+					option(value="0070 - Cleveland") Lyndhurst, OH - Legacy Village
+					option(value="0071 - The Woodlands") The Woodlands, TX - The Woodlands Mall
+					option(value="0072 - Arlington") Arlington, VA - The Market Common Clarendon
+					option(value="0073 - South San Jose") San Jose, CA - Westfield Shoppingtown Oakridge
+					option(value="0074 - Cincinnati") Cincinnati, OH - Kenwood Towne Centre
+					option(value="0075 - Pittsburgh- South Side") Pittsburgh, PA - South Side
+					option(value="0076 - Peoria") Peoria, AZ - Arrowhead Fountains Center
+					option(value="0077 - Birmingham") Birmingham, AL - The Summit
+					option(value="0078 - Sacramento") Sacramento, CA - Market Square at Arden Fair
+					option(value="0079 - Oak Brook ") Oak Brook, IL - Oakbrook Center
+					option(value="0080 - Wayne") Wayne, NJ - Willowbrook Mall
+					option(value="0081 - Rancho Mirage") Rancho Mirage, CA - The River at Rancho Mirage
+					option(value="0082 - Virginia Beach") Virginia Beach, VA - The Town Center of Virginia Beach
+					option(value="0083 - Alpharetta") Alpharetta, GA - North Point Mall
+					option(value="0084 - Corte Madera") Corte Madera, CA - Village at Corte Madera
+					option(value="0085 - Wauwatosa") Wauwatosa, WI - Mayfair Mall
+					option(value="0086 - Des Moines") Des Moines, IA - Jordan Creek Town Center
+					option(value="0087 - Richmond") Richmond, VA - Short Pump Town Center
+					option(value="0088 - Brea") Brea, CA - Brea Mall
+					option(value="0089 - Naples") Naples, FL - Coastland Center Mall
+					option(value="0090 - Jacksonville") Jacksonville , FL - St. John Town Center
+					option(value="0091 - Rancho Cucamonga") Rancho Cucamonga, CA - Victoria Gardens Mall
+					option(value="0092 - The Grove") Los Angeles, CA - The Grove
+					option(value="0093 - Westlake ") Westlake, OH - Crocker Park Mall
+					option(value="0094 - Burlington") Burlington, MA - Burlington Mall
+					option(value="0095 - Braintree") Braintree, MA - South Shore Plaza
+					option(value="0096 - Palm Beach Gardens") Palm Beach Gardens, FL - Downtown at the Gardens
+					option(value="0097 - Louisville") Louisville, KY - Mall St. Matthews
+					option(value="0098 - Nashville") Nashville, TN - The Mall at Green Hills
+					option(value="0099 - Lincolnshire") Lincolnshire, IL - Lincolnshire Commons
+					option(value="0100 - Las Vegas- Henderson") Henderson, NV - The District at Green Valley Ranch
+					option(value="0101 - Portland") Tigard, OR - Washington Square
+					option(value="0102 - Durham") Durham, NC - The Streets at Southpoint
+					option(value="0103 - Columbia") Columbia, MD
+					option(value="0104 - Southlake") Southlake, TX - Southlake Town Square
+					option(value="0105 - Fresno") Fresno, CA - Fashion Fair Mall
+					option(value="0106 - Omaha") Omaha, NE
+					option(value="0107 - Chesterfield") Chesterfield, MO - Westfield Chesterfield
+					option(value="0108 - Huntington Beach") Huntington Beach, CA - Bella Terra Mall
+					option(value="0109 - Pleasanton") Pleasanton, CA - Stoneridge Mall
+					option(value="0110 - Cherry Hill") Cherry Hill, NJ - The Market Place at Garden State Park
+					option(value="0111 - Lake Grove") Lake Grove, NY - Smith Haven Mall
+					option(value="0112 - Dayton") Beavercreek, OH - Greene Town Center
+					option(value="0113 - Albany") Albany, NY - Colonie Center
+					option(value="0114 - Fairfax") Fairfax, VA - Fair Oaks Mall
+					option(value="0115 - Chula Vista") Chula Vista, CA - Otay Ranch Town Center
+					option(value="0116 - Buffalo") Buffalo in Cheektowaga, NY - Walden Galleria
+					option(value="0117 - Oklahoma City") Oklahoma City, OK - Penn Square Mall
+					option(value="0118 - Dulles") Dulles, VA - Dulles Town Center
+					option(value="0119 - Milwaukee") Glendale, WI - Bayshore Mall
+					option(value="0120 - Boise") Boise, ID - Boise Towne Square
+					option(value="0121 - Atlanta-Cumberland Mall") Atlanta, GA - Cumberland Mall
+					option(value="0122 - Pittsburgh- Ross Park") Ross Township, PA - Ross Park
+					option(value="0123 - Riverside") Riverside, CA - Galleria at Tyler
+					option(value="0124 - Arcadia- Santa Anita") Arcadia, CA - Westfield Santa Anita Shopping Mall
+					option(value="0125 - Brandon") Brandon, FL - Westfield Brandon
+					option(value="0126 - West Hartford") West Hartford, CT - Blue Back Square
+					option(value="0127 - Anaheim") Anaheim, CA - The Shops at Anaheim GardenWalk
+					option(value="0128 - Willow Grove") Willow Grove, PA - Willow Grove Park Mall
+					option(value="0129 - Pittsford") Pittsford, NY- Pittsford Plaza
+					option(value="0130 - Tulsa") Tulsa, OK - Woodland Hills Mall
+					option(value="0131 - Southcenter- Tukwila") Tukwila, WA - Southcenter Mall
+					option(value="0132 - Freehold") Freehold, NJ - Freehold Raceway Mall
+					option(value="0133 - Arlington") Arlington, TX - Parks at Arlington
+					option(value="0134 - Natick") Natick, MA - Natick Collection
+					option(value="0135 - Salt Lake City") Murray, UT - Fashion Place Mall
+					option(value="0136 - Huntington") Huntington, NY - Walt Whitman Mall
+					option(value="0137 - Peabody-Northshore") Peabody, MA - Northshore Mall
+					option(value="0138 - Mesa") Mesa, AZ - Superstition Springs Center
+					option(value="0139 - Greenwood") Greenwood, IN - Greenwood Park Mall
+					option(value="0140 - Roseville") Roseville, CA - Roseville Galleria
+					option(value="0141 - Glendale") Glendale, CA - The Americana at Brand
+					option(value="0142 - Allen") Allen, TX - Watters Creek Mall
+					option(value="0143 - Pembroke Gardens") Pembroke Pines, FL - The Shops at Pembroke Gardens
+					option(value="0144 - Columbus-Polaris") Columbus, OH - Polaris Fashion Place
+					option(value="0145 - Towson") Towson, MD - Towson Town Center
+					option(value="0146 - Walnut Creek") Walnut Creek, CA - Plaza Escuela
+					option(value="0148 - Bridgewater Commons") Bridgewater, NJ - Bridgewater Commons
+					option(value="0149 - Annapolis") Annapolis, MD - Westfield Annapolis
+					option(value="0150 - Tucson") Tucson, AZ - Tucson Mall
+					option(value="0151 - Christiana Mall") Newark, DE - The Christiana Mall
+					option(value="0152 - Westchesters Ridge Hill") Yonkers, NY - Westchester's Ridge Hill
+					option(value="0153 - Memorial City") Houston, TX - City Mall
+					option(value="0154 - Short Hills") Short Hills, NJ - Short Hills Mall
+					option(value="0155 - Danbury") Danbury, CT - Danbury Fair
+					option(value="0156 - Hillsdale") San Mateo, CA - Hillsdale Shopping Center
+					option(value="0157 - City Creek Center") Salt Lake City, UT - City Creek Center
+					option(value="0158 - San Antonio- La Cantera Mall") San Antonio, TX - The Shops at La Cantera
+					option(value="0159 - Lawrenceville") Lawrenceville, NJ - Quaker Bridge Mall
+					option(value="0160 - ArundelMills") Hanover, MD - Maryland Live! Casino
+					option(value="0161 - Potomac Mills - Woodbridge") Woodbridge, VA - Potomac Mills
+					option(value="0162 - Baybrook - Friendswood") Friendswood, TX - Baybrook Mall
+					option(value="0163 - Orland Park") Orland Park, IL
+					option(value="0164 - Dolphin Mall - Sweetwater") Miami, FL - Dolphin Mall
+					option(value="0165 - San Juan") San Juan, PR - Plaza Las Americas
+					option(value="0166 - Knoxville") Knoxville, TN - West Town Mall
+					option(value="0167 - TwelveOaks") Novi, MI - Twelve Oaks Mall
+					option(value="0168 - Escondido") Escondido, CA
+					option(value="0169 - San Diego") San Diego, CA - The Headquarters at Seaport District
+					option(value="0170 - Topanga") Canoga Park, CA - Topanga Mall
+					option(value="0171 - Chestnut Hill") Chestnut Hill, MA - Atrium Mall
+					option(value="0172 - Mall of Georgia") Buford, GA - Mall of Georgia
+					option(value="0173 - White Flint") Bethesda, MD - Montgomery Mall
+					option(value="0174 - Syracuse") Syracuse, NY - Destiny Mall
+					option(value="0176 - Atlanta") Atlanta, GA - Lenox Square Mall
+					option(value="0177 - Metairie") Metairie, LA - Lakeside Shopping Center
+					option(value="0178 - Reno- Meadowood Mall") Reno, NV - Meadowood Mall
+					option(value="0180 - Trumbull") Trumbull, CT - Trumbull Mall
+
+			label(for="visitDate") Date of Visit
+			if platform != "desktop"
+				// TODO: Use native HTML5 date input for mobile/tablet
+				.field-wrapper
+					input#visitDate(type="date",name="visitDate")
+			else
+				// TODO: Jon - UI date picker here
+				.field-wrapper
+					input#visitDate(type="text",name="visitDate")
+
+			label(for="visitTime") Time of Visit
+			.field-wrapper
+				select#visitTime(name="visitTime")
+					option(value="") Select a Time
+					option(value="Brunch") Brunch
+					option(value="Lunch") Lunch
+					option(value="Dinner") Dinner
+
+			label Disabled Field
+			.field-wrapper
+				input(type="text",disabled)
+
+			// TODO: .form-error adds the error coloring, data-error attr contains the message
+			label Error Field
+			.field-wrapper.form-error(data-error="This field is required.")
+				input(type="text")
+
+			label(for="comments") <span class="required">*</span>Comments
+			.field-wrapper
+				textarea#comments(name="comments")
+			.comment-charactercount 7000 characters left
+
+			p.content-disclaimer
+				|We promise never to rent or sell your personal information 
+				|and you can unsubscribe at any time. Click here to see our 
+				a(href="#") Privacy Policy
+				|.
+
+			input.btn(type="submit",name="formSubmit",value="Submit")
+// END : /modules/content-contactform.html

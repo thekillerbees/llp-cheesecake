@@ -1,0 +1,47 @@
+/* ==========================================================================
+    CONTENT - LINK SECTION
+   ========================================================================== */
+
+.content-linksection {
+	border-bottom: 1px solid $borderColorDark;
+	margin: 40px 0 0;
+	&:first-child {
+		margin: 0;
+	}
+}
+.content-link {
+	border-top: 1px solid $borderColorDark;
+	padding: 40px 0;
+	a {
+		display: block;
+		font: $fontWeightRegular 16px/24px $themeFont;
+		text-transform: uppercase;
+		margin: 18px 0 0;
+		&:before {
+			font-size: 15px;
+			margin-right: 10px;
+		}
+		&.recipe:before {
+			@extend .icon-recipes;
+		}		
+		&.download:before {
+			@extend .icon-download;
+		}		
+		&.read:before {
+			@extend .icon-documents;
+		}
+	}
+}
+.content-link-title {
+	color: $contentLinkTitle;
+	font: $fontWeightBold 19px/25px $themeFont;
+	text-transform: uppercase;
+}
+.content-link-description {
+	color: $contentLinkDescription;
+	font: $fontWeightRegular 19px/25px $themeFont;
+}
+.content-link-summary {
+	font: $fontWeightRegular 16px/23px $themeFont;
+	margin: 18px 0 0;
+}

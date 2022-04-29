@@ -1,0 +1,1792 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]--><!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+  <!-- START : /jade/partials/content-listing-alt.jade-->
+  <!-- TODO: the alternate class is needed when showing the listing modules in a grid-like fashion-->
+  <!-- END : /jade/partials/content-listing-alt.jade-->
+  <!-- START : /global/head.html-->
+  <head>
+
+    
+
+    <!-- JJ -->
+   <title>The Cheesecake Factory Restaurant in {{{mallname}}}</title>
+    {{#checkIf  '(' HAPPYHOURMENU '!=' '' ')' }}
+    <meta name="description" content="The Cheesecake Factory restaurant at {{{address1}}} in the {{{mallname}}} offers a great selection of cheesecake, specialty entrees, appetizers, cocktails, wine, beer, and happy hour, with more than 250 items made fresh from scratch every day" />
+    {{else}}
+    <meta name="description" content="The Cheesecake Factory restaurant at {{{address1}}} in the {{{mallname}}} offers a great selection of cheesecake, specialty entrees, appetizers, cocktails, wine, and beer, with more than 250 items made fresh from scratch every day" />
+    {{/checkIf}}
+<!-- <link rel="canonical" href="{{{cityindex_url_lc}}}{{{clientkey}}}/" />-->
+
+<link rel="canonical" href="{{{stateindex_url}}}{{{lc city_for_url}}}-{{{clientkey}}}.html" />
+<!-- BHODATA = '$hourslabel1 $hoursfromto1, $hourslabel2 $hoursfromto2, $hourslabel3 $hoursfromto3, $hourslabel4 $hoursfromto4'; -->
+
+<meta property="fb:app_id" content="146822132031277" />
+<meta property="og:type" content="restaurant.restaurant" /> 
+<meta property="og:url" content="{{{cityindex_url}}}{{{clientkey}}}" />
+<meta property="og:title" content="The Cheesecake Factory" />
+<meta property="og:description" content="Official Cheesecake Factory Maps and Information for {{{city}}}, {{{state}}} Location." />
+<meta property="og:image" content="{{{imagename}}}" />
+<meta property="restaurant:contact_info:street_address" content="{{{address1}}}" />
+<meta property="restaurant:contact_info:locality" content="{{{city}}}" />
+<meta property="restaurant:contact_info:region" content="{{{state}}}" />
+<meta property="restaurant:contact_info:postal_code" content="{{{postalcode}}}" />
+<meta property="restaurant:contact_info:country_name" content="{{{country}}}" />
+<meta property="restaurant:contact_info:phone_number" content="{{{phone}}}" />
+<meta property="restaurant:contact_info:website" content="{{{cityindex_url}}}{{{clientkey}}}" />
+<meta property="place:location:latitude" content="{{{latitude}}}" />
+<meta property="place:location:longitude" content="{{{longitude}}}" />
+
+    <meta name="msvalidate.01" content="2B443241B7FA43147AF4ED2878EE8B89" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <link rel="icon" href="//locations.thecheesecakefactory.com/2014/assets/images/global/favicon2.ico">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <!-- Stylesheet changes based on "desktop", "mobile", "tablet"-->
+    <link rel="stylesheet" href="//locations.thecheesecakefactory.com/2014/assets/css/w2gi_local.secure.2019.0924.css">
+    <script type="text/javascript" src="/w2gi/javascript/backbone/bb/lib/jquery.js"></script>
+
+    <script>
+      //remove() polyfill for IE
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode === null) {
+          return;
+        }
+        this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+    </script>
+
+    <script>
+            var W2GI = {
+                collection : {},
+                config : {
+                    appkey : '8FB256FA-4D3E-11DF-87DB-E6AEF46A8D6E',
+                    pageObserve : ['linktrack'],
+                    autoStart : true,
+                    locator : {
+                        cgeo : false,
+                        theme : null,
+                        cdirections : false,
+                        formdata : {
+                            geoip : true,
+                            dataview : 'store_default',
+                            limit : 250,
+                            geolocs : {
+                                geoloc : [{
+                                    addressline : '',
+                                    country : '',
+                                    latitude : '',
+                                    longitude : ''
+                                }]
+                            },
+                            searchradius : '20|50|75|100|500'
+                        },
+                        drivingdirections : {
+                            disableDynamicRoutes : false,
+                            formdata : {
+                                dataview : 'store_default',
+                                geolocs : {
+                                    geoloc : [{
+                                        address1 : '',
+                                        city : '',
+                                        state : '',
+                                        province : '',
+                                        postalcode : '',
+                                        addressline : '',
+                                        country : '',
+                                        latitude : '',
+                                        longitude : ''
+                                    }]
+                                }
+                            }
+                        },
+                        imgPath : '//hosted.where2getit.com/enphase/images/zoom',
+                        controls : [{
+                            name : 'panZoom', // use panZoomBar if needs the full
+                            // bar
+                            options : {
+                                zoomWheelEnabled : false
+                            }
+                        }],
+                        //noZoomOnPan: true,
+                        //zoom: 15,
+                        dynamicSearch : false,
+                        routeStyle : {
+                            strokeWidth : 8,
+                            strokeOpacity : 0.5,
+                            strokeColor : '#0000FF'
+                        },
+                        sources : [{
+                                    name: 'Google Normal',
+                                        options: {
+                                        disableDoubleClickZoom : true,
+                                        displayName : 'Map',
+                                        projection: 'EPSG:900913',
+                                        units: 'm',
+                                        type: 'roadmap',
+                                        maxZoomLevel: 18,
+                                         styles : [{
+                                    "stylers" : [{
+                                        "saturation" : -93
+                                    }, {
+                                        "visibility" : "on"
+                                    }, {
+                                        "lightness" : 20
+                                    }, {
+                                        "gamma" : 0.81
+                                    }]
+                                }]
+                                    }
+                                }]
+
+                    }
+                }
+            };
+            W2GI.collection.poi = [
+            {{#checkIf pois}}
+            {{#each pois}} {
+                poinum : '{{poinum}}',
+                icon : '{{icon}}',
+                name : '{{name}}',
+                address1 : '{{address1}}',
+                address2 : '{{address2}}',
+                city : '{{city}}',
+                state : '{{state}}',
+                province : '{{province}}',
+                postalcode : '{{postalcode}}',
+                country : '{{country}}',
+                latitude : '{{latitude}}',
+                longitude : '{{longitude}}',
+                phone : '{{phone}}',
+                mon_sat : '{{mon_sat}}',
+                sun : '{{sun}}',
+                monfrihours : '{{monfrihours}}',
+                sathours : '{{sathours}}',
+                sunhour : '{{sunhour}}',
+                specialhours : '{{{specialhours}}}',
+                showshour : '{{showshour}}',
+                clientkey : '{{clientkey}}',
+                uid : '{{uid}}',
+                website : '{{{brandifywebsite__c}}}',
+                main_loc : '{{main_loc}}',
+                loc_url : '{{loc_url}}'
+            } {{#checkUnless @last}},{{/checkUnless}}{{/each}}
+            {{else}}
+            {
+            poinum : '{{poinum}}',
+            icon : '{{icon}}',
+            name : '{{name}}',
+            address1 : '{{address1}}',
+            address2 : '{{address2}}',
+            city : '{{city}}',
+            state : '{{state}}',
+            province : '{{province}}',
+            postalcode : '{{postalcode}}',
+            country : '{{country}}',
+            latitude : '{{latitude}}',
+            longitude : '{{longitude}}',
+            phone : '{{phone}}',
+            mon_sat : '{{mon_sat}}',
+            sun : '{{sun}}',
+            monfrihours : '{{monfrihours}}',
+            sathours : '{{sathours}}',
+            sunhour : '{{sunhour}}',
+            specialhours : '{{{specialhours}}}',
+            showshour : '{{showshour}}',
+            clientkey : '{{clientkey}}',
+            website : '{{{brandifywebsite__c}}}',
+            uid : '{{uid}}',
+            main_loc : '{{main_loc}}',
+            loc_url : '{{loc_url}}'
+            }
+            {{/checkIf}}
+            ]
+
+    </script>
+        <script data-main="/w2gi/javascript/backbone/bb/dist/bones" src="/w2gi/javascript/backbone/bb/lib/require.js"></script>
+
+    <script src="//locations.thecheesecakefactory.com/2014/assets/js/vendor/require.js"></script>
+    <script src="//locations.thecheesecakefactory.com/2014/assets/js/desktop.secure.js"></script>
+
+    <script>
+jQuery(document).on("w2gi:locatorloaded", function () {
+
+                console.log("loaded");
+
+                
+});
+	
+    function generate_directions(startaddress, endaddress){
+    alert(startaddress);
+    endaddress = endaddress.replace("#","poundsign");
+
+    if(bubbleValidate(startaddress)){
+      //$('directions_url').setAttribute('url', 'http://hosted.where2getit.com/cheesecake/directions_popup.html?form=driving_directions&addressline=' + startaddress + '&addressline=' + '{{{latitude}}},{{{longitude}}}' + '&addresslineDisplay=' + endaddress);
+
+        //performClick($('directions_url'));
+
+      var url = '//hosted.where2getit.com/cheesecake/directions_popup.2.html?form=driving_directions&addressline=' + startaddress + '&addressline=' + '{{{latitude}}},{{{longitude}}}' + '&addresslineDisplay=' + endaddress;
+      window.open(url,'website','toolbar=1,location=1,directories=1,status=1,menubar=1,scrollbars=1,resizable=1');
+    }
+  }
+
+
+  function bubbleValidate(bubbleInput) {
+    if(bubbleInput.length > 0 && bubbleInput.length < 5 && !isNaN(bubbleInput) ) {
+      //ace.util.alert("Please enter a valid ZIP code.");
+      alert ("Please enter a valid ZIP.");
+      return false;
+    }
+
+    if(bubbleInput.length == 0) {
+      alert("Please enter a starting address.");
+      return false;
+    }
+
+    return true;
+  }
+
+  function performClick(node) {
+    if((navigator.userAgent.match(/Safari/i))) {
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initMouseEvent('click', true, true, window);
+        node.dispatchEvent(evObj);
+      }
+      else {
+        node.click();
+      }
+  }
+
+
+
+  function handleGaSend(category, label) {
+    var trackername = ga.getAll()[0].get('name');
+    ga('send', 'event', 'Click', category, label);
+    /*ga("send", 
+      "event",
+      category,
+      "click",
+      label
+    );*/
+  }
+
+
+
+
+
+    </script>
+
+    <style>
+
+    h1 {
+      font-size:24px!important;
+    }
+    .discard{
+    display:none
+  }
+
+  .unmask {
+    display:block !important
+  }
+    .show {display:none;}
+    .show0 {display:none !important;}
+    .show0000, .show000000 {display:none;}
+
+    /*.showtakeout1 {
+      display: none;
+  }*/
+  .showcatering1 {display:none;}
+  .showcurb1 {display:none;}
+  .show11, .show111 {
+    display: block !important;
+  }
+  .deliveryBtn {
+    cursor: pointer;
+    background-color: white;
+      border: 2px solid #AE8347;
+      border-bottom: 0;
+      border-radius: 3px 3px 0 0;
+      color: #fff8ed;
+      display: block;
+      font: 600 16px/40px 'Lato', sans-serif;
+      /*height: 90px;*/
+      height: 124px;
+      padding: 0;
+      width: 150px !important;
+      text-align: center;
+      text-transform: uppercase;
+      width: 300px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      -webkit-transition: all 0.25s;
+      -moz-transition: all 0.25s;
+      transition: all 0.25s;
+      margin: 0 auto;
+      margin-left:0;
+  }
+  .deliveryBtn img {
+    width: 65%;
+    height: 60px
+  }
+
+  .deliveryBtn span {
+    /*background-color: #AE8347;*/
+    background-color: #7f6136;
+    border-radius: 0 0 3px 3px;
+    color: #fff8ed;
+    display: block;
+    font: 600 14px/40px "Lato", sans-serif;
+    height: 40px;
+    left: -2px;
+    line-height: 40px;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    text-align: center;
+    text-transform: uppercase;
+    top: -1px;
+    transition: all 0.25s;
+    width: 150px;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    
+  }
+
+  .deliveryBtn.order-d span {
+    top: 4px;
+  }
+
+  .deliveryBtn:hover span {
+    background-color: #d51c59;
+  }
+  .orderBtn {
+      margin: 0 10px 20px 0!important;
+      width: 150px !important;
+      font-size: 14px!important;
+      float: none !important;
+  }
+  .doorDash {
+      height: 50px !important;
+      width: 85% !important;
+      margin-top: 15px;
+      margin-bottom: 5px;
+  } 
+
+  a:focus, input:focus, select:focus, iframe:focus, button:focus  {
+    outline:2px dotted #000!important;
+  } 
+
+  .iframefocus {
+      outline:2px dotted #000!important;
+  }
+  
+ /* .doorDash {
+  	height: 20% !important; 
+  	width: 30% !important;
+  }*/
+ .doortxt {
+  color: #c71e54;
+  left: 255px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  z-index: 99;
+}
+
+.doortxt2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.dishtxt {
+  color: #c71e54;
+  font-size: 34px;
+  font-weight: 900;
+  left: 140px;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 10px;
+  width: 350px;
+  z-index: 99;
+  text-shadow: 1px 2px #cdcdcd;
+}
+.dishtxt2 {
+	font-size:50px;
+}
+
+.online-div {
+  float:left;
+  margin-right:15px;
+}
+
+.remove, .remove0 {
+  display:none;
+}
+
+.hide_if_0 {display:none !important;}
+
+.instructions {
+    color: #824d3b;
+    font: 400 16px/23px 'Lato', sans-serif;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.vanish1 {
+  display:none;
+}
+
+.onlinetext, .onlinetext1 {
+  display:none;
+}
+
+.onlinetext11, .onlinetext111 {
+  display:inline;
+}
+
+.themark {
+	width: 13px;
+    vertical-align: middle;
+}
+
+.hours-notes-wrapper {
+	margin-bottom: 20px;
+}
+
+.vanishOur {
+	display: none;
+}
+
+#dsoj, #soj, #flashsale, #sojdec19 {
+  margin:0px auto;
+  width: 100%;
+  text-align: center;
+  clear: both;
+  float: none;
+}
+
+.gm-style {
+  cursor: auto;
+}
+
+    </style>
+
+
+
+<!--<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15758575-1']);
+  _gaq.push(['_setDomainName', 'thecheesecakefactory.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>-->
+
+<!-- <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-15758575-1', 'auto');
+ga('send', 'pageview');
+</script> -->
+
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{{topindex_url_lc}}}",
+          "name": "Index"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "{{{stateindex_url_lc}}}",
+          "name": "{{{state}}}"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "{{{cityindex_url_lc}}}",
+          "name": "{{{city}}}"
+        }
+      }]
+    }
+    </script>
+
+
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"Restaurant",
+  "name": "The Cheesecake Factory",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"{{{address1}}}",
+    "addressLocality":"{{{city}}}",
+    "addressRegion":"{{{state}}}",
+    "postalCode":"{{{postalcode}}}",
+    "addressCountry":"{{{country}}}"
+  },
+"containedIn":"{{{mallname}}}",  
+"geo":{
+    "@type":"GeoCoordinates",
+    "latitude":{{{latitude}}},
+    "longitude":{{{longitude}}}
+  },
+"branchOf": {
+    "name":"The Cheesecake Factory",
+    "url": "https://www.thecheesecakefactory.com/"
+  },
+ "url":"{{{cityindex_url}}}{{{clientkey}}}",
+  "telephone":"{{{phone}}}",
+  "logo" : "https://hosted.where2getit.com/cheesecake/2014/assets/images/global/logo-tcf-desktop.png",
+  {{#checkIf  '(' imagename '!=' '' ')' }}
+  "image": "{{{imagename}}}",
+  {{else}}
+  "image": "//www.thecheesecakefactory.com/media/locationImages/locations_Default.jpg",
+  {{/checkIf}}
+  "openingHoursSpecification":[
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Monday"
+      ],
+      "opens":"{{{BHO_MON_OPEN}}}",
+      "closes":"{{{BHO_MON_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Tuesday"
+      ],
+      "opens":"{{{BHO_TUE_OPEN}}}",
+      "closes":"{{{BHO_TUE_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Wednesday"
+      ],
+      "opens":"{{{BHO_WED_OPEN}}}",
+      "closes":"{{{BHO_WED_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Thursday"
+      ],
+      "opens":"{{{BHO_THU_OPEN}}}",
+      "closes":"{{{BHO_THU_CLOSED}}}"
+    },
+        {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Friday"
+      ],
+      "opens":"{{{BHO_FRI_OPEN}}}",
+      "closes":"{{{BHO_FRI_CLOSED}}}"
+    },    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Saturday"
+      ],
+      "opens":"{{{BHO_SAT_OPEN}}}",
+      "closes":"{{{BHO_SAT_CLOSED}}}"
+    },
+        {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Sunday"
+      ],
+      "opens":"{{{BHO_SUN_OPEN}}}",
+      "closes":"{{{BHO_SUN_CLOSED}}}"
+    }
+  ],
+  "menu": "//www.thecheesecakefactory.com/menu/",
+  "acceptsReservations":"True",
+  "servesCuisine": [
+      "American style"
+   ]{{#checkIf doordashurl}},
+  "potentialAction":{
+    "@type":"OrderAction",
+    "target":{
+      "@type":"EntryPoint",
+      "urlTemplate":"{{{doordashurl}}}",
+      "inLanguage":"en-US",
+      "actionPlatform":[
+        "http://schema.org/DesktopWebPlatform"
+      ]
+    },
+    "deliveryMethod": [
+      "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+            "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+        ]   
+    {{else}}
+    {{/checkIf}}
+     
+  } 
+}
+</script>
+
+<style>
+iframe {
+   border:0;
+   width:800px;
+   height: 600px;
+}
+
+a {
+  /*color:#5d3327;
+  color: #876537;*/
+  color: #6D512C;
+}
+
+.footer-links a, .footer-social a {
+  color:#C5A06D;
+}
+
+.text-submit-wrapper button, .btn {
+  color:#fff;
+}
+
+.iframe {
+  border:0;
+  width:800px;
+  height: 0px;
+  display: none;
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
+.btn-primary:focus {background:#000000; color:#FFF; }
+
+/* the below is for addressing color contrast ADA AA level issue 11/03/2017*/
+
+.level-aa .highlight {
+	background-color: #6D522C !important;
+}
+
+.text-submit-wrapper button{
+	background-color: #AE8347;
+}
+
+.btn {
+  border-radius: 3px;
+  height: 40px;
+  font: 600 19px/40px "Lato", sans-serif;
+  line-height: 40px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  background-color: #AE8347;
+  color: #fff8ed;
+  display: block;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 300px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.btn:hover{
+	background-color: #d51c59;
+}
+
+.footer-links, .copyright {
+	color: #C5A06D;
+}
+
+.linkmenu li a {
+  color: #876537;
+  /*font-weight: !important;*/
+}
+
+.linkmenu li a:hover {
+  color: #D51C59;
+}
+
+.linkmenu {
+  color:#97724D;
+}
+
+.content-navigation {
+  width:306px !important;
+}
+
+.curbside div{
+    color: #824d3b;
+    font: 400 16px/23px 'Lato', sans-serif;
+}
+
+.cheescakelogo {
+    margin-top: 15px;
+}
+
+.hide_if_0 {display:none !important;}
+.ol-overlay-container div {padding: 46px 0px 46px 60px!important; cursor: default!important;}
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NV8ZGXZ');</script>
+<!-- End Google Tag Manager -->
+
+  </head>
+  <!-- END : /global/head.html-->
+  <!-- TODO: we need to specify a platform class on the body-->
+  <body class="is-desktop fixed fixed-color fixed-always always" onload="ace.click.pageObserve(['linktrack']);">
+    <a href="#main-content" aria-label="Skip to content" tabindex="0" class="sr-only">Skip to content</a>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV8ZGXZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- START : /global/header.html-->
+    <div id="header" class="header">
+      <div id="mainHeader" class="main-header">
+        <div class="container">
+          <div class="site-logo"><a href="//www.thecheesecakefactory.com" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Home" linktrack="Cheesecake Factory - Local Page - Click_to_Home">The Cheesecake Factory</a></div>
+          <ul class="main-header-controls">
+          
+              <!-- <li style="display: none;"><a href="#main-content" class="sr-only sr-only-focusable btn-primary ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Skiptomaincontent" linktrack="Click_to_Skiptomaincontent">Skip to main Content</a></li> -->
+      
+      
+            <!-- Only show these menu items on desktop/tablet-->
+            <li><a href="//www.thecheesecakefactory.com/menu/" class="head-menu ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Menu" linktrack="Cheesecake Factory - Local Page - Click_to_Menu" href="{{{link}}}"><span>Menu</span></a></li>
+            <li><a href="//www.thecheesecakefactory.com/locations" class="head-locations ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Locations" linktrack="Cheesecake Factory - Local Page - Click_to_Locations"><span>Locations</span></a></li>
+            <li><a href="https://thecheesecakefactory.cashstar.com/" class="head-giftcards ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Giftcards" linktrack="Cheesecake Factory - Local Page - Click_to_Giftcards"><span>Gift Cards</span></a></li>
+            <li><a id="menuToggle" href="javascript:void(0);" role="button" class="head-more"><span class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_More" linktrack="Cheesecake Factory - Local Page - Click_to_More">More</span></a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+    <script>
+      require(["modules/fixedHeader"], function(FixedHeader) {
+       return new FixedHeader();
+      });
+    </script>
+    <!-- END : /global/header.html-->
+    <!-- START : /global/menu.html-->
+    <div id="navigation" class="navigation">
+      <div class="navigation-inner">
+        <div id="closeNav" class="navigation-close"></div>
+        <ul class="navigation-social">                   
+            <li><a href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Facebook" linktrack="Cheesecake Factory - Local Page - Click_to_Facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cheesecake" target="_blank" class="social-twitter ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Twitter" linktrack="Cheesecake Factory - Local Page - Click_to_Twitter">Twitter</a></li>
+            <li><a href="//www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Pinterest" linktrack="Cheesecake Factory - Local Page - Click_to_Pinterest">Pinterest</a></li>
+            <li><a href="//instagram.com/cheesecakefactory#" target="_blank" class="social-instagram ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Instagram" linktrack="Cheesecake Factory - Local Page - Click_to_Instagram">Instagram</a></li>
+            <li>
+              <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="//www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Newsletter" linktrack="Cheesecake Factory - Local Page - Click_to_Newsletter">Newsletter</a>
+            </li>
+        </ul>
+        <ul class="navigation-list">
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Aboutus" linktrack="Cheesecake Factory - Local Page - Click_to_Aboutus"><span>About Us</span></div>
+              <ul class="navigation-links">
+                <li><a href="//www.thecheesecakefactory.com/about-us/" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_OurStory" linktrack="Cheesecake Factory - Local Page - Click_to_OurStory">Our Story</a></li>
+                <li><a href="//www.thecheesecakefactory.com/about-us/awards/" lass="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Awards" linktrack="Cheesecake Factory - Local Page - Click_to_Awards">Awards</a></li>
+                <li><a href="//www.thecheesecakefactory.com/about-us/our-recipes/" lass="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_OurRecipes" linktrack="Cheesecake Factory - Local Page - Click_to_OurRecipes>Our Recipes</a></li>                
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="navigation-list-name">
+              <a href="//www.thecheesecakefactory.com/connect/questions/" lass="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_GotQuestions" linktrack="Cheesecake Factory - Local Page - Click_to_GotQuestions"><span>Got Questions?</span></a>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Connect" linktrack="Cheesecake Factory - Local Page - Click_to_Connect"><span>Connect</span></div>
+              <ul class="navigation-links">
+                <li><a href="//www.thecheesecakefactory.com/connect/email-sign-up" data-internal="17120" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_EmailSignup" linktrack="Cheesecake Factory - Local Page - Click_to_EmailSignup">Email Sign-Up</a></li>
+                <li><a href="//www.thecheesecakefactory.com/connect/banquet-info" data-internal="14405" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_BanquetInformation" linktrack="Cheesecake Factory - Local Page - Click_to_BanquetInformation">Banquet Information</a></li>
+                <li><a href="//www.thecheesecakefactory.com/connect" data-internal="27315"  class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Contactus" linktrack="Cheesecake Factory - Local Page - Click_to_Contactus">Contact Us</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_CorporateInformation" linktrack="Cheesecake Factory - Local Page - Click_to_CorporateInformation"><span>Corporate Information</span></div>
+              <ul class="navigation-links">
+                <li><a href="//www.thecheesecakefactory.com/corporate-information/" data-internal="26907" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_globaldevelopment" linktrack="Cheesecake Factory - Local Page - Click_to_globaldevelopment">Global Development</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-information/press-room" data-internal="27123" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Pressroom" linktrack="Cheesecake Factory - Local Page - Click_to_Pressroom">Press Room</a></li>
+                <li><a href="//investors.thecheesecakefactory.com/" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Investors" linktrack="Cheesecake Factory - Local Page - Click_to_Investors">Investors</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-information/employment-policy" data-internal="19103" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Employmentpolicy" linktrack="Cheesecake Factory - Local Page - Click_to_Employmentpolicy">Employment Policy</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-information/terms-of-use" data-internal="10941" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Termsofuse" linktrack="Cheesecake Factory - Local Page - Click_to_Termsofuse">Terms of Use</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-information/privacy-policy" data-internal="10945" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Employmentpolicy" linktrack="Cheesecake Factory - Local Page - Click_to_PrivacyPolicy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Corporatesocialresponsibility" linktrack="Cheesecake Factory - Local Page - Click_to_Corporatesocialresponsibility"><span>Corporate Social Responsibility</span></div>
+              <ul class="navigation-links">
+                <li><a href="//www.thecheesecakefactory.com/corporate-social-responsibility/" data-internal="27343" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_CharitableGiving" linktrack="Cheesecake Factory - Local Page - Click_to_CharitableGiving">Charitable Giving</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-social-responsibility/culture/" data-internal="27344" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Culture" linktrack="Cheesecake Factory - Local Page - Click_to_Culture>Culture</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-social-responsibility/sustainability/" data-internal="27345" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Sustainability" linktrack="Cheesecake Factory - Local Page - Click_to_Sustainability">Sustainability</a></li>
+                <li><a href="//www.thecheesecakefactory.com/corporate-social-responsibility/sustainable-sourcing/" data-internal="27341" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_SustainableSourcing" linktrack="Cheesecake Factory - Local Page - Click_to_SustainableSourcing">Sustainable Sourcing</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li>
+            <div class="navigation-list-name">
+              <a href="https://www.thecheesecakefactory.com/delivery/" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_OrderDelivery" linktrack="Cheesecake Factory - Local Page - Click_to_OrderDelivery"><span>Order Delivery</span></a>
+            </div>
+          </li>          
+          <li>
+            <div class="navigation-list-name">
+              <a  href="http://www.harryanddavid.com/h/bakery/cheesecake-factory?ref=TheCheesecakeFactory&amp;utm_medium=partnerships&amp;utm_source=cheesecake_factory" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_ShipaCheesecake" linktrack="Cheesecake Factory - Local Page - Click_to_ShipaCheesecake"><span>Ship a Cheesecake</span></a>
+            </div>
+          </li>
+          <li>
+            <div class="navigation-list-name">
+              <a  href="https://www.thecheesecakefactory.com/at-home/" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_HomeRetailProducts" linktrack="Cheesecake Factory - Local Page - Click_to_HomeRetailProducts"><span>At Home Retail Products</span></a>
+            </div>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+    <script>
+      require(["modules/accordion"], function(Accordion) {
+       return new Accordion();
+      });
+      require(["modules/headerNav"], function(HeaderNav) {
+       return HeaderNav.get();
+      });
+    </script>
+    <!-- END : /global/menu.html-->
+    <div class="outer-wrap">
+      <!-- START : WRAPPER-->
+      <div class="wrapper">
+        <!-- START : /modules/content-location-header.html-->
+        <div id="contentHeader" class="content-header">
+          <!-- TODO: iframe placeholder -->
+          <iframe id="mapframe" title="Map for {{{city}}}" src="//hosted.where2getit.com/cheesecake/mapOnly.secure.ADA-1204.html?clientkey={{{clientkey}}}" onFocus="setFocus();" onBlur="removeFocus();" ></iframe>
+        </div>
+        <!-- END : /modules/content-location-header.html-->
+        <div class="container" id="main-content">
+          <!-- START : MAIN CONTAINER-->
+          <div id="mainContainer" class="main-container">
+            <!-- START : PAGE CONTENT-->
+            <div id="mainContent" class="main-content">
+              <!-- TODO: Everything inside "#mainContent" will be repopulated by Backbone-->
+              <!-- START : /modules/content-header.html-->
+              <!-- TODO: Add .navigation-anchors-only class to hide on mobile (if the navigation consists of only anchor links)-->
+              <style>
+               
+                .hero-banner {
+                  clear: both;
+                  height: auto;
+                  margin: 0 0 30px;
+                  /*position: absolute;
+                  right: -80px;*/
+                  text-align: left;
+                  width: 100%;
+                }
+
+                .hero-banner img {
+                  height: auto;
+                  /*max-width: 480px;*/
+                  max-width: 480px;
+                  width: 100%; 
+                }
+
+              </style>
+
+              <div id="contentNavigation" class="content-navigation navigation-anchors-only">
+                <ul class="linkmenu">
+                  <li><a href="#restaurantdetails" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_RestaurantDetails" linktrack="Cheesecake Factory - Local Page - Click_to_RestaurantDetails">Restaurant Details</a></li>
+                  <!-- will add a new tmpl_if statement, once a database column  is assigned -->
+                  {{#checkIf yelpreservation}}
+                  <li><a href="#reservations" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Reservations" linktrack="Cheesecake Factory - Local Page - Click_to_Reservations">Reservations</a></li>
+                  {{/checkIf}}
+                  
+                  {{#checkIf  '(' HAPPYHOURMENU '!=' '' ')' }}
+                      <li><a href="#happyhour" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Happyhours" linktrack="Cheesecake Factory - Local Page - Click_to_HappyHours">Happy Hour</a></li>
+                  {{/checkIf}}
+                  {{#checkIf ONLINEORDERING '!=' ''}} 
+                    
+                    <li><a href="#delivery" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Orderonline" linktrack="Cheesecake Factory - Local Page - Click_to_Orderonline">Order Online</a></li>
+                    
+                  {{else}}
+                    {{#checkIf  '('  '(' DOORDASHFLAG '!=' '0' ')'   '&&'   '(' DOORDASHFLAG '!=' '' ')'  ')' }}
+                    <li><a  href="#delivery" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_OrderDelivery" linktrack="Cheesecake Factory - Local Page - Click_to_OrderDelivery">Order Delivery</a></li>
+                    {{/checkIf}}
+                  {{/checkIf}}
+                  {{#checkIf takeoutflag '==' '1'}}
+                    <li><a href="#takeout" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Takeout" linktrack="Cheesecake Factory - Local Page - Click_to_Takeout">Take Out</a></li>
+                  {{/checkIf}}
+                  {{#checkIf  '(' CURBSIDEFLAG '==' '1' ')' }}
+                  <li class="show{{{CURBSIDEPHONE}}}"><a href="#togo" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Curbsideto-goinstructions" linktrack="Cheesecake Factory - Local Page - Click_to_Curbsideto-goinstructions">Curbside to-go instructions</a></li>
+                  {{/checkIf}}
+                  <!-- {{#checkIf  '(' ONLINEORDERING '!=' '1' ')' }}
+                    <li><a href="#takeout">Take Out</a></li>
+                  {{/checkIf}} -->
+                  {{#checkIf  '(' CATERINGFLAG '==' '1' ')' }}
+                  <li><a href="#catering" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Catering" linktrack="Cheesecake Factory - Local Page - Click_to_Catering">Catering</a></li>
+                  {{/checkIf}}
+                  {{#checkIf  '(' banquets '==' '1' ')' }}
+                  <li><a href="#banquet" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - Local Page" data-gaact="Click_to_Click_to_BanquetServices" linktrack="Cheesecake Factory - Local Page - Click_to_BanquetServices">Banquet Services</a></li>
+                  {{/checkIf}}
+                </ul>
+              </div>
+              <script>
+                require(["modules/fixedNavigation"], function(FixedNavigation) {
+                 return new FixedNavigation();
+                });
+              </script>
+              <!-- END : /modules/content-header.html-->
+
+
+              <div class="content-column">
+                <!-- holiday banner -->
+                {{#checkIf  '(' CLIENTKEY '==' '1501' ')' }}
+                {{else}} 
+                  
+                  <!-- <div id="dsoj">
+                    <a href="https://www.thecheesecakefactory.com/gift-cards"><img src="//hosted.where2getit.com/cheesecake/2014/assets/images/global/CCF_DSOJ-2019_BANNER_LOCAL-PAGE-480x150.jpg" alt="Buy a Gift Card, Get Two free slices. Valid Through Dec 2nd"></a>
+                  </div>
+                  <div id="sojdec19">
+                    <a href="https://www.thecheesecakefactory.com/gift-cards"><img src="//hosted.where2getit.com/cheesecake/2014/assets/images/global/CCF_SOJ-2019_BANNER_LOCAL-PAGE-480x150.jpg" alt="Give a Gift Card, Get a free slice. Valid Through Dec 31st"></a>
+                  </div>
+                  <div id="soj">
+                    <a href="https://www.thecheesecakefactory.com/gift-cards"><img src="//hosted.where2getit.com/cheesecake/2014/assets/images/global/CCF_SOJ-2019_BANNER_LOCAL-PAGE-480x150.jpg" alt="Give a Gift Card, Get a free slice. Valid Through Dec 31st"></a>
+                  </div>
+                  <div id="flashsale">
+                    <a href="https://www.thecheesecakefactory.com/gift-cards"><img src="//hosted.where2getit.com/cheesecake/2014/assets/images/global/CCF_FS-2019_BANNER_LOCAL-PAGE-480x150.jpg" alt="Buy a eGift Card, Get Two free slices. Valid Today Only"></a>
+                  </div> -->
+
+                  <script type="text/javascript">
+                      /*var dsojshowAfter = new Date(Date.UTC(2019, 10, 29, 8, 00)) //
+                          //var showAfter = new Date(Date.UTC(2019, 5, 20, 21, 00)) //
+                      var dsojhideAfter = new Date(Date.UTC(2019, 11, 3, 7, 59)) // 
+
+                      
+                      console.log("DSOJ " + dsojshowAfter);
+                      console.log("DSOJ after " + dsojhideAfter);
+                      if ((Date.parse(dsojshowAfter) <= Date.now()) && (Date.parse(dsojhideAfter) > Date.now())) {
+                          document.getElementById('dsoj').style.display = 'block'
+                      }
+                      else {
+                          document.getElementById('dsoj').remove();
+                      }
+
+                      var sojshowAfter = new Date(Date.UTC(2019, 11, 3, 8, 00)) //
+                      //var sojshowAfter = new Date(Date.UTC(2019, 10, 19, 4, 00))
+                      var sojhideAfter = new Date(Date.UTC(2019, 11, 20, 7, 59)) // 
+
+                      
+                      console.log("SOJ " + sojshowAfter);
+                      console.log("SOJ after " + sojhideAfter);
+                      if ((Date.parse(sojshowAfter) <= Date.now()) && (Date.parse(sojhideAfter) > Date.now())) {
+                          document.getElementById('sojdec19').style.display = 'block'
+                      }
+                      else {
+                          document.getElementById('sojdec19').remove();
+                      }
+
+                      var sojshowAfters = new Date(Date.UTC(2019, 11, 21, 8, 00)) //
+                      //var sojshowAfter = new Date(Date.UTC(2019, 10, 19, 4, 00))
+                      var sojhideAfters = new Date(Date.UTC(2020, 0, 1, 7, 59)) // 
+
+                      
+                      console.log("SOJs " + sojshowAfters);
+                      console.log("SOJs after " + sojhideAfters);
+                      if ((Date.parse(sojshowAfters) <= Date.now()) && (Date.parse(sojhideAfters) > Date.now())) {
+                          document.getElementById('soj').style.display = 'block'
+                      }
+                      else {
+                          document.getElementById('soj').remove();
+                      }
+
+                      var flashsaleshowAfter = new Date(Date.UTC(2019, 11, 20, 8, 00)) //
+                      //var flashsaleshowAfter = new Date(Date.UTC(2019, 10, 19, 4, 00)) //
+                      var flashsalehideAfter = new Date(Date.UTC(2019, 11, 21, 7, 59)) // 
+
+                      
+                      console.log("flash " + flashsaleshowAfter);
+                      console.log("flash after " + flashsalehideAfter);
+                      if ((Date.parse(flashsaleshowAfter) <= Date.now()) && (Date.parse(flashsalehideAfter) > Date.now())) {
+                          document.getElementById('flashsale').style.display = 'block'
+                      }
+                      else {
+                          document.getElementById('flashsale').remove();
+                      }*/
+
+                  </script>
+                  <hr> 
+                  <div style="clear: both">&nbsp;</div>
+
+                  
+                {{/checkIf}}
+              	
+                <!-- TODO: Only share on desktop/tablet-->
+                <div class="heading-share share-this">
+                    <!-- remove on 7/30 -->
+
+              
+                  <!-- TODO: .share-action button triggers .share-active on .share-this-->
+                  <div class="share-action">Share</div>
+                  <!-- TODO: .share-print should trigger page print--><a href="javascript:window.print()" class="share-print">Print</a>
+                  <div class="share-social-wrapper">
+                    <ul class="share-social">
+                      <li class="share-email"><a  onclick="window.open('//hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&amp;action=emaillocatorstart&template=emaillocatorstart2014-1204&amp;uid={{{uid}}}','EMAIL','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');handleGaSend('Info Link', 'Send Location Details to eMail');" href="javascript: void(0);">Email</a></li>
+                      <li class="share-mobile"><a  onclick="window.open('//hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&amp;action=smslocatorstart&template=smslocatorstart2014-1204&amp;uid={{{uid}}}','MOBILE','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');handleGaSend('Info Link', 'Send Location Details to Mobile');" href="javascript: void(0);">Mobile</a></li>
+                    </ul>
+                  </div>
+               
+                  {{#checkIf  '(' COMINGSOON '==' '1' ')' }}
+                  <h1 id="restaurantdetails" class="content-heading">{{{name}}}</h1>
+                  {{/checkIf}}
+                  {{#checkIf  '(' COMINGSOON '!=' '1' ')' }}
+                    <h1 id="restaurantdetails" class="content-heading">{{{mallname}}} Restaurant</h1>
+                  {{/checkIf}}
+                </div>
+
+		<div id="templates" style="display: none;">
+			<script id="locator_addressline" type="text/x-handlebars-template">
+				^((#if address1^))^((address1^))^((else^))^((#if addressline^))^((addressline^))^((/if^))^(( city ^)) ^(( county ^)) ^(( state ^)) ^((postalcode^))^((/if^))
+			</script>
+			<script id="directions_addressline" type="text/x-handlebars-template">
+				^((#if address1^))^((address1^))^((else^))^((#if addressline^))^((addressline^))^((/if^)) ^(( city ^)) ^(( county ^)) ^(( state ^)) ^((postalcode^))^((/if^))
+			</script>
+			<script id="collection_multiple_address" type="text/x-handlebars-template">
+				<h3>Please select your location</h3>
+				<ul class="content-list address-suggestions">
+				^((#each this^))
+				<li data-id=^((@index^))><strong>^((address1^)) ^(( city ^)) ^(( county ^))</strong>^(( state ^)) ^((postalcode^))</li>
+				^((/each^))
+				</ul>
+			</script>
+
+			<!-- icon template start  -->
+			<script id="default" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="30" data-height="27" data-offsetx="-15" data-offsety="-27">
+				<img class="alpha" src="//hosted.where2getit.com/w2gi/images/icons/pin1.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			<script id="main_icon" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="30" data-height="30" data-offsetx="-15" data-offsety="-30" data-labeloffsetx="-1" data-labeloffsety="15" data-fontcolor="#ffffff" data-fontsize="10" data-fontweight="bold" data-display="true">
+				<img class="alpha" src="//hosted.where2getit.com/w2gi/images/icons/pin1.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			<script id="other_icon" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="33" data-height="40" data-offsetx="-17" data-offsety="-40" data-labeloffsetx="-1" data-labeloffsety="28" data-fontcolor="#ffffff" data-fontsize="10" data-fontweight="bold" data-display="true">
+				<img class="alpha" src="//hosted.where2getit.com/w2gi/images/icons/gray-pin-shadow.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			
+			<script id="dealer" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="33" data-height="40" data-offsetx="-17" data-offsety="-40" data-labeloffsetx="-1" data-labeloffsety="28" data-fontcolor="#ffffff" data-fontsize="10" data-fontweight="bold" data-display="true">
+				<img class="alpha" src="/w2gi/images/icons/ddendpin.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			
+			<script id="center_marker" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="30" data-height="28"  data-offsetx="-11" data-offsety="-33">
+				<img class="alpha" alt="redstar" src="//hosted.where2getit.com/w2gi/images/zoombar/blank.gif"/>
+				</div>
+			</script>
+			<script id="ddstarticon" type="text/x-handlebars-template">
+				<div class="end_icon" data-width="27" data-height="38" data-offsetx="-16" data-offsety="-28">
+				<img class="alpha" alt="start" src="/w2gi/images/icons/ddstartpin.png"/>
+				</div>
+			</script>
+			<script id="ddendicon" type="text/x-handlebars-template">
+				<div class="end_icon" data-width="27" data-height="38" data-offsetx="-16" data-offsety="-28">
+				<img class="alpha" alt="end" src="/w2gi/images/icons/ddendpin.png"/>
+				</div>
+			</script>
+			<!-- icon template end -->
+
+			<!-- bubble template start -->
+			<script id="bubble" data-offsetx="15" data-offsety="-18" {{#checkIf is_wireless_device}}data-width="1" data-height="1"{{else}}data-width="220" data-height="180" {{/checkIf}} type="text/x-handlebars-template">
+          
+				<ul class="tabs" style="display:none;">
+				<li class="active" data-tab="tab1">Address</li>
+				<li data-tab="tab2">Hours</li>
+				<li data-tab="tab3">Amenities</li>
+				</ul>
+				<div class="tab-content active" data-tab="tab1">
+				<b>^((name^))</b>
+				<ul>
+				<li>^((address1^))</li>
+				<li>^((city^)), ^((state^)) ^((postalcode^))</li>
+				</ul>
+
+				<div class="dd-wrapper">
+				<div class="origin-select">
+				Directions:&nbsp; <a href="#" data-action="to" class="">To</a> | <a href="#" data-action="from">From</a> Here
+				</div>
+				<form id="dd" autocomplete="off" style="margin-top:5px;">
+				<span>From:</span> <br/>
+				<input size="19" type="text" title="Address" name="addressline" value="^((addressline^))" style="width: 130px;"/>
+				<select id="bubble_country" name="country" class="country_selection" style="display:none;">
+				<option value="^((country^))">^((country^))</option>
+				</select>
+				<input type="submit" value="Go" style="width:30px;"/>
+				</form>
+				</div>
+				</div>
+				<div class="tab-content" data-tab="tab2">tab2</div>
+				<div class="tab-content" data-tab="tab3">
+				<div class="gboxDiv">
+				<a class="gs" data-action="show">Street View</a>
+				</div>
+				</div>
+			</script>
+			<!-- bubble template end -->
+
+			<!-- POI table template start -->
+			<script id="collection_poi" type="text/x-handlebars-template">
+
+				<ul class="content-list poi-result"> 
+
+				^((#each pois^))
+				<li data-id=^((@index^)) data-uid=^((uid^)) class="poi-item hidefirst^((@index^))" style="float: left; margin-right:10px; margin-bottom:10px;">
+
+				<div class="nearby_icon">
+				<span class="poinum"> 
+				<div>
+				<a data-action="open_bubble" style="cursor:pointer;color:#fff;">^((incIndex @index^))</a>
+				</div>
+				</span>
+				</div>
+
+				<div class="nearby_details">  
+				<div>
+				<span style="font-weight:bold;">^((name^))</span>
+				<a data-action="open_bubble" data-linktrack="view-on-map-click" class="open_bubble">View on map </a>
+
+				</div>
+
+				<div class="address1">
+				^((address1^))
+				</div>
+
+				<div class="address2">
+				^((city^)), ^((state^))^((province^)) ^((postalcode^))
+				<br />
+				Phone: ^((phone^))
+				<br/>
+				Distance: ^((_distance^)) miles away
+				</div>
+
+				</div>
+
+				</li>
+
+				^((/each^))
+				</ul>
+			</script>
+			<!-- POI table template end -->
+
+			<!-- More Info table template start -->
+			<script id="collection_more_info" type="text/x-handlebars-template">
+				<table odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="5">
+				<thead>
+				<tr>
+				<td></td>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+				<td></td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<tr recnum="#{POINUM}">
+				<td width="33px" valign="top">
+				<div templateid="#{ICON}"></div>
+				</td>
+				<td width="310px">
+				<a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a>
+				<br/>
+				#{ADDRESS1}
+				<br/>
+				#{CITY}, #{STATE}#{PROVINCE} #{POSTALCODE}
+				<br/>
+				<strong>#{PHONE}</strong>
+				</td>
+				</tr>
+				<tr>
+				<td colspan="2">
+				<a action="show_all" recnum="#{POINUM}" href="javascript:void(0);">Show All Locations</a>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+			</script>
+			<!-- More Info table template end -->
+
+			<!-- Ambiguous address table template start -->
+			<!--script id="collection_multiple_address" type="text/x-handlebars-template">
+				<table odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+				<tr>
+				<th>Did you mean:</th>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+				<td></td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<tr recnum="#{POINUM}">
+				<td width="250px">
+				<a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE}#{PROVINCE} #{POSTALCODE}</a>
+				<br/>
+				#{COUNTY}
+				</td>
+				</tr>
+				</tbody>
+				</table>
+			</script-->
+			<!-- Ambiguous address table template end -->
+
+			<!-- driving directions panel template end -->
+			<script id="collection_maneuvers" type="text/x-handlebars-template">
+				<p>
+				<a class="search_again" href="javascript:void(0);" target="_parent" onclick="window.location.reload()">Back to Store Details</a>
+				</p>
+
+				<h3>Driving Directions</h3>
+				<p><strong>Distance: ^((total_distance^)) miles.         Drive time: ^((total_time^)) minutes</strong></p>
+				<p class="maneuver_start">
+				From (A): <strong>^((#if fromAddress.address1^))^((fromAddress.address1^))^((else^))^((#if fromAddress.addressline^))^((fromAddress.addressline^))^((/if^)) ^(( fromAddress.city ^)) ^(( fromAddress.county ^)) ^(( fromAddress.state ^)) ^((fromAddress.postalcode^))^((/if^)) </strong>
+				</p>
+				<ul class="content-list maneuver-result">
+				^((#each maneuverlist^))
+				<li data-id=^((@index^)) data-uid=^((uid^))>
+				<strong>^((incIndex @index^)) </strong>^((text^)) ^((distance^)) ^((distanceuom^))
+				</li>
+				^((/each^))
+				</ul>
+				<p class="maneuver_end">
+				To (B): <strong>^((#if toAddress.address1^))^((toAddress.address1^))^((else^))^((#if toAddress.addressline^))^((toAddress.addressline^))^((/if^)) ^(( toAddress.city ^)) ^(( toAddress.county ^)) ^(( toAddress.state ^)) ^((toAddress.postalcode^))^((/if^)) </strong>
+				</p>
+
+			</script>
+
+			<!-- Maneuvers table template end -->
+			<div id="lightwindow_cache" params="lightwindow_width=400, lightwindow_height=300, lightwindow_loading_animation=false">
+				<span id="lightwindow_cache_data" style="line-height: auto;
+				overflow: visible,
+				position: relative;float: left;width: 100%;"></span>
+			</div>
+		</div>
+		<!-- End Locator Map/POI List Templates -->
+                <div data-w2gi="locator" id="w2gilocalmain">
+
+			<div id="form">
+
+				<form id="locator_search" autocomplete="off"></form>
+				<form id="driving_directions" autocomplete="off" style="display: none;">
+
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									From:
+								</td>
+								<td>
+									<input title="From Address" class="addressentry" id="startaddress" type="text" size="28" name="addressline" value="Start address" onClick="clear_search_directions_box(this);"/>
+									To:
+								</td>
+								<td>
+									<input title="To Address" class="addressentry" id="endaddress" type="text" size="28" name="addressline" value="End address" onClick="clear_search_directions_box(this);"/>
+									<input id="driving_directions_button" type="submit" value="Get Directions" name="driving_directions"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="map_panel" style="display:none">
+
+				<div id="map" class="map"></div>
+
+				<div id="panel" class="poi panel"></div>
+
+				<!-- nearby locartions info, if applied -->
+
+			</div>
+
+
+                <ul class="breadcrumbs linkmenu">
+                  <li><a href="{{{topindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_StateIndex" linktrack="LocalPage - Click_to_StateIndex">Select a State</a></li>
+                  <li><a href="{{{stateindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_State" linktrack="LocalPage - Click_to_State">{{{state_longname_pc}}} {{#checkIf state}}({{{province}}}{{{state}}}){{/checkIf}}</a></li>
+                  <li><a href="{{{cityindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_CityIndex" linktrack="LocalPage - Click_to_CityIndex">{{{city}}}</a></li>
+                  <li>{{{address1}}}</li>
+                </ul>
+                </div>
+
+                <div class="content-split">
+                  
+                  <div class="location-info" itemprop="address">
+                    <span itemprop="name" style="display:none;">The Cheesecake Factory</span>
+                    {{#checkIf  '(' MALLNAME '!=' '' ')' }}
+                      <span itemprop="containedIn" style="display: none;">{{{mallname}}}</span>
+                    {{/checkIf}}
+                   
+                    <div itemprop="address">
+
+                      <strong class="small-title">Address</strong>
+                      <p>
+                      <span class="hide{{{mallname}}}">{{{mallname}}}</span><br>
+                      <span itemprop="streetAddress">{{{address1}}}</span><br>
+                      <span itemprop="addressLocality">{{{city}}}</span>,
+                      <span itemprop="addressRegion">{{{state}}}</span>
+                      <span itemprop="postalCode">{{{postalcode}}}</span>
+                      <span itemprop="addressCountry">{{{country}}}</span>
+                      </p>
+
+                    </div>
+                    
+                    <p itemprop="telephone">{{{phone}}}</p>
+                    <time itemprop="openingHours" datetime="Mo {{{BHO_MON_OPEN}}}-{{{BHO_MON_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="Tu {{{BHO_TUE_OPEN}}}-{{{BHO_TUE_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="We {{{BHO_WED_OPEN}}}-{{{BHO_WED_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="Th {{{BHO_THU_OPEN}}}-{{{BHO_THU_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="Fr {{{BHO_FRI_OPEN}}}-{{{BHO_FRI_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="Sa {{{BHO_SAT_OPEN}}}-{{{BHO_SAT_CLOSED}}}"></time>
+                    <time itemprop="openingHours" datetime="Su {{{BHO_SUN_OPEN}}}-{{{BHO_SUN_CLOSED}}}"></time>
+              
+                  </div>
+        		  
+                  <div class="location-info">
+                    <!-- TODO: On desktop, show Get Directions--><strong class="small-title">Get directions from:</strong>
+                    <div class="text-submit-wrapper">
+                      <!-- <input type="text" value="" placeholder="Enter an address">
+                      <button id="getDirections">Go</button> -->
+
+
+                    <form id="directions_mini_form" onSubmit="var url='//hosted.where2getit.com/cheesecake/directions_popup.2.html?form=driving_directions&addressline=' + document.getElementById('directions_address_input').value + '&addressline=' + '{{{address1}}}, {{{city_pc}}} {{{state}}}{{{province}}} {{{postalcode}}}'; window.open(url,'website','toolbar=1,location=1,directories=1,status=1,menubar=1,scrollbars=1,resizable=1');handleGaSend('Directions Link', 'Driving Directions'); return false;">
+                      <label for="directions_address_input" style="position:absolute; left: -9999px;">Enter an Address</label>
+                      <input type="text" id="directions_address_input" title="Enter an Address" class="bubble_input" onFocus="this.value='';" value="{{{city}}} {{{state}}} {{{postalcode}}}" placeholder="Enter an address"/>
+                      <button aria-controls="Driving Directions for The Cheesecake Factory location at {{{address1}}}, {{{city_pc}}} {{{state}}}{{{province}}} {{{postalcode}}}" id="getDirections" type="submit" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_GetDirections" linktrack="LocalPage - Click_to_GetDirections">Go</button>
+
+                    </form>
+
+
+                    </div>
+                  </div>
+                </div>
+
+                
+
+                {{#checkIf yelpreservation}}
+                <hr>
+                  <div id="reservations">
+                    <style>
+                      #reservations iframe {
+                        margin-top: 15px;
+                      }
+                    </style>
+                    <strong class="small-title">Reservations</strong>
+                    <div style="font-size: 16px; text-align: left; margin: 5px 0; line-height: 25px;">We reserve much of the dining room for walk-in guests and serve a full menu at the bar. If you do not see your desired reservation time, please walk-in anytime!</div>
+                    <iframe id="yelp-reservations-widget" style="border: 0;width:100%;height:88px" src="{{{yelpreservation}}}/widget?orientation=horizontal&color-scheme=light"><a href="{{{yelpreservation}}}" target="_blank">Reserve at The Cheesecake Factory on Yelp</a></iframe>
+                  </div>
+                {{/checkIf}}
+                <hr>
+                <!-- TODO: br's in .time-table are hidden on desktop but used on mobile-->
+                <strong class="small-title">Hours of Operation</strong>
+
+                {{#checkIf specialhoursnotes}}
+	                {{#checkIf specialhoursnotes '!=' 'Hi Nate, this is a test!'}}
+		  	            <div class="hours-notes-wrapper">
+		                  	{{{specialhoursnotes"NONE"}}}
+			            </div>
+	                {{/checkIf}}
+                {{/checkIf}}
+                
+
+                <table class="time-table">
+                  <tr>
+                    <td>{{{hourslabel1}}}</td>
+                    <td>{{{hoursfromto1}}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{{hourslabel2}}}</td>
+                    <td>{{{hoursfromto2}}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{{hourslabel3}}}</td>
+                    <td>{{{hoursfromto3}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td>{{{hourslabel4}}}</td>
+                    <td>{{{hoursfromto4}}}</td>
+                  </tr>
+                </table>
+
+                {{#checkIf  '(' HAPPYHOURMENU '!=' '' ')' }} 
+               
+                  <strong id="happyhour" class="small-title">Happy Hour</strong>
+                  <table class="time-table">
+                    <tr>
+                      <td>MON - FRI</td>
+                      {{#checkIf clientkey '==' '68'}}
+                        <td>3:00PM - 5:00PM</td>
+                      {{else}}
+                        {{#checkIf clientkey '==' '214'}}
+                          <td>4:00PM - 7:00PM</td>
+                        {{else}}
+                          <td>4:00PM - 6:00PM</td>
+                        {{/checkIf}}
+                      {{/checkIf}}
+                    </tr>
+                  </table>
+                  <a href="javascript: void(0);" onclick="handleGaSend('Hours Link', 'Happy Hours');" class="btn happy-hour-link ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_HappyHoursMenu" linktrack="LocalPage - Click_to_HappyHoursMenu" style="margin-top:10px">Happy Hour Menu</a>
+                {{/checkIf}}
+                <hr>
+
+
+                <strong class="small-title">Location</strong>
+                <p>{{{textlocation}}}</p>               
+               
+                
+                {{#checkIf selfparking '!=' ''  '||'  freeselfparking '!=' ''  '||'  paidselfparking '!=' ''  '||'  parkingvalidation '!=' ''  '||'  valetparking '!=' ''  '||'  compvaletparking '!=' ''  '||'  seasonalvaletparking '!=' ''  '||'  meteredstreetparking '!=' ''  '||'  curbsidetogoparking '!=' '' }}
+                	<strong class="small-title">Parking</strong>
+                	<p>
+                		{{#checkIf selfparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Self-Parking<br/>{{/checkIf}}
+                		{{#checkIf freeselfparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Free Self-Parking<br/>{{/checkIf}}
+                		{{#checkIf paidselfparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Paid Self-Parking<br/>{{/checkIf}}
+                		{{#checkIf parkingvalidation}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Restaurant Validation Available<br/>{{/checkIf}}
+                		{{#checkIf valetparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Valet Parking<br/>{{/checkIf}}
+                		{{#checkIf compvaletparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Complimentary Valet Parking<br/>{{/checkIf}}
+                		{{#checkIf seasonalvaletparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Seasonal Valet Parking<br/>{{/checkIf}}
+                		{{#checkIf meteredstreetparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Metered Street Parking<br/>{{/checkIf}}
+                		{{#checkIf curbsidetogoparking}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Curbside To-Go Parking Spots<br/>{{/checkIf}}
+                	</p>
+                
+                {{/checkIf}}
+                
+                {{#checkIf INDOORPATIO '!=' ''  '||'  OUTDOORPATIO '!=' ''  '||'  HEATEDPATIO '!=' ''  '||'  SEASONALPATIO '!=' '' }}
+                	<strong class="small-title">Patio Seating</strong>
+                	<p>                		
+                		{{#checkIf OUTDOORPATIO}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Outdoor Patio<br/>{{/checkIf}}
+                		{{#checkIf INDOORPATIO}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Indoor Patio<br/>{{/checkIf}}
+                		{{#checkIf HEATEDPATIO}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Heated Patio<br/>{{/checkIf}}
+                		{{#checkIf SEASONALPATIO}}<img src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/checkmark.png" alt="Check Mark" class="themark"> Seasonal Patio<br/>{{/checkIf}}                		
+                	</p>
+                
+                {{/checkIf}}
+                              
+                
+                {{#checkIf  '('  '(' ONLINEORDERING '!=' '' ')'   '||'   '('  '(' DOORDASHFLAG '!=' '0' ')'   '&&'   '(' DOORDASHFLAG '!=' '' ')'  ')'  ')' }}
+                  {{#checkIf ONLINEORDERING '!=' ''}} 
+                    
+                      <hr><strong id="delivery" class="small-title">Order Online</strong>
+                    
+                  {{else}}
+                    <hr><strong id="delivery" class="small-title">Order Delivery</strong>
+                  {{/checkIf}}
+                   <p style="font-size:14px; margin-bottom:10px">
+                  {{#checkIf ONLINEORDERING '!=' ''}} 
+                    {{#checkIf  '('  '(' DOORDASHURL '==' '' ')'   '||'   '(' DOORDASHFLAG '==' '0' ')'   '||'   '(' DOORDASHFLAG '==' '' ')'  ')' }}
+                       Our entire menu is available for pickup.
+                    {{else}}
+                     Our entire menu is available for pickup and delivery.
+                    {{/checkIf}}
+                  {{else}}
+                   Our entire menu is available for delivery.
+                  {{/checkIf}}
+                   </p>
+               
+                   <div class="online-div remove{{{ONLINEORDERING}}}">
+                      <a class="deliveryBtn order-online-link ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderPickup" linktrack="LocalPage - Click_to_OrderPickup" title="Online ordering for {{{NAME}}}" data-linktrack="Order-Online-Link-Desktop" href="{{{onlineorderingurl}}}" onclick="handleGaSend('OrderOnline Link', 'order Online');">
+                        <img alt="Online ordering for {{{NAME}}}" class="cheescakelogo ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderPickup" linktrack="LocalPage - Click_to_OrderPickup" src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/chesecake-logo-cropped.png" style="width:auto !important;" data-linktrack="Order-Online-Link-Desktop"><br>
+                        <span>ORDER PICKUP</span>
+                      </a>
+                  </div>
+
+                    {{#checkIf  '(' DOORDASHFLAG '==' '1' ')'   '&&'   '(' DOORDASHURL '!=' '' ')' }}
+                       <div class="online-div">
+                          <a class="deliveryBtn order-d ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderDelivery" linktrack="LocalPage - Click_to_OrderDelivery" href="{{{DOORDASHURL}}}" target="_blank" data-linktrack="Order-Delivery-Link-Desktop" onclick="handleGaSend('Doordash Order Link', 'order using Doordash');">
+                            <img class="doorDash ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderDelivery" linktrack="LocalPage - Click_to_OrderDelivery" alt="order using Doordash" src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/DoorDash_logo_stacked.svg"><br>
+                            <span>ORDER DELIVERY</span>
+                          </a>
+                      </div>
+                    {{/checkIf}}
+
+                    <div style="clear:both"></div>
+                {{/checkIf}}
+                {{#checkIf takeoutflag '==' '1'}}
+                    <hr><strong id="takeout" class="small-title">Take Out</strong>
+                    {{#checkIf  takeout}}
+                      <p>{{{takeout}}}</p>
+                        {{else}}
+                          <p class="show{{{takeoutflag}}}"> We are currently open for Take Out and you may place your order online or at our Bakery counter.</p>
+                    {{/checkIf}}
+                    
+                    {{#checkIf  takeoutlink}}
+                      <a class="btn take-out-link ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_Takeoutmenu" linktrack="LocalPage - Click_to_TakeoutMenu" href="javascript: void();">Take Out Menu</a>
+                    {{/checkIf}}
+                {{/checkIf}}
+                <!-- <div>Curbside == {{{curbsideflag}}} -->
+                {{#checkIf CURBSIDEFLAG '==' '1'}}
+                <!-- <span class="show{{{TAKEOUTFLAG}}}"> -->
+                  <hr><strong id="togo" class="small-title">Curbside To-Go Instructions</strong>
+                  <div class="instructions">Need your order "To-Go?" Try our Curbside To-Go Service! It’s as easy as 1, 2, 3!</div>
+                  <div class="curbside">
+                  
+                      <div>{{{curbsidedesc}}}</div>
+                  
+
+                  </div>
+               <!-- </span> -->
+                {{/checkIf}}
+                {{#checkIf takeoutflag '!=' '1'}}
+                <span>
+	                <hr><strong id="takeout" class="small-title">Take Out</strong>
+					        <p class="showtakeout{{{TAKEOUTFLAG}}}">Take out is not available at this location.</p>
+                </span>
+                {{/checkIf}}                
+                {{#checkIf  '(' CATERINGFLAG '==' '1' ')' }}
+                    <hr><strong id="catering" class="small-title">Catering</strong>
+
+                    <p class="showcatering{{{CATERINGFLAG}}}">Catering not available at this location. </p>
+
+                    <p class="show{{{CATERINGFLAG}}}">{{{CATERINGDESC}}}</p>
+                    <a href="javascript: void(0);" onclick="window.open('{{{CATERINGLINK}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');handleGaSend('Catering Link', 'Catering Menu');" class="btn show{{{CATERINGFLAG}}}">Catering Menu</a>
+                {{/checkIf}}
+
+                {{#checkIf banquets}} 
+               		<div id="banquet"> 
+	                 	<hr><strong class="small-title">Large Parties</strong>
+	                 
+	              		<p>{{{largeparties}}}</p> 
+              		</div>
+                {{/checkIf}}
+
+                
+               
+              </div>
+            </div>
+            <!-- END : PAGE CONTENT-->
+          </div>
+          <!-- END : MAIN CONTAINER-->
+        </div>
+      </div>
+		<div class="overlay" style="display:none"></div>
+
+
+		<div style="display:none">
+			<div class="modal" style="display:none">
+
+				<a href="#" class="closeBtn">Close</a>
+
+				<div id="lightwindow_title_bar" style="position:absolute; left:0px; top:0px; padding-top:2px; height:28px; width: 366px;">
+
+					<div id="lightwindow_title_bar_inner" style="">
+
+						<span id="lightwindow_title_bar_title">Send to Phone</span>
+
+					</div>
+
+				</div>
+
+				<div class="bottom_bar"></div>
+
+				<p></p>
+
+			</div>
+		</div>
+
+      <!-- START : /global/footer.html-->
+      <div id="footer" class="footer">
+        <div class="container">
+          <ul class="footer-social">
+            <li><a href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Facebook" linktrack="City index page - Click_to_Facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cheesecake" target="_blank" class="social-twitter ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Twitter" linktrack="City index page - Click_to_Twitter">Twitter</a></li>
+            <li><a href="http://www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Pinterest" linktrack="City index page - Click_to_Pinterest">Pinterest</a></li>
+            <li><a href="http://instagram.com/cheesecakefactory#" target="_blank" class="social-instagram ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Instagram" linktrack="City index page - Click_to_Instagram">Instagram</a></li>
+            <li>
+              <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Newsletter" linktrack="City index page - Click_to_Newsletter">Newsletter</a>
+            </li>
+          </ul>
+          <div class="footer-text">
+            <ul class="footer-links">
+              <li><a href="http://www.thecheesecakefactory.com/connect" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Contactus" linktrack="City index page - Click_to_Contactus">Contact Us</a></li>
+              <li><a href="http://investors.thecheesecakefactory.com/" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Investors" linktrack="City index page - Click_to_Investors">Investors</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/terms-of-use" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Termsofuse" linktrack="City index page - Click_to_Termsofuse">Terms of Use</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/privacy-policy/" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_PrivacyPolicy" linktrack="City index page - Click_to_PrivacyPolicy">Privacy Policy</a></li>
+              <li><a href="//www.cakecareers.com/" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - City" data-gaact="Click_to_Careers" linktrack="City index page - Click_to_Careers">Careers</a></li>
+            </ul>
+            <div class="copyright">
+              <p>&copy; 2020 TCF Co. LLC. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END : /global/footer.html-->
+      <!-- END : WRAPPER-->
+    </div>
+    
+  </body>
+
+<script>
+  function setFocus() {
+    var el = document.getElementById("mapframe");
+    el.addClass="iframefocus";
+  }
+
+  function removeFocus() {
+    var el = document.getElementById("mapframe");
+    el.removeClass="iframefocus";
+  }
+
+  jQuery(document).ready(function(){
+    
+      jQuery('.hero-banner a').on('mousedown',function(e){
+        if( e.which == 1 || e.which == 2) {
+          if(e.which == 2) {
+            console.log('Mouse wheel click detected');
+          }
+          window.open('https://www.thecheesecakefactory.com/gift-cards','_blank');  
+        }
+      });
+
+      jQuery('a.happy-hour-link').on('mousedown',function(e){
+        // console.log(e.which)
+        if( e.which == 1 || e.which == 2) {
+          if(e.which == 2) {
+            console.log('Mouse wheel click detected');
+          }
+         window.open('{{{HAPPYHOURMENU}}}','menu','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');
+        }
+      });
+
+      jQuery('a.order-online-link').on('mousedown',function(e){
+        // console.log(e.which)
+        if( e.which == 1 || e.which == 2) {
+          if(e.which == 2) {
+              console.log('Mouse wheel click detected');
+            }
+          window.open('{{{ONLINEORDERINGURL}}}');
+        }
+      });
+
+      jQuery('a.pick-up-link').on('mousedown',function(e){
+        // console.log(e.which)
+        if( e.which == 1 || e.which == 2) {
+          if(e.which == 2) {
+            console.log('Mouse wheel click detected');
+          }
+          window.open('{{{ONLINEORDERINGURL}}}');
+        }
+      });
+      
+
+      jQuery('a.take-out-link').on('mousedown',function(e){
+        // console.log(e.which)
+        if( e.which == 1 || e.which == 2) {
+        if(e.which == 2) {
+            console.log('Mouse wheel click detected');
+          }
+        window.open('{{{takeoutlink}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');
+        }
+      });
+
+      jQuery('a.take-out-link-spanish').on('mousedown',function(e){
+        // console.log(e.which)
+        if( e.which == 1 || e.which == 2) {
+          if(e.which == 2) {
+            console.log('Mouse wheel click detected');
+          }
+          window.open('{{{TAKEOUTLINK_SPANISH}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');
+        }
+      });
+
+      setTimeout(function(){
+        jQuery('#map > div > div> div.gm-style iframe').removeAttr('frameborder').attr('title','Map inner iframe');
+      },3000);
+  });
+
+</script>
+ <script>
+      $(function(){
+        $('#menuToggle').on('keydown',function(e){
+          if(e.keycode == 13 || e.which == 13) {
+            if(!$('body').hasClass('show-nav')){
+            // $('body').addClass('show-nav')
+            // body.classList.add('show-nav');
+            }
+          }
+          if(e.keycode == 9 || e.which == 9) {
+            if(!$('body').hasClass('show-nav')){
+              $('#mapFrame').focus();
+            }
+          }
+        });
+
+        $('#closeNav').on('keydown',function(e){
+          if(e.keycode == 13 || e.which == 13) {
+            $('body').removeClass('show-nav')
+          }
+        })
+      })
+    </script>
+
+</html>

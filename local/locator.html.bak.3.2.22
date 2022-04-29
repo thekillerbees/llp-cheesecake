@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <link rel="icon" href="/2014/assets/images/global/favicon2.ico">
+        <title>Locations</title>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKGWSQ7');</script>
+        <!-- End Google Tag Manager -->
+        <script>
+            var agent = navigator.userAgent.toLowerCase(),
+
+            FALSE = "false",
+            TRUE = "true",
+            
+            // Check if the UA is a mobile one (iphone, ipod, android, blackberry)
+            isUAMobile =!!(agent.match(/(iPhone|iPod|blackberry|android 0.5|htc|lg|midp|mmp|mobile|nokia|opera mini|palm|pocket|psp|sgh|smartphone|symbian|treo mini|Playstation Portable|SonyEricsson|Samsung|MobileExplorer|PalmSource|Benq|Windows Phone|Windows Mobile|IEMobile|Windows CE|Nintendo Wii|iPad|SCH-I800|xoom|kindle)/i));
+
+           
+
+            // referrer = document.referrer;
+            function getQueryParams(){
+                var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); }, 
+                query  = window.location.search.substring(1),
+                urlParams = {};
+                while (match = search.exec(query)) {
+                    urlParams[decode(match[1]).toLowerCase()] = decode(match[2])
+                }  
+                return urlParams;
+            }  
+            referrer = getQueryParams().pagetype ? getQueryParams().pagetype : document.referrer;
+            // property = {};
+            // criteria = '';
+            // critVal = '';
+            critVal = '';
+            pickupVal = '';
+            deliveryVal = '';
+            reservationsVal = '';
+            if(referrer.indexOf('pickup') > -1) {
+                // criteria = 'onlineordering';
+                pickupVal = 1;
+                parent.postMessage('w2gi:pickup','*');
+            } else if(referrer.indexOf('delivery') > -1) {
+                // criteria = 'onlineordering';
+                deliveryVal = 1;
+                // critVal = 1;
+                parent.postMessage('w2gi:pickup','*');
+            } else {
+                 parent.postMessage('w2gi:reservations','*');
+                 // reservationsVal = '1,Yes';
+            }
+            if(isUAMobile){
+                                var W2GI = {
+                    config: {
+                        appkey: '8FB256FA-4D3E-11DF-87DB-E6AEF46A8D6E',
+                        autoStart: true,
+                        pageObserve : ['linktrack'],
+                        locator: {
+                            theme:null,
+                            noZoomOnPan: true,
+                            locatorlocale : 'en_US',
+                            alertError: false,
+                            formdata: {
+                                gps: 'first',
+	                            
+                                dataview: 'store_default',
+                                // limit: 20,
+                                limit: 20,
+                                stateonly: 1,
+                                nobf: 1,
+                                geolocs: {
+                                    geoloc: [{
+                                        addressline:    '',
+                                        country:        '',
+                                        latitude:       '',
+                                        longitude:      ''
+                                    }]
+                                },
+                                searchradius: '50|100|150|300|500|750|1000',
+                                where: {
+                                    and: {
+                                        comingsoon : {
+                                            distinctfrom: 1
+                                        },
+                                        onlineordering : {
+                                            eq: pickupVal
+                                        },
+                                        doordashflag: {
+                                            eq: deliveryVal
+                                        },
+                                        display_yelpreservation: {
+                                            in: reservationsVal
+                                        }
+                                    }
+                                }
+                            },
+                            drivingdirections: {
+                                disableDynamicRoutes: false,
+                                formdata: {
+                                    <tmpl_if expr="is_wireless_device == 1">
+                                    gps: 'first',
+                                    <tmpl_else>
+                                    geoip: true,
+                                    </tmpl_if>
+                                    dataview: 'store_default',
+                                    map: {
+                                        size :'330,225',
+                                        icons:{
+                                            start: {
+                                                path: 'ddstartpin.png'
+                                            },
+                                            end:{
+                                                path: 'ddendpin.png'
+                                            }
+                                        }
+                                    },
+                                    geolocs: {
+                                        geoloc: [{
+                                            address1:       '',
+                                            city:           '',
+                                            state:          '',
+                                            province:       '',
+                                            postalcode:     '',
+                                            addressline:    '',
+                                            country:        '',
+                                            latitude:       '',
+                                            longitude:      ''
+                                        }]
+                                    }
+                                }
+                            },
+                           imgPath:  'images/icons/zoombar_new',
+                            controls: [{ name: 'zoom', options: {} }],
+                             interactions : [{ 
+                                name : 'defaults',
+                                options : {
+                                mouseWheelZoom: false,
+                                doubleClickZoom :false
+                                }
+                            }],       
+                            dynamicSearch: false,
+                            routeStyle: {
+                                strokeWidth:     8,
+                                strokeOpacity:  .5,
+                                strokeColor:    '#0000FF'
+                            },
+                            sources: [  
+                               { 
+                                    name: 'Google Normal',
+                                        options: {
+                                        disableDoubleClickZoom : true,
+                                        displayName : 'Map',
+                                        projection: 'EPSG:900913', 
+                                        units: 'm',
+                                        type: 'roadmap', 
+                                        maxZoomLevel:18,
+                                        styles: [
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#fefefe"
+                                                    },
+                                                    {
+                                                        "lightness": "20"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#fefefe"
+                                                    },
+                                                    {
+                                                        "lightness": "17"
+                                                    },
+                                                    {
+                                                        "gamma": "1"
+                                                    },
+                                                    {
+                                                        "weight": "1.2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative.country",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "gamma": "1.74"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#f5f5f5"
+                                                    },
+                                                    {
+                                                        "lightness": "20"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#f5f5f5"
+                                                    },
+                                                    {
+                                                        "lightness": "21"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.attraction",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.business",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.park",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "lightness": "21"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    },
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.park",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.school",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.school",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "29"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    },
+                                                    {
+                                                        "weight": "0.2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.arterial",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "18"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.arterial",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "16"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            // {
+                                            //     "featureType": "transit",
+                                            //     "elementType": "geometry.fill",
+                                            //     "stylers": [
+                                            //         {
+                                            //             "color": "#f2f2f2"
+                                            //         }
+                                            //     ]
+                                            // },
+                                            // {
+                                            //     "featureType": "transit",
+                                            //     "elementType": "labels.icon",
+                                            //     "stylers": [
+                                            //         {
+                                            //             "visibility": "off"
+                                            //         }
+                                            //     ]
+                                            // },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#e9e9e9"
+                                                    },
+                                                    {
+                                                        "lightness": "17"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+
+                     },
+                     custom_ob: {
+                       updateRecords : function(recs) {
+                            var date = new Date();
+                            var today = date.getDay();
+                            $(recs).each (function(i,e) {
+                                if(e.address1) {
+                                    e.address1 = e.address1.toLowerCase();
+                                }
+                                if(e.city) {
+                                    e.city = e.city.toLowerCase();
+                                    e.city_enc = e.city.replace(/ /g,'-');
+                                }
+                                if(e.state){
+                                    e.state_enc = e.state.toLowerCase();
+                                }
+                                if(e.postalcode) {
+                                  var postal = e.postalcode.length;
+                                  if(postal == 10) {
+                                    var cut = e.postalcode.substring(0, 5);
+                                    e.postalcode = cut;
+                                    }
+                                }
+                                if(e.name){
+                                    //e.lp_link = 'https://locations.thecheesecakefactory.com/' + e.state_enc + '/' + e.city_enc + '-' + e.clientkey + '.html?templatename=local-2021';
+                                    e.lp_link = 'https://locations.thecheesecakefactory.com/' + e.state_enc + '/' + e.city_enc + '-' + e.clientkey + '.html';
+                                }
+
+                                // if (e.happyhourmenu || e.clientkey == '68' || e.clientkey == '214'){
+                                //     e.happyhour_flag = '1';
+                                //     if(e.clientkey == '68'){
+                                //         e.happyhours = '3:00pm - 5:00pm';
+                                //     } else if (e.clientkey == '214') {
+                                //         e.happyhours = '4:00pm - 7:00pm';
+                                //     } else {
+                                //         e.happyhours = '4:00pm - 6:00pm';
+                                //     }
+                                // }
+                                
+                                if(e.selfparking) {
+                                    e.self_flag = 1;
+                                } else {
+                                    e.self_flag = '';
+                                }
+
+                                if(e.freeselfparking) {
+                                    e.freeself_flag = 1;
+                                } else {
+                                    e.freeself_flag = '';
+                                }
+
+                                if(e.paidselfparking) {
+                                    e.paidself_flag = 1;
+                                } else {
+                                    e.paidself_flag = '';
+                                }
+
+                                if(e.parkingvalidation) {
+                                    e.validation_flag = 1
+                                } else {
+                                    e.validation_flag = ''
+                                }
+
+                                if(e.valetparking) {
+                                    e.valet_flag = 1;
+                                } else {
+                                    e.valet_flag = '';
+                                }
+
+                                if(e.compvaletparking) {
+                                    e.compvalet_flag = 1;
+                                } else {
+                                    e.compvalet_flag = '';
+                                }
+
+                                if(e.seasonalvaletparking) {
+                                    e.seasonalvalet_flag = 1;
+                                } else {
+                                    e.seasonalvalet_flag = '';
+                                }
+
+                                if(e.curbsidetogoparking) {
+                                    e.curbside_flag = 1;
+                                } else {
+                                    e.curbside_flag = '';
+                                }
+
+                                if(e.self_flag === 1 || e.freeself_flag === 1 || e.paidself_flag === 1 || e.validation_flag === 1 || e.valet_flag === 1 || e.compvalet_flag === 1 || e.seasonalvalet_flag === 1 || e.curbside_flag === 1) {
+                                    e.parking_flag = 1;
+                                } else {
+                                    e.parking_flag = '';
+                                }
+                                console.log('parking flag = ' + e.parking_flag)
+
+                                if (today == 0) {
+                                    e.SUNCHECK = 1;
+                                    // if(e.hourslabel4){
+                                    //     e.todayshours = e.hourslabel4;
+                                    // } else if (e.hourslabel3) {
+                                    //     e.todayshours = e.hourslabel3;
+                                    // }
+                                    if(e.hoursfromto4){
+                                        e.todayshours = e.hoursfromto4.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 1) {
+                                    e.MONCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 2) {
+                                    e.TUECHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 3) {
+                                    e.WEDCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 4) {
+                                    e.THRCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 5) {
+                                    e.FRICHECK = 1;
+                                    if(e.hoursfromto2){
+                                        e.todayshours = e.hoursfromto2.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 6) {
+                                    e.SATCHECK = 1;
+                                    if(e.hoursfromto3){
+                                        e.todayshours = e.hoursfromto3.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                            }.bind(this));
+                            return recs;
+                        },
+                    },
+                }
+            } else {
+                var W2GI = {
+                    config: {
+                        appkey: '8FB256FA-4D3E-11DF-87DB-E6AEF46A8D6E',
+                        autoStart: true,
+                        pageObserve : ['linktrack'],
+                        locator: {
+                            theme:null,
+                            noZoomOnPan: true,
+                            locatorlocale : 'en_US',
+                            alertError: false,
+                            formdata: {
+                                geoip: true,
+                                dataview: 'store_default',
+                                // limit: 20,
+                                stateonly: 1,
+                                limit: 20,
+                                geolocs: {
+                                    geoloc: [{
+                                        addressline:    '',
+                                        country:        '',
+                                        latitude:       '',
+                                        longitude:      ''
+                                    }]
+                                },
+                                searchradius: '50|100|150|300|500|750|1000',
+                                where: {
+                                    and: {
+                                        comingsoon : {
+                                            distinctfrom: 1
+                                        },
+                                        // testpage : {
+                                        //     distinctfrom: 1
+                                        // },
+                                        onlineordering : {
+                                            eq: pickupVal
+                                        },
+                                        doordashflag: {
+                                            eq: deliveryVal
+                                        },
+                                        display_yelpreservation: {
+                                            in: reservationsVal
+                                        }
+                                    }
+                                }
+                            },
+                            drivingdirections: {
+                                disableDynamicRoutes: false,
+                                formdata: {
+                                    <tmpl_if expr="is_wireless_device == 1">
+                                    gps: 'first',
+                                    <tmpl_else>
+                                    geoip: true,
+                                    </tmpl_if>
+                                    dataview: 'store_default',
+                                    map: {
+                                        size :'330,225',
+                                        icons:{
+                                            start: {
+                                                path: 'ddstartpin.png'
+                                            },
+                                            end:{
+                                                path: 'ddendpin.png'
+                                            }
+                                        }
+                                    },
+                                    geolocs: {
+                                        geoloc: [{
+                                            address1:       '',
+                                            city:           '',
+                                            state:          '',
+                                            province:       '',
+                                            postalcode:     '',
+                                            addressline:    '',
+                                            country:        '',
+                                            latitude:       '',
+                                            longitude:      ''
+                                        }]
+                                    }
+                                }
+                            },
+                           imgPath:  'images/icons/zoombar_new',
+                            controls: [{ name: 'zoom', options: {} }],
+                              interactions : [{ 
+                                name : 'defaults',
+                                options : {
+                                mouseWheelZoom: false,
+                                doubleClickZoom :false
+                                }
+                            }],       
+                            dynamicSearch: false,
+                            routeStyle: {
+                                strokeWidth:     8,
+                                strokeOpacity:  .5,
+                                strokeColor:    '#0000FF'
+                            },
+                            sources: [  
+                               { 
+                                    name: 'Google Normal',
+                                        options: {
+                                        disableDoubleClickZoom : true,
+                                        displayName : 'Map',
+                                        projection: 'EPSG:900913', 
+                                        units: 'm',
+                                        type: 'roadmap', 
+                                        maxZoomLevel:18,
+                                        styles: [
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#fefefe"
+                                                    },
+                                                    {
+                                                        "lightness": "20"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#fefefe"
+                                                    },
+                                                    {
+                                                        "lightness": "17"
+                                                    },
+                                                    {
+                                                        "gamma": "1"
+                                                    },
+                                                    {
+                                                        "weight": "1.2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "administrative.country",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "gamma": "1.74"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#f5f5f5"
+                                                    },
+                                                    {
+                                                        "lightness": "20"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#f5f5f5"
+                                                    },
+                                                    {
+                                                        "lightness": "21"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.attraction",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.business",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.park",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "lightness": "21"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    },
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.park",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.school",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "poi.school",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "29"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    },
+                                                    {
+                                                        "weight": "0.2"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "hue": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.arterial",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "18"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.arterial",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ffffff"
+                                                    },
+                                                    {
+                                                        "lightness": "16"
+                                                    },
+                                                    {
+                                                        "gamma": "1.00"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.local",
+                                                "elementType": "labels.icon",
+                                                "stylers": [
+                                                    {
+                                                        "visibility": "off"
+                                                    }
+                                                ]
+                                            },
+                                            // {
+                                            //     "featureType": "transit",
+                                            //     "elementType": "geometry.fill",
+                                            //     "stylers": [
+                                            //         {
+                                            //             "color": "#f2f2f2"
+                                            //         }
+                                            //     ]
+                                            // },
+                                            // {
+                                            //     "featureType": "transit",
+                                            //     "elementType": "labels.icon",
+                                            //     "stylers": [
+                                            //         {
+                                            //             "visibility": "off"
+                                            //         }
+                                            //     ]
+                                            // },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#e9e9e9"
+                                                    },
+                                                    {
+                                                        "lightness": "17"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#ff0000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "labels.text.stroke",
+                                                "stylers": [
+                                                    {
+                                                        "color": "#b3a17b"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+
+                     },
+                     custom_ob: {
+                       updateRecords : function(recs) {
+                            var date = new Date();
+                            var today = date.getDay();
+                            $(recs).each (function(i,e) {
+                                if(e.address1) {
+                                    e.address1 = e.address1.toLowerCase();
+                                }
+                                if(e.city) {
+                                    e.city = e.city.toLowerCase();
+                                    e.city_enc = e.city.replace(/ /g,'-');
+                                }
+                                if(e.state){
+                                    e.state_enc = e.state.toLowerCase();
+                                }
+                                if(e.postalcode) {
+                                  var postal = e.postalcode.length;
+                                  if(postal == 10) {
+                                    var cut = e.postalcode.substring(0, 5);
+                                    e.postalcode = cut;
+                                    }
+                                }
+                                if(e.name){
+                                    e.lp_link = 'https://locations.thecheesecakefactory.com/' + e.state_enc + '/' + e.city_enc + '-' + e.clientkey + '.html';
+                                }
+
+                                // if (e.happyhourmenu || e.clientkey == '68' || e.clientkey == '214'){
+                                //     e.happyhour_flag = '1';
+                                //     if(e.clientkey == '68'){
+                                //         e.happyhours = '3:00pm - 5:00pm';
+                                //     } else if (e.clientkey == '214') {
+                                //         e.happyhours = '4:00pm - 7:00pm';
+                                //     } else {
+                                //         e.happyhours = '4:00pm - 6:00pm';
+                                //     }
+                                // }
+                                
+
+                                  if(e.selfparking) {
+                                    e.self_flag = 1;
+                                } else {
+                                    e.self_flag = '';
+                                }
+
+                                if(e.freeselfparking) {
+                                    e.freeself_flag = 1;
+                                } else {
+                                    e.freeself_flag = '';
+                                }
+
+                                if(e.paidselfparking) {
+                                    e.paidself_flag = 1;
+                                } else {
+                                    e.paidself_flag = '';
+                                }
+
+                                if(e.parkingvalidation) {
+                                    e.validation_flag = 1
+                                } else {
+                                    e.validation_flag = ''
+                                }
+
+                                if(e.valetparking) {
+                                    e.valet_flag = 1;
+                                } else {
+                                    e.valet_flag = '';
+                                }
+
+                                if(e.compvaletparking) {
+                                    e.compvalet_flag = 1;
+                                } else {
+                                    e.compvalet_flag = '';
+                                }
+
+                                if(e.seasonalvaletparking) {
+                                    e.seasonalvalet_flag = 1;
+                                } else {
+                                    e.seasonalvalet_flag = '';
+                                }
+
+                                if(e.curbsidetogoparking) {
+                                    e.curbside_flag = 1;
+                                } else {
+                                    e.curbside_flag = '';
+                                }
+
+                                if(e.self_flag === 1 || e.freeself_flag === 1 || e.paidself_flag === 1 || e.validation_flag === 1 || e.valet_flag === 1 || e.compvalet_flag === 1 || e.seasonalvalet_flag === 1 || e.curbside_flag === 1) {
+                                    e.parking_flag = 1;
+                                } else {
+                                    e.parking_flag = '';
+                                }
+                                
+                                if (today == 0) {
+                                    e.SUNCHECK = 1;
+                                    // if(e.hourslabel4){
+                                    //     e.todayshours = e.hourslabel4;
+                                    // } else if (e.hourslabel3) {
+                                    //     e.todayshours = e.hourslabel3;
+                                    // }
+                                    if(e.hoursfromto4){
+                                        e.todayshours = e.hoursfromto4.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 1) {
+                                    e.MONCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 2) {
+                                    e.TUECHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 3) {
+                                    e.WEDCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 4) {
+                                    e.THRCHECK = 1;
+                                    if(e.hoursfromto1){
+                                        e.todayshours = e.hoursfromto1.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 5) {
+                                    e.FRICHECK = 1;
+                                    if(e.hoursfromto2){
+                                        e.todayshours = e.hoursfromto2.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                                if (today == 6) {
+                                    e.SATCHECK = 1;
+                                    if(e.hoursfromto3){
+                                        e.todayshours = e.hoursfromto3.replace(/ /g,'').replace('-',' - ').toLowerCase();
+                                    }
+                                }
+
+                            }.bind(this));
+                            return recs;
+                        },
+                    },
+                }
+            }
+             var reserve_formdata = {
+                dataview: 'store_default',
+                // limit: 20,
+                limit: 250,
+                locatorlocale: 'en_US',
+                geolocs: {
+                    geoloc: [{
+                        addressline:    '',
+                        country:        '',
+                        latitude:       '',
+                        longitude:      ''
+                    }]
+                },
+                searchradius: '50|100|150|300|500|750|1000',
+                stateonly: 1,
+                where: {
+                    comingsoon : {distinctfrom: 1},
+                    // testpage : {distinctfrom: 1}
+                    // display_yelpreservation : {in: '1,Yes'}
+              
+                }
+            };
+
+            var pickup_formdata = {
+                dataview: 'store_default',
+                limit: 20,
+                locatorlocale: 'en_US',
+                geolocs: {
+                    geoloc: [{
+                        addressline:    '',
+                        country:        '',
+                        latitude:       '',
+                        longitude:      ''
+                    }]
+                },
+                searchradius: '50|100|150|300|500|750|1000',
+                stateonly: 1,
+                where: {
+                    comingsoon : {distinctfrom: 1},
+                    // testpage : {distinctfrom: 1},
+                    onlineordering: {eq:'1'}
+                }
+            };
+
+             var delivery_formdata = {
+                dataview: 'store_default',
+                limit: 2,
+                locatorlocale: 'en_US',
+                geolocs: {
+                    geoloc: [{
+                        addressline:    '',
+                        country:        '',
+                        latitude:       '',
+                        longitude:      ''
+                    }]
+                },
+                searchradius: '7',
+                where: {
+                    comingsoon : {distinctfrom: 1},
+                    //testpage : {distinctfrom: 1},
+                    doordashflag: {eq:'1'}
+                }
+            };
+
+              var reserve_pickup_formdata = {
+                dataview: 'store_default',
+                limit: 2,
+                locatorlocale: 'en_US',
+                geolocs: {
+                    geoloc: [{
+                        addressline:    '',
+                        country:        '',
+                        latitude:       '',
+                        longitude:      ''
+                    }]
+                },
+                searchradius: '50|100|150|300|500|750|1000',
+                where: {
+                  comingsoon : {distinctfrom: 1},
+                  //testpage : {distinctfrom: 1},
+                  onlineordering: {eq:'1'},
+                  // display_yelpreservation : {in:'1,Yes'}
+                }
+            };
+        </script>
+        <script src="/w2gi/javascript/backbone/bb/lib/jquery.js"></script>
+        <script data-main="/w2gi/javascript/backbone/bb/dist/bones.min" src="/w2gi/javascript/backbone/bb/lib/require.js"></script>
+        <script src="/2021/js/custom.js"></script>
+        <script type="text/javascript">
+          W2GI.loaded = function($) { 
+            // on page load (for when there is no response)
+             if(referrer.indexOf('reservations') > -1){
+                $('#reservations_btn').click();
+            } else if(referrer.indexOf('pickup') > -1){
+                $('#pickup_btn').click();
+            } else if(referrer.indexOf('delivery') > -1){
+                setTimeout(function(){
+                $('#delivery_btn').click();
+              }, 1000);
+
+            } else {
+                $('#reservations_btn').click();
+            }
+
+
+            special = '';
+            window.special2 = '';
+              var date = new Date() ;
+              var time = date.getTime();
+              var openDate = new Date('2021-09-01T08:00');
+              var openTime = openDate.getTime();
+              var closeDate = new Date('2021-09-30T23:59');
+              var closeTime = closeDate.getTime();
+              /*var openDate2 = new Date('2021-02-16T08:00');
+              var openTime2 = openDate2.getTime();
+              var closeDate2 = new Date('2021-02-21T23:59');
+              var closeTime2 = closeDate2.getTime();*/
+
+              
+            if(openTime <= time && time < closeTime){
+                special = '<div class="special_offer"><strong>Special Offer</strong><p>Get $10 Off Your Delivery Order! Through 3/7, get $10 off* your delivery order with DoorDash of $50 or more. Use promo code <strong><em>MARCH10</em></strong> before submitting your order.</p><p><a href="https://help.doordash.com/consumers/s/article/The-Cheesecake-Factory-10-off-50-March?language=en_US" target="_parent">*Additional Terms and Conditions Apply.</a></p></div>';
+                special2 = '<div class="special_offer"><strong>Special Offer</strong><p>Get $10 Off Your Pickup Order! Through 3/7, get $10 off* your pickup order through our site of $50 or more. Use promo code <strong><em>MARCH10</em></strong> before submitting your order. Must login or register for an account.</p><p><a href="https://www.thecheesecakefactory.com/online-order-offer" target="_parent">*Additional Terms and Conditions Apply.</a></p></div>'
+            }
+
+            parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+            // on initial response and searches
+
+            ace.util.DomEvent.on("w2gi:poiselected", function(i,e) {
+                 console.log(i,e);
+                 var scrollTarget = $('.poi-item[data-uid=' + e.uid + ']');
+                 console.log(scrollTarget);
+                 var offsetTop = scrollTarget.offset().top;
+                 parent.postMessage("w2gi:scrollPage" + "//" + offsetTop,"*");
+                 console.log("w2gi:scrollPage" + "//" + offsetTop);
+            });
+
+            ace.util.DomEvent.on("w2gi:proximityresponse", function(event,responseObject) {
+                console.log(responseObject)
+                $('.pseudo-count').empty();
+                $('.pseudo-count').html($('.count-mask').html());
+                
+                $('.lower-cta .reservations a').keydown(function(e){
+                    if(e.which == 9 || e.keycode === 9){
+                        console.log($(this).closest('.poi-item').attr('class'));
+                        if(!$(this).closest('.poi-item').hasClass('poi-hover')){
+                            $(this).closest('.lower-cta').find('.details a').attr('tabindex','-1');
+                            
+                             // var cIndex= $(this).data('index');
+                            // $(this).closest('.poi-item').next().find('a.test').focus()
+                            // $(this).closest('.poi-item').next().find('h2 a').focus();
+                        } else {
+                            $(this).closest('.lower-cta').find('.details a').attr('tabindex','0');
+                        }
+                    }
+                })
+
+                if(!$('#delivery_btn').hasClass('selected')){
+                    setTimeout(function(){
+                        var lBreak = '<li class="break"></li>';
+
+                        if($(window).width() > 1280){
+                            if(responseObject.response.length > 3){
+                                $('.content-list > li:nth-of-type(3n)').addClass('last');
+                                $('.content-list > li:nth-of-type(3n)').after(lBreak);
+                               var b = $('.content-list > li.break').last().nextAll().length;
+                                if(b === 2) {
+                                    $('.content-list').append('<li class="poi-item last" />');
+                                }
+                                if(b === 1) {
+                                    $('.content-list').append('<li />');
+                                    $('.content-list').append('<li class="poi-item last" />');
+                                }
+                            } else {
+                                var b = $('.content-list > li').length;
+                                if(b === 2) {
+                                    $('.content-list').append('<li class="poi-item last" />');
+                                }
+                                if(b === 1) {
+                                    $('.content-list').append('<li />');
+                                    $('.content-list').append('<li class="poi-item last" />');
+                                }
+                            }
+                            $('.content-list').addClass('three')
+                        }
+
+                        if($(window).width() < 1280 && $(window).width() > 801){
+                            if(responseObject.response.length > 2){
+                                $('.content-list > li:nth-of-type(2n)').addClass('last');
+                                $('.content-list > li:nth-of-type(2n)').after(lBreak);
+                                var c = $('.content-list > li.break').last().nextAll().length;
+                                    if(c === 1) {
+                                    $('.content-list').append('<li />');
+                                }
+                            } else {
+                                var b = $('.content-list > li').length;
+                                if(b === 1) {
+                                    $('.content-list').append('<li />');
+                                }
+                            }
+                            $('.content-list').addClass('two')
+                        }
+
+                        if($(window).width() < 802){
+                            $('.content-list').addClass('one')
+                        }
+
+                         parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+                    }, 100);
+
+                    $(window).resize(function(){
+                        var lBreak = '<li class="break"></li>';
+                        if($(window).width() > 1280){
+                            if($('.content-list').hasClass('one')){
+                               
+                                if(responseObject.response.length > 3){
+                                    $('.content-list > li:nth-of-type(3n)').addClass('last');
+                                    $('.content-list > li:nth-of-type(3n)').after(lBreak);
+                                   var b = $('.content-list > li.break').last().nextAll().length;
+                                    if(b === 2) {
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                } else {
+                                    var b = $('.content-list > li').length;
+                                    if(b === 2) {
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                }
+                                $('.content-list').removeClass('one')
+                                $('.content-list').addClass('three')
+                            } else if($('.content-list').hasClass('two')) {
+
+                                $('.content-list li').each(function(){
+                                    $(this).removeClass('last');
+                                    if($(this).hasClass('break')){
+                                        $(this).remove();
+                                    }
+                                })
+                                if(responseObject.response.length > 3){
+                                    $('.content-list > li:nth-of-type(3n)').addClass('last');
+                                    $('.content-list > li:nth-of-type(3n)').after(lBreak);
+                                   var b = $('.content-list > li.break').last().nextAll().length;
+                                    if(b === 2) {
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                } else {
+                                    var b = $('.content-list > li').length;
+                                    if(b === 2) {
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                        $('.content-list').append('<li class="poi-item last" />');
+                                    }
+                                }
+                                $('.content-list').removeClass('two')
+                                $('.content-list').addClass('three')
+                            } else {
+
+                            }
+                        }
+                        if($(window).width() < 1280 && $(window).width() > 801){
+                            if($('.content-list').hasClass('one')){
+                                
+                                if(responseObject.response.length > 2){
+                                    $('.content-list > li:nth-of-type(2n)').addClass('last');
+                                    $('.content-list > li:nth-of-type(2n)').after(lBreak);
+                                    var c = $('.content-list > li.break').last().nextAll().length;
+                                        if(c === 1) {
+                                        $('.content-list').append('<li />');
+                                    }
+                                } else {
+                                    var b = $('.content-list > li').length;
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                    }
+                                }
+                                $('.content-list').removeClass('one')
+                                $('.content-list').addClass('two')
+                            } else if($('.content-list').hasClass('three')) {
+                                $('.content-list li').each(function(){
+                                    $(this).removeClass('last');
+                                    if($(this).hasClass('break')){
+                                        $(this).remove();
+                                    }
+                                })
+                                 if(responseObject.response.length > 2){
+                                    $('.content-list > li:nth-of-type(2n)').addClass('last');
+                                    $('.content-list > li:nth-of-type(2n)').after(lBreak);
+                                    var c = $('.content-list > li.break').last().nextAll().length;
+                                        if(c === 1) {
+                                        $('.content-list').append('<li />');
+                                    }
+                                } else {
+                                    var b = $('.content-list > li').length;
+                                    if(b === 1) {
+                                        $('.content-list').append('<li />');
+                                    }
+                                }
+                                $('.content-list').removeClass('three')
+                                $('.content-list').addClass('two')
+                            } else {
+
+                            }
+                        }
+
+                        if($(window).width() < 802) {
+                            if($('.content-list').hasClass('two') || $('.content-list').hasClass('three')){
+                                $('.content-list li').each(function(){
+                                    $(this).removeClass('last');
+                                    if($(this).hasClass('break')){
+                                        $(this).remove();
+                                    }
+                                })
+                                $('.content-list').removeClass('three')
+                                $('.content-list').removeClass('two')
+                                $('.content-list').addClass('one')
+                            } else {
+
+                            }   
+                        }
+                           parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+                    })
+                    if($(window).width() < 802) {
+
+
+                    } else {
+                        parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+                    }
+                }
+            
+                $('.hoursToggle').on('click',function(){
+                    $(this).toggleClass('open');
+                    $(this).next().slideToggle(300);
+                })
+                var lat = W2GI.addresses[0].latitude,
+                    lng = W2GI.addresses[0].longitude;
+                    
+
+                var rObject = responseObject.response;
+
+                addresses = []
+                ddurls = [];
+                for (i = 0; i < rObject.length; i++) {
+                    if(rObject[i].doordashflag == 1)
+                    var ct = i + 1;
+                    if (rObject[i].address2 !== null) {
+                        var address2 = ', ' + rObject[i].address2;
+                    } else {
+                        var address2 = '';
+                    }
+                    if (rObject[i].state) {
+                        if(rObject[i].mallname !== null){
+                            var locationName = rObject[i].mallname.toLowerCase()
+                        } else {
+                            var locationName = rObject[i].city + ',' + rObject[i].state;
+                        }
+
+                        // var a = '<div class="card-upper"><h2><a href="href="https://locations.thecheesecakefactory.com/' + rObject[i].state.toLowerCase() + '/' + rObject[i].city.toLowerCase().replace(/ /g,'-') + '-' + rObject[i].clientkey + '.html">' + locationName + '</a></h2><div class="address-wrapper"><div class="address">' + rObject[i].address1 + ', ' + rObject[i].city + ' ' + rObject[i].postalcode + '</div></div>';
+                        var a = '<h2>' + ct + '. ' + locationName + '</h2><div class="address-wrapper"><div class="address">' + rObject[i].address1 + address2 + '<br>' + rObject[i].city + ', ' + rObject[i].state + ' ' + rObject[i].postalcode + '</div><a class="phone" href="tel:' + rObject[i].phone + '" onclick="window.parent.location = \'tel:' + rObject[i].phone + '\';" target="_parent"><span class="sr-only">Click to call the' + rObject[i].city + ',' + rObject[i].state + ' restaurant at </span>' + rObject[i].phone + '</a></div>';
+                    } else if (rObject[i].province) {
+                        var a = '<h2>' + ct + '. ' + locationName + '</h2><div class="address-wrapper"><div class="address">' + rObject[i].address1 + address2 + '<br>' + rObject[i].city + ', ' + rObject[i].province + ' ' + rObject[i].postalcode + '</div><a class="phone" href="tel:' + rObject[i].phone + '" onclick="window.parent.location = \'tel:' + rObject[i].phone + '\';" target="_parent"><span class="sr-only">Click to call the' + rObject[i].city + ',' + rObject[i].state + ' restaurant at </span>' + rObject[i].phone + '</a></div>';
+                    }
+            
+                    addresses.push(a);
+
+                    if(rObject[i].doordashurl !== null) {
+                        ddurls.push(rObject[i].doordashurl)
+                    }
+               
+                }
+
+
+                if($('#delivery_btn').hasClass('selected')){
+                    rObject[i]
+                    $('.poi').hide();
+                    if(special != ''){
+                     if(!$('.special_offer').length){
+                        $('.form-wrapper').append(special);
+                     } else {
+                        $('.special_offer').remove()
+                        $('.form-wrapper').append(special);
+                     }
+                    }
+                    $.ajax({
+                        type: 'GET',
+                        url: 'https://doordash.where2getit.com/cheesecake?lat=' + lat + '&lng=' + lng,
+                        // url: 'https://doordash.where2stageit.com/cheesecake?lat=' + lat + '&lng=' + lng,
+                        success: function(data, textStatus, jqXHR) {
+                          if (data.length > 0 && data.length < 2) {
+                            var list = '<ul class="content-list poi-result" />';
+                            $('.poi').empty();
+                            $('.poi').append(list)
+                            // if(special != ''){
+                            //  if(!$('.special_offer').length){
+                            //     $('.poi').prepend(special);
+                            //  }
+                            // }
+
+                            var content = '<li class="poi-item great-news poi-hover"><div class="card-front poi-wrapper"><div class="card-front-inner"><h2>Great News!</h2><p>It looks like we deliver to your area! You’re one step closer to enjoying delicious food brought straight to you.</p><button class="dd_btn " onclick="window.open(\'' + ddurls + '\',\'_blank\')" data-linktrack="doordash-order">Order from Doordash</button><p class="footnote">Clicking this button will take you to the <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a> website. The Cheesecake Factory is not responsible for the services provided by <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a>. Any questions or concerns regarding your order should be directed to <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a>.</p></div></div></li>';
+                            $('.poi ul').append(content);
+                            $('.poi').show();
+                          } else if (data.length > 1) {
+                            var list = '<ul class="content-list poi-result" />';
+                            $('.poi').empty();
+                            $('.poi').append(list)
+                            
+                            var content1 = '<li class="poi-item great-news poi-hover"><div class="card-front poi-wrapper"><div class="card-front-inner"><h2>Great News!</h2><p>It looks like we deliver to your area! You’re one step closer to enjoying delicious food brought straight to you.<p><p class="footnote">Clicking this button will take you to the <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a> website. The Cheesecake Factory is not responsible for the services provided by <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a>. Any questions or concerns regarding your order should be directed to <a href="https://www.doordash.com/" target="_blank">DoorDash.com</a>.</p></div></div></li>';
+                            $('.poi ul').append(content1);
+                             console.log('ul li lenght = ' + $('.poi ul li').length)
+                            for (i = 0; i < 2; i++){
+                                console.log(data[i]);
+                                var content2 = '<li class="poi-item"><div class="card-front poi-wrapper"><div class="card-front-inner">' + addresses[i] + '<button class="dd_btn ga_w2gi_loc" data-galoc="Click-to-Localpage-{{clientkey}} btn_location_order_delivery" data-gaact="Click_to_OrderfromDoordash" onclick="window.open(\'' + ddurls[i] + '\',\'_blank\')" data-linktrack="doordash-order">Order from Doordash</button></div></li>';
+                                $('.poi ul').append(content2);
+                                console.log('ul li lenght = ' + $('.poi ul li').length)
+                            }
+                            // var content3 =  '';
+                            // $('.delivery_wrapper').append(content3);
+                            // if(!$('.special_offer').length){
+                            //     $('.poi').prepend(special);
+                            //  }
+                            $('.poi').show();
+                          } else {
+                            console.log('fail')
+                            // $('.poi').empty();
+                            // reserve_pickup_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                            // $(document).trigger("w2gi:proximitysearchrequest", reserve_pickup_formdata); 
+                            var content = '<li class="poi-item no-delivery"><div class="card-front poi-wrapper"><div class="card-front-inner"><h2>No Delivery Yet</h2><p>Darn—DoorDash isn’t delivering to this area yet.<br><br>However, the following locations offer easy and convenient pickup:</p></div></div></li>';
+                            if(!$('.no-delivery').length){
+                                    $('.poi > ul').prepend(content);
+                                }
+                                
+                                // if(!$('.special_offer').length){
+                                //     $('.poi').prepend(special);
+                                //  }
+                                
+                                $('.poi').addClass('noDelivery');
+                                $('.poi').show();
+                            }
+                            
+                        }
+
+
+                      }).done(function(){
+                          if($(window).width() > 1280){
+                            if($('.content-list > li').length === 2){
+                                $('.content-list').append('<li />');
+                            }
+                        }
+                      });
+                  
+                        setTimeout(function(){
+              parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+              }, 800);
+                }
+
+                if($('#pickup_btn').hasClass('selected')){
+                    // if(window.special2 != ''){
+                    //  if(!$('.special_offer').length){
+                    //     $('.poi').prepend(window.special2);
+                    //  }
+                    // }
+
+                    $('.poi-item h2 a').each(function(e){
+                        $(this).attr('tabindex','-1');
+                    })
+                    if($('.special_offer').length){
+                        $('.special_offer').remove();
+                    }
+                    if(window.special2 != ''){
+                     if(!$('.special_offer').length){
+                        $('.form-wrapper').append(window.special2);
+                     }
+                    }
+                }
+
+                if($('#reservations_btn').hasClass('selected')){
+                    if($('.special_offer').length){
+                        $('.special_offer').remove();
+                    }
+                }
+
+              if($('.poi').hasClass('noDelivery')){
+              } 
+
+              $('button.select_btn').on('click',function(){
+                var a = $(this).parent().prev().html();
+                var b = $(this).data('url');
+                var c = $(this).data('hours');
+                $('.first_result').html(a);
+                $('#begin_pickup').data('url',b);
+                $(this).addClass('selected');
+                $('button.select_btn').not(this).removeClass('selected');
+                if($('#reservations_btn').hasClass('selected')){
+                    // populateHours(c);
+                    var d = $(this).data('yelpurl');
+                    // $('#yelp_url').val(d);
+                    window.open(d,'_blank');
+                  
+                }
+                if($('#delivery_btn').hasClass('selected')){
+                    var e = $(this).data('delivery');
+                    $('#begin_delivery').data('url',e);
+                }
+
+              });
+
+              $('.select_btn.pickup,.dd_btn,.reservations2').on('click',function(){
+                    var f = $(this).data('url');
+                    window.open (f,'_blank');
+              })
+                // if($(window).width() < 950 && $('.wrapper').hasClass('active')){
+                //     $('.pseudo_count').empty();
+                //     $('.pseudo_count').html($('.locations_count').html());
+                // }
+            });
+        // when no results are returned. Note that the delay must be at least 800 or the modal popup will not display properly
+        ace.util.DomEvent.on("w2gi:fetchError", function(e,i) {
+        	console.log(e);
+        	console.log(i);
+            var a = '<div class="count-inner"><span>0</span></div>'
+              $('.pseudo-count').empty();
+              $('.pseudo-count').html(a);
+        	//https://hosted.where2getit.com/amazonfreshuk/index.html?addressline=NW10%207ST&country=UK
+        	
+              setTimeout(function(){
+              parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+              }, 800);
+            if($('.poi').hasClass('delivery_list') && i.errorCode == 5001){
+                $('.poi').empty();
+                reserve_pickup_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                $(document).trigger("w2gi:proximitysearchrequest", reserve_pickup_formdata); 
+            }
+
+            if(i.errorCode == 5000) {
+                var a = '<div id="error_message"><span class="locerror">We could not find any restaurants within range that are currently accepting reservations.</div></div>'
+                $('.poi').empty();
+                $('.poi').html(a);
+            }
+
+            if(i.errorCode == 4016){
+                var b = '<div id="error_message"><span class="locerror">Enter an address above to begin.</div></div>'
+                $('.poi').empty()
+                $('.poi').html(b)
+            }
+        });
+
+        ace.util.DomEvent.on("w2gi:poiselected", function() {
+            if($(window).width() > 801){
+                var els = $('.poi-hover')
+                if(els.length > 0) {
+                    els.first().find('.icon_div').click();
+                }
+            }
+        });
+        // Browser is resized
+            $(window).resize(function() {
+                setTimeout(function(){
+                    parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+                }, 100);
+            }); 
+        // When pagination is present and occurs
+            ace.util.DomEvent.on("w2gi:sliceupdated", function() {
+                setTimeout(function(){
+                    parent.postMessage("w2gi:iframeHeightUpdated" + "//" + $('#w2gi_wrapper').height() + "//" + $('#w2gi_wrapper').width(),"*");
+                }, 100);
+        });
+            ace.collection.appendOptions('#bubble_country', 'Account::Country', {}, 'account_country', 'name', 'description');
+          }
+          function searchCountry(country) {
+              require(['jquery'], function($) {
+                  $('.search-box').val('')
+                  $('.country_val').val(country)
+                  ace.util.searchExternal('locator_search');  
+              })         
+          } 
+
+          $('#map').on('pageshow', function(){
+            google.maps.event.trigger(map, "resize");
+        });
+        </script>    
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link href="//hosted.where2getit.com/w2gi/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="2021/css/custom.2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        <style>
+            .top-10 {
+                margin-top:10px;
+            }
+            .moreinfo_box {
+                max-height: 430px;
+            }
+
+            .lower-cta li a.disable {
+                background: transparent;
+                color: #573B34;
+                font-size: 12px;
+                font-weight: 400;
+                font-style: italic;
+                max-width: none;
+                pointer-events: none;
+                text-align: left;
+                text-transform: none;
+            }
+
+            .lower-cta li a.disable:before {
+                content: 'Reservations temporarily unavailable';
+            }
+
+            .poi-hover .lower-cta li a.disable {
+                color: #fff;
+            }
+
+            /*@media (max-width: 480px) {
+                .lower-cta li a.disable {
+                    font-size: 10px;
+                }
+            }*/
+            @media (max-width: 801px){
+                a.w2gi-popup-close.ol-unselectable.olPopupCloseBox:after {
+                    content: 'X';
+                }
+            }
+            .hide {
+                display: none;
+            }
+
+            .reservations a span {
+                pointer-events: none;
+            }
+
+            
+            
+.ol-control button {
+    /*background-color: rgba(65,64,66,.5);*/
+    background-color: #8F6724;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: normal;
+    height: 32px;
+    transition: all .25s ease-in-out;
+    width: 32px;
+}
+
+.ol-control button:hover {
+    background-color: #fff;
+    color: #8f6724;
+}
+
+.ol-control button:first-of-type {
+    line-height: 34px;
+}
+
+.ol-control button:hover, .ol-control button:focus {
+    background-color: #682C49;
+} 
+#poiEl.noDelivery li.delivery {
+    display: none;
+}
+        </style>
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGWSQ7"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="w2gi_wrapper" role="main">
+            <div data-w2gi="locator" class="box-wrapper">
+                <a class="sr-only sr-only-focusable" href="#poiEl">Skip to Store Listings</a>
+                <!-- <button class="openForm"><span class="fa fa-list-ul"></span><span class="sr-only">Open search form</span></button> -->
+                <div class="forms-poi-box" role="form">
+                    <!-- <button class="closeForm" type="button"><img src="/2021/images/close-form.svg" alt=""><span class="sr-only">Close search form</span></button> -->
+                    <div class="form-wrapper" >
+                        <div class="locator-wrapper">
+                            <h1 class="sr-only">Find Locations Near You</h1> 
+                             <form id="locator_search" role="search" autocomplete="off" >
+                                <ul class="tab_wrapper">
+                                    <li>
+                                        <button id="reservations_btn" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_Make_Reservation" type="button"><span class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_Make_Reservation">Locations<br> near you</span></button>
+                                    </li>
+                                    <li>
+                                        <button id="pickup_btn" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_OrderPickup" type="button"><span class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_OrderPickup">Order<br>pickup</span></button>
+                                    </li>
+                                    <li>
+                                        <button id="delivery_btn" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_OrderDelivery" type="button"><span class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_OrderDelivery">Order<br>delivery</span></button>
+                                    </li>
+                                </ul>
+                                <div class="search_wrapper">
+                                    <label for="search_input">Enter city and state or ZIP/postal code to find a nearby location.</label>
+                                    <input id="search_input" type="text" class="search-box" name="addressline" onfocus="this.value=''" />
+                                    <button aria-label="Go" class="button-search">GO</button>
+                                </div>
+                                <input class="sr-only" type="submit" aria-hidden="true" value="search" name="search" tabindex="-1" />
+                                <label for="search_country" class="sr-only">Select a country</label>
+                                <select id="search_country" name="country" aria-hidden="true" style="display: none;">
+                                    <option value="">Select a country</option>
+                                </select>
+                                <label for="searchradius" class="sr-only" aria-hidden="true">Search Radius</label>
+                                <select id="searchradius" style="display:none;" name="searchradius" aria-hidden="true">
+                                    <option value="50|100|150">50 miles</option>
+                                    <option value="100">100 miles</option>
+                                    <option value="150">150 miles</option>
+                                    <option value="300">300 miles</option>
+                                    <option value="500">500 miles</option>
+                                    <option value="750">750 miles</option>
+                                    <option value="1000">1000 miles</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                 
+                </div>
+                <div class="dd-form-wrapper" style="display:none"></div>
+                <div class="wrapper">
+                    <div class="pseudo-count">
+                    </div>
+                    <div id="mapEl" class="map"></div>
+                
+                    <div id="indicator"></div>
+                </div>
+                <div id="poiEl" class="poi"></div>
+                <div class="attribution">
+                    <span class="attribution">
+                        Mapping Locator Powered by <a href="http://www.meetsoci.com/" target="_blank">SOCi </a>Copyright &copy; <script>document.write(new Date().getFullYear())</script>, All Rights Reserved.
+                    </span>
+                    
+                    <div id="navteqfooter" style="display:none">
+                        <script type="text/javascript">
+                            var d = new Date()
+                            document.write(" <img src=/w2gi/images/logo_navteq_large.gif alt='Navtech Logo'/> ")
+                            document.write(" &copy; Copyright ")
+                            document.write(d.getFullYear())
+                            document.write(" NAVTEQ Corp.  ")
+                        </script>
+                        <a href="http://www.where2getit.com/terms/terms.html" onClick="window.open(this.href,'_blank','width=988,height=600,scrollbars=yes,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes');return false;">Use Subject to Terms and Conditions</a>
+                    </div>
+                </div>
+                <div class="overlay"></div>
+                <div class="modal" aria-hidden="true" role="dialog">
+                    <a aria-label="close Modal" href="#" class="closeBtn">Close</a>
+                    <!-- <button type="button" class="closeBtn" aria-label="Close">close</button> -->
+                    <p></p>
+                </div>
+                <div class="street-view-wrapper" aria-hidden="true"> 
+                    <a aria-label="close Modal" href="#" class="gs" data-action="close">Close</a>
+                    <!-- <button type="button" class="gs" data-action="close"aria-label="Close">close</button> -->
+                    <div id="streetViewCtn" class="street-view"></div>
+                </div>
+            </div>
+            <!-- Templates -->
+            <div class="templates" aria-hidden="true">
+                <script id="locator_addressline" type="text/x-handlebars-template" aria-hidden="true">
+                    {{#if address1}}{{address1}}{{else}}{{#if addressline}}{{addressline}}{{/if}}{{ city }} {{ county }} {{ state }} {{postalcode}}{{/if}}
+                </script>
+                <script id="directions_addressline" type="text/x-handlebars-template">
+                    {{#if address1}}{{address1}} {{ city }} {{ state }} {{postalcode}} {{else}}{{#if addressline}}{{addressline}}{{/if}} {{ city }} {{ state }} {{postalcode}}{{/if}}
+                </script>
+                <script id="collection_multiple_address" type="text/x-handlebars-template">
+                    <h3>Please select your location</h3>
+                    <ul class="content-list address-suggestions">
+                        {{#each this}}
+                            <li data-id={{@index}}><strong>{{address1}} {{ city }} {{ county }}</strong>{{ state }} {{postalcode}}</li>
+                        {{/each}}
+                    </ul>
+                </script>
+                <!-- poi template start -->
+                <script id="collection_poi" type="text/x-handlebars-template"> 
+                    <!-- <h2>There are {{count}} locations near you</h2> -->
+                    <div class="count-mask" style="display: none;">
+                        <div class="count-inner"><span>{{count}}</span></div>
+                    </div>
+                    <ul class="content-list poi-result">
+                        {{#each pois}}
+                        <li data-id={{@index}} data-uid={{uid}} class="poi-item">
+                            <div class="card-front poi-wrapper">
+                                <div class="card-front-inner">
+                                    <div class="card-upper">
+                                        {{#if mask}}
+                                        <div class="covid-msg">
+                                            <img src="/2021/images/warning.white.svg" alt="" /> {{{mask}}}
+                                        </div>
+                                        {{/if}}
+                                         {{#if specialhoursnotes}}
+                                        <div class="covid-msg top-10">
+                                        {{specialhoursnotes}}
+                                        </div>
+                                        {{/if}}
+                                        {{#if mallname}}
+                                        <h2 data-action="open_bubble"><span>{{collectionIndex}}.</span> {{city}}, {{state}} <br> {{mallname}}</h2>
+                                        {{else}}
+                                        <h2 data-action="open_bubble"><span>{{collectionIndex}}.</span> {{city}}, {{state}}</h2>
+                                        {{/if}}
+                                                                               
+                                        <div class="address-wrapper" data-action="open_bubble">
+                                            <div class="address">{{address1}}, <br />{{#if address2}}{{address2}} <br />{{/if}}{{city}}, {{state}} {{postalcode}}</div>
+                                            <div class="todays-hours"><span>Today's Hours:</span><span>{{todayshours}}</span></div>
+                                        </div>
+                                        <div class="pickup-phone" >
+                                             <a href="tel:{{phone}}" onclick="window.parent.location='tel:{{phone}}';"><span class="sr-only">Click to call</span> {{phone}}</a>
+                                        </div>
+                                        <ul class="cta">
+                                            <li class="directions">
+                                                <a data-index="collectionIndex" href="http://maps.google.com?q=the cheesecake factory,{{address1}},{{city}},{{state}}{{province}} {{postalcode}}" onclick="window.open('http://maps.google.com?q=the cheesecake factory{{address1}},{{city}},{{state}}{{province}} {{postalcode}}')" onclick="$(document).trigger('w2gi:track',{'action':'linktrack', 'value': 'GetDirections_Clicked_{{clientkey}}' });" data-linktrack="GetDirections_Clicked_{{clientkey}}" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_GetDirections"><span class="sr-only">Get Directions to location {{collectionIndex}}</span></a>
+                                            </li>
+                                            <li class="info">
+                                                <button data-action="open_bubble"><span class="sr-only" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_ToggleMoreInfo">Click to toggle more info</span></button>
+                                            </li>
+                                            <li class="phone">
+                                                <a href="tel:{{phone}}" onclick="window.parent.location='tel:{{phone}}';" class="ga_w2gi_loc" data-galoc="Cheesecake Factory- Reservations Page" data-gaact="Click_to_Call"><span class="sr-only">Click to call {{phone}}</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-front-lower">
+                                        <div class="hours-wrapper">
+                                            <ul class="hours">
+                                                <li><span>Mon:</span><span>{{hoursfromto1}}</span></li>
+                                                <li><span>Tue:</span><span>{{hoursfromto1}}</span></li>
+                                                <li><span>Wed:</span><span>{{hoursfromto1}}</span></li>
+                                                <li><span>Thu:</span><span>{{hoursfromto1}}</span></li>
+                                                <li><span>Fri:</span><span>{{hoursfromto2}}</span></li>
+                                                <li><span>Sat:</span><span>{{hoursfromto3}}</span></li>
+                                                <li><span>Sun:</span><span>{{hoursfromto4}}</span></li>
+                                            </ul>
+                                            <ul class="other-hours">
+                                                {{#if happyhourmenu}}
+                                                <li>
+                                                    <h3>Happy Hour</h3>
+                                                    <span>Mon - Fri:</span> <span>4:00pm - 6:00pm</span>
+                                                </li>
+                                                {{/if}}
+                                                {{#if brunch}}
+                                                <li>
+                                                    <h3>Weekend Brunch</h3>
+                                                    <span>Sat - Sun:</span> <span>Until 2:00pm</span>
+                                                </li>
+                                                {{/if}}
+                                                
+                                                {{#if parking_flag}}
+                                                <li>
+                                                    <h3>Parking</h3>
+                                                    <ul class="parking">
+                                                        {{#if self_flag}}<li>Self Parking</li>{{/if}}
+                                                        {{#if freeself_flag}}<li>Free Self Parking</li>{{/if}}
+                                                        {{#if paidself_flag}}<li>Paid Self Parking</li>{{/if}}
+                                                        {{#if validation_flag}}<li>Parking Validation</li>{{/if}}
+                                                        {{#if valet_flag}}<li>Valet Parking</li>{{/if}}
+                                                        {{#if compvalet_flag}}<li>Complementary Valet Parking</li>{{/if}}
+                                                        {{#if seasonalvalet_flag}}<li>Seasonal Valet Parking</li>{{/if}}
+                                                        {{#if metered_flag}}<li>Metered Street Parking</li>{{/if}}
+                                                        {{#if curbside_flag}}<li>Curbside Parking Spots</li>{{/if}}
+                                                    </ul>
+                                                <li>
+                                            {{/if}}
+                                                
+                                            </ul>
+                                        </div>
+                                        <ul class="lower-cta">
+                                            <li class="reservations">
+                                                <a href="javascript:void(0);" onclick="top.location.href = '{{yelpreservation}}';" class="disable{{display_yelpreservation}}"><span class="hide{{display_yelpreservation}}">Make a Reservation</span><span class="sr-only">at location #{{collectionIndex}},opens in a new window</span></a>
+                                            </li>
+                                            <li class="details">
+                                                <a tabindex="-1" href="{{lp_link}}">View Details <span class="sr-only">for location #{{collectionIndex}},opens in a new window</span></a>
+                                            </li>
+                                            <li class="pickup">
+                                                <a href="javascript:void(0);" onclick="top.location.href = '{{onlineorderingurl}}';">Order Pickup<span class="sr-only">from location #{{collectionIndex}}, opens in a new window</span></a>
+                                            </li>
+                                            {{#if doordashurl}}
+                                            <li class="delivery">
+                                                <a href="javascript:void(0);" onclick="top.location.href = '{{doordashurl}}';">Order Delivery<span class="sr-only"> from location #{{collectionIndex}}, opens in a new window</span></a>
+                                            </li>{{/if}}
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <div class="poi_paging_wrapper">
+                        <span class="poi_paging_prev"><div aria-hidden="true" class="fa fa-arrow-left"></div><span>Previous</span></span>
+                        <span class="poi_paging_next"><span>Next</span><div aria-hidden="true" class="fa fa-arrow-right"></div></span>
+                    </div>
+                </script>
+                <!-- poi template end -->
+                 <script id="collection_more_info" type="text/x-handlebars-template" data-slicesize="20">
+                    <ul class="content-list poi-result moreinfo_box">
+                        <li data-id={{index}} data-uid={{uid}} class="poi-item">
+                            <div class="moreinfo_header_wrap">
+                                <div class="icon_div">
+                                    <img src="images/new/map-pin.2.png" alt="Map Pin">
+                                    <span> {{collectionIndex}}</span> 
+                                </div>
+                                <div class="more_info_header_container">
+                                    <span class ="more_info_header">{{internalname}}</span>
+                                </div>
+                            </div>
+                            <form class="directions_btn_wrapper" onsubmit="getdirections_moreinfo();" style="display: none;">
+                                <label for="input_moreinfo" class="sr-only">Enter starting address</label>
+                                <input id="input_moreinfo" placeholder="Enter starting address" onfocus="this.value=''" type="text">
+                                <button aria-label="Driving Directions" id="button_moreinfo" onclick="getdirections_moreinfo();">
+                                    <img src="images/new/get-directions.2.svg">
+                                </button>
+                            </form>                 
+                            <button class="moreinfo_getdirections ga_w2gi_loc" data-galoc="{{internalname}} - {{clientkey}}" data-gaact="Click_To_GetDirections" onclick="window.open('http://maps.google.com?q=Amazon Fresh,{{#if address1_mod}}{{address1_mod}}{{else}}{{address1}}{{/if}},{{city}},{{state}}{{postalcode}}')" $(document).trigger('w2gi:track',{'action':'linktrack', 'value': 'GetDirections_Clicked_{{clientkey}}' });>Get Directions</button>
+                            <div id="mobile_button_wrapper">
+                                <div id="moreinfo_mobile_back" class="ga_w2gi_loc" data-galoc="{{internalname}} - {{clientkey}}" data-gaact="Click_To_BackToSearch" data-action="show_all" onclick="moreinfo_changeback();$(document).trigger('w2gi:track',{'action':'linktrack', 'value': 'BackToSearch_Clicked_{{clientkey}}' });" onkeypress="moreinfo_change()">Back to Results</div>
+                                <div class="ga_w2gi_loc" data-galoc="{{internalname}} - {{clientkey}}" data-gaact="Click_To_GetDirections" onclick="window.open('http://maps.google.com?q=Amazon Fresh,{{#if address1_mod}}{{address1_mod}}{{else}}{{address1}}{{/if}},{{city}},{{state}}{{postalcode}}');" id="moreinfo_mobile_directions" onclick="$(document).trigger('w2gi:track',{'action':'linktrack', 'value': 'GetDirections_Clicked_{{clientkey}}' });">Get Directions</div>
+                            </div>
+                            <div style="display:none;" id="open_bubble" data-action="open_bubble" class="open_bubble"></div>
+                            <div id="desktop_info">
+                                <div id ="desktop_info_one">
+                                     <span class="add_info">Address</span>
+                                     <div>
+                                        {{address1}} <br/>
+                                        {{city}}, {{state}} {{postalcode}} <br/>
+                                    </div> 
+                                    <!-- <br/>
+                                         <span class="moreinfo_phone_text">Phone</span>
+                                         <div class="moreinfo_phone">
+                                            <a href="tel:{{phone}}" onclick="window.parent.location = 'tel:{{phone}}';" >
+                                                <span class="phone">{{phone}}</span>
+                                            </a>
+                                        </div> -->
+                                </div>
+                                <div id="desktop_info_two">
+                                    <span class="distance_text">Distance</span>
+                                    <div>
+                                         <span class="distance"><strong>{{_distance}}</strong> miles away</span>
+                                    </div> 
+                                </div>
+                            </div>
+                             <div id="desktop_hours">
+                                <span>Hours</span>
+                                <div class="week_head">
+                                    <div class="weekinfo day{{MONCHECK}}">    
+                                        <div class="weekday">Monday:</div> 
+                                        <div class="weekhours">{{monopen}} - {{monclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{TUECHECK}}">
+                                        <div class="weekday">Tuesday:</div> 
+                                        <div class="weekhours">{{tueopen}} - {{tueclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{WEDCHECK}}">
+                                        <div class="weekday">Wednesday:</div> 
+                                        <div class="weekhours">{{wedopen}} - {{wedclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{THRCHECK}}">
+                                        <div class="weekday">Thursday:</div> 
+                                        <div class="weekhours">{{thropen}} - {{thrclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{FRICHECK}}">
+                                        <div class="weekday">Friday:</div>  
+                                        <div class="weekhours">{{friopen}} - {{friclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{SATCHECK}}">
+                                        <div class="weekday">Saturday:</div>  
+                                        <div class="weekhours">{{satopen}} - {{satclose}}</div>
+                                    </div>
+                                    <div class="weekinfo day{{SUNCHECK}}" style="padding-bottom:10px;">
+                                        <div class="weekday">Sunday:</div>  
+                                        <div class="weekhours">{{sunopen}} - {{sunclose}}</div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div id="moreinfo_back" class="ga_w2gi_loc" data-galoc="{{internalname}} - {{clientkey}}" data-gaact="Click_To_BackToSearch" tabindex="0" onclick="document.getElementById('back_image').click();$(document).trigger('w2gi:track',{'action':'linktrack', 'value': 'MoreInfo_Clicked_{{clientkey}}' });" onkeypress="document.getElementById('back_image').click()">
+                                <img id="back_image" data-action="show_all" onclick="moreinfo_changeback();" src="images/new/back-to-search.2.svg" alt="Back Arrow">
+                                <span>Back to Search</span>
+                            </div>
+                        </li>
+                    </ul>
+                </script>
+                <!--  <a data-action="show_all" href="javascript:void(0);">Back</a> -->
+                <!-- driving directions panel template end -->
+                <script id="collection_maneuvers" type="text/x-handlebars-template">
+                    <div tabindex="20" id="search_return" onclick="window.location.reload()">
+                        <img src="images/new/back_to_search.png" alt="Back Arrow">
+                        <span>Back to Search Results</span>
+                    </div>
+                    <div class = "dist_time"><span>Distance:</span> {{total_distance}} miles</div>      
+                    <div class = "dist_time"><span>Drive time:</span> {{total_time}} minutes drive</div>
+                    <p class="maneuver_start">
+                        From (A): {{#if fromAddress.address1}} {{fromAddress.address1}}, {{/if}} {{fromAddress.city}} {{fromAddress.state}} {{fromAddress.postalcode}}
+                    </p>
+                    <ul class="content-list maneuver-result">
+                        {{#each maneuverlist}}
+                            <li data-id={{@index}} data-uid={{uid}}>
+                               {{incIndex @index}} {{text}} {{distance}} {{distanceuom}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <p class="maneuver_end">
+                        To (B): {{#if toAddress.address1}} {{toAddress.address1}}, {{/if}} {{toAddress.city}} {{toAddress.state}} {{toAddress.postalcode}} </strong>
+                    </p>
+                </script>
+                <!-- driving directions panel template end -->
+                <!-- driving directions form template start -->
+                <script id="dd-template" type="text/x-handlebars-template">
+                    <form id="driving_directions" autocomplete="off">
+                         <div class="icon-bar">
+                            <a href="#" onclick="window.open(ace.util.printUrl('locator-print.html'), 'print', 'toolbar=no, resizable=yes, scrollbars=yes, menubar=yes');"><div class="fa fa-print"></div>Print</a>
+                        </div>
+                        <label for="start_address">
+                            <span>From:</span><input tabindex="17" type="text" id="start_address" class="search-box"  data-action="start" name="addressline" placeholder="Start address">
+                        </label>
+                        <label for="end_address">
+                            <span>To:</span><input tabindex="18" type="text" id="end_address" class="search-box"  data-action="end" name="addressline" placeholder="End address">
+                        </label>
+                            <button tabindex="19" class="button-search dd-button-search">GET DIRECTIONS</button>
+                              <input type="hidden" id="longitude" name="longitude" aria-hidden="true"/>
+                              <input type="hidden" id="latitude" name="latitude" aria-hidden="true"/>
+                              <input type="hidden" id="dest_longitude" name="dest_longitude" aria-hidden="true"/>
+                              <input type="hidden" id="dest_latitude" name="dest_latitude" aria-hidden="true"/>
+                    </form>
+                </script>
+                <!-- driving directions form template end -->
+                <!-- icon template start  -->
+                 <script id="default" type="text/x-handlebars-template">
+                    <div class="icon" data-bubbleid="bubble" style="pointer-events: none; cursor:none !important;" data-width="37" data-height="50" data-offsetx="-18" data-offsety="-50" data-labeloffsetx="0" data-labeloffsety="16"  data-fontfamily="Gotham" data-fontcolor="#ffffff" data-fontsize="400 13px" data-display="true">
+                            <img class="alpha" src="/2021/images/map-pin.2.png" style="cursor:pointer;" alt="Map Pin"/>
+                    </div>
+                </script>
+                <script id="default2" type="text/x-handlebars-template">
+                    <div class="icon" data-bubbleid="bubble" data-width="33" data-height="40" data-offsetx="-16" data-offsety="-40" data-labeloffsetx="0" data-labeloffsety="50"  data-fontcolor="#ffffff" data-fontsize="18" data-display="true">
+                            <img class="alpha" src="images/new/map-pin.2.png" style="cursor:pointer;" alt="Map Pin"/>
+                    </div>
+                </script>
+                <!-- icon template end -->
+                 <!-- bubble template start -->
+                <script id="bubble" data-offsetx="10" data-offsety="-40" data-width="0" data-height="0" data-margintop="100" data-marginbottom="0" data-marginleft="100" data-marginright="100" type="text/x-handlebars-template">
+
+                    <ul class="tabs" style="display:none;">
+                        <li class="active" data-tab="tab1">Address</li>
+                    </ul>
+                    <div class="tab-content active" data-tab="tab1">
+                        <strong>{{internalname}}</strong>
+                        <button onclick="window.open('http://maps.google.com?q=Amazon Fresh,{{#if address1_mod}}{{address1_mod}}{{else}}{{address1}}{{/if}},{{city}},{{state}}{{postalcode}}');">Get Directions</button>
+                        <ul style="display:none;">
+                          <li>{{address1}}<li>
+                          <li>{{city}}, {{state}} {{postalcode}}<li>
+                          <li> <a href="javascript:void(0);" onclick="window.parent.location = 'tel:{{phone}}';" >
+                            {{phone}}</a>
+                          </li>
+                        </ul>
+                       
+                        <div class="dd-wrapper" style="display:none !important;">
+                            <form id="dd" autocomplete="off">
+                                <label for="input_bubble" class="sr-only" aria-hidden="true">Enter Address</label>
+                                <input id="input_bubble" size="18" type="text" name="addressline" class="direction_address" value="{{addressline}}" />
+                                <label for="bubble_submit" class="sr-only" aria-hidden="true">Submit Address</label>
+                                <input id="bubble_submit" type="submit" value="" class="search_arrow">
+                                <label for="bubble_country" class="sr-only" aria-hidden="true">Country</label>
+                                <select id="bubble_country" name="country" class="country_selection" style="display:none">
+                                    <option value="">Select a country</option>
+                                     {{#each options}}
+                                    <option value="{{value}}" {{#if selected}}selected="selected"{{/if}}>{{text}}</option>
+                                    {{/each}}
+                                </select>
+                                <input type="submit" value="Go" style="display:none;" aria-hidden="true">
+                            </form>
+                        </div>
+                    </div>
+                </script>
+                <!-- bubble template end -->
+                <!-- center marker template start -->
+                <script id="center_marker" type="text/x-handlebars-template">
+                    <div class="icon" data-bubbleid="bubble" data-width="30" data-height="28"  data-offsetx="-15" data-offsety="-14" >
+                        <img class="alpha" src="/w2gi/images/spacer.png" alt="Center Star" />
+                    </div>
+                </script>
+                <!-- center marker template end -->
+                <!-- dd end markers template start  -->
+                <script id="ddstarticon" type="text/x-handlebars-template">
+                    <div  class="end_icon" data-height="38" data-width="27" data-offsetx="-13" data-offsety="-38">
+                       <img class="alpha" src="images/new/ddstartpin-new.png" alt="Start Icon"/>
+                    </div>
+                </script>
+                <script id="ddendicon" type="text/x-handlebars-template">
+                    <div class="end_icon" data-height="38" data-width="27" data-offsetx="-13" data-offsety="-38">
+                        <img class="alpha" src="images/new/ddendpin-new.png" alt="End Icon"/>
+                    </div>
+                </script>
+                <!-- dd end markers template start  -->
+                <script id="panel_error_message" type="text/x-handlebars-template">
+                    <div id="error_message"><span class="locerror">{{error}}</span></div>
+                </script>
+            </div>
+        </div> <!-- end of w2gi wrapper -->
+        <script> 
+            // var anchorIn = document.createElement('a');
+            // anchorIn.setAttribute('href', '#');
+            // anchorIn.setAttribute('title', 'Zoom In');
+
+            // var anchorOut = document.createElement('a');
+            // anchorOut.setAttribute('href', '#');
+            // anchorOut.setAttribute('title', 'Zoom Out');
+
+            $(function(){
+                setTimeout(function(){
+                    // body...
+                    var zoomInTxt = '<span class="sr-only">Zoom in map</span>';
+                    var zoomOutTxt = '<span class="sr-only">Zoom out map</span>';
+                    var zoomInBtn = $('.ol-zoom-in');
+                    var zoomOutBtn = $('.ol-zoom-out');
+                    zoomInBtn.append(zoomInTxt)
+                    zoomOutBtn.append(zoomOutTxt)
+                },3000)
+                
+
+            })
+
+            setTimeout(function(){
+              
+                
+
+
+
+
+              var temp = document.querySelectorAll("#mapEl img");
+              for(var i = 0; i < temp.length; i++) {
+                var img = temp[i];
+                img.setAttribute("alt", "Google Map" + i);
+                img.setAttribute("aria-title", "Google Map" + i);
+              }
+
+              var temp = document.querySelectorAll("#mapEl div img");
+              for(var i = 0; i < temp.length; i++) {
+                var img = temp[i];
+                img.setAttribute("alt", "Google Map" + i);
+                img.setAttribute("aria-title", "Google Map" + i);
+              }
+
+              var temp = document.getElementById('mapEl').querySelectorAll('[role="presentation"]');
+              for(var i = 0; i < temp.length; i++) {
+                temp[i].removeAttribute("role");
+              }
+              
+              var temp = document.getElementById('mapEl').getElementsByTagName('iframe');
+              for (var index = 0; index < temp.length; index++) {
+                temp[index].setAttribute("title", "Google Maps");
+                temp[index].setAttribute("tabindex", "-1");
+                temp[index].removeAttribute("frameborder");
+
+              }
+          
+            }, 7000);
+
+
+        </script>
+        <script>
+            $(function(){
+                 if($(window).width() < 1170 && $(window).width() > 801){
+                        $('label[for=search_input]').html('Enter your city & state or ZIP.');
+                    }
+                
+                // $('.closeForm').click(function(){
+                //     $('.forms-poi-box').addClass('closed');
+                //     $('#locator_search button,#locator_search input').attr('tabindex','-1');
+                //     setTimeout(function(){
+                //         $('.openForm').addClass('closed')
+                //     },200);
+                // })
+
+                // $('.openForm').click(function(){
+                //     $(this).removeClass('closed');
+                //     $('#locator_search button,#locator_search input').attr('tabindex','0');
+                //     setTimeout(function(){
+                //         $('.forms-poi-box').removeClass('closed');
+                //     },200);
+                // })
+                $('.button-search').on('click',function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var paddr = ''
+                    geocodeObj = new google.maps.Geocoder();
+                    geocodeObj.geocode({'address': $("#search_input").val(), 'region': $("#search_country").val()}, function (response, status){ 
+                        if (!status || status != google.maps.GeocoderStatus.OK) {
+                            console.log('no geocode')
+                              var searchString = $('#search_input').val();
+                            var blankCard = '<li><div id="error_message"><span class="locerror">Please enter an address.</div></div></li>';
+                            var specCharCard = '<li><div id="error_message"><span class="locerror">Your search must not include !$%^*()</div></div></li>';
+                            if(/[!\$%\\^*()]/.test(searchString)){
+                                $('.poi .content-list').empty();
+                                $('.poi .content-list').prepend(specCharCard);
+                                if($(window).width() > 1280){
+                                    $('.poi .content-list').append('<li/><li/>');
+                                } else if ($(window).width > 801){
+                                    $('.poi .content-list').append('<li/>');
+                                }
+                            } else if(searchString === '') {
+                                $('.poi .content-list').empty();
+                                $('.poi .content-list').prepend(blankCard);
+                                if($(window).width() > 1280){
+                                    $('.poi .content-list').append('<li/><li/>');
+                                } else if ($(window).width > 801){
+                                    $('.poi .content-list').append('<li/>');
+                                }
+                            }
+                        } else {
+                            paddr = ace.cgeo.parseAddress(response[0]);
+                            //console.log(paddr)
+                            try {
+                                paddr.longitude = response[0].geometry.location.lng();
+                                paddr.latitude = response[0].geometry.location.lat()
+                            } catch (err) {
+                                console.log('err: ', err )
+                            }
+                            if($('#reservations_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    reserve_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    reserve_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $(document).trigger("w2gi:proximitysearchrequest", reserve_formdata);
+                            }
+                            if($('#pickup_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    pickup_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    pickup_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $(document).trigger("w2gi:proximitysearchrequest", pickup_formdata);
+                            }
+                            if($('#delivery_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    delivery_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    delivery_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $('.poi').removeClass('noDelivery');
+                                $(document).trigger("w2gi:proximitysearchrequest", delivery_formdata);
+                            }
+                        }
+                    })
+
+                });
+
+                $('#search_input').on('keydown',function(e){
+                    // e.preventDefault();
+                    if(e.which == 13 || e.keycode == 13) {
+                       e.preventDefault();
+                       e.stopPropagation();
+                    var paddr = ''
+                    geocodeObj = new google.maps.Geocoder();
+                    geocodeObj.geocode({'address': $("#search_input").val(), 'region': $("#search_country").val()}, function (response, status){ 
+                        if (!status || status != google.maps.GeocoderStatus.OK) {
+                            console.log('no geocode')
+                            var searchString = $('#search_input').val();
+                            var blankCard = '<li><div id="error_message"><span class="locerror">Please enter an address.</div></div></li>';
+                            var specCharCard = '<li><div id="error_message"><span class="locerror">Your search must not include !$%^*()</div></div></li>';
+                            if(/[!\$%\\^*()]/.test(searchString)){
+                                $('.poi .content-list').empty();
+                                $('.poi .content-list').prepend(specCharCard);
+                                if($(window).width() > 1280){
+                                    $('.poi .content-list').append('<li/><li/>');
+                                } else if ($(window).width > 801){
+                                    $('.poi .content-list').append('<li/>');
+                                }
+                            } else if(searchString === '') {
+                                $('.poi .content-list').empty();
+                                $('.poi .content-list').prepend(blankCard);
+                                if($(window).width() > 1280){
+                                    $('.poi .content-list').append('<li/><li/>');
+                                } else if ($(window).width > 801){
+                                    $('.poi .content-list').append('<li/>');
+                                }
+                            }
+                        } else {
+                            paddr = ace.cgeo.parseAddress(response[0]);
+                            //console.log(paddr)
+                            try {
+                                paddr.longitude = response[0].geometry.location.lng();
+                                paddr.latitude = response[0].geometry.location.lat()
+                            } catch (err) {
+                                console.log('err: ', err )
+                            }
+                            if($('#reservations_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    reserve_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    reserve_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $(document).trigger("w2gi:proximitysearchrequest", reserve_formdata);
+                            }
+                            if($('#pickup_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    pickup_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    pickup_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $(document).trigger("w2gi:proximitysearchrequest", pickup_formdata);
+                            }
+                            if($('#delivery_btn').hasClass('selected')){
+                                if(paddr) {
+                                    paddr.addressline = paddr.addressline.replace(', USA','');
+                                    delivery_formdata.geolocs.geoloc[0] = paddr
+                                } else {
+                                    delivery_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                                }
+                                $('.poi').removeClass('noDelivery');
+                                $(document).trigger("w2gi:proximitysearchrequest", delivery_formdata);
+                            }
+                        }
+                    })
+
+                    }
+                })
+                
+                $('.tab_wrapper button').on('click',function(){
+                    if(!$(this).hasClass('selected')){
+                        $(this).addClass('selected')
+                        $('.tab_wrapper button').not(this).removeClass('selected');
+                        if($(this).attr('id') == 'reservations_btn'){
+                            parent.postMessage('w2gi:reservations','*');
+                            reserve_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                            $(document).trigger("w2gi:proximitysearchrequest", reserve_formdata);
+                            $('.poi').addClass('reservations_list').removeClass('pickup_list').removeClass('delivery_list');
+                            // $('.current-location').show()
+                            // if($(window).width() < 950 && $('.wrapper').hasClass('active')){
+                            //  setTimeout(function(){
+                            //      $('.pseudo_count').empty();
+                            //      $('.pseudo_count').html($('.locations_count').html());
+                            //  }, 400);
+                            // }
+                            // if($(window).width() > 1280){
+                            //     $('label[for=search_input]').html('Enter your address, city and state to find a nearby location:');
+                            // } else {
+                            //     $('label[for=search_input]').html('Enter your city & state or ZIP:');
+                            // }
+                        }
+                        if($(this).attr('id') == 'pickup_btn'){
+                            parent.postMessage('w2gi:pickup','*');
+                            pickup_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                            $(document).trigger("w2gi:proximitysearchrequest", pickup_formdata);
+                            $('.poi').addClass('pickup_list').removeClass('reservations_list').removeClass('delivery_list');
+                            $('.current-location').show()
+                            // if($(window).width() < 950 && $('.wrapper').hasClass('active')){
+                            //  setTimeout(function(){
+                            //      $('.pseudo_count').empty();
+                            //      $('.pseudo_count').html($('.locations_count').html());
+                            //  }, 400);
+                            // }
+                            // if($(window).width() > 1280){
+                            //     $('label[for=search_input]').html('Enter your address, city and state to find a nearby location:');
+                            // } else {
+                            //     $('label[for=search_input]').html('Enter your city & state or ZIP:');
+                            // }
+                        }
+                        if($(this).attr('id') == 'delivery_btn'){
+                            $('.poi').removeClass('noDelivery');
+                            parent.postMessage('w2gi:delivery','*')
+                            delivery_formdata.geolocs.geoloc[0].addressline = $("#search_input").val();
+                               $(document).trigger("w2gi:proximitysearchrequest", delivery_formdata);
+                            $('.poi').addClass('delivery_list').removeClass('reservations_list').removeClass('pickup_list');
+                            // $('.current-location').hide();
+                            
+                        }
+                    }
+
+                });
+             
+            });
+
+                $(window).resize(function(){
+                    if($(window).width() < 1170 && $(window).width() > 801){
+                            $('label[for=search_input]').html('Enter your city & state or ZIP.');
+                    } else {
+                            $('label[for=search_input]').html('Enter city and state or ZIP/postal code to find a nearby location.');
+                    }
+                });
+        </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* ==========================================================================
+    CONTENT - CONTACT FORM
+   ========================================================================== */
+
+.contact-form {
+	margin: 40px 0 0;
+	&:first-child {
+		margin: 0;
+	}
+}
+.content-contactform {
+	.field-wrapper {
+		float: left;
+		position: relative;
+		width: 67%; //423px
+		&.form-error {
+			&:before {
+				background-color: $formBorderErrorColor;
+				border-radius: 3px 3px 0 0;
+				color: $mainTextColor;
+				content: attr(data-error);
+				font: $fontWeightSemibold 14px/25px $themeFont;
+				height: 25px;
+				padding: 0 10px;
+				position: absolute;
+				top: -24px;
+				right: 0;
+			}
+			input[type="text"],
+			input[type="email"],
+			input[type="tel"],
+			input[type="date"],
+			input[type="search"],
+			textarea,
+			select {
+				background-color: $formBgErrorColor;
+				border: 1px solid $formBorderErrorColor;
+				border-radius: 3px 0 3px 3px;
+			}
+		}
+	}
+	label {
+		font: $fontWeightRegular 16px/20px $themeFont;
+		clear: both;
+		display: block;
+		float: left;
+		height: 40px;
+		margin: 0 0 20px;
+		padding: 0 16px 0 0;
+		text-transform: uppercase;
+		width: 33%; //216px
+	}
+	input[type="submit"] {
+		display: block;
+		margin: 40px auto 0;
+	}
+}
+.comment-charactercount {
+	clear: both;
+	font: $fontWeightRegular 13px/13px $themeFont;
+	padding: 10px 0 40px 33%;
+}
+.content-disclaimer {
+	border-top: 1px solid $borderColorDark;
+	border-bottom: 1px solid $borderColorDark;
+	clear: both;
+	padding: 18px 0;
+}

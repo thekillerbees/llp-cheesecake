@@ -1,0 +1,26 @@
+// START : /global/header.html
+#header.header
+	#mainHeader.main-header
+		.container
+			ul.main-header-controls
+				if platform != "mobile"
+					// Only show these menu items on desktop/tablet
+					li
+						a(href="#").head-menu
+							span Menu
+					li
+						a(href="/locations/").head-locations
+							span Locations
+					li
+						a(href="/giftcards/").head-giftcards
+							span Gift Cards
+				li
+					a#menuToggle.head-more
+						span More
+			h1.site-logo
+				a(href="/home/") The Cheesecake Factory
+script.
+	require(["modules/fixedHeader"], function(FixedHeader) {
+		return new FixedHeader();
+	});
+// END : /global/header.html

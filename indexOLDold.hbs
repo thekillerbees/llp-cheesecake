@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		
+<title>cheesecake</title>
+<meta name="keywords" content="cheesecake" />
+
+<meta name="description" content="cheesecake Store and
+Dealer locator" />
+
+		<link type="text/css" href="css/proto.css" rel="stylesheet" media="all"/>
+		<link type="text/css" href="/w2gi/css/litbox.css" rel="stylesheet" media="all"/>		
+		<link type="text/css" href="/w2gi/css/bubble.css" rel="stylesheet" media="all"/>		
+		<link type="text/css" href="/w2gi/css/style.css" rel="stylesheet" media="all"/>		
+
+		<script type="text/javascript" src="/w2gi/javascript/ace/1.74/prototype.js"></script>
+		<script type="text/javascript" src="/w2gi/javascript/ace/1.74/W2GI_core.js"></script>
+		<script type="text/javascript" src="/w2gi/javascript/ace/1.74/W2GI_maps.js"></script>	
+		<script type="text/javascript" src="/w2gi/javascript/ace/1.74/W2GI_slippymap.js"></script>
+
+		<script type="text/javascript">
+			function loadSlippyMap() {
+				var options = {
+					dynamicSearch: true,
+					geoip: false,
+					theme: null,
+                                        routeStyle: {   strokeWidth: 8,
+							strokeOpacity: .5,
+                                                        strokeColor: '#0000FF' },
+					controls: [	new OpenLayers.Control.PanZoomBar(), 
+							new OpenLayers.Control.Navigation() ]
+				};
+				OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2; 
+				OpenLayers.ImgPath='/w2gi/images/zoombar/';
+				SlippyMap.load('map', 'panel', options);		
+			}
+			
+	            function clear_search_directions_box(i) {
+	                if (i.value == 'Enter street address, city, state or ZIP') {
+        	            i.value = '';
+                	}
+	                if (i.value == 'Start address') {
+        	            i.value = '';
+	                }
+        	        if (i.value == 'End address') {
+                	    i.value = '';
+	                }
+        	    }
+			
+		</script>	
+
+	</head>
+	
+	<body onload="loadSlippyMap();" onunload="SlippyMap.unload();">		
+		<!-- XML data island start  -->
+		<xml>
+			<root>
+                <ajaxurl>/ajax?</ajaxurl>
+                <appkey>320C479E-6D70-11DE-9D8B-E57E37ABAA09</appkey>
+				<inputforms>				
+					<inputform>
+						<formdata id="reversegeocoder">
+							<geolocs>
+								<geoloc>
+									<latitude></latitude>
+									<longitude></longitude>
+									<country></country>
+								</geoloc>
+							</geolocs>
+						</formdata>			
+					</inputform>
+				</inputforms>									
+                                <sources>
+                                  <source>
+                                    <name>SlippyMap W2GI</name>
+                                    <imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles</imageurl>
+                                    <options>{map: 'smap-01'}</options>
+                                  </source>
+                                  <source>
+                                    <name>SlippyMap Navteq</name>
+                                    <imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles</imageurl>
+                                    <options>{map: 'smap-02'}</options>
+                                  </source>
+                                </sources>
+			</root>		
+		</xml>
+		<!-- XML data island end -->	
+		
+		<div id="templates" style="display: none;">
+			<!-- icon template start  -->	
+                        <div id="default" class="icon" bubbleid="bubble" width="33" height="28" offsetx="-16" offsety="-28">
+                                <img class="alpha" src="/w2gi/images/icons/default.png"/>
+                                <div action="open_bubble" recnum="#{POINUM}">#{POINUM}</div>
+                        </div>
+			<div id="center_marker" class="icon" bubbleid="bubble" width="30" height="28"  offsetx="-11" offsety="-33">
+				<img class="alpha" src="/w2gi/images/icons/red-star.png"/>
+			</div>					
+			<!-- icon template end  -->		
+					
+                        <!-- bubble template start  -->
+                        <div id="bubble" offsetx="-135" offsety="-270" style="margin: 25px; width: 276; height: 235px;">
+                                <img class="alpha bubble_tab activetab tab1" src="/w2gi/images/spacer.png" />
+                                <div class="tab_label tab1label">Address</div>
+                                <img class="alpha bubble_tab nonactivetab tab2" src="/w2gi/images/spacer.png" />
+                                <div class="tab_label tab2label">Hours</div>
+                                <img class="alpha bubble_close" src="/w2gi/images/spacer.png" />
+
+                                <!-- middle -->
+                                <img class="alpha mainbubble" src="/w2gi/images/bubble/popover/popover.png" />
+                                <div class="mainbubblecontent" >
+                                        <div class="mainbubblelocationname">#{NAME}</div>
+                                        <div class="mainbubbletabcontent" >
+                                                <div class="tab_content activetabcontent">
+                                                        <div>#{ADDRESS1}</div>
+                                                        <div>#{CITY}, #{STATE} #{POSTALCODE}</div><br/>
+							<div style="color:black;font-size:16px;font-weight:bold">#{PHONE}</div>
+                                                        <!-- <div style="padding-top: 0.7em;">
+                                                                <form style="position: absolute; left: 0px; top: 50px; height: 60px; width: 240px;" autocomplete="off">                                              
+                                                                        <span class="dir" style="font-size: 12px; color: black; margin-right: 5px">Get directions from:</span><a style="font-size: 12px;" href="javascript:void(0);">To</a>
+                                                                        <input recnum="#{POINUM}" type="text" name="addressline" value=""/>
+                                                                        <input recnum="#{POINUM}" type="submit" value="Go"/>
+                                                                        <div class="address_helper">(111 Main St, Chicago, IL 60613)</div>
+                                                                </form>
+                                                        </div> -->
+                                                </div>
+                                                <div class="tab_content nonactivetabcontent" >
+                                                        <div>#{ADDRESS1}</div>
+                                                        <div>#{CITY}, #{STATE} #{POSTALCODE}</div><br/>
+							<div style="color:black;font-size:16px;font-weight:bold">#{PHONE}</div>
+                                                </div>
+                                        </div>
+                                </div>
+
+			</div>
+
+			<!-- bubble template end -->	
+	
+			<!-- POI table template start -->			
+			<table id="collection_poi" odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="4">
+				<thead>
+					<tr class="poi">
+						<th colspan="2" style="text-indent: 15px;"><strong>#{COUNT}</strong> locations found in your area</th>
+					</tr>	
+				</thead>
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<td width="33px" valign="top">
+							<div templateid="#{ICON}">				
+							</div>
+						</td>
+						<td width="227px">
+							<a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a><br/>
+							<strong>#{PHONE}</strong><br/>
+							#{ADDRESS1}<br/>
+							#{CITY}, #{STATE} #{POSTALCODE}<br/><br/>
+ 							<a action="more_info" recnum="#{POINUM}" href="javascript:void(0);">More Info</a>
+						</td>		
+					</tr>	
+				</tbody>				
+			</table>	
+			<!-- POI table template end -->	
+			
+                        <!-- More Info table template start -->
+                        <table id="collection_more_info" odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="1">
+                                <thead>
+                                        <tr>
+                                        </tr>
+                                </thead>
+                                <tfoot>
+                                        <tr>
+                                        </tr>
+                                </tfoot>
+                                <tbody>
+                                        <tr recnum="#{POINUM}">
+                                                <td width="33px" valign="top">
+                                                        <div templateid="#{ICON}">
+                                                        </div>
+                                                </td>
+                                                <td width="310px">
+                                                        <a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a><br/>
+                                                        #{ADDRESS1}<br/>
+                                                        #{CITY}, #{STATE} #{POSTALCODE}<br/>
+                                                        <strong>#{PHONE}</strong>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td colspan="2">
+                                                        <a action="show_all" recnum="#{POINUM}" href="javascript:void(0);">Show All Locations</a>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <!-- more info table template end -->
+
+			<!-- Ambiguous address table template start -->			
+			<table id="collection_multiple_address" odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+					<tr>
+						<th>Did you mean:</th>
+					</tr>						
+				</thead>	
+				<tfoot><tr><td></td></tr></tfoot>				
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<td width="250px">
+							<a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}</a><br/>	
+							#{COUNTY}							
+						</td>		
+					</tr>	
+				</tbody>				
+			</table>	
+			<!-- Ambiguous address table template end -->		
+
+			<!-- Maneuvers table template start -->	
+			<table id="collection_maneuvers" odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+					<tr>
+						<th>
+							Total distance: #{TOTAL_DISTANCE} #{DISTANCE_UNIT}
+						</th>
+					</tr>
+					<tr>
+						<th>
+							Total time: #{TOTAL_TIME} #{TIME_UNIT}
+						</th>
+					</tr>	
+					<tr>
+						<th>
+							<a class="reverse_directions" style="font-size: 12px;" href="javascript:void(0);">Get reverse directions</a>
+						</th>
+					</tr>		
+                                        <tr>
+                                                <th>
+							<div >
+								<br/>From (A)
+							</div>
+                                                        <span class="addressline"></span>
+                                                </th>
+                                        </tr>
+				</thead>
+				<tfoot>
+                                        <tr>
+                                                <th style="border-top: 1px solid lightblue">
+							<div>
+								To (B)
+							</div>
+                                                        <span class="addressline"></span>
+                                                </th>
+                                        </tr>
+				</tfoot>
+				<tbody>		
+					<tr>
+						<td class="maneuver">#{ID}. #{TEXT} #{DISTANCE} #{DISTANCEUOM}</td>
+					</tr>	
+				</tbody>				
+			</table>
+			<!-- Maneuvers table template end -->
+
+		</div>
+        <!-- end of div id="templates" -->
+
+<div id="outer">
+
+        <div id="google" style="position:absolute; float: left;display:inline;">
+        </div>
+        <!-- end div google -->
+
+	<div id="inner">
+                <div id="header">
+                    
+                </div>
+                <div id="controls">
+                        <div id="formheader" style="float:left;height: 35px;margin-left:10px;">
+                                <div style="float: left;font-size:24px;padding-top:5px;font-weight:bold;width:450px;">
+                                cheesecake</div>
+                                <div id="icon_bar">
+                                                <a class="links"
+                                                id="page_email"
+                                                subject="cheesecake Location Information" 
+                                                href="javascript:void(0);">
+                                                        <img alt="Email" src="/w2gi/images/iconbar/email.gif"/>
+                                                        <span>Email</span>
+                                                </a>
+                                                <a class="links" id="page_link" href="javascript:void(0);">
+                                                        <img alt="Link to this page" src="/w2gi/images/iconbar/link.gif"/>
+                                                        <span>Link to this page</span>
+                                                </a>
+                                </div>
+                        </div>
+                        <div id="form" style="margin-left:3px;float:left;">
+				<form id="locator_search" autocomplete="off">
+					<table>
+						<tbody>							
+							<tr>
+								<td>
+									&nbsp;<input class="addressentry" type="text" size="29" name="addressline" value="Enter street address, city, state or ZIP" onClick="clear_search_directions_box(this);" />
+								</td>	
+								<td>
+									<input id="search_button" type="submit" value="Search" name="search"/>
+								</td>									
+							</tr>
+						</tbody>									
+					</table>
+					<xml>
+						<root>
+							<inputform>
+								<formdata id="locatorsearch">
+									<dataview>store_default</dataview>
+									<limit>4</limit>
+									<geolocs>
+										<geoloc>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+										</geoloc>
+									</geolocs>
+									<searchradius>10|25|50|100|250</searchradius>
+								</formdata>						
+							</inputform>									
+						</root>					
+					</xml>										
+				</form>
+				<form id="driving_directions" autocomplete="off" style="display: none;">
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<span style="font-size: 12px;">&nbsp;From</span> 
+								</td>
+								<td>
+									<input class="addressentry" type="text" size="28" name="addressline" value="Start address" onClick="clear_search_directions_box(this);"/>	
+									<img style="cursor: pointer;" width="10" height="14" src="/w2gi/images/ddirflip.png" title="Switch start and end address" alt="Switch start and end address"/>
+									<span style="font-size: 12px;">To</span>
+								</td>
+								<td>	
+									<input class="addressentry" type="text" size="28" name="addressline" value="End address" onClick="clear_search_directions_box(this);"/>
+									<input id="driving_directions_button" type="submit" value="Get Directions" name="driving_directions"/>
+								</td>									
+							</tr>
+						</tbody>
+					</table>
+					<xml>
+						<root>
+							<inputforms>							
+								<inputform>
+									<formdata id="drivingdirections">
+										<dataview>store_default</dataview>
+										<geolocs>
+											<geoloc>
+												<addressline></addressline>
+												<longitude></longitude>	
+												<latitude></latitude>
+											</geoloc>
+											<geoloc>
+												<addressline></addressline>
+												<longitude></longitude>	
+												<latitude></latitude>
+											</geoloc>
+										</geolocs>
+										<rid></rid>
+									</formdata>
+								</inputform>
+							</inputforms>	
+						</root>					
+					</xml>	
+				</form>					
+			</div>
+			<!-- end of form -->
+		</div>
+		<!-- controls end -->
+
+		<div id="locator">		
+			<div id="panel">
+				<div id="intro_text">
+                    Begin your search by entering an address, city, 
+                    state or ZIP code into the search box.
+                </div>
+			</div>
+			<div id="map"></div>			
+		</div>
+
+        <div id="branding_panel_link_container">
+          <div id="branding_box_1">
+              
+          </div>
+          <div id="branding_box_2">
+              
+          </div>
+
+		  <div id="local_link">
+            <a href="http://locations.where2getit.com/cheesecake/"
+            Local cheesecake Pages</a>
+          </div>
+
+	      <div id="navteqfooter">
+            <script type="text/javascript">
+                var d = new Date()
+                document.write(" <img src=http://direct.where2getit.com/navteq/logo_navtech_large.gif> ")
+                document.write(" &copy; Copyright ")
+                document.write(d.getFullYear())
+                document.write(" NAVTEQ Corp.  ")
+	        </script>
+	      </div>
+        </div>
+
+	</div>
+	<!-- inner end -->
+
+	<div id="amazon">
+	</div>
+
+</div>
+<!-- outer end -->
+
+	</body>
+</html>
+

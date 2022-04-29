@@ -1,0 +1,22 @@
+//- INCLUDE GLOBAL MIXINS
+include ../modules-mixins/includes
+// START : /global/head.html
+head
+	title The Cheesecake Factory
+	meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
+	meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+	meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+	link(rel="icon",href="/assets/images/global/favicon.ico")
+	if platform != "mobile"
+		meta(name="viewport", content="width=device-width, maximum-scale=1")
+	else
+		meta(name="viewport", content="width=device-width, user-scalable=no")
+	- direction = (direction === "rtl") ? "-rtl" : ""
+	// Stylesheet changes based on "desktop", "mobile", "tablet"
+	link(rel="stylesheet", href="/assets/css/#{platform}#{direction}.css")
+	script(src="//use.typekit.net/bxf4rjm.js")
+	script try{Typekit.load();}catch(e){}
+	script(src="/assets/js/vendor/require.js")
+	script(src="/assets/js/#{platform}.js")
+// END : /global/head.html

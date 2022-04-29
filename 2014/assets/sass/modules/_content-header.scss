@@ -1,0 +1,69 @@
+/* ==========================================================================
+    CONTENT HEADER
+   ========================================================================== */
+
+.content-header {
+	background-position: center;
+	background-repeat: repeat-x;
+	background-size: cover;
+	position: relative;
+	color: $bannerTextColor;
+	text-align: center;
+	text-transform: uppercase;
+	@if ($platform != mobile) {
+		height: 380px;
+	} @else {
+		height: 300px;
+	}
+	&:before {
+		content: "";
+		@include linear-gradient(rgba(#272727, 0.5) 0%, rgba(#272727, 0) 100%, $fallback: transparent);
+		width: 100%;
+		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 5;
+	}
+	&.banner-pink 	{ background-color: $bannerPink; background-image: url('/assets/images/global/top-banner-pink.jpg'); }
+	&.banner-purple	{ background-color: $bannerPurple; background-image: url('/assets/images/global/top-banner-purple.jpg'); }
+	&.banner-gold 	{ background-color: $bannerGold; background-image: url('/assets/images/global/top-banner-gold.jpg'); }
+	&.banner-orange	{ background-color: $bannerOrange; background-image: url('/assets/images/global/top-banner-orange.jpg'); }
+	&.banner-brown 	{ background-color: $bannerBrown; background-image: url('/assets/images/global/top-banner-brown.jpg'); }
+	&.banner-green 	{ background-color: $bannerGreen; background-image: url('/assets/images/global/top-banner-green.jpg'); }
+	.fixed-always & {
+		background-color: darken($bgSiteColor,5%);
+		padding: 0;
+		@if ($platform != mobile) {
+			height: 320px;
+		} @else {
+			height: 250px;
+		}
+		&:before {
+			content: none;
+			height: 0;
+			width: 0;
+		}
+	}
+	.content-header-title {
+		cursor: default;
+		margin: 0;
+		position: absolute;
+		width: 100%;
+		@if ($platform != mobile) {
+			bottom: 52px;
+			font: $fontWeightSemibold 46px/50px $themeFont;
+			letter-spacing: 0.025em;
+			padding: 0 20px;
+		} @else {
+			bottom: 26px;
+			font: $fontWeightSemibold 32px/36px $themeFont;
+			padding: 0 15px;
+		}
+	}
+	iframe {
+		height: 100%;
+		width: 100%;
+	}
+}

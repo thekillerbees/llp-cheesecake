@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>{{{account}}} Store Location</title>
+        <link rel="stylesheet" type="text/css" href="/officedepot/style.css" />
+    </head>
+<body>
+<div class="b1">
+<img src="/officedepot/nav_logo.gif" alt="Office Depot" width="211" height="42" class="logo"/>
+
+    <table class="b1">
+    <tr>
+	<table class="b1">
+		<tr>
+			<td><form action="{{{host}}}/lite">
+				<table class="b1">
+					<tr>
+						<td>Please enter your starting addres</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="address"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Go"></td>
+					</tr>
+				</table>
+				<input type="hidden" name="appkey" value="76726570-4D6A-11DD-A13E-BBF0E7C82D56">
+				<input type="hidden" name="action" value="drivingdirection">
+				<input type="hidden" name="uid" value="{{{uid}}}"
+				<input type="hidden" name="template" value="drivingdirectionresult">
+				</form>
+			</td>
+		<tr>
+			<td>Destination Address</td>
+		</tr>
+		<tr>
+			<td>{{{name}}}</td>
+    		<tr>
+        		<td>{{{address}}}</td>
+    		</tr>
+    		<tr>
+			<td>{{{city}}}, {{{state}}}&nbsp;&nbsp;{{{postalcode}}}
+			</td>
+		</tr>
+	</table>
+    </tr>
+    </table>
+</div>
+</body>
+</html>
+

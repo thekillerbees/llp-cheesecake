@@ -1,0 +1,155 @@
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	include ../global/head
+	// TODO: we need to specify a platform class on the body
+	body(class="is-#{platform} fixed fixed-color fixed-always")
+		include ../global/header
+		include ../global/menu
+		.outer-wrap
+			// START : WRAPPER
+			.wrapper
+				include ../modules/content-location-header
+				.container
+					// START : MAIN CONTAINER
+					#mainContainer.main-container
+						// START : PAGE CONTENT
+						#mainContent.main-content
+							// TODO: Everything inside "#mainContent" will be repopulated by Backbone
+							include ../modules/content-location-navigation
+							.content-column
+								if platform != "mobile"
+									// TODO: Only share on desktop/tablet
+									.heading-share.share-this
+										// TODO: .share-action button triggers .share-active on .share-this
+										.share-action Share
+										// TODO: .share-print should trigger page print
+										a(href="javascript:window.print()").share-print Print
+										.share-social-wrapper
+											ul.share-social
+												li.share-email
+													a(href="#") Email
+												li.share-mobile
+													a(href="#") Mobile
+										h2#restaurantdetails.content-heading Winter Park Location
+								else
+									// TODO: No sharing on mobile
+									h2#restaurantdetails.content-heading Winter Park Location
+
+								ul.breadcrumbs
+									li
+										a(href="/location-listing") Select a State
+									li
+										a(href="/location-listing") Florida (FL)
+									li
+										a(href="/location-listing") Winter Park
+									li
+										a(href="/location-listing") 520 N. Orlando Avenue
+
+								.content-split
+									.location-info
+										strong.small-title Address
+										p
+											|520 North Orlando Avenue
+											br 
+											|Winter Park, FL 32789
+										p
+											|407-644-4220
+									.location-info
+										if platform == "desktop"
+											// TODO: On desktop, show Get Directions
+											strong.small-title Get directions from:
+											.text-submit-wrapper
+												input(type="text",value="Orlando, FL 32803",placeholder="Enter an address")
+												button#getDirections Go
+										else
+											// TODO: On tablet/mobile, button launches native Maps app
+											a.btn(href="#") View Map
+								
+								include ../modules/content-slider
+
+								hr
+
+								// TODO: br's in .time-table are hidden on desktop but used on mobile
+								strong.small-title Hours of Operation
+								table.time-table
+									tr
+										td Mon&nbsp;-&nbsp;Thu:
+										td
+											|11:15AM - 11:00PM 
+											br
+											|(bakery and bar close at 11:30PM)
+									tr
+										td Fri&nbsp;-&nbsp;Sat:
+										td
+											|11:15AM - 12:00AM 
+											br
+											|(bakery and bar close at 12:30AM)
+									tr
+										td Sun:
+										td
+											|11:15AM - 11:00PM 
+											br
+											|(bakery and bar close at 11:30PM)
+								
+								hr
+
+								strong.small-title Location
+								p Located in Winter Park Village. Next to Regal Cinemas.
+
+								strong.small-title Parking
+								p Valet and self-parking are available.
+
+								strong.small-title Patio Seating
+								p Patio seating is available with heaters, music, ceiling fans and "misters" for those dry warm days and nights in the desert.
+
+								strong.small-title Special Menus
+								ul
+									li Braille Menu
+									li Large Print Menu
+
+								strong.small-title Large Parties
+								p We can easily accomodate large parties.
+
+								hr
+
+								strong#ourmenu.small-title Our Menu
+								p The Cheesecake Factory menu features more than 200 menu selections made in-house each day, using only the highest quality ingredients, which combines to create our remarkable tastes.
+								a.btn(href="#") View Our Menu
+
+								hr
+
+								strong#togo.small-title To Go
+								p
+									|Need your order "To Go?" Try our Curbside To-Go Service!
+									br
+									|It's as easy as 1, 2, 3!
+								ol
+									li Call in to place your order.
+									li When you arrive to pickup your order, Drive up to our special Curbside To-Go Parking spaces, and call our Curbside Pickup line at 407-644-5199 to let us know you've arrived.
+									li Your food will be delivered right to your car, and you'll be on your way!
+								
+								hr
+
+								strong#takeout.small-title Take Out
+								p For your convenience our entire menu of more than 200 selections is available for Take Out! You may place and pick up Take Out orders at our Bakery counter.
+								a.btn(href="#") Take Out Menu
+								
+								hr
+
+								strong#catering.small-title Catering
+								p 
+									|Something for everyone at your office, party or home!
+									br
+									|At The Cheesecake Factory we like to celebrate big. Now you can bring the celebration to your home, office or special event with our delicious catering selections!
+								a.btn(href="#") Catering Menu
+
+						// END : PAGE CONTENT
+					// END : MAIN CONTAINER
+			include ../global/footer
+			// END : WRAPPER

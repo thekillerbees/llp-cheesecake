@@ -1,0 +1,175 @@
+/* ==========================================================================
+	 FOOTER
+	========================================================================== */
+.footer {
+	background-color: $footerBgColor;
+	color: $footerTextColor;
+	position: relative;
+	text-align: center;
+	z-index: 100;
+	@if ($platform != mobile) {
+		height: 100px;
+		left: 0;
+		padding: 32px 0;
+		.container {
+			min-width: $tablet;
+		}
+		.show-nav & {
+			box-shadow: rgba(0, 0, 0, 0.12) 1px 0 9px 2px;
+		}
+	} @else {
+		.container {
+			padding: 0 0 25px;
+			position: relative;
+		}
+	}
+	a:hover,
+	a:active {
+		color: $footerHoverColor;
+	}
+}
+.footer-buttons {
+	border-bottom: 2px solid #260a05;
+	font: $fontWeightRegular 16px/40px $themeFont;
+	height: 40px;
+	margin: 0 0 17px;
+	text-transform: uppercase;
+	li {
+		float: left;
+		height: 40px;
+		width: 50%;
+		&:first-child {
+			border-right: 2px solid #260a05;
+		}
+		a {
+			display: block;
+			height: 100%;
+			width: 100%;
+			&:before {
+				font-size: 18px;
+				margin-right: 8px;
+				position: relative;
+				top: 1px;
+			}
+		}
+	}
+}
+.footer-text {
+	display: inline-block;
+	vertical-align: top;
+}
+.footer-links,
+.copyright {
+	font: $fontWeightRegular 14px/14px $themeFont;
+	@if ($platform != mobile) {
+		height: 14px;
+		text-align: left;
+	} @else {
+		text-align: center;
+	}
+}
+.copyright p {
+	@if ($platform != mobile) {
+		@include transition(all $transitionSpeed);
+	} @else {
+		padding: 15px 0 0;
+	}
+}
+.footer-links {
+	margin: 0 0 8px;
+	text-transform: uppercase;
+	@if ($platform != mobile) {
+		margin: 0 0 8px;
+	} @else {
+		margin: 0 0 15px;
+	}
+	li {
+		@if ($platform != mobile) {
+			float: left;
+		} @else {
+			display: inline-block;
+		}
+		&:before {
+			content: "|";
+			@if ($platform != mobile) {
+				padding: 0 9px;
+			} @else {
+				padding: 0 8px 0 6px;
+			}
+		}
+		&:first-child {
+			&:before {
+				content: "";
+				padding: 0;
+			}
+		}
+	}
+}
+.footer-social {
+	vertical-align: top;
+	@if ($platform != mobile) {
+		display: inline-block;
+		height: 36px;
+		padding: 3px 0;
+		width: 252px;
+	} @else {
+		display: block;
+		height: 30px;
+		margin: 0 0 20px;
+	}
+	a {
+		position: relative;
+		text-indent: -9999px;
+		width: 30px;
+		height: 30px;
+		@if ($platform != mobile) {
+			display: block;
+			float: left;
+			margin: 0 6px;
+		} @else {
+			display: inline-block;
+			margin: 0 0 0 34px;
+		}
+		&:before {
+			position: absolute;
+			font-size: 30px;
+			text-indent: 0;
+			top: 0;
+			left: 0;
+		}
+	}
+	li {
+		@if ($platform == mobile) {
+			display: inline-block;
+		}
+		&:first-child {
+			a {
+				margin-left: 0;
+			}
+		}
+		&:last-child {
+			a {
+				margin-right: 0;
+			}
+		}
+	}
+}
+@if ($platform != mobile) {
+	@include tablet {
+		.footer-links,
+		.copyright {
+			font-size: 13px;
+		}
+		.footer-social {
+			padding: 5px 0;
+			width: 210px;
+			a {
+				width: 25px;
+				height: 25px;
+				&:before {
+					font-size: 25px;
+				}
+			}
+		}
+	}
+}

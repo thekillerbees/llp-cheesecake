@@ -1,0 +1,33 @@
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	include ../global/head
+	// TODO: we need to specify a platform class on the body
+	// TODO: except for mobile, fill-screen class is on the body for home/menu/locations
+	// TODO: fixed, fixed-color, fixed-always on locations body to keep header sticky
+	if platform != "mobile"
+		- bodyClasses = "is-" + platform + " fixed fixed-color fixed-always fill-screen"
+	else
+		- bodyClasses = "is-mobile fixed fixed-color fixed-always"
+	body(class=bodyClasses)
+		include ../global/header
+		include ../global/menu
+		.outer-wrap
+			// START : WRAPPER
+			.wrapper
+				.container
+					// START : MAIN CONTAINER
+					#mainContainer.main-container
+						// START : PAGE CONTENT
+						#mainContent.main-content
+							iframe.locations-frame(src="/html/#{platform}/modules/locations-content.html",frameBorder="0",scrolling="no")
+							//include ../modules/locations-content
+						// END : PAGE CONTENT
+					// END : MAIN CONTAINER
+			include ../global/footer
+			// END : WRAPPER

@@ -1,0 +1,54 @@
+// START : /global/footer.html
+#footer.footer
+	if platform == "mobile"
+		// TODO: Menu/Locations footer buttons are only on mobile
+		ul.footer-buttons
+			li
+				a(href="#").head-menu
+					span Menu
+			li
+				a(href="/locations/").head-locations
+					span Locations
+	.container
+		ul.footer-social
+			li
+				a(href="#",target="_blank").social-facebook Facebook
+			li
+				a(href="#",target="_blank").social-twitter Twitter
+			li
+				a(href="#",target="_blank").social-pinterest Pinterest
+			li
+				a(href="#",target="_blank").social-instagram Instagram
+			li
+				// TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp
+				a(href="#",target="_blank").social-email Newsletter
+		.footer-text
+			if platform == "mobile"
+				// Mobile has two lines of links in footer
+				ul.footer-links
+					li
+						a(href="#") Contact Us
+					li
+						a(href="#") Investors
+					li
+						a(href="#") Terms of Use
+				ul.footer-links
+					li
+						a(href="#") Privacy Policy
+					li
+						a(href="#") Careers
+			else
+				ul.footer-links
+					li
+						a(href="#") Contact Us
+					li
+						a(href="#") Investors
+					li
+						a(href="#") Terms of Use
+					li
+						a(href="#") Privacy Policy
+					li
+						a(href="#") Careers
+			.copyright
+				p &copy; 2002-2014 TCF Co. LLC. All Rights Reserved.
+// END : /global/footer.html

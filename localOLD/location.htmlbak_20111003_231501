@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head> 
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+	<title>Store Location</title>
+	
+	
+		
+<link href="http://www.highstreetad.com/abbey/css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://www.highstreetad.com/abbey/css/jd.gallery.css" type="text/css" media="screen" />
+
+
+	
+	<link rel="stylesheet" href="css/proto_nw_new.css" type="text/css" media="all">
+    <link type="text/css" href="css/bubble_location.css" rel="stylesheet" media="all" >
+    <link rel="stylesheet" href="css/local/location.css" type="text/css" media="all">
+    <link type="text/css" href="http://static.where2getit.com/w2gi/css/style.css" rel="stylesheet" media="all" >	
+	<link type="text/css" href="http://static.where2getit.com/w2gi/css/litbox.css" rel="stylesheet" media="all" >
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	 
+   
+
+<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.76/prototype.js"></script>
+<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.76/W2GI_core.js"></script>
+<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.76/W2GI_maps.js"></script>	
+<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.76/W2GI_slippymap.js"></script>
+	
+<script> 
+		function loadSlippyMap() {
+			var options = {
+				geoip: true,
+				ddpanel : 'panel',
+				formdataid : 'getlist',
+				theme: 'css/theme.css',
+				location_address_id : 'location_address',
+				locatorType : 'locator',
+                routeStyle: {   strokeWidth: 8,
+                                strokeOpacity: 0.5,
+                                strokeColor: '#0000FF' },
+				controls: [	new OpenLayers.Control.PanZoomBar(), 
+							new OpenLayers.Control.Navigation()],
+				scales: [35000000, 20000000, 10000000, 4000000, 1000000, 500000,150000,100000,
+                                            50000, 25000, 15000, 6000 ]
+			};
+            OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
+			OpenLayers.ImgPath='/w2gi/images/zoombar/';
+			SlippyMap.load('map', 'local_comp_panel', options);
+            SlippyMap.locator.smap.map.setCenter( new OpenLayers.LonLat( -98.15261705337687, 40.53681640918523 ), 0 );		
+		}
+		function clear_search_directions_box(i) {
+                                if (i.value == 'Enter street address, city & state, OR Zip Code') {
+                                        i.value = '';
+                                }
+                                if (i.value == 'Start address') {
+                                        i.value = '';
+                                }
+                                if (i.value == 'End address') {
+                                        i.value = '';
+                                }
+                        }
+                function printprepare() {
+                	return; 
+		}
+		
+				function showHideMap () {
+					var mapButton = $('showHideMapButton');
+					var mapContainer = $('map_image_cont');
+					if (mapContainer.getStyle('display') == 'none') {
+						mapButton.src = "images_new/hide.jpg";
+					}
+					else {
+						mapButton.src = "images_new/unhide.jpg";
+					}
+				}
+
+	</script>
+	
+</head>
+
+<body onload="loadSlippyMap()" onunload="SlippyMap.unload();">
+	<center>
+		
+	<xml id="application_data" style="display: none;">
+		<root>
+		<appkey>4ECB212A-6D70-11DE-BC28-64B83B999D57</appkey>
+		<ajaxurl>ajax?</ajaxurl>	
+				<inputforms>			
+					<inputform>    
+						<formdata id="getlist">     
+						<objectname>StoreLocator</objectname>
+						<where>
+							<uid><eq></eq></uid>
+						</where>    
+						<geolocs>         
+							<geoloc>      
+								<addressline></addressline>     
+							</geoloc>        
+						</geolocs>                             
+						<geoip></geoip>           
+						</formdata>   
+					</inputform>
+
+					<formdata id="reversegeocoder">
+						<geolocs>
+							<geoloc>
+
+								<latitude></latitude>
+								<longitude></longitude>
+								<country></country>
+							</geoloc>
+						</geolocs>
+					</formdata>		
+				</inputforms>	
+				
+                <sources>
+					<layer>
+						<name>SlippyMap W2GI</name>
+						<imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles, http://st3.slippymap.com/tiles, http://st4.slippymap.com/tiles</imageurl>
+						<options>{map: 'smap-01'}</options>
+					</layer>
+					<layer>
+						<name>SlippyMap Navteq</name>
+						<imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles, http://st3.slippymap.com/tiles, http://st4.slippymap.com/tiles</imageurl>
+						<options>{map: 'smap-02'}</options>
+					</layer>
+				</sources>
+
+		</root>
+	</xml>
+	
+	
+	<div id="templates" style="display: none;">
+			
+		<!-- online dealer template start  -->
+		<table id="collection_etailer" class="online_table" odd_row_class="odd" even_row_class="even" active_row_class="active" style="display: none;width: 100%;position: relative;" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        <thead>
+	        	<!--<tr class="table_title">
+	        		<td colspan=10 style="border: 1px solid #d8d3cf;width: 100%;background: url(images/table_header_shade.jpg) repeat-x;height: 33px;padding-left: 10px;text-align: left;">SHOP ONLINE</td>
+	        	</tr>-->
+                <tr class="header_row">
+                    <td style="width: 25%;">
+                    Store
+                    </td>
+                    <td style="width: 25%;">
+                    Instock
+                    </td>
+                    <td style="width: 25%;">
+                    Price
+                    </td>
+                    <td style="width: 25%;">
+                    &nbsp; 
+                    </td>
+                  </tr>
+	        </thead>
+	        <tbody>
+                <tr class="table_data">
+                    <td style="padding: 5px;"><center><div style="padding-left: 3px;border: 1px solid #ccc; width: 100; height: 100; background: #fff url(#{STOREIMAGE}) no-repeat;position:relative;">&nbsp;</div></center><!-- <img src="#{STOREIMAGE}" img_url="#{STOREIMAGE}" onload="this.src=this.getAttribute('img_url');">#{STORENAME}--></td>
+                    <td class="in_stock">#{INSTOCK}</td>
+                    <td class="price">$#{PRICE}</td>
+                    <td><a href="#" link="#{BUYURL}" onclick="location.href=this.getAttribute('link')" ><span class="buy_img"><img src="images/buy.gif" /></span></a></td>
+               </tr>
+	        </tbody>
+		</table>
+		<!-- online dealer template end  -->
+		
+		<!-- icon template start  -->	
+		 <div id="default" class="icon" bubbleid="bubble" width="30" height="27" offsetx="-16" offsety="-28">
+
+              <img class="alpha" src="/w2gi/images/icons/pin1.png"/>
+              <div action="open_bubble" recnum="#{POINUM}">#{POINUM}</div>
+           </div>
+						
+			<div id="center_marker" class="icon" bubbleid="bubble" width="30" height="28"  offsetx="-15" offsety="-14">
+				<img class="alpha" src="/w2gi/images/icons/red-star.png"/>
+			</div>	
+        
+			<div id="ddstarticon" class="end_icon" height="38" width="27" offsetx="-16" offsety="-28">
+
+					<img class="alpha" src="/w2gi/images/icons/ddstartpin.png"/>
+			</div>			
+			<div id="ddendicon" class="end_icon" height="38" width="27" offsetx="-16" offsety="-28">
+
+				<img class="alpha" src="/w2gi/images/icons/ddendpin.png"/>
+			</div>		
+		<!-- icon template end  -->		
+		
+			
+                       <!-- bubble template start  -->
+                        <div id="bubble" offsetx="-105" offsety="-205" style="margin: 25px; width: 230px; height: 180px;">
+                                                               
+                                <img class="alpha bubble_close" src="/w2gi/images/spacer.png" />
+
+                                <!-- middle -->
+                                <img class="alpha mainbubble" src="/w2gi/images/bubble/popover/popover.png" />
+                                <div class="mainbubblecontent">
+                                        <div style="float:left; margin-right:5px;" ><img src="images/map_icon.png" border="0" /></div>
+										<div class="mainbubblelocationname">#{NAME}</div>
+                                        <div class="mainbubbletabcontent" >
+                                                <div class="tab_content activetabcontent">
+													
+												
+                                                    <div>#{ADDRESS1}</div>
+
+													<div>#{CITY}, #{STATE} #{PROVINCE} #{POSTALCODE}</div>	
+													<div>Phone: #{PHONE}</div>	
+													
+																
+						                              
+                                                	
+                                               </div>
+                                        </div>
+                                </div>
+
+			</div>
+
+			<!-- bubble template end -->	
+				
+	<!-- POI table template start -->			
+			<table id="collection_poi" odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="4">
+				<!-- <thead>
+					<tr class="poi">
+						<th colspan="2" style="text-indent: 5px; display: none;"><strong>#{COUNT}</strong> locations found in your area</th>
+					</tr>	
+				
+					<tr>
+						<th colspan="2" style="display: none;"><a class="prev_results" action="prev_results" href="javascript:void(0);">Prev</a><a class="next_results" action="next_results" href="javascript:void(0);">Next</a></th>
+
+					</tr>
+				</thead> -->
+
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<td style="font-size:11px;">
+							<a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a><br/>
+						</td>
+						
+					</tr>
+					<tr>
+						<td >	
+							#{ADDRESS1}<br/>
+							#{CITY}, #{STATE} #{POSTALCODE}<br/>
+							Phone:#{PHONE}<br/>						
+							
+						</td>
+						
+					</tr>
+					
+				</tbody>				
+			</table>	
+			<!-- POI table template end -->	
+			
+			<!-- Ambiguous address table template start -->			
+			<table id="collection_multiple_address" odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+					<tr>
+						<th>Select your city</th>
+					</tr>						
+				</thead>	
+				<tfoot><tr><td></td></tr></tfoot>				
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<td>
+							<a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE}#{PROVINCE} #{POSTALCODE}</a><br/>	
+							#{COUNTY}							
+						</td>		
+					</tr>	
+				</tbody>				
+			</table>	
+			<!-- Ambiguous address table template end -->		
+			<!--
+			<div id="ddstarticon">
+					<span style =" float:left; "  class="from_div2 addressline">
+						<span id="address_line1"></span>
+						<span id="address_city"></span>
+						<span id="address_state"></span>
+						<span id="address_zip"></span>
+					</span>
+			</div>
+			-->
+			<!-- Maneuvers table template start -->	
+			<table id="collection_maneuvers" odd_row_class="odd_DD" even_row_class="even_DD" active_row_class="active">
+				<thead>
+                     <tr style="$height: 38px;height:40px; background-color: #fff;">
+                           
+                            <th colspan="2" style="font-size: 12px; font-weight: normal;text-align: left;vertical-align:top;border-bottom:1px solid #999;  ">
+							  <!-- <span class="ddendpoint" style="width: 33px; float:left; padding-left: 5px;"></span> -->
+                                    <span style="font-weight: bold;float: left; padding-left: 20px;padding-right: 12px;padding-top:5px;">From:</span>
+									<span style ="font-weight: bold; float:left;  text-align: left;padding-top:5px;"  class="addressline">
+										<span class="address_line1"></span>
+								
+											<span class="address_city"></span>
+											<span class="address_state"></span>
+											<span class="address_zip"></span>
+										
+									</span>
+
+
+						</th>
+					</tr>
+				</thead>
+				<tfoot>  
+                	<tr style="height: 38px;background-color: #fff;">
+                           
+                        <th colspan="2" style="font-size: 12px; font-weight: normal;vertical-align:top;padding-top:7px; ">
+							  <!-- <span class="ddendpoint" style="width: 33px; float:left; padding-left: 5px;"></span> -->
+                              <span style="font-weight: bold;float: left; padding-left: 20px;padding-right: 12px;">To:</span> 
+							  <span style =" font-weight: bold;float:left; text-align: left;padding-top:0px;" class="addressline" >
+									<span class="address_line1"></span>
+
+										<span class="address_city"></span>
+										<span class="address_state"></span>
+										<span class="address_zip"></span>
+
+								</span>
+							<!-- <span style="text-align: left; font-weight: bold;float:left;width: 25px;height: 38px;padding-left: 15px;">Drive</span> -->
+							<br/><span style="font-weight: bold;text-align: left;float:left;height: 38px; padding-left:52px;padding-top:10px;">
+									<span style="font-weight:normal;">Total distance:</span> #{TOTAL_DISTANCE} miles &nbsp;&nbsp;&nbsp;&nbsp;  
+									<span style="font-weight:normal;">Total drive time:</span> #{TOTAL_TIME} minutes &nbsp;&nbsp;&nbsp;&nbsp; 
+									<a class="reverse_directions2" style="font-size: 12px;display:none;" onclick="
+									$('location_action').value = ($F('location_action') == 'From') ? 'To': 'From';
+									var ad1 = Form.getInputs($('driving_directions'), 'text', 'addressline')[0];
+									var ad2 = Form.getInputs($('driving_directions'), 'hidden', 'addressline')[0];
+									if($('location_action').value == 'From'){
+										$$('.icon_top').each(function(e){e.innerHTML = $('icon_top_store').innerHTML;});
+										$$('.icon_bottom').each(function(e){e.innerHTML = $('icon_bottom_store').innerHTML;});
+									}else{
+										$$('.icon_top').each(function(e){e.innerHTML = $('icon_bottom_store').innerHTML;});
+										$$('.icon_bottom').each(function(e){e.innerHTML = $('icon_top_store').innerHTML;});
+									}
+									
+									var ads = ($F('location_action') == 'From') ? [ad1, ad2]: [ad2, ad1];
+									var searchParams	= Form.serializeElements(ads, true);
+									var addrs = searchParams.addressline;
+									ace.directions.search(
+									$('panel')
+									,ace.xml.getFormData($('driving_directions'), 'drivingdirections')
+									,null,addrs,null
+									,SlippyMap.locator.directionsSearch.processResponse.bind(SlippyMap.locator.directionsSearch)
+									,{}
+									);
+									" href="javascript:void(0);">Get Reverse Directions</a>
+							</span>
+                        </th>
+                    </tr>
+                </tfoot>
+				<tbody>		
+					<tr recnum="#{POINUM}" style="">
+						<td style="border-bottom: 1px solid #999; font-size: 12px; padding-left:3px;vertical-align:top;padding-top:7px;width:25px;padding-bottom:7px; "><span style="padding-left: 3px;">#{RECNUM}. </span></td>
+						<td style="border-bottom: 1px solid #999;font-size: 12px; padding-left:3px;vertical-align:top;padding-top:7px;padding-bottom:7px; "> <span style="text-align: left;">#{TEXT}</span> &nbsp; <span style=" text-align: left;padding-right:3px;">#{DISTANCE} #{DISTANCEUOM}</span></td>
+					</tr>	
+				</tbody>				
+			</table>
+			<!-- Maneuvers table template end -->
+		</div>
+<!-- end templates -->
+	
+	
+<div id="container1" style="height:auto;">
+	<div id="main">
+		<div id="header">
+		<p class="header-text">The Northwest Flooring Authority</p>
+		</div><!--end header-->
+	
+	
+
+	<div id="content" style="padding-left:10px; background-color: #DECDAF;">
+		
+		
+		
+		
+
+<div id="page">
+		<form name="form1" onsubmit="return false;" style="height:0px;position:relative;padding:0px;margin:0px;">
+		
+			<xml style="display: none;">
+				<root>
+					<inputform>
+						<formdata id="onlineetailersearch">
+						    <accounts>
+						    		<account></account>
+						    </accounts>
+						    <products>
+						             <product>
+						                     <sku></sku>
+						                     <upc></upc>
+						                     <currency></currency>
+						             </product>
+						    </products>
+						</formdata>
+					</inputform>									
+				</root>					
+			</xml>
+			
+		</form>
+
+	<div id="dd_container">
+		<div style="float:right; margin-right:10px; margin-top:10px;">
+			<a class="store_name" onclick="window.print();pageTracker._trackEvent('Driving Directions', 'Print', '#{NAME}'); return false;" href="#">Print the page</a>
+		</div>
+		
+		<form id="driving_directions" autocomplete="off" >
+				<div id="direction_search">
+
+<table style="font-size:11px;">
+<tbody>
+<tr>
+	<td valign="top" colspan="2">
+		<div class="directions_title">Driving Directions</div>
+		<div style="margin-bottom:0px;">Enter your starting address </div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="text" id="startaddress" size="27" name="addressline" value="" class="zippy" style="font-size: 11px; width:220px; height:21px;" />
+					<input type="hidden"  name="addressline" id="location_address" value="" />
+					<input type="hidden"  name="country" id="location_country" value="" />
+					<input type="hidden"  name="lat" id="location_lat" value="" />
+					<input type="hidden"  name="lon" id="location_long" value="" />
+					<input type="hidden"  name="action" id="location_action" value="From" /> 
+
+	</td>
+	<td valign="top" >
+		<input id="driving_directions_button" type="submit" name="driving_directions"  value="Get Directions" onClick="pageTracker._trackEvent('Driving Directions', 'Get Directions', '#{NAME}');"/>
+
+	</td>
+</tr>
+</tbody>
+</table>
+
+<div class="divider"></div>
+				</div>
+				<xml style="display:none;">
+					<root>
+						<inputforms>							
+							<inputform>
+								<formdata id="drivingdirections">
+									<dataview>store_default</dataview>
+									<geolocs>
+										<geoloc>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+										<geoloc>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+									</geolocs>
+									<rid></rid>
+								</formdata>
+							</inputform>
+						</inputforms>	
+					</root>					
+				</xml>	
+				
+		</form>
+	</div>		
+<!-- panel start -->
+<div id="local_comp_panel">
+</div>	
+<!--<div id="location">-->
+	<div id="map_image_cont">
+	<div id="map" style=""></div>
+</div>
+	<div id="panel"></div>
+	<div id="footers" style="clear:both;">
+		<div id="footer" style="color:#000;">
+    				<a href="http://www.brandify.com" style="color:#333333;">Store Locator Software</a> by Brandify, Inc. Copyright &copy; 2010, All Rights Reserved.
+
+        </div>
+        <div id="navteqfooter">
+                <script type="text/javascript">
+                var d = new Date()
+                document.write(" <img src=http://direct.where2getit.com/navteq/logo_navtech_large.gif> ")
+                document.write(" &copy; Copyright ")
+                document.write(d.getFullYear())
+                document.write(" NAVTEQ Corp.  ")
+                </script>
+
+        </div>
+	</div>
+	<div id="search_bar_loc" style="display:none;">
+			<form id="product_search" autocomplete="off">
+				<input type="text" style="width:220px;" name="addressline" value="Enter Street Address, City, state OR Zip Code" class="addressentry"  />
+									<input id="search_button" type="submit" value="Search" name="search"/>
+
+			        <xml>
+						<root>
+							<inputform>    
+								<formdata id="getlist">        
+									<geolocs>         
+										<geoloc>      
+											<addressline></addressline>     
+										</geoloc>        
+									</geolocs>                             
+									<searchradius>2000</searchradius>        
+									<where>                         
+										<sku><eq></eq></sku>        
+									</where>                             
+								</formdata>   
+							</inputform>				
+						</root>					
+					</xml>									
+				</form>
+		
+	</div>
+
+
+<div id="online_comp_panel" >
+</div>	
+
+<img id="ajax_activity" style="display: none; z-index: 10000; position: absolute; top: 10px; right: 10px; width: 32px; height: 32px;" src="/w2gi/images/indicator.gif"/>
+ </div>
+ 
+ 
+ 
+ </div></div></div>
+ 
+ </center>
+ 
+ <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15759636-1");
+pageTracker._setDomainName(".abbeycarpet.com");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

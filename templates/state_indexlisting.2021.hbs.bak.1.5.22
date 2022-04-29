@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NV8ZGXZ');</script>
+        <!-- End Google Tag Manager -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>The Cheesecake Factory Restaurant Locations in {{{state_longname_pc}}}</title>
+        <meta name="description" content="{{{state_longname_pc}}} The Cheesecake Factory Restaurants. Find driving directions and local restaurant Information." />
+        <link rel="icon" href="//locations.thecheesecakefactory.com/2014/assets/images/global/favicon2.ico">
+        <meta name="viewport" content="width=device-width">
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name='format-detection' content='telephone=no' />
+        <link rel="canonical" href="{{{stateindex_url}}}" />
+        <link rel="stylesheet" type="text/css" href="/2021/css/header-footer-styles.css">
+        <link rel="stylesheet" type="text/css" href="/2021/css/custom-local.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="/w2gi/javascript/backbone/bb/lib/jquery.js"></script>
+        <!-- <script data-main="/w2gi/javascript/backbone/bb/dist/bones" src="/w2gi/javascript/backbone/bb/lib/require.js"></script> -->
+        <script type="application/ld+json">
+            {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                "@id": "{{{topindex_url_lc}}}",
+                "name": "Index"
+                }
+            }]
+            }
+        </script>
+        <script>
+            var W2GI = {
+                config : {
+                    appkey : '{{{appkey}}}',
+                    pageObserve: ['linktrack'],				
+                }
+            }
+        </script>
+    </head>
+    <body data-w2gi="locator" class="path-frontpage">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV8ZGXZ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        {{> 'header-include'}}
+        <main id="mainContainer" class="listings">
+            <h1 class="content-header-title">The Cheesecake Factory Locations In {{{state_longname_pc}}}</h1>
+            <nav aria-label="State Breadcrumb">
+                <ul class="breadcrumb">
+                    <li>
+                        <a class="ga_w2gi_lp" data-linktrack="Top index page" href="{{{topindex_url_lc}}}?templatename=index-2021" data-galoc="Cheesecake Factory - StatePage" data-gaact="Click_to_IndexPage">Select a Location</a> 
+                        <span aria-hidden="true">&gt;</span>
+                    </li>
+                    <li>
+                        {{{state_longname_pc}}} ({{{state}}}{{{province}}})
+                    </li>
+                </ul>
+            </nav>
+            <section class="state-links">
+                 <h2>Cities</h2>
+                {{#each contentlist_pc}}
+                   
+                    <ul class="state-list listing-wrap">
+                    {{#checkIf cities}}
+                        {{#each cities}}
+                            <li class="listing-card">
+                               
+                                    <a data-linktrack="City index page - {{{link_name}}}" class="listing-card-inner ga_w2gi_lp" href="{{{link}}}?templatename=city-2021" data-galoc="The Cheesecake Factory - StatePage" data-gaact="Click_to_CityPage">{{{link_name}}}</a>
+                            </li>
+                        {{/each}}
+                    {{/checkIf}}
+                    </ul>
+                {{/each}} 
+            </section>
+        </main>
+       {{> 'footer-include'}}
+        <script>
+          $(function(){
+            $('header span.burger').click(function (){
+              $('body').addClass('mobile-menu-open');
+            });
+            $('header span.burger-close').click(function (){
+              $('body').removeClass('mobile-menu-open');
+            });
+          });
+        </script>
+    </body>
+</html>

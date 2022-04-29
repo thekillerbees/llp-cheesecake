@@ -1,0 +1,530 @@
+<!doctype html>
+<!--[if IE 7]><html class="lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]--><head>
+<base href="http://mobile.where2getit.com/stripesstores">
+	<meta http-equiv="Cache-Control" content="max-age-600" />
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Stripes Where2GetIt Store Locator</title>
+	<meta name="author" content="Third Wave Digital - www.thirdwavedigital.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Open+Sans:800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/stripesstores/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/stripesstores/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css" />		
+	<link rel="stylesheet" type="text/css" href="/w2gi/css/style210.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/w2gi/css/lightwindow.css" />
+	<!--[if lt IE 9]>
+	<script src="/stripesstores/js/vendor/selectivizr-min.js"></script>
+	<script src="/stripesstores/js/vendor/html5shiv.js"></script>
+	<![endif]-->   
+
+		
+<!-- Redirect if javascript is not supported by the browser -->
+<noscript>
+	<meta http-equiv="refresh" content="0; URL=wap.html" />
+</noscript>
+
+<TMPL_UNLESS NAME="ajax">
+	<meta http-equiv="refresh" content="0; URL=wap.html" />			
+</TMPL_UNLESS>
+		
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyABNyZK7U8Dbt6_grtNUWqEfcFBBl_vWEY&channel=cheesecake"></script>
+
+<script type="text/javascript" src="/w2gi/javascript/ace/2.1/prototype.js"></script>
+<script type="text/javascript" src="/w2gi/javascript/ace/2.1/W2GI_core.js"></script>
+<script type="text/javascript" src="/w2gi/javascript/ace/1.78/W2GI_mobile.js"></script>
+<script type="text/javascript" src="/stripesstores/js/helper.js"></script>
+		
+
+		<script type="text/javascript">
+			dd_search = null;
+
+			document.observe('dom:loaded', function() {
+				ace.mobile.initialize({
+					pageIDs : ['search_panel', 'more_info_panel', 'driving_directions_panel'],
+					map : {
+						gps : "my_location",
+						noCenterMarker : true,
+						noBubbles : true,
+						googleMapOptions : {
+							streetViewControl : false
+						}
+					},
+					touch : true
+				});
+
+				dd_search = new ace.mobile.search({
+					noCenterMarker : true,
+					map : ace.mobile._search.map, // this is the line gets changed when enabling the map when page is loaded; otherwise use (mapID: 'driving_map',)
+					formID : 'driving_directions',
+					panelID : 'directions_results',
+					gps : false,
+					noBubbles : true
+				});
+
+				var addrval = '';
+				$('endaddress').observe('focus', function(event) {
+					addrval = $('endaddress').value;
+				}.bind(this));
+				$('endaddress').observe('blur', function(event) {
+					if (addrval != $('endaddress').value) {
+						var lat = $('driving_directions').select('#dest_latitude');
+						var lon = $('driving_directions').select('#dest_longitude');
+						if (lat.length && lon.length) {
+							lat = lat[0];
+							lat.value = '';
+							lon = lon[0];
+							lon.value = '';
+						}
+					}
+				}.bind(this));
+
+				//added this to reset the map when it is shared between direction search and the other search form
+				$$('#driving_directions_panel #backbutton').invoke("observe", 'click', function(event) {
+					var recnum = $$('#driving_directions input#recnum')[0].value;
+					ace.mobile._search.map.clearMarkers();
+					ace.mobile._search.map.setMap(ace.table.data['results'].records);
+					ace.mobile._search.map.showOnMap(recnum);
+				});
+				////////////////
+			}.bind(this));
+
+			load_driving_directions_panel = function(recnum, panel) {
+				var poi = Object.clone(ace.table.getRecord(recnum, panel));
+				dd_search.map.clearMarkers();
+				dd_search.map.setMap([poi]);
+				dd_search.map.showOnMap(recnum);
+				var recnum_input = $('driving_directions').select('input#recnum');
+				if (recnum_input.length) {
+					recnum_input = recnum_input[0];
+					recnum_input.value = recnum;
+				}
+				$('endaddress').value = poi.ADDRESS1 + " " + poi.CITY + ", " + poi.STATE + ", " + poi.POSTALCODE;
+				var lat = $('driving_directions').select('#dest_latitude');
+				var lon = $('driving_directions').select('#dest_longitude');
+				if (lat.length && lon.length) {
+					lat = lat[0];
+					lat.value = poi.LATITUDE;
+					lon = lon[0];
+					lon.value = poi.LONGITUDE;
+				}
+				ace.table.data['directions_results'] = {
+					records : [],
+					options : {}
+				};
+				ace.table.addRecord(poi, 'directions_results');
+				$('directions_results').update('');
+				dd_search.bubbleSearch($('driving_directions'), true, 1);
+			}
+		</script>
+
+		
+	</head>
+	<body onload="ace.click.pageObserve(['linktrack']);">
+	
+	<div id="w2gi_wrapper">
+	
+		<!-- client header starts here -->
+		
+		
+		<!-- client header ends here -->
+		
+		
+		<xml id="application_data">
+			<root>
+			
+		        <appkey>4EEBBA66-6D70-11DE-BC28-64B83B999D57</appkey>
+				<ajaxurl>ajax?</ajaxurl>
+			</root>
+		</xml>
+		
+			
+		<!-- <img id="ajax_activity" /> -->
+		
+		<div id="ajax_activity">
+			<img />
+		</div>
+
+		
+		<div id="search-results-wrapper">
+			<div id="search-results">
+
+				
+				<form id="locator_search">
+					<input type="hidden" id="latitude" name="latitude" />
+					<input type="hidden" id="longitude" name="longitude" />
+				
+					<div class="float-left">
+						<button id="my_location" type="button" class="btn btn-blue"><i class="fa fa-crosshairs"></i> My Location</button>
+						<p>Or</p>
+					</div>
+					<div class="float-right">
+						<input type="text" name="addressline" id="addressline" value="" onfocus="clearfield(this);">
+						<button type="submit" class="btn btn-clear"><i class="fa fa-search"></i></button>
+					</div>
+				
+					<ul>
+						<li class="active list_view_button" onclick="hide_map();"><a href="javascript:void(0);"><i class="fa fa-list"></i> List View</a></li>
+						<li class="map_view_button" onclick="show_map();"><a href="javascript:void(0);"><i class="fa fa-map-marker"></i> Map View</a></li>
+					</ul>
+				
+					<button id="show_filters" type="button" class="btn btn-blue show-filters" onclick="$('filters').toggle(); $('show_filters').toggle(); $('close_filters').toggle();"><i class="fa fa-chevron-circle-down"></i> Filter these results</button>
+					<button id="close_filters" type="button" class="btn btn-blue show-filters" onclick="$('filters').toggle(); $('close_filters').toggle(); $('show_filters').toggle();" style="display: none;"><i class="fa fa-times"></i> Close</button>
+					<div id="filters" style="display: none;">
+
+							<div class="float-left">
+								<label><input type="checkbox" value="1" name="laredo_taco">Laredo Taco Company</label>
+								<label><input type="checkbox" value="1" name="truck_accessible">Truck Stop</label>
+								<label><input type="checkbox" value="1" name="carwash">Carwash</label>
+								<label><input type="checkbox" value="1" name="atm">ATM</label>
+								
+							</div>
+							<div class="float-right">
+								<label><input type="checkbox" value="1" name="lube">Lube Location</label>
+								<label><input type="checkbox" value="1" name="showers">Showers</label>
+								<label><input type="checkbox" value="1" name="laundry_room">Laundry Room</label>
+								<label><input type="checkbox" value="1" name="comingsoon">Coming Soon</label>
+							</div>
+						
+					</div><!-- end filters -->
+					
+					<xml>
+						<root>
+							<inputform>
+								<formdata id="locatorsearch">
+									<dataview>store_default</dataview>
+									
+									<order>_distance</order>
+									<softmatch>1</softmatch> 
+									
+									<limit>10</limit>
+									<atleast>1</atleast>
+									<searchradius>25|50|100|250|1000</searchradius>
+		
+									<geolocs>
+										<geoloc>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+										</geoloc>
+									</geolocs>
+									
+									<stateonly>1</stateonly> <!-- Allows search by entering a State Name in the address input -->
+									<nobf>1</nobf> <!-- Ambiguous City searches do not default to GEO-IP State -->
+									
+									<where>
+										<laredo_taco><eq></eq></laredo_taco>
+										<truck_accessible><eq></eq></truck_accessible>
+										<carwash><eq></eq></carwash>
+										<atm><eq></eq></atm>
+										<lube><eq></eq></lube>
+										<showers><eq></eq></showers>
+										<laundry_room><eq></eq></laundry_room>
+										<comingsoon><eq></eq></comingoon>
+									</where>
+		
+								</formdata>						
+							</inputform>									
+						</root>	
+					</xml>
+				</form>
+				
+				
+				<!--<div id="results">-->
+				<ol id="results">
+				</ol>
+				<!--</div>-->
+				
+			</div><!-- end search-results -->
+		</div><!-- end search-results-wrapper -->
+		
+		<div id="more_info_panel">
+			<ul id="more_info_results">
+			</ul>
+		</div><!-- end map_panel -->
+		
+		<!-- this div was moved to be outside of the more_info_panel div in order to show the map when page loaded -->
+		<div id="map_canvas" class="map_hidden">				
+		</div>
+		
+		
+		<div id="driving_directions_panel">
+		
+		
+			<div id="driving_map"></div>
+			
+			<form id="driving_directions">
+				<div style=''>
+					<div class="searchboxBorder">
+						Start<br/>
+						Enter address  <span id="useCurrentLoc">or <a href="javascript:void(0);">Use Current Location</a></span>
+						<br/>
+						<input id="startaddress" name="addressline" type="search" placeholder="Enter your starting address" />
+					</div>
+					<div class="searchboxBorder">
+						End<br/>
+						<input id="endaddress" name="addressline" type="search" placeholder="End" />
+						<input type="hidden" name="recnum" id="recnum" /> 
+						<input type="hidden" name="dest_latitude" id="dest_latitude" />
+						<input type="hidden" name="dest_longitude" id="dest_longitude" />
+						
+						<!-- <input id="search" name="search" type="image" src="images/btn_go_new.png" value="" /> -->
+						
+						<input id="search" name="search" type="submit" value="Get Directions"/>
+					</div>
+					
+				</div>
+				<xml>
+					<root>
+						<inputforms>
+							<inputform>
+								<formdata id="drivingdirections">
+									<dataview>store_default</dataview>
+									<geolocs>
+										<geoloc>
+											<address1></address1>
+											<city></city>
+											<state></state>
+											<province></province>
+											<postalcode></postalcode>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+										<geoloc>
+											<address1></address1>
+											<city></city>
+											<state></state>
+											<province></province>
+											<postalcode></postalcode>
+											<addressline></addressline>
+											<longitude></longitude>
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+									</geolocs>
+								</formdata>
+							</inputform>
+						</inputforms>
+					</root>
+				</xml>
+			</form>
+			<ul id="directions_results">
+			</ul>
+			<div id="backbutton">
+					<a href="javascript:void(0);">Back</a>
+			
+			</div>
+			
+			
+			
+		</div>
+			
+		<div></div>
+		
+		
+		<div id="templates">
+
+			<!-- icon template start, you can use client's icon here. You may need to modify the .number class in the mobile css file for the appearance of the number -->	
+           	<div id="poi_icon">
+            	<span class="number" onclick="get_more_info('#{POINUM}');"><strong>#{POINUM}</strong></span><img id="icon" class="alpha" src="/stripesstores/images/map-tools-location-icon.png"/>
+			</div>					
+			<!-- icon template end  -->
+
+			<!-- POI template start -->
+			<ul id="collection_poi">
+
+				<ul class="ul_head">
+				<li class="result_count">
+					<div id="matches-found">
+						<img alt="" src="images/stripes-symbol.png">
+						<p>#{COUNT} Locations Nearby</p>
+					</div>
+				</li>
+				</ul>
+
+				<ul class="ul_body">
+
+					<li><b>#{NAME}</b><br/>
+						#{ADDRESS1}<br>
+						#{CITY}, #{STATE} #{POSTALCODE}<br>
+						<a href="tel:#{PHONE}">#{PHONE}</a><br>
+						#{_DISTANCE} miles<br>
+						<a href="javascript:void(0);" onclick="get_more_info('#{POINUM}');"><i class="fa fa-info-circle"></i> Store Details</a> | <a href="http://maps.apple.com/?daddr=#{ADDRESS1}, #{CITY} #{STATE} #{POSTALCODE}" target="_blank"><i class="fa fa-map-marker"></i> Directions</a>
+						
+						<img alt="Laredo Taco Company" src="images/laredo-taco-company-logo.png" class="hide_#{LAREDO_TACO}">
+					
+					</li>
+				</ul>
+			</ul>
+			<!-- POI template end -->
+			
+			<!-- multiple address template start -->
+			<ul id="collection_multiple_address">
+				<ul class="ul_head">
+				<li class="result_count">
+					<div id="matches-found">
+						<img alt="" src="images/stripes-symbol.png">
+						<p>Did you mean:</p>
+					</div>
+				</li>
+				</ul>
+				<ul class="ul_body">
+					<li recnum="#{POINUM}" action="search_address">
+						<a href="javascript:void(0);">
+							<span>#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}</span>
+						</a>
+					</li>
+				</ul>
+			</ul>
+			<!-- multiple address template end -->
+			
+			<!-- bubble template start  -->
+            <div id="bubble">
+				
+			</div>
+			<!-- bubble template end -->
+			
+			<!-- more info template start -->
+			<ul id="collection_more_info">
+				<ul class="ul_body">
+					<li>
+						<div id="map-bubble">
+							<button class="btn btn-clear close-bubble" type="button" onclick="back_to_results();"><i class="fa fa-times-circle"></i></button>
+							<div class="float-left">
+								<img alt="Stripes" src="images/stripes-logo.png">
+								<img alt="Laredo Taco Company" src="images/laredo-taco-company-logo.png" class="hide_#{LAREDO_TACO}">
+							</div>
+							<div class="float-right" style="margin: 0 0 20px 0;">
+								<address><b>#{NAME}</b><br/>
+									#{ADDRESS1}<br>
+									#{CITY}, #{STATE} #{POSTALCODE}<br>
+									<a href="tel:#{PHONE}">#{PHONE}</a><br>
+									
+								</address>
+								<a style="margin: 0 0 0 10px" href="http://maps.apple.com/?daddr=#{ADDRESS1}, #{CITY} #{STATE} #{POSTALCODE}" target="_blank"><i class="fa fa-map-marker"></i> Driving Directions</a>
+							</div>
+							<div class="clearfix"></div>
+							<p>Store Details</p>
+							<div id="store-details">
+								<img alt="Truck Accessible" src="/stripesstores/images/truck-accessible.png" class="hide_#{TRUCK_ACCESSIBLE}">
+								<img alt="Car Wash" src="/stripesstores/images/car-wash.png" class="hide_#{CARWASH}">
+								<img alt="ATM Machine" src="/stripesstores/images/atm-machine.png" class="hide_#{ATM}">
+								<img alt="Lube Location" src="/stripesstores/images/lube-location.png" class="hide_#{LUBE}">
+								<img alt="Shower Facilities" src="/stripesstores/images/shower-facilities.png" class="hide_#{SHOWERS}">
+								<img alt="Laundry Facilities" src="/stripesstores/images/laundry-facilities.png" class="hide_#{LAUNDRY_ROOM}">
+							</div>
+							<p>Promotions</p>
+							<img alt="Store Promotion" src="images/store-promo-sample.jpg" id="store-promo">
+						</div>
+					</li>
+				</ul>
+			</ul>
+			<!-- more info template end -->
+			
+			<!-- maneuvers start -->
+			<div id="collection_maneuvers">
+				<div class="div_head">
+					<li class="textbox">
+					<span>Directions</span><br/>
+						Total distance: #{TOTAL_DISTANCE} #{DISTANCE_UNIT}<br/>
+						Total time: #{TOTAL_TIME} #{TIME_UNIT}
+					</li>
+					<li class="textbox">
+						<div>
+							<strong>From (A): </strong><br>
+							<div class="addressline">
+								<div class="address_line1"></div>
+								<div>
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+									<span class="address_zip"></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="div_foot">
+					<li class="textbox">
+						<div>
+							 <strong> To (B):</strong><br>
+							<div class="addressline">
+								<div class="address_line1"></div>
+								<div>
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+									<span class="address_zip"></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="div_body">
+					<li class="menu" num="#{ID}" action="show_segment" page="driving_directions_panel">
+						<div>#{ID}.</div>
+						<div>#{TEXT} #{DISTANCE} #{DISTANCEUOM}</div>
+					</li>
+					<div class="maneuver_pois" id="maneuver_#{ID}">
+						
+					</div>
+				</div>
+			</div>
+			<!-- maneuvers end -->
+			
+			<!-- center marker start -->
+			<div id="center_marker">
+				<img id="icon" src="/w2gi/images/icons/red-star.png" anchorx="15" anchory="14" />
+			</div>
+			<!-- center marker end -->
+			
+			<!-- poi marker start -->
+			<!-- poi marker end -->
+			
+			<!-- error start -->
+			<ul id="error">
+				<li class="textbox">#{MESSAGE}</li>
+			</ul>
+			<!-- error end -->
+			
+			<!-- driving directions start icon start -->
+			<div id="ddstarticon">
+				<img id="icon" src="/w2gi/images/icons/ddstartpin.png"/>
+			</div>
+			<!-- driving directions start icon end -->
+			
+			<!-- driving directions end icon start -->
+			<div id="ddendicon">
+				<img id="icon" src="/w2gi/images/icons/ddendpin.png"/>
+			</div>
+			<!-- driving directions end icon end -->
+		</div>
+		
+		
+
+		<div id="footer">
+			
+			<div id="copyright">
+			  <br/>
+        			<script type="text/javascript">
+					var d = new Date()
+                        	document.write("&copy; ")
+					document.write(d.getFullYear())
+					document.write("<a href='http://www.brandify.com' target='_new'> Brandify</a>")
+                			document.write("")
+				</script>
+			</div>
+		</div>
+		
+<!-- client footer starts here -->
+
+
+	</div><!-- end w2gi_wrapper -->
+		
+	</body>
+</html>
+       

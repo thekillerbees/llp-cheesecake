@@ -1,0 +1,18 @@
+// START : /modules/content-header.html
+#contentNavigation.content-navigation
+	ul
+		li
+			a(href="/content").active Content [active]
+		li
+			a(href="/giftcards") Gift Cards
+		li
+			a(href="#") Page Link
+		li
+			a(href="#egiftcards") Anchor - E-Gift Cards
+		li
+			a(href="#giftcards") Anchor - Gift Cards
+script.
+	require(["modules/fixedNavigation"], function(FixedNavigation) {
+		return new FixedNavigation();
+	});
+// END : /modules/content-header.html

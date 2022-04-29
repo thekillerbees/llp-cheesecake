@@ -1,0 +1,914 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]--><!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+  <!-- START : /jade/partials/content-listing-alt.jade-->
+  <!-- TODO: the alternate class is needed when showing the listing modules in a grid-like fashion-->
+  <!-- END : /jade/partials/content-listing-alt.jade-->
+  <!-- START : /global/head.html-->
+  <head>
+   <title>The Cheesecake Factory Restaurant in {{{city}}}, {{{state}}}{{{province}}}</title>
+<meta name="description" content="Maps, driving directions and information for the {{{address1}}} restaurant location." />
+
+<!-- <link rel="canonical" href="{{{cityindex_url_lc}}}{{{clientkey}}}/" />-->
+
+<link rel="canonical" href="{{{stateindex_url}}}{{{lc city_for_url}}}-{{{clientkey}}}.html" />
+<!-- BHODATA = '$hourslabel1 $hoursfromto1, $hourslabel2 $hoursfromto2, $hourslabel3 $hoursfromto3, $hourslabel4 $hoursfromto4'; -->
+
+<meta property="fb:app_id" content="146822132031277" />
+<meta property="og:type" content="restaurant.restaurant" /> 
+<meta property="og:url" content="{{{cityindex_url}}}{{{clientkey}}}" />
+<meta property="og:title" content="The Cheesecake Factory" />
+<meta property="og:description" content="Official Cheesecake Factory Maps and Information for {{{city}}}, {{{state}}} Location." />
+<meta property="og:image" content="{{{imagename}}}" />
+<meta property="restaurant:contact_info:street_address" content="{{{address1}}}" />
+<meta property="restaurant:contact_info:locality" content="{{{city}}}" />
+<meta property="restaurant:contact_info:region" content="{{{state}}}" />
+<meta property="restaurant:contact_info:postal_code" content="{{{postalcode}}}" />
+<meta property="restaurant:contact_info:country_name" content="{{{country}}}" />
+<meta property="restaurant:contact_info:phone_number" content="{{{phone}}}" />
+<meta property="restaurant:contact_info:website" content="{{{cityindex_url}}}{{{clientkey}}}" />
+<meta property="place:location:latitude" content="{{{latitude}}}" />
+<meta property="place:location:longitude" content="{{{longitude}}}" />
+
+
+   <meta name="msvalidate.01" content="2B443241B7FA43147AF4ED2878EE8B89" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <link rel="icon" href="http://locations.thecheesecakefactory.com/2014/assets/images/global/favicon2.ico">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <!-- Stylesheet changes based on "desktop", "mobile", "tablet"-->
+    <link rel="stylesheet" href="http://locations.thecheesecakefactory.com/2014/assets/css/w2gi_local.2.css">
+    
+    <script src="http://locations.thecheesecakefactory.com/2014/assets/js/vendor/require.js"></script>
+    <script src="http://locations.thecheesecakefactory.com/2014/assets/js/desktop.js"></script>
+
+    <script>
+
+    function generate_directions(startaddress, endaddress){
+    alert(startaddress);
+    endaddress = endaddress.replace("#","poundsign");
+
+    if(bubbleValidate(startaddress)){
+      //$('directions_url').setAttribute('url', 'http://hosted.where2getit.com/cheesecake/directions_popup.html?form=driving_directions&addressline=' + startaddress + '&addressline=' + '{{{latitude}}},{{{longitude}}}' + '&addresslineDisplay=' + endaddress);
+
+        //performClick($('directions_url'));
+
+      var url = 'http://hosted.where2getit.com/cheesecake/directions_popup.html?form=driving_directions&addressline=' + startaddress + '&addressline=' + '{{{latitude}}},{{{longitude}}}' + '&addresslineDisplay=' + endaddress;
+      window.open(url,'website','toolbar=1,location=1,directories=1,status=1,menubar=1,scrollbars=1,resizable=1');
+    }
+  }
+
+
+  function bubbleValidate(bubbleInput) {
+    if(bubbleInput.length > 0 && bubbleInput.length < 5 && !isNaN(bubbleInput) ) {
+      //ace.util.alert("Please enter a valid ZIP code.");
+      alert ("Please enter a valid ZIP.");
+      return false;
+    }
+
+    if(bubbleInput.length == 0) {
+      alert("Please enter a starting address.");
+      return false;
+    }
+
+    return true;
+  }
+
+  function performClick(node) {
+    if((navigator.userAgent.match(/Safari/i))) {
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initMouseEvent('click', true, true, window);
+        node.dispatchEvent(evObj);
+      }
+      else {
+        node.click();
+      }
+  }
+
+    </script>
+
+    <style>
+    .discard{
+    display:none
+  }
+
+  .unmask {
+    display:block !important
+  }
+    .show {display:none;}
+    .show0 {display:none !important;}
+    .show0000, .show000000 {display:none;}
+
+    .showtakeout1 {
+      display: none;
+  }
+  .showcatering1 {display:none;}
+  .showcurb1 {display:none;}
+  .show11, .show111 {
+    display: block !important;
+  }
+  .deliveryBtn {
+    background-color: white;
+      border: 2px solid #bd945b;
+      border-bottom: 0;
+      border-radius: 3px 3px 0 0;
+      color: #fff8ed;
+      display: block;
+      font: 600 16px/40px 'proxima-nova', sans-serif;
+      height: 90px;
+      padding: 0;
+      width: 150px !important;
+      text-align: center;
+      text-transform: uppercase;
+      width: 300px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      -webkit-transition: all 0.25s;
+      -moz-transition: all 0.25s;
+      transition: all 0.25s;
+      margin: 0 auto;
+      margin-left:0;
+  }
+  .deliveryBtn img {
+    width: 65%;
+    height: 60px
+  }
+  .orderBtn {
+      margin: 0 10px 20px 0!important;
+      width: 150px !important;
+      float: none !important;
+  }
+  .doorDash {
+      height: 50px !important;
+      width: 85% !important;
+      margin-top: 15px;
+      margin-bottom: 5px;
+  } 
+
+  .grubhub {
+    margin-top:34px;
+  }
+
+  a:focus, input:focus, select:focus, iframe:focus, button:focus  {
+    outline:2px dotted #000!important;
+  } 
+
+  .iframefocus {
+      outline:2px dotted #000!important;
+  }
+  
+ /* .doorDash {
+  	height: 20% !important; 
+  	width: 30% !important;
+  }*/
+ .doortxt {
+  color: #c71e54;
+  left: 255px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  z-index: 99;
+}
+
+.doortxt2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.dishtxt {
+  color: #c71e54;
+  font-size: 34px;
+  font-weight: 900;
+  left: 140px;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 10px;
+  width: 350px;
+  z-index: 99;
+  text-shadow: 1px 2px #cdcdcd;
+}
+.dishtxt2 {
+	font-size:50px;
+}
+
+.online-div {
+  float:left;
+  margin-right:15px;
+}
+
+.remove {
+  display:none;
+}
+
+.hide_if_0 {display:none !important;}
+
+.instructions {
+    color: #880d53;
+    font: 400 16px/23px 'proxima-nova', sans-serif;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.vanish1 {
+  display:none;
+}
+
+.onlinetext, .onlinetext1 {
+  display:none;
+}
+
+.onlinetext11, .onlinetext111 {
+  display:inline;
+}
+    </style>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15758575-1']);
+  _gaq.push(['_setDomainName', 'thecheesecakefactory.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{{topindex_url_lc}}}",
+          "name": "Index"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "{{{stateindex_url_lc}}}",
+          "name": "{{{state}}}"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "{{{cityindex_url_lc}}}",
+          "name": "{{{city}}}"
+        }
+      }]
+    }
+    </script>
+
+
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"Restaurant",
+  "name": "The Cheesecake Factory",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"{{{address1}}}",
+    "addressLocality":"{{{city}}}",
+    "addressRegion":"{{{state}}}",
+    "postalCode":"{{{postalcode}}}",
+    "addressCountry":"{{{country}}}"
+  },
+"containedIn":"{{{mallname}}}",  
+"geo":{
+    "@type":"GeoCoordinates",
+    "latitude":{{{latitude}}},
+    "longitude":{{{longitude}}}
+  },
+"branchOf": {
+    "name":"The Cheesecake Factory",
+    "url": "http://www.thecheesecakefactory.com/"
+  },
+ "url":"{{{cityindex_url}}}{{{clientkey}}}",
+  "telephone":"{{{phone}}}",
+  "logo" : "http://hosted.where2getit.com/cheesecake/2014/assets/images/global/logo-tcf-desktop.png",
+  {{#checkIf  '(' imagename '!=' '' ')' }}
+  "image": "{{{imagename}}}",
+  {{else}}
+  "image": "http://www.thecheesecakefactory.com/media/locationImages/locations_Default.jpg",
+  {{/checkIf}}
+  "openingHoursSpecification":[
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Monday"
+      ],
+      "opens":"{{{BHO_MON_OPEN}}}",
+      "closes":"{{{BHO_MON_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Tuesday"
+      ],
+      "opens":"{{{BHO_TUE_OPEN}}}",
+      "closes":"{{{BHO_TUE_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Wednesday"
+      ],
+      "opens":"{{{BHO_WED_OPEN}}}",
+      "closes":"{{{BHO_WED_CLOSED}}}"
+    },
+    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Thursday"
+      ],
+      "opens":"{{{BHO_THU_OPEN}}}",
+      "closes":"{{{BHO_THU_CLOSED}}}"
+    },
+        {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Friday"
+      ],
+      "opens":"{{{BHO_FRI_OPEN}}}",
+      "closes":"{{{BHO_FRI_CLOSED}}}"
+    },    {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Saturday"
+      ],
+      "opens":"{{{BHO_SAT_OPEN}}}",
+      "closes":"{{{BHO_SAT_CLOSED}}}"
+    },
+        {
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":[
+        "Sunday"
+      ],
+      "opens":"{{{BHO_SUN_OPEN}}}",
+      "closes":"{{{BHO_SUN_CLOSED}}}"
+    }
+  ],
+  "menu": "http://www.thecheesecakefactory.com/menu/",
+  "acceptsReservations":"True",
+  "servesCuisine": [
+      "American style"
+   ]{{#checkIf doordashurl}},
+  "potentialAction":{
+    "@type":"OrderAction",
+    "target":{
+      "@type":"EntryPoint",
+      "urlTemplate":"{{{doordashurl}}}",
+      "inLanguage":"en-US",
+      "actionPlatform":[
+        "http://schema.org/DesktopWebPlatform"
+      ]
+    },
+    "deliveryMethod": [
+      "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+            "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+        ]   
+    {{else}}
+    {{/checkIf}}
+     
+  } 
+}
+</script>
+
+<style>
+iframe {
+   border:0;
+   width:800px;
+   height: 600px;
+}
+
+a {
+  /*color:#5d3327;
+  color: #876537;*/
+  color: #6D512C;
+}
+
+.footer-links a, .footer-social a {
+  color:#C5A06D;
+}
+
+.text-submit-wrapper button, .btn {
+  color:#fff;
+}
+
+.iframe {
+  border:0;
+  width:800px;
+  height: 0px;
+  display: none;
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
+.btn-primary:focus {background:#000000; color:#FFF; }
+
+/* the below is for addressing color contrast ADA AA level issue 11/03/2017*/
+
+.level-aa .highlight {
+	background-color: #6D522C !important;
+}
+
+.text-submit-wrapper button, .btn:hover{
+	background-color: #97724D !important;
+}
+
+.footer-links, .copyright {
+	color: #C5A06D;
+}
+
+.linkmenu li a {
+  color: #97724D !important;
+  font-weight:bold !important;
+}
+
+.linkmenu {
+  color:#97724D;
+}
+
+.content-navigation {
+  width:306px !important;
+}
+
+.curbside div{
+    color: #880d53;
+    font: 400 16px/23px 'proxima-nova', sans-serif;
+}
+
+.cheescakelogo {
+    margin-top: 15px;
+}
+
+.hide_if_0 {display:none !important;}
+</style>
+
+  </head>
+  <!-- END : /global/head.html-->
+  <!-- TODO: we need to specify a platform class on the body-->
+  <body class="is-desktop fixed fixed-color fixed-always">
+
+
+    <!-- START : /global/header.html-->
+    <div id="header" class="header">
+      <div id="mainHeader" class="main-header">
+        <div class="container">
+          <ul class="main-header-controls">
+          <a href="#main-content" class="sr-only sr-only-focusable btn-primary">Skip to main Content</a>
+          
+            <!-- Only show these menu items on desktop/tablet-->
+            <li><a  href="http://www.thecheesecakefactory.com/menu/" class="head-menu"><span>Menu</span></a></li>
+            <li><a  href="http://www.thecheesecakefactory.com/locations" class="head-locations"><span>Locations</span></a></li>
+            <li><a  href="https://thecheesecakefactory.cashstar.com/" class="head-giftcards"><span>Gift Cards</span></a></li>
+            <!-- <li><a href="http://jobs.thecheesecakefactory.com/" target="_blank" class="head-careers">
+            <span>
+              Careers</span></a></li> -->
+              
+            <li><a  href="http://jobs.thecheesecakefactory.com/" target="_blank" class="head-careers"><span>Careers</span></a></li>
+            <li><a  id="menuToggle" class="head-more"><span>More</span></a></li>
+          </ul>
+          <h1 class="site-logo"><a  href="http://www.thecheesecakefactory.com">The Cheesecake Factory</a></h1>
+        </div>
+      </div>
+    </div>
+    <script>
+      require(["modules/fixedHeader"], function(FixedHeader) {
+       return new FixedHeader();
+      });
+    </script>
+    <!-- END : /global/header.html-->
+    <!-- START : /global/menu.html-->
+    <div id="navigation" class="navigation">
+      <div class="navigation-inner">
+        <div id="closeNav" class="navigation-close"></div>
+        <ul class="navigation-social">
+            <li><a  href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook">Facebook</a></li>
+            <li><a  href="https://twitter.com/cheesecake" target="_blank" class="social-twitter">Twitter</a></li>
+            <li><a  href="http://www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest">Pinterest</a></li>
+            <li><a  href="http://instagram.com/cheesecakefactory#" target="_blank" class="social-instagram">Instagram</a></li>
+            <li>
+              <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a  href="http://www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email">Newsletter</a>
+            </li>
+        </ul>
+        <ul class="navigation-list">
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>About Us</span></div>
+              <ul class="navigation-links">
+                <li><a  href="http://www.thecheesecakefactory.com/about-us/">Our Story</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/about-us/awards/">Awards</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/about-us/our-recipes/">Our Recipes</a></li>
+
+              </ul>
+            </div>
+          </li>          
+          <li>
+            <div class="navigation-list-name">
+              <a  href="http://www.thecheesecakefactory.com/connect/got-questions/"><span>Got Questions?</span></a>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Connect</span></div>
+              <ul class="navigation-links">
+                <li><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" data-internal="17120">Email Sign-Up</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/connect/banquet-info" data-internal="14405">Banquet Information</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/connect" data-internal="27315">Contact Us</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Corporate Information</span></div>
+              <ul class="navigation-links">
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-information/" data-internal="26907">Global Development</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-information/press-room" data-internal="27123">Press Room</a></li>
+                <li><a  href="http://investors.thecheesecakefactory.com/" target="_blank">Investors</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-information/employment-policy" data-internal="19103">Employment Policy</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-information/terms-of-use" data-internal="10941">Terms of Use</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-information/privacy-policy" data-internal="10945">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Corporate Social Responsibility</span></div>
+              <ul class="navigation-links">
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-social-responsibility/" data-internal="27343">Charitable Giving</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-social-responsibility/culture/" data-internal="27344">Culture</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-social-responsibility/sustainability/" data-internal="27345">Sustainability</a></li>
+                <li><a  href="http://www.thecheesecakefactory.com/corporate-social-responsibility/sustainable-sourcing/" data-internal="27341">Sustainable Sourcing</a></li>
+              </ul>
+            </div>
+          </li>
+          <!--li style="display:none;">
+            <div class="navigation-list-name">
+              <a  href="http://www.thecheesecakefactory.com/kitchen-speaks"><span>Kitchen Speaks™</span></a>
+            </div>
+          </li-->
+          <li>
+            <div class="navigation-list-name">
+              <a  href="http://www.harryanddavid.com/h/bakery/cheesecake-factory?ref=TheCheesecakeFactory&amp;utm_medium=partnerships&amp;utm_source=cheesecake_factory" target="_blank"><span>Ship a Cheesecake</span></a>
+            </div>
+          </li>
+          <!--<li>
+            <div class="navigation-list-name"><a href="http://www.thecheesecakefactoryfeedback.tellsmg.com/"><span>Guest Survey</span></a></div>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+    <script>
+      require(["modules/accordion"], function(Accordion) {
+       return new Accordion();
+      });
+      require(["modules/headerNav"], function(HeaderNav) {
+       return HeaderNav.get();
+      });
+    </script>
+    <!-- END : /global/menu.html-->
+    <div class="outer-wrap">
+      <!-- START : WRAPPER-->
+      <div class="wrapper">
+        <!-- START : /modules/content-location-header.html-->
+        <div id="contentHeader" class="content-header">
+          <!-- TODO: iframe placeholder -->
+          <iframe id="mapframe" title="Map for {{{city}}}" src="http://hosted.where2getit.com/cheesecake/mapOnly.html?clientkey={{{clientkey}}}" onFocus="setFocus();" onBlur="removeFocus();" ></iframe>
+        </div>
+        <!-- END : /modules/content-location-header.html-->
+        <div class="container" id="main-content">
+          <!-- START : MAIN CONTAINER-->
+          <div id="mainContainer" class="main-container">
+            <!-- START : PAGE CONTENT-->
+            <div id="mainContent" class="main-content">
+              <!-- TODO: Everything inside "#mainContent" will be repopulated by Backbone-->
+              <!-- START : /modules/content-header.html-->
+              <!-- TODO: Add .navigation-anchors-only class to hide on mobile (if the navigation consists of only anchor links)-->
+              <div id="contentNavigation" class="content-navigation navigation-anchors-only">
+                <ul class="linkmenu">
+                  <li><a  href="#restaurantdetails">Restaurant Details</a></li>
+                  {{#checkIf  '(' COMINGSOON '!=' '1' ')' }}
+                  {{/checkIf}}
+                  {{#checkIf  '(' CURBSIDEFLAG '==' '1' ')' }}
+                  <li class="show{{{CURBSIDEPHONE}}}"><a  href="#togo">Curbside-to-go instructions</a></li>
+                  {{/checkIf}}
+                  {{#checkIf  '(' DOORDASHFLAG '==' '1' ')'   '||'   '(' ONLINEORDERING '==' '1' ')'   '||'   '(' GRUBHUB '==' '1' ')' }}
+                  <li><a  href="#delivery">Order Online</a></li>
+                  {{/checkIf}}
+                  <li class ="vanish{{{ONLINEORDERING}}}"><a  href="#takeout">Take Out</a></li>
+                  {{#checkIf  '(' CATERINGFLAG '==' '1' ')' }}
+                  <li class="vanish{{{ONLINEORDERING}}}"><a  href="#catering">Catering</a></li>
+                  {{/checkIf}}
+                </ul>
+              </div>
+              <script>
+                require(["modules/fixedNavigation"], function(FixedNavigation) {
+                 return new FixedNavigation();
+                });
+              </script>
+              <!-- END : /modules/content-header.html-->
+              <div class="content-column">
+                <!-- TODO: Only share on desktop/tablet-->
+                <div class="heading-share share-this">
+                  <!-- TODO: .share-action button triggers .share-active on .share-this-->
+                  <div class="share-action">Share</div>
+                  <!-- TODO: .share-print should trigger page print--><a href="javascript:window.print()" class="share-print">Print</a>
+                  <div class="share-social-wrapper">
+                    <ul class="share-social">
+                      <li class="share-email"><a  onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&amp;action=emaillocatorstart&template=emaillocatorstart2014&amp;uid={{{uid}}}','EMAIL','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');" href="javascript: void(0);">Email</a></li>
+                      <li class="share-mobile"><a  onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&amp;action=smslocatorstart&template=smslocatorstart2014&amp;uid={{{uid}}}','MOBILE','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');" href="javascript: void(0);">Mobile</a></li>
+                    </ul>
+                  </div>
+                  {{#checkIf  '(' COMINGSOON '==' '1' ')' }}
+                  <h1 id="restaurantdetails" class="content-heading">{{{name}}}</h1>
+                  {{/checkIf}}
+                  {{#checkIf  '(' COMINGSOON '!=' '1' ')' }}
+                    <h1 id="restaurantdetails" class="content-heading">{{{city}}} Location</h1>
+                  {{/checkIf}}
+                </div>
+                <div>
+                <ul class="breadcrumbs linkmenu">
+                  <li><a  href="{{{topindex_url}}}">Select a State</a></li>
+                  <li><a  href="{{{stateindex_url}}}">{{{state_longname_pc}}} {{#checkIf state}}({{{province}}}{{{state}}}){{/checkIf}}</a></li>
+                  <li><a  href="/{{{lc state}}}/{{{lc city_for_url}}}/">{{{city}}}</a></li>
+                  <li>{{{address1}}}</li>
+                </ul>
+                </div>
+
+                <div class="content-split">
+                  <div class="location-info" itemprop="address">
+                    <span itemprop="name" style="display:none;">The Cheesecake Factory</span>
+                    {{#checkIf  '(' MALLNAME '!=' '' ')' }}
+                      <span itemprop="containedIn" style="display: none;">{{{mallname}}}</span>
+                    {{/checkIf}}
+                   
+                    <div itemprop="address">
+
+                      <strong class="small-title">Address</strong>
+                      <p>
+                      <span class="hide{{{mallname}}}">{{{mallname}}}</span><br>
+                      <span itemprop="streetAddress">{{{address1}}}</span><br>
+                      <span itemprop="addressLocality">{{{city}}}</span>,
+                      <span itemprop="addressRegion">{{{state}}}</span>
+                      <span itemprop="postalCode">{{{postalcode}}}</span>
+                      <span itemprop="addressCountry">{{{country}}}</span>
+                      </p>
+
+                    </div>
+                    
+                    <p itemprop="telephone">{{{phone}}}</p>
+                <time itemprop="openingHours" datetime="Mo {{{BHO_MON_OPEN}}}-{{{BHO_MON_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="Tu {{{BHO_TUE_OPEN}}}-{{{BHO_TUE_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="We {{{BHO_WED_OPEN}}}-{{{BHO_WED_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="Th {{{BHO_THU_OPEN}}}-{{{BHO_THU_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="Fr {{{BHO_FRI_OPEN}}}-{{{BHO_FRI_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="Sa {{{BHO_SAT_OPEN}}}-{{{BHO_SAT_CLOSED}}}"></time>
+                <time itemprop="openingHours" datetime="Su {{{BHO_SUN_OPEN}}}-{{{BHO_SUN_CLOSED}}}"></time>
+              
+                      <!-- <div class="banner_wrapper" style="position:relative;">
+                      	<span class="dishtxt">over 250 dishes <br/> made fresh. <br/> <span class="dishtxt2">every day</span></span>
+                        <a  href="http://www.thecheesecakefactory.com/menu/" target="_parent"><img src="http://hosted.where2getit.com/cheesecake/2014/assets/images/global/local_page640X147-ada.jpg" title="Over 250 dishes made everyday" alt="Over 250 dishes made everyday"/></a>
+                      </div> -->
+                  </div>
+        		  
+                  <div class="location-info">
+                    <!-- TODO: On desktop, show Get Directions--><strong class="small-title">Get directions from:</strong>
+                    <div class="text-submit-wrapper">
+                      <!-- <input type="text" value="" placeholder="Enter an address">
+                      <button id="getDirections">Go</button> -->
+
+
+                    <form id="directions_mini_form" onSubmit="var url='http://hosted.where2getit.com/cheesecake/directions_popup.html?form=driving_directions&addressline=' + document.getElementById('directions_address_input').value + '&addressline=' + '{{{address1}}}, {{{city_pc}}} {{{state}}}{{{province}}} {{{postalcode}}}'; window.open(url,'website','toolbar=1,location=1,directories=1,status=1,menubar=1,scrollbars=1,resizable=1'); return false;">
+                      <label for="directions_address_input" style="position:absolute; left: -9999px;">Enter an Address</label>
+            <input type="text" id="directions_address_input" class="bubble_input" onFocus="this.value='';" value="{{{city}}} {{{state}}} {{{postalcode}}}" placeholder="Enter an address"/>
+            <button aria-controls="Driving Directions for The Cheesecake Factory location at {{{address1}}}, {{{city_pc}}} {{{state}}}{{{province}}} {{{postalcode}}}" id="getDirections" type="submit">Go</button>
+
+          </form>
+
+
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+                <!-- TODO: br's in .time-table are hidden on desktop but used on mobile--><strong class="small-title">Hours of Operation</strong>
+                <table class="time-table">
+                  <tr>
+                    <td>{{{hourslabel1}}}</td>
+                    <td>{{{hoursfromto1}}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{{hourslabel2}}}</td>
+                    <td>{{{hoursfromto2}}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{{hourslabel3}}}</td>
+                    <td>{{{hoursfromto3}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td>{{{hourslabel4}}}</td>
+                    <td>{{{hoursfromto4}}}</td>
+                  </tr>
+
+
+                </table>
+                {{#checkIf specialhoursnotes}}
+
+                  {{#checkIf specialhoursnotes '!=' 'Hi Nate, this is a test!'}}
+  	                <div class="hours-notes-wrapper">
+	                  	{{{specialhoursnotes}}}
+	                  </div>
+                  {{/checkIf}}
+
+	   	       		{{/checkIf}}
+
+                {{#checkIf  '(' HAPPYHOURMENU '!=' '' ')' }}
+                  <strong id="happyhour" class="small-title">Happy Hour</strong>
+                  <table class="time-table">
+                    <tr>
+                      <td>MON - FRI</td>
+                      <td>4:00PM - 6:00PM</td>
+                    </tr>
+                  </table>
+                  <a href="javascript: void(0);" onclick="window.open('{{{HAPPYHOURMENU}}}','menu','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');" class="btn" style="margin-top:10px">Happy Hour Menu</a>
+                {{/checkIf}}
+                <hr>
+                <strong class="small-title">Location</strong>
+                <p>{{{textlocation}}}</p>
+                <strong class="small-title">Parking</strong>
+                <p>{{{textparking}}}</p>
+                {{#checkIf patio '==' '0' }}
+                {{else}}
+                  <strong class="small-title">Patio Seating</strong>
+                  <p>{{{textpatio}}}</p>
+                {{/checkIf}}
+
+                {{#checkIf  '('  '(' ONLINEORDERING '!=' '' ')'   '||'   '(' DOORDASHFLAG '!=' '' ')'   '||'   '(' GRUBHUB '!=' '' ')'  ')' }}
+                              {{#checkIf  '('  '(' ONLINEORDERING '!=' '' ')'   '||'   '(' GRUBHUB '!=' '' ')'  ')' }}
+                              <hr><strong id="delivery" class="small-title">Order Online</strong>
+                              {{/checkIf}}
+                              {{#checkIf DOORDASHFLAG '!=' ''}}
+                              <hr><strong id="delivery" class="small-title">Order Delivery</strong>
+                              {{/checkIf}}
+                               <p class="remove{{{ONLINEORDERINGURL}}}" style="font-size:14px; margin-bottom:10px">Our entire menu is available for <span class="onlinetext{{{DOORDASHFLAG}}}{{{GRUBHUB}}}{{{ONLINEORDERING}}}">takeout or </span>delivery.</p>
+                           
+                               <div class="online-div remove{{{ONLINEORDERINGURL}}}">
+                                  <a class="deliveryBtn" onclick="window.open('{{{ONLINEORDERINGURL}}}');" role="link" aria-label="Online ordering for {{{NAME}}}">
+                                  <img alt="Online ordering for #{NAME}" class="cheescakelogo" src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/chesecake-logo-cropped.png" style="width:auto !important;">
+                                </a>
+                                <div style="clear:both"></div>
+                                <a role="link" aria-label="Order Using Door Dash Delivery for {{{NAME}}}" class="btn orderBtn" href="javascript:void(0);" onclick="window.open('{{{ONLINEORDERINGURL}}}');" style="border-radius: 0 0 3px 3px;">ORDER PICKUP</a>
+                              </div>
+
+                                {{#checkIf DOORDASHFLAG '==' '1'}}
+                                    <div class="online-div">
+                                      <a class="deliveryBtn" href="{{{DOORDASHURL}}}" target="_blank">
+                                          <img class="doorDash" alt="order using Doordash" src="https://hosted.where2getit.com/cheesecake/2014/assets/images/global/Doordash.png">
+                                        </a>
+                                    <div style="clear:both"></div>
+                                    <a class="btn orderBtn" href="{{{DOORDASHURL}}}" target="_blank" style="border-radius: 0 0 3px 3px;">Order Delivery</a>
+                                  </div>
+                                {{/checkIf}}
+
+                                {{#checkIf GRUBHUB '==' '1'}}
+                                    <div class="online-div">
+                                    <a class="deliveryBtn" style="height:90px;" href="{{{grubhuburl}}}" target="_blank">
+                                      <img class="grubhub" alt="order using Grubhub" src="http://hosted.where2getit.com/cheesecake/2014/assets/images/global/GRUBHUB_RED-01.png" style="width:auto !important; height: 25px !important;">                                 
+                                    </a>
+                                     <a class="btn orderBtn" href="{{{grubhuburl}}}" target="_blank" style="border-radius: 0 0 3px 3px;">Order Delivery</a>
+                                  </div>
+                                {{/checkIf}}
+
+                                <div style="clear:both"></div>
+                {{/checkIf}}
+                {{#checkIf onlineordering '==' '1'}}
+                    <hr><strong id="catering" class="small-title">Take Out:</strong>
+
+                    <p class="show{{{takeoutflag}}}">
+                      {{{takeout}}}
+                    </p>
+                    <a href="javascript: void(0);" onclick="window.open('{{{takeoutlink}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');" class="btn">Takeout Menu</a>
+                {{/checkIf}}
+
+                {{#checkIf CURBSIDEFLAG '==' '1'}}
+                <span class="show{{{TAKEOUTFLAG}}}">
+                  <hr><strong id="togo" class="small-title">Curbside To-Go Instructions</strong>
+                  <div class="instructions">Need your order "To Go?" Try our Curbside To-Go Service! It’s as easy as 1, 2, 3!</div>
+                  <div class="curbside show{{{TAKEOUTFLAG}}}">
+                    <div class="vanish{{{ONLINEORDERING}}}">1.) Call {{{PHONE}}} to place your order.</div>
+                    <div class=" hide_if_0{{{ONLINEORDERING}}}">1.) Order online or call {{{PHONE}}} to place your order.</div>
+                   <div class="discard{{{CURBSIDEPHONE}}}">2.) When you arrive to pick up your order, drive up to our special Curbside To-Go parking 
+                  spaces and call our Curbside Pickup line at {{{CURBSIDEPHONE}}} to let us know you’ve arrived.</div>
+                <div class="unmask{{{CURBSIDEPHONE}}}" style="display:none;">2.) When you arrive to pick up your order, drive up to our special Curbside To-Go parking 
+                spaces and call our Curbside Pickup line at {{{PHONE}}} to let us know you’ve arrived.</div>
+                    <div>3.)  Your food will be delivered right to your car, and you’ll be on your way!</div>
+                  </div>
+               </span>
+                {{/checkIf}}
+               <span class ="vanish{{{ONLINEORDERING}}}">
+                                <hr><strong id="takeout" class="small-title">Take Out</strong>
+
+
+                               <p class="showtakeout{{{TAKEOUTFLAG}}}">Take out not available at this location. </p>
+                              
+                                <p class="{{{TAKEOUTLINK}}}">{{{TAKEOUT}}}</p>
+                                {{#checkIf STATE '!=' 'PR'}}
+                                <span class="show{{{TAKEOUTLINK}}}">
+                                <a href="javascript: void(0);" onclick="window.open('{{{TAKEOUTLINK}}}','menu','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');" class="btn show{{{TAKEOUTFLAG}}}">Take Out Menu</a>
+                                </span>
+                              {{/checkIf}}  
+                                {{#checkIf STATE '==' 'PR'}}
+                                <span class="show{{{TAKEOUTLINK}}}">
+                                <a href="javascript: void(0);" onclick="window.open('{{{TAKEOUTLINK}}}','menu','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');" class="btn show{{{TAKEOUTFLAG}}}"><span class="show{{{TAKEOUTLINK_SPANISH}}}">English</span> Take Out Menu</a>
+                                </span>
+                                <a href="javascript: void(0);" class="btn show{{{TAKEOUTLINK_SPANISH}}}" onclick="window.open('{{{TAKEOUTLINK_SPANISH}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');"><span class="show{{{TAKEOUTLINK}}}">Spanish</span> Take Out Menu</a>
+                        {{/checkIf}}
+
+               </span>
+                           
+
+
+                
+
+                {{#checkIf  '(' CATERINGFLAG '==' '1' ')' }}
+                    <hr><strong id="catering" class="small-title">Catering</strong>
+
+                    <p class="showcatering{{{CATERINGFLAG}}}">Catering not available at this location. </p>
+
+                    <p class="show{{{CATERINGFLAG}}}">{{{CATERINGDESC}}}</p>
+                    <a href="javascript: void(0);" onclick="window.open('{{{CATERINGLINK}}}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');" class="btn show{{{CATERINGFLAG}}}">Catering Menu</a>
+                {{/checkIf}}
+              </div>
+            </div>
+            <!-- END : PAGE CONTENT-->
+          </div>
+          <!-- END : MAIN CONTAINER-->
+        </div>
+      </div>
+      <!-- START : /global/footer.html-->
+      <div id="footer" class="footer">
+        <div class="container">
+          <ul class="footer-social">
+            <li><a href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cheesecake" target="_blank" class="social-twitter">Twitter</a></li>
+            <li><a href="http://www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest">Pinterest</a></li>
+            <li><a href="http://instagram.com/cheesecakefactory#" target="_blank" class="social-instagram">Instagram</a></li>
+            <li>
+              <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email">Newsletter</a>
+            </li>
+          </ul>
+          <div class="footer-text">
+            <ul class="footer-links">
+              <li><a href="http://www.thecheesecakefactory.com/connect">Contact Us</a></li>
+              <li><a href="http://investors.thecheesecakefactory.com/">Investors</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/terms-of-use">Terms of Use</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://jobs.thecheesecakefactory.com/">Careers</a></li>
+            </ul>
+            <div class="copyright">
+              <p>&copy; 2002-2014 TCF Co. LLC. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END : /global/footer.html-->
+      <!-- END : WRAPPER-->
+    </div>
+    
+
+<iframe src="//sync.graph.bluecava.com/i?p=9c620c19-a870-46b4-b71e-b4531607cb3f&segment=a7fde1fc23d0e511a7020050569b1b56&seg_apx=4654156&eids=%5b%22brandid%3acheesecake%22%2c%22pageid%3a{{{clientkey}}}%22%5d" class="iframe" title="graph"></iframe>
+  </body>
+
+<script>
+  function setFocus() {
+    var el = document.getElementById("mapframe");
+    el.addClass="iframefocus";
+  }
+
+  function removeFocus() {
+    var el = document.getElementById("mapframe");
+    el.removeClass="iframefocus";
+  }
+</script>
+
+
+</html>

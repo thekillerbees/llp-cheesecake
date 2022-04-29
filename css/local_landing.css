@@ -1,0 +1,718 @@
+/* @CLEAR (FORMATTING)
+/* ---------------------------------------- */
+
+/* INDIVIDUAL TAG RESETS */
+a {
+	text-decoration: none;
+    color:  #59595B;
+}
+
+img { 
+	outline: none;
+    display: block;
+    border: 0;
+}
+
+form {
+    margin: 0;
+}
+
+input.textfield {
+    border:1px solid #000000
+}
+
+ol, ul {
+	list-style: none;
+    font: 11px verdana, arial, sans-serif;
+}
+
+p {
+	font: 11px verdana, arial, sans-serif;
+}
+
+xml {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* @GLOBAL
+/* ---------------------------------------- */
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font: 11px verdana, arial, sans-serif;
+    margin:             auto;
+    padding:            0px;
+}
+
+/*  WRAPPER */
+
+div#wrapper { 
+	margin: 20px auto 0;
+	padding-bottom: 20px;
+	width: 960px;
+}
+	
+/* @HEADER
+/* ---------------------------------------- */
+
+div#page-header {}
+
+
+div.breadcrumb {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+div.breadcrumb span {
+    padding: 0 2px;
+    color: #b34903;
+}
+
+/* @MAIN CONTENT
+/* ---------------------------------------- */
+
+div#main-content {
+	background-color: #ffffff;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+div#main-content-wrapper {
+	float: right;
+}
+
+div#body-content {
+	float: left;
+	width: 686px;
+}
+
+div#sidebar {
+	float: left;
+	width: 272px;
+}
+
+/* @UTILITIES/ICON - BAR
+/* ---------------------------------------- */
+
+div#icon_bar {}
+
+div#print_page {
+    float: left;
+    padding-right: 10px;
+}
+
+div#email_page {
+    float: left;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+div#link_page {
+    float: left;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+div#share_page {
+    float: left;
+    white-space: nowrap;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+#icon_bar .title {
+    font-size: large;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+#icon_bar .links {
+    font-size: 11px;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 3px;
+    text-decoration: none;
+}
+
+#icon_bar a.links {
+    text-decoration: none;
+    white-space: nowrap;
+    padding-left: 0.75em;
+
+}
+
+#icon_bar a.links img {
+    vertical-align: middle;
+}
+
+/* @LOCATOR - BUBBLE
+/* ---------------------------------------- */
+
+#bubble {}
+
+.activetab {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/w2gi/images/bubble/popover/active.png",sizingMethod="crop");
+    background-image: url(/w2gi/images/bubble/popover/active.png);
+    z-index: 101;
+}
+
+.nonactivetab {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/w2gi/images/bubble/popover/nonactive.png",sizingMethod="crop");
+    background-image: url(/w2gi/images/bubble/popover/nonactive.png);
+}
+
+.tab1 {
+    z-index: 101;
+    width: 89px;
+    height: 23px;
+    position: absolute;
+    left: 6px;
+    top: 0px;
+    border-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tab1label {
+    z-index:102;
+    width: 89px;
+    height: 23px;
+    position: absolute;
+    left: 6px;
+    top: 0px;
+    padding-top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #5d6164;
+    cursor: pointer;
+}
+
+.tab2 {
+    width: 89px;
+    height: 23px;
+    position: absolute;
+    left: 101px;
+    top: 0px;
+    border-style: none;
+    padding: 0px;
+    margin: 0px;
+    z-index:101;
+}
+
+.tab2label {
+    z-index:102;
+    width: 89px;
+    height: 23px;
+    position: absolute;
+    left: 101px;
+    top: 0px;
+    padding-top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #5d6164;
+    cursor: pointer;
+}
+
+.bubble_close {
+    background: #FFFFFF url(/w2gi/images/bubble/popover/popover-close.gif) no-repeat;
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    left: 175px;
+    top: 10px;
+    z-index: 101;
+    border-style: none;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.mainbubble {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
+.mainbubblecontent {
+    height:142px;
+    left:13px;
+    position:absolute;
+    top:10px;
+    width:200px
+}
+
+.mainbubblelocationname {
+    font-size:12px;
+    font-weight:bold;
+    padding-bottom:0.1em;
+    padding-right:35px;
+}
+
+.mainbubbletabcontent {
+    height:120px;
+    margin-top:0.2em;
+    overflow-x:hidden;
+    overflow-y:auto;
+    position:relative;
+    width:200px;
+}
+
+.tab_content {
+    font-size:10px;
+}
+
+.activetabcontent {
+    display: block;
+}
+
+.nonactivetabcontent {
+    display: none;
+}
+
+
+
+
+input.addressentry {
+    font-size: 9px;
+    color: #333333;
+    width: 220px;
+}
+
+.address_helper {
+    color: gray;
+    font-size: 11px;
+}
+
+
+/* @LOCATOR - MAP/ICONS
+/* ---------------------------------------- */
+
+#map {
+    float:  left;
+    width:  272px;
+    height: 282px;
+    position:   relative;
+}
+
+div.locator_map
+{
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+.icon {
+    position: relative;
+    width: 33px;
+    height: 28px;
+}
+
+.icon img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 33px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.icon div {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 28px;
+    font-size: 9px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+#center_marker {
+    width: 30px;
+    height: 28px;
+    cursor: default;
+}
+
+#center_marker img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 28px;
+    cursor: default;
+}
+
+#w2gi_copyright {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    text-decoration: none;
+    font: bold 12px arial;
+    background: transparent;
+    z-index: 999;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+#navteq_copyright {
+    background: transparent none repeat scroll 0%;
+    bottom: 3px;
+    font-family: arial;
+    font-size: 12px;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    left: 3px;
+    line-height: normal;
+    position: absolute;
+    text-decoration: none;
+    z-index: 999;
+}
+
+
+/* @LOCATOR - POI LIST
+/* ---------------------------------------- */
+
+#panel {
+    height: 450px;
+    overflow:   auto;
+    width:  272px;
+    border-top: 2px solid #F2F4F2;
+    border-bottom: 2px solid #F2F4F2;
+    background-color:   #FFFFFF;
+}
+
+#panel table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+}
+
+#panel table th {
+    padding: 2px;
+    text-align: left;
+    font-size: 12px;
+}
+
+#panel table th a[action="sort_table"] {
+    text-decoration: none;
+    color: #59595B;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#panel table th a[action="sort_table"]:hover {
+    text-decoration: underline;
+    color: #59595B;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#panel table thead tr.poi {
+    background-color: #f8f8f8;
+    height: 20px;
+}
+
+#panel table tfoot tr.poi {
+    height: 20px;
+    font-size: 10px;
+    color: #a2afbf;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-top: 1px solid #a2afbf;
+    background-color: #f8f8f8;
+}
+
+#panel table td {
+    padding: 4px;
+    margin: 0px;
+    text-align: left;
+    color: #333333;
+    font-size: 11px;
+    vertical-align: top;
+}
+
+#panel table td.maneuver {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    padding: 5px;
+}
+
+#panel table .prev_results {
+    float: left;
+    text-decoration: none;
+}
+
+#panel table .next_results {
+    float: right;
+    text-decoration: none;
+}
+
+#panel table tr.odd {
+
+}
+
+#panel table tr.even {
+
+}
+
+#panel table tr.active {
+    background-color: #ededed;
+}
+
+#panel table p {
+    margin: 0px;
+    padding: 0px;
+}
+
+a.store_name:link { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+    font-size: 12px;
+}
+
+a.store_name:visited { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+    font-size: 12px; 
+}
+
+a.store_name:hover { 
+    text-decoration: underline;  
+    color: #000000; 
+    font-weight: bold;  
+    font-size: 12px;
+}
+
+a.store_name:active { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-size: 12px; 
+}
+
+a.next_results:link { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+    padding-left:5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.next_results:visited { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold;
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.next_results:hover { 
+    text-decoration: none; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.next_results:active { 
+    text-decoration: none; 
+    color: #59595B;
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.prev_results:link { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold;
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.prev_results:visited { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold;
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right;
+}
+
+a.prev_results:hover { 
+    text-decoration: none;
+    padding-left: 5px; 
+    padding-right: 5px;  
+    text-align: right;
+}
+
+a.prev_results:active { 
+    text-decoration: none; 
+    color: #59595B; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    text-align: right; 
+}
+
+a[action="more_info"]:link { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="more_info"]:visited { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="more_info"]:hover { 
+    text-decoration: underline; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="more_info"]:active { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="show_all"]:link { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="show_all"]:visited { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="show_all"]:hover { 
+    text-decoration: underline; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+a[action="show_all"]:active { 
+    text-decoration: none; 
+    color: #59595B; 
+    font-weight: bold; 
+}
+
+/* @LOCATOR - FOOTER
+/* ---------------------------------------- */
+
+div#w2gi_footer {
+    font-size: 9px;
+    padding: 10px;
+}
+
+div#powered_by {
+    float: left;
+}
+
+div#navteqfooter {
+    float: left;
+    padding-left: 0px;
+    padding-top: 5px;
+    width:230px;
+    text-align:left;
+    font-size:9px;
+    font-weight: normal;
+    height:30px;
+    margin-top:0px;
+    color:#000;
+}
+
+/* @FOOTER
+/* ---------------------------------------- */
+
+div#page_footer {
+}
+
+div#store-locator-footer {
+	background-color: #ffffff;
+	margin-bottom: 5px;
+	padding: 8px;
+}
+
+div#store-locator-footer img.label {
+	float: left;
+	width: 99px;
+}
+
+/* @INDEX PAGE LISTS
+/* ---------------------------------------- */
+
+div#state_list ul {
+    padding-bottom: 5px;
+}
+
+div#state_list ul li {
+    margin-bottom: 0px;
+}
+
+div#cities ul {
+	padding-bottom: 5px;
+}
+
+div#cities ul li {
+	margin-bottom: 0px;
+}
+
+div#postalcodes ul {
+    padding-bottom: 5px;
+}
+
+div#postalcodes ul li {
+    margin-bottom: 0px;
+}
+
+div#locations ul {
+    padding-bottom: 5px;
+}
+
+div#locations ul li {
+    margin-bottom: 0px;
+}
+
+/* @"NEAR-BY" BLOCKS 
+/* ---------------------------------------- */
+
+div#near_by_title {
+	font-size: 12px; 
+	font-weight: bold;
+}
+
+div#cities_near_by {
+	padding-bottom: 10px;
+}
+
+div#codes_near_by {
+    padding-bottom: 10px;
+}
+
+

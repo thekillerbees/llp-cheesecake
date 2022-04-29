@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_61" data-name="Group 61" transform="translate(-729.5 -521.5)">
+    <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(729.5 521.5)" fill="none" stroke="#fff" stroke-width="1">
+      <circle cx="15" cy="15" r="15" stroke="none"/>
+      <circle cx="15" cy="15" r="14.5" fill="none"/>
+    </g>
+    <text id="_" data-name="" transform="matrix(-1, 0, 0, 1, 745, 542)" fill="none" stroke="#fff" stroke-width="1" font-size="14" font-family="FontAwesome5FreeSolid, 'Font Awesome \35  Free'"><tspan x="-7" y="0"></tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+/* ==========================================================================
+    CONTENT - SLIDER
+   ========================================================================== */
+
+.content-slider {
+	@if ($platform != mobile) {
+		margin: 40px 0 30px;
+	} @else {
+		margin: 30px 0;
+	}
+	overflow: auto;
+	.royalSlider {
+		background: none;
+		// TODO: For initial loading, only show 1 img
+		& > .rsImg {
+			display: none;
+			&:first-child {
+				display: block;
+				visibility: hidden;
+				width: 100%;
+			}
+		}
+	}
+	.rsNav {
+		padding: 30px 0 0;
+		text-align: center;
+		width: 100%;
+	}
+	.rsBullet {
+		@if ($platform != mobile) {
+			margin: 0 5px;
+		} @else {
+			margin: 0 7px;
+		}
+		display: inline-block;
+		position: relative;
+		@if ($platform != mobile) {
+			height: 11px;
+			width: 11px;
+		} @else {
+			height: 13px;
+			width: 13px;
+		}
+		&.rsNavSelected {
+			span {
+				background: $linkColor;
+			}
+		}
+		span {
+			border-radius: 50%;
+			border: 2px solid $linkColor;
+			cursor: pointer;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			@include transition(background $transitionSpeed);
+			&:active {
+				opacity: 0.8;
+			}
+		}
+	}
+
+}

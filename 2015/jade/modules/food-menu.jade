@@ -1,0 +1,156 @@
+// START : /modules/food-menu.html
+#menuSplash.menu-splash
+	.menu-splash-title 
+		|What are you 
+		br
+		|in the mood for?
+	// TODO: menu-splash-description is an optional field and should be toggleable
+	.menu-splash-description This is an example of description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	button.btn.menu-splash-button#browseMenu Browse Our Menu
+
+// TODO: Classes that affect food-menu:
+// .show-info - expands .food-menu-category info pane
+// .show-categories, .show-listings, .show-detail - flip between 3 pages of hierarchy
+#foodMenu.food-menu.show-categories
+	form.food-menu-search
+		input#foodSearch(type="search",placeholder="Search...")
+		button.search-button#foodSearchSubmit
+		a.search-view-all#foodViewCategories(href="#") View All Categories
+	.food-menu-category
+		.food-menu-category-wrapper
+			a.food-menu-category-back(href="#")
+			button.food-menu-category-info
+			.food-menu-wrapper
+				.food-menu-panel
+					.food-menu-category-title.food-panel-categories-title Menu
+				.food-menu-panel
+					.food-menu-category-title.food-panel-listings-title Pastas
+				.food-menu-panel
+					.food-menu-category-title.food-panel-detail-title Evelyn's Favorite Pasta
+			.food-menu-category-description
+				|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+				|et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+				|aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+				|cillum dolore eu fugiat nulla pariatur. 
+	.food-menu-wrapper#foodMenuPanels
+		.food-menu-panel.food-panel-categories
+			.food-menu-content
+				ul.food-menu-list
+					li.special
+						a(href="#") Skinnylicious&reg;
+					li
+						a(href="#") Desserts
+					li
+						a(href="#") Starters
+					li
+						a(href="#") Salads
+					li
+						a(href="#") Sandwiches &amp; Glamburgers&reg;
+					li
+						a(href="#") Pizzas
+					li
+						a(href="#") Pastas
+					li
+						a(href="#") Steaks, Chops, Fish &amp; Seafood
+					li
+						a(href="#") Specialties &amp; Factory Combinations
+					li
+						a(href="#") Breakfast, Lunch &amp; Sunday Brunch
+					li
+						a(href="#") Beverages
+					li
+						a(href="#") Catering
+					li
+						a(href="#") New Items
+				.food-menu-down-arrow
+		.food-menu-panel.food-panel-listings
+			.food-menu-content
+				ul.food-menu-list
+					li.special.has-photo
+						a(href="#")
+							span.item-title Evelyn's Favorite Pasta
+							span.item-description  Penne Tossed with Broccoli, Oven-dried Tomato, Roasted Eggplant, Peppers, Artichoke, Kalamata Olives, Garlic and Pine Nuts.
+					li
+						a(href="#") 
+							span.item-title Louisiana Chicken Pasta
+							span.item-description Parmesan Crusted Chicken Served Over Pasta with Mushrooms, Peppers and Onions in a Spicy New Orleans Sauce.
+					li
+						a(href="#") 
+							span.item-title Fettuccini Alfredo
+							span.item-description A Rich Parmesan Cream Sauce. Available with Chicken.
+					li
+						a(href="#") 
+							span.item-title Tomato Basil Pasta
+							span.item-description Grilled Chicken, Fresh Mozzarella, a Touch of Garlic and Penne Pasta. Light and Fresh.
+					li
+						a(href="#") 
+							span.item-title Pasta Carbonara
+							span.item-description Spaghettini with Smoked Bacon, Green Peas, and a Garlic-Parmesan Cream Sauce. Available with Chicken.
+					li
+						a(href="#") 
+							span.item-title Four Cheese Pasta
+							span.item-description Penne Pasta, Mozzarella, Ricotta, Romano and Parmesan Cheeses, Marinara Sauce and Fresh Basil. Also served with Chicken.
+					li
+						a(href="#") 
+							span.item-title Pasta with Meat Sauce
+							span.item-description A Rich Meat Sauce Slowly Simmered with Garlic and Herbs. 
+					li
+						a(href="#") 
+							span.item-title Pasta Da Vinci
+							span.item-description Sautéed Chicken, Mushrooms and Onions in a Delicious Madeira Wine Sauce Tossed with Penne Pasta and Parmesan.
+					li
+						a(href="#") 
+							span.item-title Fettucini with Chicken &amp; Sun-dried Tomatoes
+							span.item-description In a Sun-Dried Tomato Sauce with Garlic, Cream and Parmesan Cheese.
+				.food-menu-down-arrow
+		.food-menu-panel.food-panel-detail
+			.food-menu-content
+				.food-menu-item-photo
+					.share-this
+						// TODO: .share-action button triggers .share-active on .share-this
+						.share-action Share
+						#imgEnlarge.share-enlarge Enlarge
+						.share-social-wrapper
+							ul.share-social
+								li.share-facebook
+									// TODO: Link to Facebook share URL
+									a(target="_blank",href="https://www.facebook.com/sharer/sharer.php?u=") Facebook
+								li.share-twitter
+									// TODO: Link to Twitter share URL
+									a(target="_blank",href="https://twitter.com/share?url=") Twitter
+								li.share-pinterest
+									// TODO: Link to Pinterest share URL
+									a(target="_blank",href="http://pinterest.com/pin/create/link/?url=") Pinterest
+					img(src="/assets/images/placeholders/menu_santorinifarrosalad_1920.jpg",alt="Name Me")
+				.food-menu-item-content
+					.food-menu-item-name Santorini Farro Salad
+					.food-menu-item-description
+						p.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+							labore et <a href="#">dolore</a> magna aliqus. Ut enim ad minim veniam, quis nostrud.
+						p
+							strong Food Tags: 
+							a(href="#") Pasta
+							|, 
+							a(href="#") Broccoli
+							|, 
+							a(href="#") Oven-Dried Tomato
+							|, 
+							a(href="#") Roasted Eggplant
+							|, 
+							a(href="#") Peppers
+							|, 
+							a(href="#") Artichoke
+							|, 
+							a(href="#") Kalamata Olives
+							|, 
+							a(href="#") Garlic
+						p
+							strong Fun Fact: 
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+script.
+	require(["modules/foodMenu"], function(FoodMenu) {
+		return FoodMenu.get();
+	});
+// END : /modules/food-menu.html

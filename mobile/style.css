@@ -1,0 +1,75 @@
+<style type="text/css">
+body { 
+	margin: 0px 0px 0px 0px;
+padding:0;
+	font-family: verdana, arial, helvetica, Sans-Serif;
+	font-size: 12px;
+	color: #4a4a4a;
+ }
+
+.menuButton {color: red;text-align: center;}
+
+input.zipcode {-wap-input-format: "NNNNN" }
+
+input.numeric {-wap-input-format: "N*N" }
+
+input.requiredSimpleText {-wap-input-format: "M*M" }
+
+h3.mocospace { color: #E63955; text-align: center }
+
+img.logo { display:block; margin:auto; }
+
+
+
+.b1 {width:200px; background-color:#ffffff; font-size:8pt; font-family: verdana, arial, helvetica, Sans-Serif;text-align:center;}
+table.b1 { display:block; font-size:8pt;margin: 0 auto; text-align: left;}
+.h1 {width:100%; background-color:#ffffff; border-bottom:1px solid #FFF; text-align:center; margin-bottom:0px; padding: 2px 0px 2px 0px;}
+
+.d1 {width:100%; margin-top:0px; background-color:#ffffff;}
+
+.d2 {background-color:#FFFFFF;}
+
+.d3 {text-align:left; font-family:helvetica; color:#000; padding: 2px 1px 0px 3px;}
+
+.s1 {text-align:left;}
+
+.s2 {background-color:#BB0001; color:#fff; font-weight:bold;}
+
+.t1 {width:100%; background-color:#BB0001;}
+
+.t2 {font-family: verdana, arial, helvetica, Sans-Serif; font-weight:bold; text-align:center; padding: 0px 0px 0px 0px; color:#FFFFFF;}
+
+.t3 {width:100%; background-color:#ebebeb;}
+
+.t4 {font-family:helvetica; font-weight:bold; text-align:left; padding: 0px 0px 0px 0px; color:#000;}
+
+.f1 {font-family:helvetica; font-size:8pt; font-weight:normal; text-align:left; color:#FFF; padding: 1px 1px 0px 1px;}
+
+.f2 {font-size:9pt; color:#000; text-decoration:none;}
+
+.f3 {font-size:9pt;}
+
+.l1 {font-family: verdana, arial, helvetica, Sans-Serif; font-size:7pt; color:#000; text-align:left; padding: 5px 0px 5px 5px;}
+
+.c1 {font-family: verdana, arial, helvetica, Sans-Serif; font-size:7pt; background-color:#FFFFFF; color:#000; text-align:center; padding: 5px 0px 5px 5px;}
+
+.ad1 {width:100%; border-top:1px solid #FFF; border-bottom:1px solid #FFF; background-color:#ffffff; text-align:center; padding: 1px 0px 1px 0px;}
+
+.e1 {color: red;}
+
+a {
+color:#C40109;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:11px;
+font-weight:400;
+text-decoration:none;
+}
+
+.border {
+	margin-top: 10px;
+	border-bottom:2px solid #EDEDED;
+	line-height:2px;
+}
+
+
+</style>

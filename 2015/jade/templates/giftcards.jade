@@ -1,0 +1,81 @@
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	include ../global/head
+	// TODO: we need to specify a platform class on the body
+	body(class="is-#{platform}")
+		include ../global/header
+		include ../global/menu
+		.outer-wrap
+			// START : WRAPPER
+			.wrapper
+				- contentHeaderTitle = "Gift Cards"
+				include ../modules/content-header
+				.container
+					// START : MAIN CONTAINER
+					#mainContainer.main-container
+						// START : PAGE CONTENT
+						#mainContent.main-content
+							// TODO: Everything inside "#mainContent" will be repopulated by Backbone
+							include ../modules/content-navigation
+							.content-column
+								p.
+									We offer two convenient ways to send The Cheesecake Factory Gift Cards, the 
+									perfect gift for any taste or occasion. Gift Cards may be used at any of The 
+									Cheesecake Factory restaurants nationwides.
+								.content-giftcard#egiftcards
+									h3.content-subheading E-Gift Cards
+									- largeImageCaption = ""
+									include ../modules/content-largeimage
+									ul
+										li.
+											Email an eGift Card with one of our template designs or with your own 
+											photo and personalized greeting.
+										li.
+											Available in any amount between $5 and $500 and usually arrive within 
+											2 - 4 hours of placing your order, or on the date you specify.
+										li
+											|If you are a small business placing multiple gift card orders over 
+											|the course of the year, 
+											a(href="#") click here
+											|.
+									a.btn(href="#") Purchase
+								.content-giftcard#giftcards
+									h3.content-subheading Gift Cards
+									- largeImageCaption = ""
+									include ../modules/content-largeimage
+									ul
+										li.
+											Plastic Gift Cards are presented with a personalized greeting and are 
+											available in any amount between $5 and $500.
+										li.
+											Now offering free USPS First Class shipping.
+										li.
+											Gift Cards delivered via USPS First Class Mail usually arrive within 
+											5 – 7 business days.
+										li.
+											Expedited shipping options available.
+										li
+											|If you are a small business placing multiple gift card orders over 
+											|the course of the year, 
+											a(href="#") click here
+											|.
+									a.btn(href="#") Purchase
+								h3.content-subheading Redeem a Gift Card
+								strong In Restaurant
+								br
+								p
+									|Present your Gift Card to your server with your check and it will automatically 
+									|be applied to your purchase. 
+									a(href="#") Click here to find a restaurant near you
+									|.
+
+						// END : PAGE CONTENT
+					// END : MAIN CONTAINER
+			include ../global/footer
+			// END : WRAPPER

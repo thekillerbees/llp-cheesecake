@@ -1,0 +1,12 @@
+// START : /modules/content-slider.html
+.content-slider
+	.royalSlider
+		// TODO: Slider designed for 640x360 aspect ratio (16:9). Don't forget alt text on images for accessibility
+		img.rsImg(alt="",src="/assets/images/placeholders/img_640x360.png")
+		img.rsImg(alt="",src="/assets/images/placeholders/img_640x360.png")
+		img.rsImg(alt="",src="/assets/images/placeholders/img_640x360.png")
+script.
+	require(["modules/contentSlider"], function(ContentSlider) {
+		return new ContentSlider();
+	});
+// END : /modules/content-slider.html

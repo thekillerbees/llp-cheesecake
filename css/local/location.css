@@ -1,0 +1,56 @@
+/* CSS File for Location.html - Driving Directions Page - Beefobradys */
+
+
+
+#page {
+	width:880px;
+}
+body {
+	background-color: #000;
+}
+.directions_title {
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+#dd_container {
+	background-color:#cdcdcd;
+	float:left;
+	height:85px;
+	overflow:hidden;
+	padding:0;
+	position:relative;
+	width:100%;
+	text-align:left;
+}
+
+#driving_directions {
+	padding-left: 10px;
+}
+
+table td {
+	font-size: 12px;
+	}
+
+#panel {
+float:left;
+overflow-y:visible;
+overflow-x:hidden;
+padding-top:0px;
+margin-top: 0px;
+margin-left: 10px;
+width:400px;
+height:auto;
+}
+
+#local_comp_panel {
+	float:left;
+	width:820px;
+	padding-bottom: 10px;
+}
+
+#local_comp_panel table{width:100%;}
+
+#map {
+	border: 1px solid #99cc99;
+}

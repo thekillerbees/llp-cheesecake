@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "No locations were found using your search criteria [ %s ]. Please try another input address to search for locations."
+msgstr "<div id='error_message'><span class='locerror'>No locations were found using your search criteria [ %s ]. Please try another address to search for locations.</span></div>"
+
+msgid "You entered an address which could not be geocoded [ %s ]. Please try another input address to search for locations."
+msgstr "<div id='error_message'><span class='locerror'>You entered an address which could not be geocoded [ %s ]. Please try another input address to search for locations.</span></div>"
+
+
+msgid "Unable to geocode the current input address. Please try again."
+msgstr "Unable to geocode the current input address. Please try again."
+
+msgid "Your route could not be calculated between these two locations"
+msgstr "Your route could not be calculated between these two locations"
+
+msgid "There are currently no locations in this area."
+msgstr "Currently no locations are opening in the next 60 days. Please check back later."
+
+
+msgid "Please enter an address."
+msgstr "Please enter an address."
+
+
+msgid "geoloc is missing or contains invalid parameters"
+msgstr "geoloc is missing or contains invalid parameters"
+
+msgid "Database Error: [%s]"
+msgstr "Database Error: [%s]"
+
+msgid "UNDEFINED COLUMN"
+msgstr "UNDEFINED COLUMN"

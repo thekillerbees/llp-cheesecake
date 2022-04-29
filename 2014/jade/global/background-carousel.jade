@@ -1,0 +1,14 @@
+// START : /global/background-carousel.html
+#mainCarousel.main-carousel
+	.royalSlider
+		.rsContent(style="background-image:url('../assets/images/placeholders/menu_santorinifarrosalad_1920.jpg')")
+			a.rsText(href="#") Santorini Farro Salad
+		.rsContent(style="background-image:url('../assets/images/placeholders/menu_tuscanchicken_1920.jpg')")
+			a.rsText(href="#") Tuscan Chicken
+		.rsContent(style="background-image:url('../assets/images/placeholders/menu_evelynsfavoritepasta_1920.jpg')")
+			a.rsText(href="#") Evelyn's Favorite Pasta
+script.
+	require(["modules/backgroundCarousel"], function(BackgroundCarousel) {
+		return new BackgroundCarousel();
+	});
+// END : /global/background-carousel.html

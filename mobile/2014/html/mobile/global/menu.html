@@ -1,0 +1,87 @@
+
+<!-- START : /global/menu.html-->
+<div id="navigation" class="navigation">
+  <div class="navigation-inner">
+    <div id="closeNav" class="navigation-close"></div>
+    <!-- Only mobile gets logo in navigation-->
+    <div class="site-logo"><a href="/home/">The Cheesecake Factory</a></div>
+    <ul class="navigation-social">
+      <li><a href="#" target="_blank" class="social-facebook">Facebook</a></li>
+      <li><a href="#" target="_blank" class="social-twitter">Twitter</a></li>
+      <li><a href="#" target="_blank" class="social-pinterest">Pinterest</a></li>
+      <li><a href="#" target="_blank" class="social-instagram">Instagram</a></li>
+      <li>
+        <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="#" target="_blank" class="social-email">Newsletter</a>
+      </li>
+    </ul>
+    <ul class="navigation-list">
+      <!-- Only mobile gets top-level menu items in navigation-->
+      <li>
+        <div class="navigation-list-name navigation-menu-item head-menu"><a href="#"><span>Menu</span></a></div>
+      </li>
+      <li>
+        <div class="navigation-list-name navigation-menu-item head-locations"><a href="/locations/"><span>Locations</span></a></div>
+      </li>
+      <li>
+        <div class="navigation-list-name navigation-menu-item head-giftcards"><a href="/giftcards/"><span>Gift Cards</span></a></div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-item-wrap">
+          <div class="navigation-list-name accordion-item-title"><span>About Us</span></div>
+          <ul class="navigation-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Awards</a></li>
+            <li><a href="#">Our Recipes</a></li>
+            <li><a href="#">Our Team</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-item-wrap">
+          <div class="navigation-list-name accordion-item-title"><span>Connect</span></div>
+          <ul class="navigation-links">
+            <li><a href="#">Contact Form</a></li>
+            <li><a href="#">eNewsletter</a></li>
+            <li><a href="#">Got Questions?</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-item-wrap">
+          <div class="navigation-list-name accordion-item-title"><span>Corporate Information</span></div>
+          <ul class="navigation-links">
+            <li><a href="#">Global Development</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Press Room</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Employment Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-item-wrap">
+          <div class="navigation-list-name accordion-item-title"><span>Corporate Social Responsibility</span></div>
+          <ul class="navigation-links">
+            <li><a href="#">Charitable Foundation</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Supply Chain</a></li>
+            <li><a href="#">Our Team</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="navigation-list-name"><a href="#"><span>Guest Survey</span></a></div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  require(["modules/accordion"], function(Accordion) {
+   return new Accordion();
+  });
+  require(["modules/headerNav"], function(HeaderNav) {
+   return HeaderNav.get();
+  });
+</script>
+<!-- END : /global/menu.html-->

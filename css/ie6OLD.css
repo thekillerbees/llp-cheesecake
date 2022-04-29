@@ -1,0 +1,32 @@
+#locationMap_top {
+	Z-INDEX: 2100;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://hosted.where2getit.com/cheesecake/images/TPBGIMG_new.png",sizingMethod="crop");
+	background-image: url(http://hosted.where2getit.com/cheesecake/images/TPBGIMG_new.png);
+	*background: none;	
+/*	BACKGROUND: url(images/TPBGIMG_new.png) no-repeat left top;*/
+	LEFT: 0px;
+	WIDTH: 652px;
+	POSITION: absolute;
+	TOP: 0px;
+	HEIGHT: 66px;
+}
+
+#locationMap_bottom {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	Z-INDEX: 2000;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://hosted.where2getit.com/cheesecake/images/LocationMapBGIMG_new.png",sizingMethod="crop");
+	background-image: url(http://hosted.where2getit.com/cheesecake/images/LocationMapBGIMG_new.png);
+	*background: none;	
+/*	BACKGROUND: url(images/LocationMapBGIMG_new.png) no-repeat left top;*/
+	LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	WIDTH: 652px;
+	PADDING-TOP: 0px;
+	POSITION: absolute;
+	TOP: 62px;
+	HEIGHT: 560px;
+}
+
+

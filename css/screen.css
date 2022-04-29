@@ -1,0 +1,437 @@
+@charset "utf-8";
+/* Layout
+*********************************************************************/
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	/* background-color:#210101; */
+	background: transparent;
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+a img {border:none;}
+.floatRight {float:right}
+.floatLeft {float:left}
+.search_box {
+	float: left;
+	height: 20px;
+	width: 193px;
+}
+.noDisplay {display: none;}
+
+#mainBox {
+	height:100%;
+	left:0;
+	position:absolute;
+	text-align:center;
+	top:0;
+	width:100%;
+	z-index:0;
+}
+	#mainContainer {
+	margin: 0 auto;
+	width: 1024px;
+	position: relative;
+	}
+		#siteHeader {
+			margin: 0px auto;
+			padding: 0px;
+			height: 88px;
+			width: 100%;
+			position: absolute;
+			top:0px;
+			left:0px;
+			z-index: 1000;
+			background: url(/cheesecake/images/TOPNAV_BGIMG.png) repeat-x scroll left top;
+		}
+		#logo {
+			margin: 0;
+			float: left;
+			height: 48px;
+			width: 243px;
+			position:absolute;
+			top:21px;
+			left:17px;
+			z-index:1000;
+		}
+		#topNavContainer {
+			width: 420px;
+			height:30px;
+			top:28px;
+			left:270px;
+			position:absolute;
+			z-index:1000;
+		}
+		#topSiteTools {
+			height: 20px;
+			width: 272px;
+			overflow: visible;
+			position: absolute;
+			visibility: visible;
+			z-index: 1000;
+			top: 20px;
+			right: 16px;
+		}
+		#bottomSiteTools {
+			overflow: visible;
+			position: absolute;
+			z-index: 1000;
+			height: 22px;
+			width: 302px;
+			top: 53px;
+			right: 8px;
+		}
+			#bottomSiteTools ul#siteTools {width: 302px !important; margin-top:3px; position:relative;}
+
+		#contentFlash {
+			margin: 0px;
+			padding: 0px;
+			height: 735px;
+			width: 1024px;
+			position: absolute;
+			visibility: visible;
+			z-index: 1;
+			left: 0px;
+			top: 0px;
+			background: url(/cheesecake/images/CheesecakeFactory_166of167.jpg) no-repeat scroll left top;
+		}
+			/* this is for the content height when there is no Flash as background */
+			.noFlashHeight { /*height:592px !important;*/}
+			.colorBG_F2EFDF {background-image: none !important; background-color:#F2EFDF !important;}
+			.colorBG_Black {background-image: none !important; background-color:#000 !important;}
+		
+		/* This is used for flexible height for the content area (below will show a scroll bar at the browse window) */
+		#contentBox {
+			margin: 0;
+			padding: 112px 0 50px 0;
+			width: 1024px;
+			overflow:hidden;
+		}
+
+
+		#mainContent {
+			margin:0 auto;
+			width:1024px;
+			height:100%;
+			position:absolute;
+			top:80px;
+			left:0px;
+			z-index:999;
+		}
+		#footer {
+			background: url(/cheesecake/images/FOOTER_BGIMG.png) repeat-x scroll left bottom;
+			height: 36px;
+			width: 1024px;
+			position: absolute;
+			z-index: 1000;
+			left: 0px;
+			bottom: 0px;
+		}
+		.footerContent {
+			height: 36px;
+			width: 988px;
+			position: absolute;
+			z-index: 1020;
+			left: 0px;
+			bottom: 0px;
+		}
+
+/*Left Nav Layout {this is wraped inside of #mainContent}
+*********************************************************************/
+#leftNav_levelOne {
+	float: left;
+	height: 626px;
+	width: 156px;
+	position: relative;
+	padding: 0;
+	margin:0;
+	left: 0px;
+	top: 0px;
+	bottom:0px;
+}
+#leftNav_levelTwo {
+	float: left;
+	height: 626px;
+	width: 212px;
+	position: relative;
+	padding: 0;
+	margin:0;
+	left: 0px;
+	top: 0px;
+	bottom:0px;
+}
+.leftNav_Locations {
+	width: 170px !important;
+}
+
+	.alpha_BG60 {
+		position: absolute; top: 0; bottom: 0px; left:0px; width:100%;
+		background-color:#050000;
+		filter:alpha(opacity=60); /* for IE 6&7 */
+		-moz-opacity:.60; /* older Gecko-based browsers */
+		opacity:.60; /* CSS3 standard */
+		-khtml-opacity: 0.60; /*old versions of Safari (1.x)*/
+	}
+	.alpha_BG40 {
+		position: absolute; top: 0; bottom: 0px; left:0px; width:100%;
+		background-color:#050000;
+		filter:alpha(opacity=40); /* for IE 6&7 */
+		-moz-opacity:.40; /* older Gecko-based browsers */
+		opacity:.40; /* CSS3 standard */
+		-khtml-opacity: 0.40; /*old versions of Safari (1.x)*/
+	}
+	.alpha_content {
+		position:relative;
+		left:0px;
+		top:0px;
+		vertical-align: top;
+		text-align: left;
+		width:100%;
+		height:100%;
+		padding:0;
+		margin:0;
+	}
+	#button_up{
+		padding-top:15px;
+		height:25px;
+	}
+
+	#button_down {
+	position:absolute;
+	height:25px;
+	bottom:8px;
+	}
+	
+
+/*Right Content Box Layout
+*********************************************************************/
+
+#rightContentBox {
+	background: url(/cheesecake/images/MENU_BGimg.png) no-repeat scroll left top;
+	float: left;
+	height: 384px;
+	width: 597px;
+	margin-top:63px;
+	margin-left:130px;
+	padding-top:9px;
+}
+
+#rightContent {
+	float: left;
+	height: 626px;
+	width: 854px;
+}
+
+
+
+/*Recipe Menu Layout
+*********************************************************************/
+
+#receiptMenu {
+	background: url(../images/MENU_BGimg.png) no-repeat scroll left top;
+	float: left;
+	height: 384px;
+	width: 597px;
+	margin-top:63px;
+	margin-left:25px;
+	padding-top:9px;
+}
+
+.recipt_content {
+	float: left;
+	height: 353px;
+	width: 282px;
+}
+.recipe_img {
+	float: left;
+	height: 353px;
+	width: 295px;
+}
+.recipe_glyph {
+	text-align: center;
+	height: 60px;
+}
+	.recipe_glyph img {margin-top:15px}
+	
+.recipe_title {
+	background: url(/cheesecake/images/5colors_vertical.gif) no-repeat scroll 1px top;
+	height: 60px;
+}
+.recipe_description {
+	height: 100px;
+	width: 240px;
+	border-bottom: 0.1em solid #BFBFBF;
+	margin: 0px auto;
+}
+.recipe_substitutions {
+	margin: 0px auto;
+	height: 90px;
+	width: 240px;
+}
+.recipe_nutritionInfo_Box {
+	text-align: right;
+	margin-top:5px; margin-right:12px;
+}
+	.recipe_nutritionInfo_Box img {margin-top:2px}
+
+/*Sit Map Layout
+*********************************************************************/
+#sitemap {
+	text-align: left;
+	vertical-align: top;
+	margin: 0 25px;
+	overflow:hidden;
+	height:100%
+}
+
+/*Locations Layout - org location width: 786
+*********************************************************************/
+#locationALL {height:28px; line-height:28px; vertical-align:middle}
+#locations {width:818px; height:510px; margin:50px auto 0 auto; _margin: 50px -10px 0px !important;}
+#location_box {height:70px; margin:16px auto 12px auto;}
+#locationMap { width:598px; height:427px; float:left; position:relative; z-index:9999; }
+	#locationMap_top {
+		background: url(/cheesecake/images/TPBGIMG.png) no-repeat scroll left top;
+		width:606px;
+		height:72px;
+		position:absolute;
+		top:0; left:0;
+		z-index:2100;
+	}
+		#locationMap_top h4 {margin-top:10px;margin-left: 65px;}
+		
+		
+		#locationMap_top2 {
+		background: url(/cheesecake/images/TPBGIMG_new.png) no-repeat scroll left top;
+		width:652px;
+		height:66px;
+		position:absolute;
+		top:0; left:0;
+		z-index:2100;
+	}
+		#locationMap_top2 h4 {margin-top:10px;margin-left: 65px;}
+		
+		
+		
+	#locationMap_bottom {
+		background: url(/cheesecake/images/LocationMapBGIMG.png) no-repeat scroll left top;
+		width:605px;
+		height:465px;
+		margin:0;
+		padding:0;
+		position:absolute;
+		top:68px;
+		left:0;
+		z-index:2000;
+	}
+	
+	
+	#locationMap_bottom2 {
+		background: url(/cheesecake/images/LocationMapBGIMG_new.png) no-repeat scroll left top;
+		width:652px;
+		height:560px;
+		margin:0;
+		padding:0;
+		position:absolute;
+		top:68px;
+		left:0;
+		z-index:2000;
+	}
+	
+		#locationMap_bottom2 img { text-align:center; vertical-align:top;}
+	
+		#locationMap_bottom img { text-align:center; vertical-align:top;}
+	
+	
+	/* Search Form Template */
+	#locator_search {
+		margin-top: 10px;
+		margin-left: 65px;
+	}
+		#locator_search input.checkbox {
+			border:none;
+			background: url(/cheesecake/images/INPUT_CheckBoxBGIMG.png) no-repeat scroll center center;
+			padding:1px 0 0 0;
+		}
+	#locationResults {
+		width:220px;
+		height:400px;
+		float:left;
+		background-color:#EFE4C8;
+		margin-top: 15px;
+	}
+	#locationResults h2, #locationResults h3 { display:inline; padding-top:15px;}
+	#locationListing {
+		background: #FFF;
+		height:360px;
+		width:220px;
+		overflow-y: auto;
+		overflow-x:hidden;
+		
+		/*Scrollbars Style*/	
+		scrollbar-face-color:#EAD8B2;
+		scrollbar-highlight-color:#F4EBD9;
+		scrollbar-3dlight-color:#DDD7CB;
+		scrollbar-darkshadow-color:#93846D;
+		scrollbar-shadow-color:#D8CEB6;
+		scrollbar-arrow-color:#080404;
+		scrollbar-track-color:#F4EAD7;
+		scrollbar-base-color:#F4EAD7; 
+	}
+		#locationListing table {width:180px; margin:auto; }
+	
+	
+#mapPanel {
+	height: 160px;
+	width: 30px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 3000;
+}
+#zoomPanel {
+	position: absolute;
+	height: 115px;
+	width: 20px;
+	left: 5px;
+	bottom: 0px;
+	background: url(/cheesecake/images/MAP_bar2.png) no-repeat scroll center center;
+}
+
+/* Location Infomation Tabs */
+#locationInfo {
+	height: 362px;
+	width: 566px;
+	position: absolute;
+	z-index: 4000;
+	left: 0px;
+	top: 0px;
+}
+	#glyphIMG {
+	position:absolute;
+	top:15px;
+	left: 110px;
+	width:40px;
+	height: 30px;
+}
+	#restaurantIMG {
+	position:absolute;
+	top:22px;
+	width:202px;
+	height: 284px;
+	right: 0px;
+	}
+	#closeLink {
+		position:absolute;
+		top:10px;
+		right:8px;
+	}
+	#directions_summary {
+		padding: 10px 20px;
+		background-color:#713F29;
+	}

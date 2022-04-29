@@ -1,0 +1,124 @@
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	include ../global/head
+	// TODO: we need to specify a platform class on the body
+	body(class="is-#{platform}")
+		include ../global/header
+		include ../global/menu
+		.outer-wrap
+			// START : WRAPPER
+			.wrapper
+				- contentHeaderTitle = "Restaurant Locations Directory"
+				- contentHeaderClass = "banner-purple"
+				include ../modules/content-header
+				.container
+					// START : MAIN CONTAINER
+					#mainContainer.main-container
+						// START : PAGE CONTENT
+						#mainContent.main-content
+							// TODO: Everything inside "#mainContent" will be repopulated by Backbone
+							// TODO: Location listing page gets .narrow-column class for spanning full page
+							.content-column.narrow-column
+								h2.content-heading Welcome
+
+								h5 Select a location.
+
+								ul
+									li
+										a(href="/location-details") 520 N. Orlando Avenue, Suite 100, Winter Park, FL 32789
+
+
+								h5 Select a State to find restaurant locations.
+
+								ul.location-list
+									li
+										a(href="#") Alabama (AL)
+									li
+										a(href="#") Arizona (AZ)
+									li
+										a(href="#") California (CA)
+									li
+										a(href="#") Colorado (CO)
+									li
+										a(href="#") Connecticut (CT)
+									li
+										a(href="#") District of Columbia (DC)
+									li
+										a(href="#") Delaware (DE)
+									li
+										a(href="#") Florida (FL)
+									li
+										a(href="#") Georgia (GA)
+									li
+										a(href="#") Hawaii (HI)
+									li
+										a(href="#") Iowa (IA)
+									li
+										a(href="#") Idaho (ID)
+									li
+										a(href="#") Illinois (IL)
+									li
+										a(href="#") Indiana (IN)
+									li
+										a(href="#") Kansas (KS)
+									li
+										a(href="#") Kentucky (KY)
+									li
+										a(href="#") Louisiana (LA)
+									li
+										a(href="#") Massachusetts (MA)
+									li
+										a(href="#") Maryland (MD)
+									li
+										a(href="#") Michican (MI)
+
+								ul.location-list
+									li
+										a(href="#") Minnesota (MN)
+									li
+										a(href="#") Missouri (MO)
+									li
+										a(href="#") North Carolina (NC)
+									li
+										a(href="#") Nebraska (NE)
+									li
+										a(href="#") New Jersey (NJ)
+									li
+										a(href="#") Nevada (NV)
+									li
+										a(href="#") New York (NY)
+									li
+										a(href="#") Ohio (OH)
+									li
+										a(href="#") Oklahoma (OK)
+									li
+										a(href="#") Oregon (OR)
+									li
+										a(href="#") Pennsylvania (PA)
+									li
+										a(href="#") Rhode Island (RI)
+									li
+										a(href="#") Tennessee (TN)
+									li
+										a(href="#") Texas (TX)
+									li
+										a(href="#") Utah (UT)
+									li
+										a(href="#") Virginia (VA)
+									li
+										a(href="#") Washington (WA)
+									li
+										a(href="#") Wisconsin (WI)
+									li
+										a(href="#") Pr (PR)
+
+						// END : PAGE CONTENT
+					// END : MAIN CONTAINER
+			include ../global/footer
+			// END : WRAPPER

@@ -1,0 +1,96 @@
+/* ==========================================================================
+    CONTENT - BIOGRAPHIES
+   ========================================================================== */
+
+.content-biographies {
+	margin: 40px 0 0;
+	border-top: 1px solid $borderColorDark;
+	&:first-child {
+		margin: 0;
+	}
+}
+.content-biographyrow {
+	border-bottom: 1px solid $borderColorDark;
+	padding: 40px 0 20px;
+	&.active {
+		.content-biographyrow-right {
+			&:before {
+				// hide gradient
+				height: 0;
+			}
+		}
+		.content-biographyrow-expand {
+			color: $linkActiveColor;
+			&:after {
+				@include transform(rotate(-180deg) translateZ(0));
+				-ms-transform: rotate(-180deg);
+			}
+			.viewmore {
+				display: none;
+			}
+			.viewless {
+				display: inline;
+			}
+		}
+	}
+}
+.content-biographyrow-image {
+	float: left;
+	height: 215px;
+	margin: 0 40px 0 0;
+	width: 215px;
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+.content-biographyrow-right {
+	@extend .clearfix;
+	float: left;
+	height: 215px;
+	overflow: hidden;
+	position: relative;
+	width: 384px;
+	@include transition(height 0.5s $easeInOutCubic);
+	@include text-gradient;
+}
+.content-biographyrow-title {
+	color: $contentLinkTitle;
+	font: $fontWeightSemibold 19px/23px $themeFont;
+	text-transform: uppercase;
+}
+.content-biographyrow-subtitle {
+	border-bottom: 1px solid $borderColor;
+	color: $contentLinkTitle;
+	font: $fontWeightSemibold 14px/23px $themeFont;
+	padding: 0 0 3px;
+	text-transform: uppercase;
+}
+.content-biographyrow-description {
+	font: $fontWeightRegular 16px/23px $themeFont;
+	padding: 14px 0 0;
+	a {
+		font-weight: $fontWeightSemibold;
+	}
+}
+.content-biographyrow-expand {
+	clear: both;
+	cursor: pointer;
+	font: $fontWeightRegular 16px/16px $themeFont;
+	display: block;
+	padding: 10px 0 0 255px;
+	text-align: center;
+	text-transform: uppercase;
+	&:after {
+		@extend .icon-arrow-down;
+		display: inline-block;
+		margin-left: 14px;
+		position: relative;
+		top: 2px;
+		@include transition(transform 0.5s $easeInOutCubic);
+	}
+	.viewless {
+		display: none;
+		color: $linkActiveColor;
+	}
+}

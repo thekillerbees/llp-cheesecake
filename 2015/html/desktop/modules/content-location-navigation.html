@@ -1,0 +1,18 @@
+
+<!-- START : /modules/content-header.html-->
+<!-- TODO: Add .navigation-anchors-only class to hide on mobile (if the navigation consists of only anchor links)-->
+<div id="contentNavigation" class="content-navigation navigation-anchors-only">
+  <ul>
+    <li><a href="#restaurantdetails">Restaurant Details</a></li>
+    <li><a href="#ourmenu">Our Menu</a></li>
+    <li><a href="#togo">To Go</a></li>
+    <li><a href="#takeout">Take Out</a></li>
+    <li><a href="#catering">Catering</a></li>
+  </ul>
+</div>
+<script>
+  require(["modules/fixedNavigation"], function(FixedNavigation) {
+   return new FixedNavigation();
+  });
+</script>
+<!-- END : /modules/content-header.html-->

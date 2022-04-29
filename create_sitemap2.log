@@ -1,0 +1,46 @@
+[2015-10-12 10:45:36]	31981	Start. Getting database connection.
+[2015-10-12 10:45:36]	31981	Getting site information from database
+[2015-10-12 10:45:36]	31981	get_site locator SQL: 
+		select l.uid, l.schemaname, l.name,
+			l.authurl, l.appkey,
+			l.localsites, l.urlstructure,
+			a.name as accountname, c.name as clientname, c.masterschema
+		from w2gi.locator l
+		join w2gi.account a on a.uid = l.accountuid
+		join w2gi.client  c on c.uid = a.clientuid
+		where l.schemaname = 'cheesecake'  and l.appkey = '8FB256FA-4D3E-11DF-87DB-E6AEF46A8D6E'
+		and l.localsites = true
+		and l.authurl is not null
+		order by case when l.authurl ~ '^http://' then 1 else 2 end
+		limit 1
+	
+[2015-10-12 10:45:36]	31981	get_site locatortemplate SQL: 
+		select templatetype, defaulttemplate, locationfilter, alternateclientkey
+		from cheesecake.locatortemplate
+		where templatetype = 'Locator::Location'
+		order by case when defaulttemplate = true then 1 else 2 end ASC
+		limit 1
+	
+[2015-10-12 10:45:36]	31981	Getting list of URLs from database.
+[2015-10-12 10:45:36]	31981	get_urls SQL: 
+				select url, priority, to_char( now(), 'YYYY-MM-DDT00:00:00-05:00' ) as lastmod
+				from (
+					select 'http://locations.thecheesecakefactory.com/index.html' as url, 0.3::decimal as priority, 0::int as level
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(state) || '/index.html' as url, 0.5, 1
+						from cheesecake.storelocator where country = 'US' and state <> '' 
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(province) || '/index.html' as url, 0.5, 1
+						from cheesecake.storelocator where country <> 'US' and province <> '' 
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(state) || '/' || lower(w2gi.urlescape(city)) || '.html' as url, 0.5, 2
+						from cheesecake.storelocator where country = 'US' and state <> '' and city <> '' 
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(province) || '/' || lower(w2gi.urlescape(city)) || '.html' as url, 0.5, 2
+						from cheesecake.storelocator where country <> 'US' and province <> '' and city <> '' 
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(state) || '/' || lower(w2gi.urlescape(city)) || '-' || clientkey || '.html' as url, 0.7, 3
+						from cheesecake.storelocator where country = 'US' and state <> '' and city <> '' and clientkey <> '' 
+					union all select distinct 'http://locations.thecheesecakefactory.com/' || lower(province) || '/' || lower(w2gi.urlescape(city)) || '-' || clientkey || '.html' as url, 0.7, 3
+						from cheesecake.storelocator where country <> 'US' and province <> '' and city <> '' and clientkey <> '' 
+				) urls order by level,url
+			
+[2015-10-12 10:45:36]	31981	Generating sitemap file(s).
+[2015-10-12 10:45:36]	31981	Sitemap with 404 URLs saved to '/u/client/cheesecake/local/sitemap.xml'.
+[2015-10-12 10:45:36]	31981	Compressed the file '/u/client/cheesecake/local/sitemap.xml' to '/u/client/cheesecake/local/sitemap.xml.gz'.
+[2015-10-12 10:45:36]	31981	Finished.

@@ -1,0 +1,663 @@
+<!-- START : /modules/locations-content.html--><!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]--><!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+<title>The Cheesecake Factory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+<link rel="icon" href="/cheesecake/2014/assets/images/global/favicon.ico">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="stylesheet" href="/cheesecake/2014/assets/css/w2gi_mobile.css">
+<link type="text/css" href="w2gi/css/w2gi_styles.css" rel="stylesheet" media="all"/>
+<link type="text/css" href="http://static.where2getit.com/w2gi/css/style210.css" rel="stylesheet" media="all"/>	
+<link type="text/css" href="http://static.where2getit.com/w2gi/css/lightwindow.css" rel="stylesheet" media="all"/>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyABNyZK7U8Dbt6_grtNUWqEfcFBBl_vWEY&channel=cheesecake"></script>
+
+<script type="text/javascript" src="/w2gi/javascript/ace/2.1/prototype.js"></script>
+<script type="text/javascript" src="/w2gi/javascript/ace/2.1/W2GI_core.js"></script>
+<script type="text/javascript" src="/w2gi/javascript/ace/1.78/W2GI_mobile.js"></script>
+<script type="text/javascript" src="w2gi/js/helper.js"></script>
+
+<script>
+
+</script>
+</head>
+<body>
+
+<xml id="application_data">
+	<root>
+	   <appkey>4EEBBA66-6D70-11DE-BC28-64B83B999D57</appkey>
+		<ajaxurl>ajax?</ajaxurl>
+	</root>
+</xml>
+<div id="w2gi_wrapper">
+	
+		<!-- client header starts here -->
+		
+		
+		<!-- client header ends here -->
+		
+
+			
+		<!-- <img id="ajax_activity" /> -->
+		
+		<div id="ajax_activity">
+			<img />
+		</div>
+
+		
+		<div id="search-results-wrapper">
+			<div id="search-results">
+
+				
+				<form id="locator_search">
+					<input type="hidden" id="latitude" name="latitude" />
+					<input type="hidden" id="longitude" name="longitude" />
+				
+					<div class="float-left">
+						<button id="my_location" type="button" class="btn btn-blue"><i class="fa fa-crosshairs"></i> My Location</button>
+						<p>Or</p>
+					</div>
+					<div class="float-right">
+						<input type="text" name="addressline" id="addressline" value="" onfocus="clearfield(this);">
+						<button type="submit" class="btn btn-clear"><i class="fa fa-search"></i></button>
+					</div>
+				
+					<ul>
+						<li class="active list_view_button" onclick="hide_map();"><a href="javascript:void(0);"><i class="fa fa-list"></i> List View</a></li>
+						<li class="map_view_button" onclick="show_map();"><a href="javascript:void(0);"><i class="fa fa-map-marker"></i> Map View</a></li>
+					</ul>
+				
+					<button id="show_filters" type="button" class="btn btn-blue show-filters" onclick="$('filters').toggle(); $('show_filters').toggle(); $('close_filters').toggle();"><i class="fa fa-chevron-circle-down"></i> Filter these results</button>
+					<button id="close_filters" type="button" class="btn btn-blue show-filters" onclick="$('filters').toggle(); $('close_filters').toggle(); $('show_filters').toggle();" style="display: none;"><i class="fa fa-times"></i> Close</button>
+					<div id="filters" style="display: none;">
+
+							<div class="float-left">
+								<label><input type="checkbox" value="1" name="laredo_taco">Laredo Taco Company</label>
+								<label><input type="checkbox" value="1" name="truck_accessible">Truck Stop</label>
+								<label><input type="checkbox" value="1" name="carwash">Carwash</label>
+								<label><input type="checkbox" value="1" name="atm">ATM</label>
+								
+							</div>
+							<div class="float-right">
+								<label><input type="checkbox" value="1" name="lube">Lube Location</label>
+								<label><input type="checkbox" value="1" name="showers">Showers</label>
+								<label><input type="checkbox" value="1" name="laundry_room">Laundry Room</label>
+								<label><input type="checkbox" value="1" name="comingsoon">Coming Soon</label>
+							</div>
+						
+					</div><!-- end filters -->
+					
+					<xml>
+						<root>
+							<inputform>
+								<formdata id="locatorsearch">
+									<dataview>store_default</dataview>
+									
+									<order>_distance</order>
+									<softmatch>1</softmatch> 
+									
+									<limit>10</limit>
+									<atleast>1</atleast>
+									<searchradius>25|50|100|250|1000</searchradius>
+		
+									<geolocs>
+										<geoloc>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+										</geoloc>
+									</geolocs>
+									
+									<stateonly>1</stateonly> <!-- Allows search by entering a State Name in the address input -->
+									<nobf>1</nobf> <!-- Ambiguous City searches do not default to GEO-IP State -->
+									
+									<where>
+										<laredo_taco><eq></eq></laredo_taco>
+										<truck_accessible><eq></eq></truck_accessible>
+										<carwash><eq></eq></carwash>
+										<atm><eq></eq></atm>
+										<lube><eq></eq></lube>
+										<showers><eq></eq></showers>
+										<laundry_room><eq></eq></laundry_room>
+										<comingsoon><eq></eq></comingoon>
+									</where>
+		
+								</formdata>						
+							</inputform>									
+						</root>	
+					</xml>
+				</form>
+				
+				
+				<!--<div id="results">-->
+				<ol id="results">
+				</ol>
+				<!--</div>-->
+				
+			</div><!-- end search-results -->
+		</div><!-- end search-results-wrapper -->
+		
+		<div id="more_info_panel">
+			<ul id="more_info_results">
+			</ul>
+		</div><!-- end map_panel -->
+		
+		<!-- this div was moved to be outside of the more_info_panel div in order to show the map when page loaded -->
+		<div id="map_canvas" class="map_hidden">				
+		</div>
+		
+		
+		<div id="driving_directions_panel">
+		
+		
+			<div id="driving_map"></div>
+			
+			<form id="driving_directions">
+				<div style=''>
+					<div class="searchboxBorder">
+						Start<br/>
+						Enter address  <span id="useCurrentLoc">or <a href="javascript:void(0);">Use Current Location</a></span>
+						<br/>
+						<input id="startaddress" name="addressline" type="search" placeholder="Enter your starting address" />
+					</div>
+					<div class="searchboxBorder">
+						End<br/>
+						<input id="endaddress" name="addressline" type="search" placeholder="End" />
+						<input type="hidden" name="recnum" id="recnum" /> 
+						<input type="hidden" name="dest_latitude" id="dest_latitude" />
+						<input type="hidden" name="dest_longitude" id="dest_longitude" />
+						
+						<!-- <input id="search" name="search" type="image" src="images/btn_go_new.png" value="" /> -->
+						
+						<input id="search" name="search" type="submit" value="Get Directions"/>
+					</div>
+					
+				</div>
+				<xml>
+					<root>
+						<inputforms>
+							<inputform>
+								<formdata id="drivingdirections">
+									<dataview>store_default</dataview>
+									<geolocs>
+										<geoloc>
+											<address1></address1>
+											<city></city>
+											<state></state>
+											<province></province>
+											<postalcode></postalcode>
+											<addressline></addressline>
+											<longitude></longitude>	
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+										<geoloc>
+											<address1></address1>
+											<city></city>
+											<state></state>
+											<province></province>
+											<postalcode></postalcode>
+											<addressline></addressline>
+											<longitude></longitude>
+											<latitude></latitude>
+											<country></country>
+										</geoloc>
+									</geolocs>
+								</formdata>
+							</inputform>
+						</inputforms>
+					</root>
+				</xml>
+			</form>
+			<ul id="directions_results">
+			</ul>
+			<div id="backbutton">
+					<a href="javascript:void(0);">Back</a>
+			
+			</div>
+			
+			
+			
+		</div>
+			
+		<div></div>
+		
+		
+		<div id="templates">
+
+			<!-- icon template start, you can use client's icon here. You may need to modify the .number class in the mobile css file for the appearance of the number -->	
+           	<div id="poi_icon">
+            	<span class="number" onclick="get_more_info('#{POINUM}');"><strong>#{POINUM}</strong></span><img id="icon" class="alpha" src="/stripesstores/images/map-tools-location-icon.png"/>
+			</div>					
+			<!-- icon template end  -->
+
+			<!-- POI template start -->
+			<ul id="collection_poi">
+
+				<ul class="ul_head">
+				<li class="result_count">
+					<div id="matches-found">
+						<img alt="" src="images/stripes-symbol.png">
+						<p>#{COUNT} Locations Nearby</p>
+					</div>
+				</li>
+				</ul>
+
+				<ul class="ul_body">
+
+					<li><b>#{NAME}</b><br/>
+						#{ADDRESS1}<br>
+						#{CITY}, #{STATE} #{POSTALCODE}<br>
+						<a href="tel:#{PHONE}">#{PHONE}</a><br>
+						#{_DISTANCE} miles<br>
+						<a href="javascript:void(0);" onclick="get_more_info('#{POINUM}');"><i class="fa fa-info-circle"></i> Store Details</a> | <a href="http://maps.apple.com/?daddr=#{ADDRESS1}, #{CITY} #{STATE} #{POSTALCODE}" target="_blank"><i class="fa fa-map-marker"></i> Directions</a>
+						
+						<img alt="Laredo Taco Company" src="images/laredo-taco-company-logo.png" class="hide_#{LAREDO_TACO}">
+					
+					</li>
+				</ul>
+			</ul>
+			<!-- POI template end -->
+			
+			<!-- multiple address template start -->
+			<ul id="collection_multiple_address">
+				<ul class="ul_head">
+				<li class="result_count">
+					<div id="matches-found">
+						<img alt="" src="images/stripes-symbol.png">
+						<p>Did you mean:</p>
+					</div>
+				</li>
+				</ul>
+				<ul class="ul_body">
+					<li recnum="#{POINUM}" action="search_address">
+						<a href="javascript:void(0);">
+							<span>#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}</span>
+						</a>
+					</li>
+				</ul>
+			</ul>
+			<!-- multiple address template end -->
+			
+			<!-- bubble template start  -->
+            <div id="bubble">
+				
+			</div>
+			<!-- bubble template end -->
+			
+			<!-- more info template start -->
+			<ul id="collection_more_info">
+				<ul class="ul_body">
+					<li>
+						<div id="map-bubble">
+							<button class="btn btn-clear close-bubble" type="button" onclick="back_to_results();"><i class="fa fa-times-circle"></i></button>
+							<div class="float-left">
+								<img alt="Stripes" src="images/stripes-logo.png">
+								<img alt="Laredo Taco Company" src="images/laredo-taco-company-logo.png" class="hide_#{LAREDO_TACO}">
+							</div>
+							<div class="float-right" style="margin: 0 0 20px 0;">
+								<address><b>#{NAME}</b><br/>
+									#{ADDRESS1}<br>
+									#{CITY}, #{STATE} #{POSTALCODE}<br>
+									<a href="tel:#{PHONE}">#{PHONE}</a><br>
+									
+								</address>
+								<a style="margin: 0 0 0 10px" href="http://maps.apple.com/?daddr=#{ADDRESS1}, #{CITY} #{STATE} #{POSTALCODE}" target="_blank"><i class="fa fa-map-marker"></i> Driving Directions</a>
+							</div>
+							<div class="clearfix"></div>
+							<p>Store Details</p>
+							<div id="store-details">
+								<img alt="Truck Accessible" src="/stripesstores/images/truck-accessible.png" class="hide_#{TRUCK_ACCESSIBLE}">
+								<img alt="Car Wash" src="/stripesstores/images/car-wash.png" class="hide_#{CARWASH}">
+								<img alt="ATM Machine" src="/stripesstores/images/atm-machine.png" class="hide_#{ATM}">
+								<img alt="Lube Location" src="/stripesstores/images/lube-location.png" class="hide_#{LUBE}">
+								<img alt="Shower Facilities" src="/stripesstores/images/shower-facilities.png" class="hide_#{SHOWERS}">
+								<img alt="Laundry Facilities" src="/stripesstores/images/laundry-facilities.png" class="hide_#{LAUNDRY_ROOM}">
+							</div>
+							<p>Promotions</p>
+							<img alt="Store Promotion" src="images/store-promo-sample.jpg" id="store-promo">
+						</div>
+					</li>
+				</ul>
+			</ul>
+			<!-- more info template end -->
+			
+			<!-- maneuvers start -->
+			<div id="collection_maneuvers">
+				<div class="div_head">
+					<li class="textbox">
+					<span>Directions</span><br/>
+						Total distance: #{TOTAL_DISTANCE} #{DISTANCE_UNIT}<br/>
+						Total time: #{TOTAL_TIME} #{TIME_UNIT}
+					</li>
+					<li class="textbox">
+						<div>
+							<strong>From (A): </strong><br>
+							<div class="addressline">
+								<div class="address_line1"></div>
+								<div>
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+									<span class="address_zip"></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="div_foot">
+					<li class="textbox">
+						<div>
+							 <strong> To (B):</strong><br>
+							<div class="addressline">
+								<div class="address_line1"></div>
+								<div>
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+									<span class="address_zip"></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="div_body">
+					<li class="menu" num="#{ID}" action="show_segment" page="driving_directions_panel">
+						<div>#{ID}.</div>
+						<div>#{TEXT} #{DISTANCE} #{DISTANCEUOM}</div>
+					</li>
+					<div class="maneuver_pois" id="maneuver_#{ID}">
+						
+					</div>
+				</div>
+			</div>
+			<!-- maneuvers end -->
+			
+			<!-- center marker start -->
+			<div id="center_marker">
+				<img id="icon" src="/w2gi/images/icons/red-star.png" anchorx="15" anchory="14" />
+			</div>
+			<!-- center marker end -->
+			
+			<!-- poi marker start -->
+			<!-- poi marker end -->
+			
+			<!-- error start -->
+			<ul id="error">
+				<li class="textbox">#{MESSAGE}</li>
+			</ul>
+			<!-- error end -->
+			
+			<!-- driving directions start icon start -->
+			<div id="ddstarticon">
+				<img id="icon" src="/w2gi/images/icons/ddstartpin.png"/>
+			</div>
+			<!-- driving directions start icon end -->
+			
+			<!-- driving directions end icon start -->
+			<div id="ddendicon">
+				<img id="icon" src="/w2gi/images/icons/ddendpin.png"/>
+			</div>
+			<!-- driving directions end icon end -->
+		</div>
+		
+		
+
+		<div id="footer">
+			
+			<div id="copyright">
+			  <br/>
+        			<script type="text/javascript">
+					var d = new Date()
+                        	document.write("&copy; ")
+					document.write(d.getFullYear())
+					document.write("<a href='http://www.brandify.com' target='_new'> Brandify</a>")
+                			document.write("")
+				</script>
+			</div>
+		</div>
+		
+<!-- client footer starts here -->
+
+
+	</div><!-- end w2gi_wrapper -->
+
+    <!-- TODO: Only mobile gets .location-header-->
+    <div class="location-header">
+      <!-- TODO: action attribute is required on form for "Search" button on iOS 8 keyboard-->
+      <form action="" class="text-submit-wrapper">
+        <input id="locationSearch" type="search" placeholder="Search for a location">
+        <button class="filterToggle">Search Filter</button>
+      </form>
+      <ul class="location-toggle toggle-switch">
+        <!-- TODO: .active class denotes the currently selected .location-toggle li-->
+        <li class="active"><a href="#" class="show-list-view">List View</a></li>
+        <li><a href="#" class="show-map-view">Map View</a></li>
+      </ul>
+    </div>
+    <!-- TODO: On mobile, .location-map is hidden by default, and shows when .show-map class is added to body-->
+	
+	
+	
+    <div id="locationMap" class="location-map">
+      <!-- TODO: iframe placeholder -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3502.922523368389!2d-81.364582!3d28.602100999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7706b36192781%3A0x1218a9f3b38341c9!2sThe+Cheesecake+Factory!5e0!3m2!1sen!2sus!4v1410808479892" width="800" height="600" frameborder="0" style="border:0"></iframe>
+      
+    </div>
+    <!-- TODO: Only include one class below at a time-->
+    <!-- TODO: .show-filter on .location-sidebar drops down the Search Filter-->
+    <!-- TODO: .show-detail on .location-sidebar slides over from Results (which is shown on load) to a result detail page-->
+    <!-- TODO: .show-directions on .location-sidebar shows directions list. Remove class to hide directions-->
+    <form class="location-sidebar form-dark">
+      <fieldset class="location-sidebar-filter">
+        <div class="filter-toggles"><strong class="small-title">Search Only Locations With:</strong>
+          <div class="filter-grid">
+            <input id="filterCurbside" type="checkbox" checked>
+            <label for="filterCurbside" class="choice-label">Curbside To-Go</label>
+            <input id="filterCatering" type="checkbox">
+            <label for="filterCatering" class="choice-label">Catering</label>
+            <input id="filterBanquets" type="checkbox">
+            <label for="filterBanquets" class="choice-label">Banquets</label>
+            <input id="filterPatio" type="checkbox">
+            <label for="filterPatio" class="choice-label">Patio</label>
+          </div>
+          <button id="filterSubmit" class="btn">Apply Filter</button>
+        </div>
+        <div class="filter-select">
+          <select id="filterStates">
+            <!-- TODO: Populate with list of all TCF location states-->
+            <option value="">List By State</option>
+            <option value="CA">California</option>
+            <option value="FL">Florida</option>
+            <option value="NY">New York</option>
+          </select>
+        </div>
+        <!-- TODO: Mobile only gets Coming Soon/All Locations links here-->
+        <ul class="location-sidebar-bottom">
+          <!-- TODO: These links will populate search results-->
+          <li>
+            <!-- TODO: Coming Soon will populate search results, but each li will have the class '.no-page' to indicate it can't be clicked--><a href="#">Coming Soon</a>
+          </li>
+          <li>
+            <!-- TODO: All Locations will populate search results with all restaurants--><a href="#">All Locations</a>
+          </li>
+        </ul>
+      </fieldset>
+      <div class="location-sidebar-wrapper">
+        <div class="location-sidebar-directions">
+          <!-- TODO: Populate .location-sidebar-directions when user requests directions-->
+          <!-- TODO: To show directions, remove other '.show-' classes from .location-sidebar and add .show-directions-->
+          <div class="location-sidebar-title">Directions to Your Restaurant<span class="subtitle">Send Directions To: <a href="#">Email</a></span></div>
+          <div class="location-sidebar-subtitle">From (A):<br>Orlando, FL 32803<br>Total distance: 4.4 miles<br>Total time: 8 minutes</div>
+          <ul class="results-list">
+            <li>Start out on Royal Palm Ct (Going Northwest) 0.06 miles</li>
+            <li>Turn RIGHT onto Garden Plz (Going North) 0.04 miles</li>
+            <li>Turn LEFT onto Royal Palm Ct (Going Northwest) 0.13 miles</li>
+            <li>Turn RIGHT onto Palm Dr (Going North) 0.07 miles</li>
+            <li>Turn LEFT onto Weber St (Going West) 0.03 miles</li>
+            <li>Turn RIGHT onto N Hampton Ave (Going North) 0.41 miles</li>
+            <li>Turn LEFT onto Virginia Dr (Going West) 0.49 miles</li>
+            <li>Turn RIGHT onto US-17-92 (Going North) 0.68 miles</li>
+            <li>Turn SLIGHT RIGHT onto N Mills Ave/US-17-92/Mills Ave N (Going North) 0.19 miles</li>
+            <li>Turn SLIGHT LEFT onto Mills Ave N/US-17-92/N Mills Ave (Going Northwest) 0.01 miles</li>
+            <li>Turn SLIGHT RIGHT onto US-17-92 (Going North) 1.13 miles</li>
+            <li>Turn RIGHT onto W Fairbanks Ave/SR-426 (Going East) 0.13 miles</li>
+            <li>Make a U-TURN onto W Fairbanks Ave/SR-426 (Going West) 0.13 miles</li>
+            <li>Turn RIGHT onto US-17-92 (Going North) 0.75 miles</li>
+            <li>Make a U-TURN onto N Orlando Ave/US-17-92/Orlando Ave N (Going South) 0.11 miles</li>
+          </ul>
+          <div class="location-sidebar-subtitle">To (B):<br>520 N. Orlando Avenue<br>Winter Park, FL 32789</div>
+          <div class="location-sidebar-title"><a href="#">Get reverse directions</a></div>
+        </div>
+        <div class="location-sidebar-results">
+          <!-- TODO: Populate with amount of search results-->
+          <div class="location-sidebar-title"><span>8</span> Locations Found</div>
+          <ul class="results-list">
+            <!-- TODO: Location/search results go below-->
+            <!-- TODO: Optional class for result li's: .active (to color result bg if map marker is selected)-->
+            <!-- TODO: Optional class for result li's: .no-page (if there's no detail page, for Coming Soon)-->
+            <li><a class="result-title">Winter Park</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>520 North Orlando Avenue, </span><span>Winter Park, FL 32789</span>
+                </p>
+                <p>407-644-4220</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <li><a class="result-title">Orlando</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>4200 Conroy Road, </span><span>Orlando, FL 32839</span>
+                </p>
+                <p>407-226-0333</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <!-- TODO: Optional class for result li's: .active (to color result bg if map marker is selected)-->
+            <!-- TODO: Optional class for result li's: .no-page (if there's no detail page, for Coming Soon)-->
+            <li><a class="result-title">Winter Park</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>520 North Orlando Avenue, </span><span>Winter Park, FL 32789</span>
+                </p>
+                <p>407-644-4220</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <li><a class="result-title">Orlando</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>4200 Conroy Road, </span><span>Orlando, FL 32839</span>
+                </p>
+                <p>407-226-0333</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <!-- TODO: Optional class for result li's: .active (to color result bg if map marker is selected)-->
+            <!-- TODO: Optional class for result li's: .no-page (if there's no detail page, for Coming Soon)-->
+            <li><a class="result-title">Winter Park</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>520 North Orlando Avenue, </span><span>Winter Park, FL 32789</span>
+                </p>
+                <p>407-644-4220</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <li><a class="result-title">Orlando</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>4200 Conroy Road, </span><span>Orlando, FL 32839</span>
+                </p>
+                <p>407-226-0333</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <!-- TODO: Optional class for result li's: .active (to color result bg if map marker is selected)-->
+            <!-- TODO: Optional class for result li's: .no-page (if there's no detail page, for Coming Soon)-->
+            <li><a class="result-title">Winter Park</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>520 North Orlando Avenue, </span><span>Winter Park, FL 32789</span>
+                </p>
+                <p>407-644-4220</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+            <li><a class="result-title">Orlando</a>
+              <div class="result-address">
+                <p>
+                  <!-- TODO: Spans are to separate address lines on mobile--><span>4200 Conroy Road, </span><span>Orlando, FL 32839</span>
+                </p>
+                <p>407-226-0333</p>
+              </div>
+              <!-- TODO: Mobile: View Map and View Details links-->
+              <div class="result-links"><a class="location-view-map">View Map</a><a class="location-view-details">View Details</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="location-sidebar-detail">
+          <!-- TODO: Populate this .location-sidebar-detail page via JS (AJAX?) when user clicks a result -->
+          <div class="location-sidebar-title">Winter Park</div>
+          <div class="detail-address">
+            <p>520 North Orlando Avenue, Winter Park, FL 32789</p>
+            <p>407-644-4220</p>
+          </div>
+          <div class="detail-directions">
+            <!-- TODO: On tablet/mobile, button launches native Maps app--><a href="#" class="btn">View Map</a>
+          </div>
+          <div class="detail-content">
+            <!-- TODO: View Details links to external page--><a href="#" class="btn">View Details</a>
+            <div class="tab-container">
+              <!-- TODO: .active class denotes the currently selected .detail-tabs li-->
+              <ul class="detail-tabs tab-switch">
+                <li fata-name="restaurant-info" class="active">
+                  <!-- TODO: anchor links on these .tab-switch li's correspond to data-name on .tab-panes-->
+                  <!-- TODO: Button title is "Restaurant" on mobile, but "Restaurant Info" not mobile--><a href="javascript:void(0);">Restaurant</a>
+                </li>
+                <li data-name="to-go">><a href="javascript:void(0);"To Go</a></li>
+              </ul>
+              <!-- TODO: .active class denotes the currently visible .detail-pane-->
+              <div class="tab-panes">
+                <div data-name="restaurant-info" class="tab-pane active"><strong>HOURS OF OPERATION</strong>
+                  <p><strong>Mon - Thu</strong><br>11:15AM - 11:00PM<br>(bakery and bar close at 11:30PM)<br><strong>Fri - Sat</strong><br>11:15AM - 12:00AM<br>(bakery and bar close at 12:30AM)<br><strong>Sun</strong><br>10:00AM - 11:00PM<br>(bakery and bar close at 11:30PM)</p>
+                  <hr>
+                  <p><strong>LOCATION:</strong><br>Located in Winter Park Village. Next to Regal Cinemas.</p>
+                  <p><strong>PATIO SEATING:</strong><br>Patio seating is available with heaters music ceiling fans and "misters" for those dry warm days and nights in the desert.</p>
+                  <p><strong>SPECIAL MENUS:</strong>
+                    <ul>
+                      <li>Braille Menu</li>
+                      <li>Large Print Menu</li>
+                    </ul>
+                  </p>
+                  <div class="btn-grid"><a href="#" class="btn">Menu</a><a href="#" class="btn">Catering Menu</a><a href="#" class="btn">Gift Cards</a><a href="#" class="btn">Careers</a></div>
+                </div>
+                <div data-name="to-go" class="tab-pane">
+                  <p><strong>TO GO:</strong><br>Need your order "To Go?" Try our Curbside To-Go Service! It's as easy as 1, 2, 3!
+                    <ol>
+                      <li>Call in to place your order.</li>
+                      <li>When you arrive to pickup your order, Drive up to our special Curbside To-Go Parking spaces, and call our Curbside Pickup line at 407-644-5199 to let us know you've arrived.</li>
+                      <li>Your food will be delivered right to your car, and you'll be on your way!</li>
+                    </ol>
+                  </p>
+                  <p><strong>TAKE OUT:</strong><br>For your convenience our entire menu of more than 200 selections is available for Take Out! You may place and pick up Take Out orders at our Bakery counter.</p><a href="#" class="btn">Take Out Menu</a>
+                  <p><strong>CATERING:</strong><br>Something for everyone at your office, party or home!<br>At The Cheesecake Factory we like to celebrate big. Now you can bring the celebration to your home, office or special event with our delicious catering selections!</p><a href="#" class="btn">Catering Menu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </body>
+</html>
+<!-- END : /modules/locations-content.html-->

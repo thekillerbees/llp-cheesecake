@@ -1,0 +1,460 @@
+// START : /modules/locations-content.html
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	head
+		title The Cheesecake Factory
+		meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
+		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+		link(rel="icon",href="/assets/images/global/favicon.ico")
+		if platform != "mobile"
+			meta(name="viewport", content="width=device-width, maximum-scale=1")
+		else
+			meta(name="viewport", content="width=device-width, user-scalable=no")
+		link(rel="stylesheet",href="/assets/css/#{platform}.css")
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+		script(src="//use.typekit.net/bxf4rjm.js")
+		script try{Typekit.load();}catch(e){}
+
+	body
+		if platform == "mobile"
+			// TODO: Only mobile gets .location-header
+			.location-header
+				// TODO: action attribute is required on form for "Search" button on iOS 8 keyboard
+				form.text-submit-wrapper(action="")
+					input#locationSearch(type="search",placeholder="Search for a location")
+					button.filterToggle Search Filter
+				ul.location-toggle.toggle-switch
+					// TODO: .active class denotes the currently selected .location-toggle li
+					li.active
+						a(href="#").show-list-view List View
+					li
+						a(href="#").show-map-view Map View
+
+		// TODO: On mobile, .location-map is hidden by default, and shows when .show-map class is added to body
+		#locationMap.location-map.
+			<!-- TODO: iframe placeholder -->
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3502.922523368389!2d-81.364582!3d28.602100999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7706b36192781%3A0x1218a9f3b38341c9!2sThe+Cheesecake+Factory!5e0!3m2!1sen!2sus!4v1410808479892" width="800" height="600" frameborder="0" style="border:0"></iframe>
+
+		// TODO: Only include one class below at a time
+		// TODO: .show-filter on .location-sidebar drops down the Search Filter
+		// TODO: .show-detail on .location-sidebar slides over from Results (which is shown on load) to a result detail page
+		// TODO: .show-directions on .location-sidebar shows directions list. Remove class to hide directions
+		form.location-sidebar.form-dark
+			if platform != "mobile"
+				// TODO: Mobile does not get .location-sidebar-search here
+				fieldset.location-sidebar-search
+					a.print(href="#") Print
+					a.email(href="#") Email
+					// TODO: #locationSearch input box will return search results
+					input#locationSearch(type="search",placeholder="Search for a location")
+					// TODO: clicking .filterToggle toggles the class .show-filter on .location-sidebar
+					a.filterToggle Search Filter
+			fieldset.location-sidebar-filter
+				.filter-toggles
+					strong.small-title Search Only Locations With:
+					.filter-grid
+						input#filterCurbside(type="checkbox",checked)
+						label.choice-label(for="filterCurbside") Curbside To-Go
+
+						input#filterCatering(type="checkbox")
+						label.choice-label(for="filterCatering") Catering
+
+						input#filterBanquets(type="checkbox")
+						label.choice-label(for="filterBanquets") Banquets
+
+						input#filterPatio(type="checkbox")
+						label.choice-label(for="filterPatio") Patio
+					button.btn#filterSubmit Apply Filter
+				.filter-select
+					select#filterStates
+						// TODO: Populate with list of all TCF location states
+						option(value="") List By State
+						option(value="CA") California
+						option(value="FL") Florida
+						option(value="NY") New York
+				if platform == "mobile"
+					// TODO: Mobile only gets Coming Soon/All Locations links here
+					ul.location-sidebar-bottom
+						// TODO: These links will populate search results
+						li
+							// TODO: Coming Soon will populate search results, but each li will have the class '.no-page' to indicate it can't be clicked
+							a(href="#") Coming Soon
+						li
+							// TODO: All Locations will populate search results with all restaurants
+							a(href="#") All Locations
+
+			.location-sidebar-wrapper
+
+				.location-sidebar-directions
+					// TODO: Populate .location-sidebar-directions when user requests directions
+					// TODO: To show directions, remove other '.show-' classes from .location-sidebar and add .show-directions
+					.location-sidebar-title Directions to Your Restaurant
+						span.subtitle
+							|Send Directions To: 
+							a(href="#") Email
+					.location-sidebar-subtitle
+						|From (A):
+						br
+						|Orlando, FL 32803
+						br
+						|Total distance: 4.4 miles
+						br
+						|Total time: 8 minutes
+					ul.results-list
+						li Start out on Royal Palm Ct (Going Northwest) 0.06 miles
+						li Turn RIGHT onto Garden Plz (Going North) 0.04 miles
+						li Turn LEFT onto Royal Palm Ct (Going Northwest) 0.13 miles
+						li Turn RIGHT onto Palm Dr (Going North) 0.07 miles
+						li Turn LEFT onto Weber St (Going West) 0.03 miles
+						li Turn RIGHT onto N Hampton Ave (Going North) 0.41 miles
+						li Turn LEFT onto Virginia Dr (Going West) 0.49 miles
+						li Turn RIGHT onto US-17-92 (Going North) 0.68 miles
+						li Turn SLIGHT RIGHT onto N Mills Ave/US-17-92/Mills Ave N (Going North) 0.19 miles
+						li Turn SLIGHT LEFT onto Mills Ave N/US-17-92/N Mills Ave (Going Northwest) 0.01 miles
+						li Turn SLIGHT RIGHT onto US-17-92 (Going North) 1.13 miles
+						li Turn RIGHT onto W Fairbanks Ave/SR-426 (Going East) 0.13 miles
+						li Make a U-TURN onto W Fairbanks Ave/SR-426 (Going West) 0.13 miles
+						li Turn RIGHT onto US-17-92 (Going North) 0.75 miles
+						li Make a U-TURN onto N Orlando Ave/US-17-92/Orlando Ave N (Going South) 0.11 miles
+					.location-sidebar-subtitle
+						|To (B):
+						br
+						|520 N. Orlando Avenue
+						br
+						|Winter Park, FL 32789
+					.location-sidebar-title 
+						a(href="#") Get reverse directions
+
+				.location-sidebar-results
+					// TODO: Populate with amount of search results
+					.location-sidebar-title <span>8</span> Locations Found
+					ul.results-list
+						// TODO: Location/search results go below
+						each i in new Array(4)
+							// TODO: Optional class for result li's: .active (to color result bg if map marker is selected)
+							// TODO: Optional class for result li's: .no-page (if there's no detail page, for Coming Soon)
+							li
+								a.result-title Winter Park
+								.result-address
+									p 
+										// TODO: Spans are to separate address lines on mobile
+										span 520 North Orlando Avenue, 
+										span Winter Park, FL 32789
+									p 407-644-4220
+								if platform != "mobile"
+									// TODO: Non-mobile: Email and Mobile links will keep behavior from current TCF Locations page 
+									.result-links Send To: <a href="#">Email</a> | <a href="#">Mobile</a>
+								else
+									// TODO: Mobile: View Map and View Details links
+									.result-links
+										a.location-view-map View Map
+										a.location-view-details View Details
+							li
+								a.result-title Orlando
+								.result-address
+									p 
+										// TODO: Spans are to separate address lines on mobile
+										span 4200 Conroy Road, 
+										span Orlando, FL 32839
+									p 407-226-0333
+								if platform != "mobile"
+									// TODO: Non-mobile: Email and Mobile links will keep behavior from current TCF Locations page 
+									.result-links Send To: <a href="#">Email</a> | <a href="#">Mobile</a>
+								else
+									// TODO: Mobile: View Map and View Details links
+									.result-links
+										a.location-view-map View Map
+										a.location-view-details View Details
+
+				.location-sidebar-detail
+					// TODO: Populate this .location-sidebar-detail page via JS (AJAX?) when user clicks a result 
+					.location-sidebar-title Winter Park
+					.detail-address
+						p 520 North Orlando Avenue, Winter Park, FL 32789
+						p 407-644-4220
+					.detail-directions
+						if platform == "desktop"
+							// TODO: On desktop, show Get Directions
+							strong.small-title Get directions from:
+							.text-submit-wrapper
+								input(type="text",value="Orlando, FL 32803",placeholder="Enter an address")
+								button#getDirections Go
+						else
+							// TODO: On tablet/mobile, button launches native Maps app
+							a.btn(href="#") View Map
+					.detail-content
+						// TODO: View Details links to external page
+						a.btn(href="#") View Details
+						.tab-container
+							// TODO: .active class denotes the currently selected .detail-tabs li
+							ul.detail-tabs.tab-switch
+								li.active
+									// TODO: anchor links on these .tab-switch li's correspond to data-name on .tab-panes
+									// TODO: Button title is "Restaurant" on mobile, but "Restaurant Info" not mobile
+									if platform != "mobile"
+										a(href="#restaurant-info") Restaurant Info
+									else
+										a(href="#restaurant-info") Restaurant
+								li
+									a(href="#to-go") To Go
+							// TODO: .active class denotes the currently visible .detail-pane
+							.tab-panes
+								.tab-pane.active(data-name="restaurant-info")
+									strong HOURS OF OPERATION
+									p
+										strong Mon - Thu
+										br
+										|11:15AM - 11:00PM
+										br
+										|(bakery and bar close at 11:30PM)
+										br
+										strong Fri - Sat
+										br
+										|11:15AM - 12:00AM
+										br
+										|(bakery and bar close at 12:30AM)
+										br
+										strong Sun
+										br
+										|10:00AM - 11:00PM
+										br
+										|(bakery and bar close at 11:30PM)
+									hr
+									p
+										strong LOCATION:
+										br
+										|Located in Winter Park Village. Next to Regal Cinemas.
+									p
+										strong PATIO SEATING:
+										br
+										|Patio seating is available with heaters music ceiling fans and "misters" for those dry warm days and nights in the desert.
+									p
+										strong SPECIAL MENUS:
+										ul
+											li Braille Menu
+											li Large Print Menu
+									.btn-grid
+										a.btn(href="#") Menu
+										a.btn(href="#") Catering Menu
+										a.btn(href="#") Gift Cards
+										a.btn(href="#") Careers
+								.tab-pane(data-name="to-go")
+									p
+										strong TO GO:
+										br
+										|Need your order "To Go?" Try our Curbside To-Go Service! It's as easy as 1, 2, 3!
+										ol
+											li Call in to place your order.
+											li When you arrive to pickup your order, Drive up to our special Curbside To-Go Parking spaces, and call our Curbside Pickup line at 407-644-5199 to let us know you've arrived.
+											li Your food will be delivered right to your car, and you'll be on your way!
+									p
+										strong TAKE OUT:
+										br
+										|For your convenience our entire menu of more than 200 selections is available for Take Out! You may place and pick up Take Out orders at our Bakery counter.
+									a.btn(href="#") Take Out Menu
+									p
+										strong CATERING:
+										br
+										|Something for everyone at your office, party or home!
+										br
+										|At The Cheesecake Factory we like to celebrate big. Now you can bring the celebration to your home, office or special event with our delicious catering selections!
+									a.btn(href="#") Catering Menu
+
+			if platform != "mobile"
+				// TODO: Mobile does not get Coming Soon/All Locations links here - it's in the search filter
+				ul.location-sidebar-bottom
+					// TODO: These links will populate search results
+					li
+						// TODO: Coming Soon will populate search results, but each li will have the class '.no-page' to indicate it can't be clicked
+						a(href="#") Coming Soon
+					li
+						// TODO: All Locations will populate search results with all restaurants
+						a(href="#") All Locations
+
+		// jQuery included inline for Where2GetIt
+		script.
+			$body = $('body');
+			$locationSidebar = $('.location-sidebar');
+			$locationSidebarDetail = $('.location-sidebar-detail');
+
+			// check if mobile based on platform (this is based on a variable set in our Jade)
+			isMobile = "#{platform}" == "mobile"
+
+			function showLocationDetails() {
+				// If mobile, grab current list item because user clicked View Details link
+				// If desktop, they clicked on the li
+				if (isMobile)
+					$this = $(this).closest('li');
+				else
+					$this = $(this);
+
+				_resultIndex = $this.index();
+				_resultLocation = $this.find('.result-title').text();
+				_resultAddress = $this.find('.result-address').html();
+
+				// example of filling in data in the detail pane
+				$locationSidebarDetail.find('.location-sidebar-title').text(_resultLocation);
+				$locationSidebarDetail.find('.detail-address').html(_resultAddress);
+
+				// bring detail pane to its top
+				if (!isMobile)
+					$locationSidebarDetail.scrollTop(0);
+
+				// slide over to detail pane
+				$locationSidebar.addClass('show-detail');
+				if (isMobile)
+					setWrapperHeight();
+
+				// W2GI - need postMessage here. When I see it, will scroll user to top of browser on mobile 
+			}
+
+			function showMap() {
+				// show map
+				$body.addClass('show-map');
+				// debug code - reload map iframe for rendering purposes
+				$('#locationMap iframe').attr('src', function (i, val) { return val; });
+				// add active class to map toggle
+				$('.toggle-switch li.active').removeClass('active');
+				$('.show-map-view').parent().addClass('active');
+				// close search filter if open
+				if ($locationSidebar.hasClass('show-filter')) {
+					$('.filterToggle').removeClass('active');
+					$locationSidebar.removeClass('show-filter');
+				}
+
+				// W2GI - need postMessage here. When I see it, will resize iframe to 100% browser height on mobile
+			}
+
+			function hideMap() {
+				// show list
+				$body.removeClass('show-map');
+				// add active class to view toggle
+				$('.toggle-switch li.active').removeClass('active');
+				$('.show-list-view').parent().addClass('active');
+
+				// W2GI - need postMessage here with $('.location-sidebar-wrapper').height. When I see it, will set iframe height on mobile
+			}
+
+			function setWrapperHeight() {
+				// mobile only - define height of wrapper based on height of visible panel
+				// mobile only - this function needs to be called whenever the view is changed
+				_newHeight = 0;
+				if ($locationSidebar.hasClass('show-detail')) {
+					_newHeight = $('.location-sidebar-detail').height();
+				} else if ($locationSidebar.hasClass('show-directions')) {
+					_newHeight = $('.location-sidebar-directions').height();
+				} else {
+					_newHeight = $('.location-sidebar-results').height();
+				}
+				$('.location-sidebar-wrapper').height(_newHeight);
+
+				// W2GI - need postMessage here with _newHeight value. When I see it, will set iframe height on mobile
+			}
+
+			// define height of tab containers to match height of active tab
+			// this needs to be performed whenever the detail pane is repopulated
+			$('.tab-pane.active').each(function () {
+				$this = $(this);
+				// get height of the active .tab-pane and set the height of the parent (.tab-panes)
+				$this.parent().height($this.height());
+			})
+
+			// mobile only - define height of wrapper based on height of visible panel
+			// mobile only - this function needs to be called whenever the view is changed
+			if (isMobile)
+				setWrapperHeight();
+
+			// toggle opening/closing of search filter
+			$body.on('click','.filterToggle',function (event) {
+				event.preventDefault();
+				$locationSidebar.toggleClass('show-filter');
+				if (isMobile) {
+					$(this).toggleClass('active');
+					hideMap();
+					if ($locationSidebar.hasClass('show-filter')) {
+						// W2GI - need postMessage here. When I see it, will resize iframe to height of filter
+					} else {
+						// W2GI - need postMessage here with $('.location-sidebar-wrapper').height. When I see it, will set iframe height on mobile
+					}
+				}
+			});
+
+			if (isMobile) {
+				// action for clicking View Details link on mobile
+				$locationSidebar.on('click','.location-view-details',showLocationDetails);
+				$locationSidebar.on('click','.location-view-map',function () {
+					// launch native map application
+					alert('Launch native Maps application for this location');
+				});
+
+				// toggle between List and Map on mobile
+				$body.on('click', '.location-toggle a', function(event) {
+					event.preventDefault();
+					// check which link was clicked
+					if ($(this).hasClass('show-map-view'))
+						showMap();
+					else
+						hideMap();
+				});
+			} else {
+				// action for search results unless li has .no-page (for Coming Soon results)
+				$locationSidebar.on('click','.location-sidebar-results .results-list li:not(".no-page")',showLocationDetails);
+			}
+
+			// stop click propagation for links area inside search result
+			$locationSidebar.on('click', '.result-links', function(event) {
+				event.stopPropagation();
+			});
+
+			// back to search results from detail pane
+			$locationSidebar.on('click','.location-sidebar-title', function () {
+				$locationSidebar.removeClass('show-detail');
+				if (isMobile)
+					setWrapperHeight();
+			});
+
+			// tab switcher
+			$locationSidebar.on('click', '.tab-switch a', function(event) {
+				// prevent anchor link behavior
+				event.preventDefault();
+
+				$this = $(this);
+				_tabName = $this.attr('href').substring(1);
+				$tabContainer =  $this.closest('.tab-container');
+				$paneToActivate = $tabContainer.find('.tab-pane[data-name="' + _tabName + '"]');
+
+				// remove active class from current tab and pane
+				$this.closest('.tab-switch').find('.active').removeClass('active');
+				$tabContainer.find('.tab-pane.active').removeClass('active');
+
+				// activate new tab/pane
+				$this.parent().addClass('active');
+				$paneToActivate.addClass('active');
+
+				// resize container heights
+				$tabContainer.find('.tab-panes').height($paneToActivate.height());
+				if (isMobile) {
+					setTimeout(function () {
+						setWrapperHeight();
+					}, 500)
+				}
+			});
+
+			// force show directions pane when Directions button is clicked - for reference
+			$('#getDirections').on('click', function(event) {
+				// prevent default 'button' behavior for debugging
+				event.preventDefault();
+
+				$locationSidebar.removeClass('show-detail').addClass('show-directions');
+				if (isMobile)
+					setWrapperHeight();
+			});
+// END : /modules/locations-content.html

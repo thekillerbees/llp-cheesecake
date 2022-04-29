@@ -1,0 +1,43 @@
+* {
+	/* resets */
+	border: none;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-weight: inherit;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+a {
+	vertical-align: baseline;
+}
+
+a, a * {
+	color: inherit;
+}
+
+table {
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	height: 0;
+}
+
+#map_canvas {
+	width: 100%;
+	height: 300px;
+}
+
+
+

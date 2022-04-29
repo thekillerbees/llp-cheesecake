@@ -1,0 +1,171 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+     <noscript>
+        <meta http-equiv="refresh" content="1; URL=nojs.html" />
+     </noscript>
+	
+	
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://cdn.thecheesecakefactory.com/cdn/Scripts/supersleight-min.js"></script>
+<![endif]-->
+
+
+<link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/typography.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="JS/delivery.js"></script>
+
+<!--[if IE 6]>
+
+	<link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen" />
+
+<![endif]-->
+
+<!-- CSS for Versions greater than or equal to IE7 -->
+<!--[if gte IE 7]>
+   <link href="css/ie7plus.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+	
+
+		<link type="text/css" href="css/proto.css" rel="stylesheet" media="all"/>
+	
+			
+		<link type="text/css" href="css/style.css" rel="stylesheet" media="all" >	
+
+
+	<!-- <link type="text/css" href="../css/geo.css" rel="stylesheet" media="all" /> -->
+<!--	<script type="text/javascript" src="/w2gi/javascript/ace/1.52/ace.js"></script> -->
+	<script type="text/javascript" src="/w2gi/javascript/ace/1.74/prototype.js"></script>
+
+	<script type="text/javascript" src="/w2gi/javascript/ace/1.74/W2GI_core.js"></script>
+
+<script>
+		function start(){
+			var country = ace.util.retrieveGetVals()['country'];
+			if(country){
+				$('country').value = country;
+				ace.table.update('panel',$('form1')); 
+			}
+		}
+	</script>
+</head>
+
+<body onload="ace.template.initialize();ace.table.update('panel',$('form1'));">
+	<xml id="application_data" style="display: none;">
+		<root>
+			 <appkey>320C479E-6D70-11DE-9D8B-E57E37ABAA09</appkey>
+		       <ajaxurl>/ajax?</ajaxurl>
+
+		</root>
+	</xml>
+
+	
+<!-- client header starts -->
+		
+
+<!-- end of client header -->
+	
+
+<div id="templates" style="display: none;">
+<table id="collection_poi" class="table" oddrowclass="odd" evenrowclass="even" style="display: none;" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+   		<tr class="poi">
+				
+					<th colspan="5"><div style="font-size:14px; font-weight:bold; color:#000000;padding-top:10px;padding-bottom:6px;">Cheesecake Factory Locations in US</div></th>
+		</tr>
+		<tr class="poi">
+					<th style="width:60%; text-align:left;">Address</th>
+
+				
+					<th style="width:30%; text-align:center;">Phone</th>
+					
+		</tr>	
+		
+		
+
+        </thead>
+       
+
+
+    <tbody style="margin-bottom: 5px; padding:5px;">
+		
+					<tr>
+						
+						<td style="width:40%; text-align:left;">
+
+							#{ADDRESS1}<br/>
+							#{CITY}<span class="display_comma#{STATE}#{PROVINCE}#{POSTALCODE}">,</span> #{STATE} #{PROVINCE} #{POSTALCODE}
+							
+							
+						</td>
+
+						
+						<td style="width:30%; text-align:center;"> #{PHONE}</td>
+
+					</tr>
+					
+					<tr>
+						<td colspan="2"><div class="hrGray"><hr/></div> </td>
+					</tr>
+
+
+        </tbody>
+</table>
+</div>
+
+<div >
+
+<form name="form1" id="form1" onsubmit="return false;"">
+
+<table width="600px" class="table_text" id="table_other_address" >
+       
+        <tr>
+                
+                <td>
+<select id="country" name="country" class="table_text" style="display:none;">
+
+<option value="US" selected>US</option>
+</select>
+		</td>
+		<td><input type="button" name="submit" value="submit" style="display:none;" onclick="ace.table.update('panel',this.form); return false;"/>
+
+		</td>
+		
+
+        </tr>
+
+
+</table>
+<xml style="display: none;">
+	<root>
+
+		<inputform>
+			<formdata id="getlist">
+				<objectname>StoreLocator</objectname>
+				<where>
+					<country></country>
+				</where>
+				<order>city</order>
+			</formdata>
+
+		</inputform>									
+	</root>					
+
+</xml>
+</form>
+
+<!-- panel start -->
+<div id="panel" style="width:300px;">
+</div>	
+<!-- panel end -->
+	
+</div>
+
+
+
+</body>
+</html>

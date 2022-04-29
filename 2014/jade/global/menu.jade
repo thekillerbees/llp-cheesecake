@@ -1,0 +1,101 @@
+// START : /global/menu.html
+#navigation.navigation
+	.navigation-inner
+		#closeNav.navigation-close
+		if platform == "mobile"
+			// Only mobile gets logo in navigation
+			.site-logo
+				a(href="/home/") The Cheesecake Factory
+		ul.navigation-social
+			li
+				a(href="#",target="_blank").social-facebook Facebook
+			li
+				a(href="#",target="_blank").social-twitter Twitter
+			li
+				a(href="#",target="_blank").social-pinterest Pinterest
+			li
+				a(href="#",target="_blank").social-instagram Instagram
+			li
+				// TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp
+				a(href="#",target="_blank").social-email Newsletter
+		ul.navigation-list
+			if platform == "mobile"
+				// Only mobile gets top-level menu items in navigation
+				li
+					.navigation-list-name.navigation-menu-item.head-menu
+						a(href="#")
+							span Menu
+				li
+					.navigation-list-name.navigation-menu-item.head-locations
+						a(href="/locations/")
+							span Locations
+				li
+					.navigation-list-name.navigation-menu-item.head-giftcards
+						a(href="/giftcards/")
+							span Gift Cards
+			li.accordion-item
+				.accordion-item-wrap
+					.navigation-list-name.accordion-item-title
+						span About Us
+					ul.navigation-links
+						li
+							a(href="#") Our Story
+						li
+							a(href="#") Awards
+						li
+							a(href="#") Our Recipes
+						li
+							a(href="#") Our Team
+			li.accordion-item
+				.accordion-item-wrap
+					.navigation-list-name.accordion-item-title
+						span Connect
+					ul.navigation-links
+						li
+							a(href="#") Contact Form
+						li
+							a(href="#") eNewsletter
+						li
+							a(href="#") Got Questions?
+			li.accordion-item
+				.accordion-item-wrap
+					.navigation-list-name.accordion-item-title
+						span Corporate Information
+					ul.navigation-links
+						li
+							a(href="#") Global Development
+						li
+							a(href="#") Investor Relations
+						li
+							a(href="#") Press Room
+						li
+							a(href="#") Careers
+						li
+							a(href="#") Employment Policy
+						li
+							a(href="#") Terms of Use
+			li.accordion-item
+				.accordion-item-wrap
+					.navigation-list-name.accordion-item-title
+						span Corporate Social Responsibility
+					ul.navigation-links
+						li
+							a(href="#") Charitable Foundation
+						li
+							a(href="#") Sustainability
+						li
+							a(href="#") Supply Chain
+						li
+							a(href="#") Our Team
+			li
+				.navigation-list-name
+					a(href="#") 
+						span Guest Survey
+script.
+	require(["modules/accordion"], function(Accordion) {
+		return new Accordion();
+	});
+	require(["modules/headerNav"], function(HeaderNav) {
+		return HeaderNav.get();
+	});
+// END : /global/menu.html

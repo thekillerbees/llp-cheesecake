@@ -1,0 +1,1094 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The Cheesecake Factory - Restaurant Landing</title>
+
+<!--Here are new CSS and JS files-->
+
+<link rel="stylesheet" href="/cheesecake/local/test/plumbing/css/organic.css" type="text/css" />
+<link href="/cheesecake/local/test/plumbing/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="/cheesecake/local/test/plumbing/css/typography.css" type="text/css" />
+<link href="/cheesecake/local/test/plumbing/css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="/cheesecake/local/test/plumbing/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script src="/cheesecake/local/test/plumbing/js/dojo.xd.js"></script>
+<script src="/cheesecake/local/test/plumbing/js/global.js" type="text/javascript"></script>
+<script language="JavaScript" src="/cheesecake/local/test/plumbing/js/menuNavHighlight-min.js"></script>
+<!--[if IE 6]>
+    <link rel="stylesheet" href="/cheesecake/local/test/plumbing/css/ie6.css" type="text/css" />
+    <script type="text/javascript" src="/cheesecake/local/test/plumbing/js/supersleight.js"></script>
+<![endif]-->
+<!--[if gte IE 7]>
+   <link href="/cheesecake/local/test/plumbing/css/ie7plus.css" rel="stylesheet" type="text/css"  />
+<![endif]-->
+<!--End new CSS and JS files-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://cdn.thecheesecakefactory.com/cdn/Scripts/supersleight-min.js"></script>
+<![endif]-->
+
+<link href="/cheesecake/local/test/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/cheesecake/local/test/css/typography.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/cheesecake/local/test/css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/cheesecake/local/test/css/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<!--<script type="text/javascript" src="JS/delivery.js"></script>-->
+
+
+<!-- CSS for Versions greater than or equal to IE7 -->
+<!--[if gte IE 7]>
+   <link href="css/ie7plus.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+
+
+		<link type="text/css" href="http://static.where2getit.com/w2gi/css/litbox.css" rel="stylesheet" media="all" />
+		<link type="text/css" href="/cheesecake/local/test/css/proto_new.css" rel="stylesheet" media="all" />
+		<link type="text/css" href="/cheesecake/local/test/css/bubble.css" rel="stylesheet" media="all" />
+		<link type="text/css" href="http://static.where2getit.com/w2gi/css/style.css" rel="stylesheet" media="all" />
+
+		<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.74/prototype.js"></script>
+		<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.74/W2GI_core.js"></script>
+		<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.74/W2GI_maps.js"></script>	
+		<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/1.74/W2GI_slippymap.js"></script>
+		<script type="text/javascript">
+			function loadSlippyMap() {
+				var options = {
+					dynamicSearch: true,
+					geoip: false,
+					theme: null,
+                                        routeStyle: {   strokeWidth: 8,
+							strokeOpacity: .5,
+                                                        strokeColor: '#0000FF' },
+					controls: [	new OpenLayers.Control.PanZoomBar(), 
+							new OpenLayers.Control.Navigation() ],
+					maxExtent: new OpenLayers.Bounds(-170,10,-50,75)
+				};
+				OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2; 
+				OpenLayers.ImgPath='../images/zoombar/';
+				SlippyMap.load('map', 'panel', options);		
+			}
+			
+	            function clear_search_directions_box(i) {
+	                if (i.value == 'Enter street address, city, state or ZIP') {
+        	            i.value = '';
+                	}
+	                if (i.value == 'Start address') {
+        	            i.value = '';
+	                }
+        	        if (i.value == 'End address') {
+                	    i.value = '';
+	                }
+        	    }
+				
+				function printprepare() {
+					clear_search_directions_box($('inputaddress'));
+					clear_search_directions_box($('startaddress'));
+					clear_search_directions_box($('endaddress'));
+			}
+			
+
+			 function viewDirectionsToForm( poiNum )
+		    {
+    		    $( 'directions_links_' + poiNum ).hide();
+		        $( 'directions_form_' + poiNum ).show();
+		    
+		        $( 'direction_display_' + poiNum ).update( 'From:' );
+		        $( 'direction_link_' + poiNum ).update( 'To' );
+		    }
+		    
+		    function viewDirectionsFromForm( poiNum )
+		    {
+    		    $( 'directions_links_' + poiNum ).hide();
+		        $( 'directions_form_' + poiNum ).show();
+		    
+		        $( 'direction_display_' + poiNum ).update( 'To:' );
+		        $( 'direction_link_' + poiNum ).update( 'From' );
+		    }
+
+			var litboxTopHeight = '18px';
+		</script>	
+     <noscript>
+        <meta http-equiv="refresh" content="1; URL=nojs.html" />
+     </noscript>
+		
+		<style>
+			
+			#map_OpenLayers_Container{
+				cursor: url(/w2gi/images/cursors/grab.cur), -moz-grab;	
+			}
+			.icon{
+				cursor: pointer;
+			}
+			.map_container_down{
+				cursor: "url(/w2gi/images/cursors/grabbing.cur), -moz-grabbing";	
+			}
+			
+		</style>
+
+</head>
+
+
+
+
+
+
+
+
+<body onload="loadSlippyMap();" onunload="SlippyMap.unload();">		
+		<!-- XML data island start  -->
+		<xml>
+			<root>
+                                <ajaxurl>ajax?</ajaxurl>
+                                <appkey>320C479E-6D70-11DE-9D8B-E57E37ABAA09</appkey>
+				<inputforms>				
+					<inputform>
+						<formdata id="reversegeocoder">
+							<geolocs>
+								<geoloc>
+									<latitude></latitude>
+									<longitude></longitude>
+									<country></country>
+								</geoloc>
+							</geolocs>
+						</formdata>			
+					</inputform>
+				</inputforms>									
+				<sources>
+
+					<layer>
+						<name>SlippyMap W2GI</name>
+						<imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles, http://st3.slippymap.com/tiles, http://st4.slippymap.com/tiles</imageurl>
+						<options>{map: 'smap-01'}</options>
+					</layer>
+					<layer>
+						<name>SlippyMap Navteq</name>
+						<imageurl>http://st1.slippymap.com/tiles, http://st2.slippymap.com/tiles, http://st3.slippymap.com/tiles, http://st4.slippymap.com/tiles</imageurl>
+						<options>{map: 'smap-02'}</options>
+					</layer>
+				</sources>
+
+
+
+
+				
+
+				<!-- *** comment 2/ for local template: need to add this xml data *** -->
+				<collection name="poi">
+                    
+                    <poi>
+                        <poinum><TMPL_VAR NAME="poinum"></poinum>
+                        <_distance><TMPL_VAR NAME="_distance"></_distance>
+                        <icon>default</icon>
+                        <name><TMPL_VAR NAME="name"></name>
+                        <address1><TMPL_VAR NAME="address1"></address1>
+                        <address2><TMPL_VAR NAME="address2"></address2>
+                        <city><TMPL_VAR NAME="city"></city>
+                        <state><TMPL_VAR NAME="state"></state>
+                        <postalcode><TMPL_VAR NAME="postalcode"></postalcode>
+                        <latitude><TMPL_VAR NAME="latitude"></latitude>
+                        <longitude><TMPL_VAR NAME="longitude"></longitude>
+                        <phone><TMPL_VAR NAME="phone"></phone>
+                        
+                        <A1_ASK_ABOUT_OUR_FREE_23_POINT_INSPECTION><TMPL_VAR NAME="A1_ASK_ABOUT_OUR_FREE_23_POINT_INSPECTION"></A1_ASK_ABOUT_OUR_FREE_23_POINT_INSPECTION>
+                        <A2_90DAYSSAMEAS_CASH__WITH_FREE_ROADSIDE_ASSISTANC><TMPL_VAR NAME="A2_90DAYSSAMEAS_CASH__WITH_FREE_ROADSIDE_ASSISTANC"></A2_90DAYSSAMEAS_CASH__WITH_FREE_ROADSIDE_ASSISTANC>
+                        <A3_12_MONTHS_OR_12000_MILE_PARTS_AND_LABOR_WARRANT><TMPL_VAR NAME="A3_12_MONTHS_OR_12000_MILE_PARTS_AND_LABOR_WARRANT"></A3_12_MONTHS_OR_12000_MILE_PARTS_AND_LABOR_WARRANT>
+                        <A4_ALIGNMENT_SERVICE_AVAILABLE><TMPL_VAR NAME="A4_ALIGNMENT_SERVICE_AVAILABLE"></A4_ALIGNMENT_SERVICE_AVAILABLE>
+                        <A5_CERTIFIED_STATE_INSPECTION_STATION><TMPL_VAR NAME="A5_CERTIFIED_STATE_INSPECTION_STATION"></A5_CERTIFIED_STATE_INSPECTION_STATION>
+                        <A6_EMISSIONS_CONTROL_INSPECTION_STATION><TMPL_VAR NAME="A6_EMISSIONS_CONTROL_INSPECTION_STATION"></A6_EMISSIONS_CONTROL_INSPECTION_STATION>
+                        <A7_TOWING_SERVICE_AVAILABLE><TMPL_VAR NAME="A7_TOWING_SERVICE_AVAILABLE"></A7_TOWING_SERVICE_AVAILABLE>
+                        <A8_WE_OFFER_LOCK_OUT_SERVICE><TMPL_VAR NAME="A8_WE_OFFER_LOCK_OUT_SERVICE"></A8_WE_OFFER_LOCK_OUT_SERVICE>
+                        <A9_WE_EMPLOY_ASE_CERTIFIED_TECHNICIANS><TMPL_VAR NAME="A9_WE_EMPLOY_ASE_CERTIFIED_TECHNICIANS"></A9_WE_EMPLOY_ASE_CERTIFIED_TECHNICIANS>
+                        <A10_10_OFF_ANY_SERVICE_OF_50_OR_MORE_WITH_COUPON><TMPL_VAR NAME="A10_10_OFF_ANY_SERVICE_OF_50_OR_MORE_WITH_COUPON"></A10_10_OFF_ANY_SERVICE_OF_50_OR_MORE_WITH_COUPON>
+                        <A11_COMPLETE_AUTO_SERVICE_CENTER><TMPL_VAR NAME="A11_COMPLETE_AUTO_SERVICE_CENTER"></A11_COMPLETE_AUTO_SERVICE_CENTER>
+                        <A12_PREVENTIVE_MAINTENANCE_AND_TUNEUPS><TMPL_VAR NAME="A12_PREVENTIVE_MAINTENANCE_AND_TUNEUPS"></A12_PREVENTIVE_MAINTENANCE_AND_TUNEUPS>
+                        <A13_COMPUTER_DIAGNOSTICS_AND_DRIVABILITY><TMPL_VAR NAME="A13_COMPUTER_DIAGNOSTICS_AND_DRIVABILITY"></A13_COMPUTER_DIAGNOSTICS_AND_DRIVABILITY>
+                        <A14_HEATING_AND_AIR_CONDITIONER_SPECIALIST><TMPL_VAR NAME="A14_HEATING_AND_AIR_CONDITIONER_SPECIALIST"></A14_HEATING_AND_AIR_CONDITIONER_SPECIALIST>
+                        <A15_COMPLETE_BRAKE_SERVICE><TMPL_VAR NAME="A15_COMPLETE_BRAKE_SERVICE"></A15_COMPLETE_BRAKE_SERVICE>
+                        <A16_DRIVELINE_AND_SUSPENSION_SERVICE><TMPL_VAR NAME="A16_DRIVELINE_AND_SUSPENSION_SERVICE"></A16_DRIVELINE_AND_SUSPENSION_SERVICE>
+                        <A17_WE_SERVICE_IMPORTS><TMPL_VAR NAME="A17_WE_SERVICE_IMPORTS"></A17_WE_SERVICE_IMPORTS>
+                        <A18_WE_SELL_TIRES><TMPL_VAR NAME="A18_WE_SELL_TIRES"></A18_WE_SELL_TIRES>
+                        <A19_WE_INSTALL_EXHAUST_SYSTEMS><TMPL_VAR NAME="A19_WE_INSTALL_EXHAUST_SYSTEMS"></A19_WE_INSTALL_EXHAUST_SYSTEMS>
+                        <A50_WE_TURN_DRUMS_AND_ROTORS><TMPL_VAR NAME="A50_WE_TURN_DRUMS_AND_ROTORS"></A50_WE_TURN_DRUMS_AND_ROTORS>
+                        <A51_WE_TEST_STARTERS_ALTERNATORS_AND_BATTERIES><TMPL_VAR NAME="A51_WE_TEST_STARTERS_ALTERNATORS_AND_BATTERIES"></A51_WE_TEST_STARTERS_ALTERNATORS_AND_BATTERIES>
+                        <A52_MACHINE_SHOP_SERVICES><TMPL_VAR NAME="A52_MACHINE_SHOP_SERVICES"></A52_MACHINE_SHOP_SERVICES>
+                        <A53_PAINT_AND_BODY_SUPPLIES><TMPL_VAR NAME="A53_PAINT_AND_BODY_SUPPLIES"></A53_PAINT_AND_BODY_SUPPLIES>
+                        <A54_WE_MAKE_HYDRAULIC_HOSES><TMPL_VAR NAME="A54_WE_MAKE_HYDRAULIC_HOSES"></A54_WE_MAKE_HYDRAULIC_HOSES>
+                        <A55_SMALL_ENGINE_LAWN_AND_GARDEN><TMPL_VAR NAME="A55_SMALL_ENGINE_LAWN_AND_GARDEN"></A55_SMALL_ENGINE_LAWN_AND_GARDEN>
+                        <A56_MARINE_PARTS><TMPL_VAR NAME="A56_MARINE_PARTS"></A56_MARINE_PARTS>
+                        <A57_HEAVY_DUTY_AND_TRUCK_PARTS><TMPL_VAR NAME="A57_HEAVY_DUTY_AND_TRUCK_PARTS"></A57_HEAVY_DUTY_AND_TRUCK_PARTS>
+                        <A58_TRUCK_ACCESSORIES_HIGH_PERFORMANCE><TMPL_VAR NAME="A58_TRUCK_ACCESSORIES_HIGH_PERFORMANCE"></A58_TRUCK_ACCESSORIES_HIGH_PERFORMANCE>
+                        <A59_WE_STOCK_AG_PARTS><TMPL_VAR NAME="A59_WE_STOCK_AG_PARTS"></A59_WE_STOCK_AG_PARTS>
+                        <A60_STOCK_AUTOBODY_MASTER><TMPL_VAR NAME="A60_STOCK_AUTOBODY_MASTER"></A60_STOCK_AUTOBODY_MASTER>
+                        <WEEKDAY><TMPL_VAR NAME="WEEKDAY"></WEEKDAY>
+                        <SATURDAY><TMPL_VAR NAME="SATURDAY"></SATURDAY>
+                        <SUNDAY><TMPL_VAR NAME="SUNDAY"></SUNDAY>
+                                                			
+						<clientkey><TMPL_VAR NAME="clientkey"></clientkey>
+						<uid><TMPL_VAR NAME="uid"></uid>
+                    </poi>
+                    
+                </collection>
+								<!-- *** END comment 2/ for local template: need to add this xml data *** -->
+
+			
+
+			</root>		
+		</xml>
+		<!-- XML data island end -->	
+		
+		<div id="templates" style="display: none;">
+			<!-- icon template start  -->	
+                        <div id="default" class="icon" bubbleid="bubble" width="55" height="46" offsetx="-28" offsety="-46">
+                                <img class="alpha" src="/cheesecake/images/cheesecake_icon2.png"/>
+                                <div action="open_bubble" recnum="#{POINUM}">#{POINUM}</div>
+                        </div>
+						
+						<div id="comingsoon" class="icon" bubbleid="bubble" width="55" height="46" offsetx="-28" offsety="-46">
+                                <img class="alpha" src="/cheesecake/images/cheesecake_icon2.png"/>
+                                <div action="open_bubble" recnum="#{POINUM}">#{POINUM}</div>
+                        </div>
+							
+			<!-- icon template end  -->		
+					
+                        <!-- bubble template start  -->
+                        <div id="bubble" offsetx="-200" offsety="-430" style="margin: 25px; width: 525px; height: 405px;">
+                                <!-- top -->
+                                <img class="alpha bubble_tab activetab tab1" src="/w2gi/images/spacer.png" />
+                                <div class="tab_label tab1label">Address</div>
+                                <img class="alpha bubble_tab nonactivetab tab2" src="/w2gi/images/spacer.png" />
+                                <div class="tab_label tab2label">Dining Options</div>
+								<img class="alpha bubble_tab nonactivetab tab3" src="/w2gi/images/spacer.png" />
+                                <div class="tab_label tab3label">Restaurant Info</div>
+                                <img class="alpha bubble_close" src="/cheesecake/images/bubble/close.png" />
+
+                                <!-- middle -->
+                                <img class="alpha mainbubble" src="/cheesecake/images/bubble/bubble.png" />
+                                <div class="mainbubblecontent" >
+                                        
+                                        <div class="mainbubbletabcontent" >
+											<div>
+												<!-- <div style="text-align:center; width:210px; float:left; padding-top:5px; padding-bottom:5px;"><img src="../images/glyph.png" border="0" /></div> -->
+												<div style="float:right; maring:0px; padding:opx;background-image:url(#{IMAGENAME});width:202px; height:265px;"></div>
+											</div>
+                                                <div class="tab_content activetabcontent">
+														<div style="color:#260602; font-size:21px; padding-top:10px; margin-bottom:5px;">#{NAME}</div>
+                                                        <div>#{ADDRESS1}, #{CITY}, #{STATE} #{POSTALCODE}<br>#{PHONE}</div>
+                                                       
+														<div style="margin-top:5px; margin-bottom:5px;"><span style="color:#C69B32;font-weight:bold;">LOCATION:</span><br/>#{TEXTLOCATION}</div>
+														
+														<div style="margin-top:5px; margin-bottom:5px;"><span style="color:#C69B32;font-weight:bold;">PARKING:</span><br/>#{TEXTPARKING}</div>
+														
+														
+														<div style="margin-top:5px; margin-bottom:5px;">
+															<span style="color:#C69B32; font-weight:bold;">HOURS OF OPERATION:</span><br/>
+															
+															<div style="float:left;"> #{HOURSLABEL1}<br/> #{HOURSLABEL2} <br/> #{HOURSLABEL3}<br/> <span class="show#{HOURSLABEL4}">#{HOURSLABEL4}</span></div>
+															<div style="float:right;">#{HOURSFROMTO1} <br/> #{HOURSFROMTO2} <br/>#{HOURSFROMTO3} <br/>#{HOURSFROMTO4}</div>
+															
+														
+														</div>
+														
+														<div style="clear:both; float:left; margin-top:5px; margin-bottom:5px;width:80px;"> <a href="javascript: void(0);" onclick="window.open('#{MENULINK}','website','width=1000,height=900,status=yes,toolbar=yes,menubar=yes,location=yes,scrollbars=yes');" style="color:#260602; font-size:10px; text-decoration:underline;">View Menu</a> </div>
+														
+														
+                                                        <!-- <div style="margin-top: 5px;">
+                                                                <form style="position: relative;" autocomplete="off">                                              
+                                                                        <span class="dir" style="font-size: 11px; margin-right: 5px">Get directions from:</span><a style="font-size: 11px;" href="javascript:void(0);">To</a>
+                                                                        <input recnum="#{POINUM}" type="text" name="addressline" value=""/>
+                                                                        <input recnum="#{POINUM}" type="submit" value="Go"/>
+                                                                        <div class="address_helper">(111 Main St, Chicago, IL 60613)</div>
+                                                                </form>
+                                                        </div>
+														
+														-->
+														
+																											
+														<div class="miniDirections" style="width:260px;_width:240px;float:left;">
+														
+															<div id="directions_links_#{POINUM}" style="float:right; vertical-align:middle;">
+	
+									                            <a href="javascript:void(0);" onclick="viewDirectionsToForm( '#{POINUM}' ); return false;" style="color:#260602; font-size:10px; text-decoration:underline;"> Driving Directions <img src="../images/4colors.gif" border="0" /></a>&nbsp;&nbsp;<a href="javascript:void(0);" style="display:none; color:#260602; font-size:10px; text-decoration:underline;" onclick="viewDirectionsFromForm( '#{POINUM}' ); return false;">from this location</a>
+																
+									                        </div>
+	                                                        
+															<form autocomplete="off">
+									                            <div id="directions_form_#{POINUM}" style="display: none;">
+									                                <div style="margin-top: 5px;">
+									
+									                                    <span id="direction_display_#{POINUM}">From:</span>
+									
+									                                    <input type="text" name="addressline" recnum="#{POINUM}" style="width: 110px; font-size:10px;" />
+									                                    <input recnum="#{POINUM}" type="submit" value="Go" style="font-size:10px;"/>
+									                                    <a id="direction_link_#{POINUM}" href="javascript:void(0);" style="display: none;">To</a>
+									                                </div>
+									                               
+									                            </div>
+									                        </form>	   
+														
+														</div>
+														
+														
+                                                </div>
+                                               	<div class="tab_content nonactivetabcontent" >
+                                                        
+															<div style="color:#260602; font-size:21px;margin-bottom:10px; padding-top:10px;">Dining Options</div>
+															
+															<div class="show#{CURBSIDEFLAG}">
+															<!-- <img style="float:left; margin-right:5px;" src="images/ICON_ToGo.jpg" width="20" height="20" /> -->
+															
+																<span style="color:#C69B32; font-weight:bold;">CURBSIDE TO-GO:</span><br>
+																#{CURBSIDEDESC}
+																 
+															</div>
+															
+															<div class="show#{CATERINGFLAG}" style="padding-top:5px;">
+															<!-- <img style="float:left; margin-right:5px;" src="images/ICON_catering.jpg" width="20" height="20" /> -->
+															
+																<span style="color:#C69B32; font-weight:bold;">CATERING:</span><BR>
+																#{CATERINGDESC}. To see our exciting new Catering Menu, please 
+																<a href="javascript: void(0);" onclick="window.open('#{CATERINGLINK}','website','width=1000,height=750,status=yes,toolbar=no,menubar=no,location=no');">click here</a>.
+
+																 
+															</div>
+															
+															
+
+
+															
+															<div class="show#{DELIVERYFLAG}" style="padding-top:5px;">
+															<!-- <img style="float:left; margin-right:5px;" src="/cheesecake/images/ICON_Delivery.jpg" width="20" height="20" /> -->
+															
+																<span style="color:#C69B32; font-weight:bold;">DELIVERY:</span><BR>
+																#{DELIVERYDESC}								 
+																 <a href="#" onclick="eval('#{DELIVERYLINK}')">Click here to order</a>.<br />
+															</div>
+														
+														
+							                    </div>
+												  
+												<div class="tab_content nonactivetabcontent" >
+														<div style="color:#260602; font-size:21px;margin-bottom:10px; padding-top:10px;">Restaurant Info</div>
+                                                        <div>#{TEXTRESTAURANT}</div>
+														
+														<div>
+														
+														</div>
+														
+							                    </div>
+                                        </div>
+                                </div>
+
+			</div>
+
+			<!-- bubble template end -->	
+	
+			<!-- POI table template start -->			
+			<table id="collection_poi" odd_row_class="odd" even_row_class="even" active_row_class="active" >
+			<!--	<thead>
+					<tr class="poi">
+						<th colspan="2" style="text-align:center; height:64px; _height:66px;"><h2>#{COUNT}</h2> <h3>restaurants found</h3> </th>
+					</tr>	
+				
+					<tr>
+						<th colspan="2" ><a class="prev_results" action="prev_results" href="javascript:void(0);">Prev</a><a class="next_results" action="next_results" href="javascript:void(0);">Next</a></th>
+
+					</tr>
+				</thead>
+			-->
+				
+
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<!--<td width="15px" valign="top">
+							 <div templateid="#{ICON}">				
+							</div> 
+							<div style="font-weight:bold; color:#260602;text-align:right;">#{POINUM}</div>
+						</td>-->
+						<td>
+							<a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a><br/>
+							
+							<span style="font-size:15px;">#{ADDRESS1}</span><br/>
+							#{CITY}, #{STATE} #{POSTALCODE}<br/>
+							#{PHONE}<br/>
+							
+		
+							<!--<a action="open_bubble" recnum="#{POINUM}" href="javascript:void(0);" style="color:#260602;font-size:11px;text-decoration:underline;">Details</a><br/>		
+							
+ 							 <a action="more_info" recnum="#{POINUM}" href="javascript:void(0);">More Info</a> -->
+						</td>
+						<td>
+							<div ><span style="font-size:11px;">Send Address To:</span>
+												<a href="javascript: void(0);" style="color:#260602;font-size:11px;text-decoration:underline;" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=emaillocatorstart&uid=#{UID}','EMAIL','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">
+						                       	Email</a> | <a style="color:#260602;font-size:11px;text-decoration:underline;" href="javascript: void(0);" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=smslocatorstart&uid=#{UID}','MOBILE','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">Mobile</a>
+							</div>
+							
+						</td>
+		
+					</tr>	
+					
+					<tr>
+						<td colspan="2"> </td>
+					</tr>
+					
+				</tbody>				
+			</table>	
+			<!-- POI table template end -->	
+			
+                        <!-- More Info table template start -->
+                        <table id="collection_more_info" odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="1">
+                               
+                                <tbody>
+                                        <tr recnum="#{POINUM}">
+                                                <td width="33px" valign="top">
+                                                        <a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a><br/>
+															
+															#{ADDRESS1}<br/>
+															#{CITY}, #{STATE} #{POSTALCODE}<br/>
+															#{PHONE}<br/>
+															
+															<div >Send Address To:
+																				<a href="javascript: void(0);" style="color:#260602;font-size:11px;text-decoration:underline;" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=emaillocatorstart&uid=#{UID}','EMAIL','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">
+														                       	Email</a> | <a style="color:#260602;font-size:11px;text-decoration:underline;" href="javascript: void(0);" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=smslocatorstart&uid=#{UID}','MOBILE','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">Mobile</a>
+								
+												
+															</div>
+															
+															<form autocomplete="off">
+									                            <div id="directions_form_#{POINUM}" style="display:none;">
+									                                <div style="margin-top: 5px;">
+									
+									                                    <span id="direction_display_#{POINUM}">From:</span>
+									
+									                                    <input type="text" name="addressline" recnum="#{POINUM}" style="width: 110px; font-size:10px;" />
+									                                    <input recnum="#{POINUM}" type="submit" value="Go" style="font-size:10px;"/>
+									                                    <a id="direction_link_#{POINUM}" href="javascript:void(0);" style="display: none;">To</a>
+									                                </div>
+									                               
+									                            </div>
+									                        </form>	   
+														
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td colspan="2">
+                                                        <a action="show_all" recnum="#{POINUM}" href="javascript:void(0);">Show All Locations</a>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <!-- more info table template end -->
+
+			<!-- Ambiguous address table template start -->			
+			<table id="collection_multiple_address" odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+					<tr>
+						<th>Did you mean:</th>
+					</tr>						
+				</thead>	
+				<tfoot><tr><td></td></tr></tfoot>				
+				<tbody>		
+					<tr recnum="#{POINUM}">
+						<td width="250px">
+							<a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}</a><br/>	
+							#{COUNTY}							
+						</td>		
+					</tr>	
+				</tbody>				
+			</table>	
+			<!-- Ambiguous address table template end -->		
+
+			<!-- Maneuvers table template start -->	
+			<table id="collection_maneuvers" odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+					<tr>
+						<th>
+							<h3><span style="font-size:16px;">Directions to Your Restaurant</span></h3>
+							
+							<div style="margin-left:5px; font-weight:normal; font-size:11px;">
+							Send Directions To:
+						<a href="javascript: void(0);" onclick="window.open(SlippyMap.locator.iconBar.ddSendEmail(),'EMAIL','width=720,height=800,status=yes,toolbar=no,scrollbars=1,menubar=no,location=no');">
+						<span style="color:#260602;font-size:11px;text-decoration:underline;">Email</span></a> | 
+						<a href="javascript: void(0);" onclick="window.open(SlippyMap.locator.iconBar.ddSendSMS(),'MOBILE','width=720,height=800,status=yes,toolbar=no,menubar=no,scrollbars=1,location=no');"><span style="color:#260602;font-size:11px;text-decoration:underline;">Mobile</span></a> 
+						
+						</th>
+					</tr>
+					<tr>
+						<th style="text-align:center; background-color:#713F29; color:#ffffff;">
+								<span class="addressline">
+								From (A): <div class="address_line1" ></div>
+								<div >
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+
+									<span class="address_zip"></span>
+								</div>
+  								</span>
+						Total distance: #{TOTAL_DISTANCE} #{DISTANCE_UNIT}<br>
+							Total time: #{TOTAL_TIME} #{TIME_UNIT}
+						</th>
+					</tr>	
+					
+                                  
+				</thead>
+				<tfoot>
+                                        <tr>
+                                                <th style="border-top: 1px solid lightblue; text-align:center; background-color:#713F29; color:#ffffff;">
+							<div>
+								To (B):<br>
+								<span class="addressline">
+								<div class="address_line1" ></div>
+								<div >
+									<span class="address_city"></span>
+									<span class="address_state"></span>
+
+									<span class="address_zip"></span>
+								</div>
+  								</span>
+							</div>
+                                                       
+                                                </th>
+                                        </tr>
+										
+										<tr>
+						<th>
+							<a class="reverse_directions" style="font-size: 12px; color:#666666;" href="javascript:void(0);">Get reverse directions</a>
+						</th>
+					</tr>		
+				</tfoot>
+				<tbody>		
+					<tr>
+						<td class="maneuver"><table><tr><td>#{ID}. </td><td>#{TEXT} #{DISTANCE} #{DISTANCEUOM}</td></tr></table></td>
+					</tr>	
+				</tbody>				
+			</table>
+			<!-- Maneuvers table template end -->
+		</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Here is new header-->
+<div id="mainBox">
+  <div id="mainContainer">
+    <div id="headerBox" class="">
+      <div id="siteHeader">&nbsp;</div>
+      <div id="logo"><a href="http://www.thecheesecakefactory.com" target="_top" title="Home"><img src="images/horizontal_logo.png" width="243" height="48" alt="Home"/></a></div>
+      <div id="topNavContainer">
+        <ul id="topNav" class="MenuBarHorizontal">
+          <li> <a href="#" class="MenuBarItemSubmenu"><img src="images/list_img.png" width="15" height="12"/> Experience</a>
+            <ul class="">
+              <li><a href="http://www.thecheesecakefactory.com/restaurant/restaurant" tabindex="-1" target="_top">Restaurant</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/bakery/bakery" tabindex="-1" target="_top">Bakery</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/bar/bar" tabindex="-1" target="_top">Bar</a></li>
+            </ul>
+          </li>
+          <li><a href="http://www.thecheesecakefactory.com/menu/welcome/Welcome" target="_top" title="" class="MenuBarItemSubmenu"><img src="/cheesecake/local/test/images/list_img.png" width="15" height="12"/> Menu</a></li>
+          <li><a href="http://www.thecheesecakefactory.com/locations/locations" target="_top" title="" class="MenuBarItemSubmenu"><img src="/cheesecake/local/test/images/list_img.png" width="15" height="12"/> Locations</a></li>
+          <li><a href="http://shop.thecheesecakefactory.com/webapp/wcs/stores/servlet/Home_-1_10251_10001" target="_blank" title="" class="MenuBarItemSubmenu"><img src="/cheesecake/local/test/images/list_img.png" width="15" height="12"> Shop</a></li>
+        </ul>
+      </div>
+      <div id="topSiteTools">
+        <div class="floatLeft secondaryLink fontsize15" style="margin-right:15px;"><a href="http://www.thecheesecakefactory.com/shareit/eNewsletterSignUp/emailSignUp" target="" title="">Sign Up</a></div>
+        <div class="search_box">
+          <form id="search_form" method="get" action="http://www.thecheesecakefactory.com/locations/locations" onSubmit="if((this.value=='Location: City, State or Zip Code') || (this.value=''))return false;">
+            <input type="text" name="addressline" value="Location: City, State or Zip Code" class="locationSearch" onFocus="if(this.value=='Location: City, State or Zip Code')this.value='';" onBlur="if (this.value == '')this.value = 'Location: City, State or Zip Code';" size="18" maxlength="100" >
+          </form>
+        </div>
+      </div>
+      <div id="bottomSiteTools">
+        <ul id="siteTools" class="MenuBarHorizontal">
+          <li class="siteTools"><a href="http://www.thecheesecakefactory.com/aboutUs/ourStory/ourStory" target="" title="" class="MenuBarItemSubmenu">About Us</a></li>
+          <li class="siteTools" style="border-left:#F6D39A 1px solid; border-right:#F6D39A 1px solid;"><a href="http://www.thecheesecakefactory.com/careersLanding/careers" target="_top" title="" class="MenuBarItemSubmenu">Careers</a>
+            <ul>
+              <li><a href="http://www.thecheesecakefactory.com/careers/corporateOpportunities/corporateOpportunities" target="_top" title="">Corporate</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/careers/bakeryOpportunities/bakeryOpportunities" target="_top" title="">Bakery</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/careers/comeshareinoursuccess/comeshareinoursuccess#row2" target="_top" title="">Hourly</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/careers/restaurantManagementOpportunities/restaurantManagementOpportunities" target="_top" title="">Restaurant Mgt</a></li>
+            </ul>
+          </li>
+          <li class="siteTools"><a href="http://www.thecheesecakefactory.com/shareItLanding/shareit" target="_top" title="" class="MenuBarItemSubmenu">Share It!</a></li>
+        </ul>
+      </div>
+      <script type="text/javascript">
+var topNav = new Spry.Widget.MenuBar("topNav");
+var siteTools = new Spry.Widget.MenuBar("siteTools");
+</script>
+      <!--End new header-->
+    </div>
+    <!--Add this for control-->
+    <div id="contentArea">
+      <!-- Oraganic Section Starts -->
+      <div class="organicCont" id="organicCont">
+
+
+
+	<!--<div class="bread"><a href="#">Select a State</a>  > <a href="#">California (CA)</a> > <a href="#">Brea</a></div>-->
+
+    <!-- *** comment 3 / for local template: needs to update the navigation, need to change the account name in the url accordingly *** -->
+
+    <div class="navbar"><p>
+    
+    <a href="http://hosted.where2getit.com/cheesecake/local/test/organicLocations.html">Select a State</a> >> <a href="http://locations.dev.where2getit.com/yong_test/<TMPL_VAR NAME='state'>/index.html"><TMPL_VAR NAME="statelongname"> (<TMPL_VAR NAME="state">)</a> >> <span><TMPL_VAR  NAME="adminunit"></span>
+    </p>
+    </div>
+
+    <!-- *** END comment 3 / for local template: needs to update the navigation, need to change the account name in the url accordingly *** -->
+
+
+
+
+        
+        <div class="rightCol">
+
+		    <div class="orgHeaderImg" style="margin-bottom: 20px;">
+				<img src="/cheesecake/local/test/images/organicHeaderSmall.jpg" alt="Header" >
+			</div>
+
+         
+          <div class="orgSep"></div>
+          <div class="restaurantBlock">
+            <h5 class="subheading">Restaurant Info:</h5>
+            <p>First Place Winner of the Orange County Register’s 2007 & 2008 Best of Orange County for "Best Desserts!" </p>
+            <p>Two outdoor patios are available  for seating. </p>
+            <p>Large print and Baille menus are available.</p>
+          </div>
+          <div class="orgSep"></div>
+          <div class="dinningBlock">
+            <h5 class="subheading">Dining Options:</h5>
+            <p><strong>CURBSIDE TO-GO:</strong><br>
+              <br>
+              Need your order “To-Go?” Try our Curbside To-Go Service! It’s easy as 1, 2, 3!</p>
+            <ul>
+              <li>1) Call in to place your order.</li>
+              <li>2)	When you arrive to pickup your order, drive up to our special Curbside To-Go Parking spaces, and call our Curbside Pickup line at (714) 255-0920 to let us know you’ve arrived.</li>
+              <li> 3) Your food will be delivered right to your car, and 			you’ll be on your way! </li>
+            </ul>
+            <p><strong>CATERING:</strong><br>
+              <br>
+              Something for everyone at your office, party or home!<br>
+              <br>
+              At The Cheesecake Factory we like to celebrate big. Now you can bring the celebration to your home, office or special event with our delicious catering selections! To see our exciting new Catering Menu, please <a href="http://www.thecheesecakefactory.com/resources/f3936a00405bc1cd82c4ea74cabaed23/TCF+Catering+Web+2-10.pdf" target="_blank" title="click here">click here</a>. </p>
+         <p><strong>DELIVERY:</strong><br>
+		<br/>
+		What if you could get a great Cheesecake Factory dining experience delivered to your home or office? We are now proud to announce that we partner with restaurant a delivery company local to your area. <a href="#">Click here to order.</a> 
+		<br/>
+
+	 </div>
+          <div class="orgSep"></div>
+          <div class="dinningBlock">
+            <h5 class="subheading">See our Menu:</h5>
+            <p> <a href="http://www.thecheesecakefactory.com/resources/8bc93780405bc23e82cdea74cabaed23/Menu_W.pdf" target="_blank" title="click here">Click here</a> to view and print our entire menu. </p>
+          </div>
+          <div class="orgSep"></div>
+          <div class="citiesBlock">
+            <h5 class="subheading">Cities Closest to The Cheesecake Factory:</h5>
+            <p>Irvine, Costa Mesa, Tustin, Aliso Viejo, Mission Viejo, Laguna Beach, Newport Beach, Huntington Beach, Long Beach</p>
+          </div>
+          <div class="orgSep"></div>
+          <div class="zipBlock">
+            <h5 class="subheading">Zip Codes Near The Cheesecake Factory:</h5>
+
+		<!-- *** comment 4/ for local template: needs to add the zip_code variable *** -->
+
+			<div class="zip_codes">
+      			   <TMPL_VAR NAME="codes_near_by">
+			</div>
+
+		<!-- *** END comment 4/ for local template: needs to add the zip_code variable *** -->
+
+        <!--    <p>92657, 92662, 92725, 92869, 92661, 92704, 92782, 92614, 92697, 92628, 92650, 92658, 92698, 92781, 92703, 92707, 92619, 92702, 92612, 92618, 92864, 92701, 92711, 92604, 92620, 92625, 92735, 92799, 92616, 92868, 92706, 92780, 92728, 92623, 92602, 92606, 92712, 92705, 92603, 92866, 92617, 92660 </p>
+          		-->
+	   </div>
+
+          <div class="orgSep"></div>
+          <div class="zipBlock">
+            <h5 class="subheading">Cities Near The Cheesecake Factory:</h5>
+
+<!-- *** comment 5/ for local template: needs to add the zip_code variable *** -->
+
+	<div class="zip_codes">
+	<TMPL_VAR NAME="cities_near_by">
+	</div>
+<!-- *** END comment 5/ for local template: needs to add the zip_code variable *** -->
+	   </div>
+
+        </div>
+
+        <div class="leftCol">
+	<!--	
+          <div class="locatorMap" style="margin-right:20px;">
+		<div class="c1"></div>
+           	 <div class="c2"></div>
+           	 <div class="c3"></div>
+           	 <div class="c4"></div>
+		<img src="/cheesecake/local/test/images/locatorMap.jpg" alt="Header">
+	</div>
+	-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					   
+            
+				<div id="locations">
+
+					<div id="locationMap">
+					 	
+						<div id="locationMap_top" align="left">
+
+
+
+
+
+
+
+						
+							<img id="fluerdeleaf" src="/cheesecake/images/glyph.png" width="33" height="25" class="floatLeft" style="margin-left:15px; margin-top:20px;" />
+							
+							
+
+
+							<div id="form">
+							<form id="locator_search" autocomplete="off">
+							<h4 style="margin-left:0px;">Search only locations with:</h4>
+								<input name="CURBSIDEFLAG" type="checkbox" class="checkbox" align="top" width="14" height="14" border="0" VALUE="1"/>
+								<label>Curbside To-Go</label>
+								
+								<input name="CATERYFLAG" type="checkbox" class="checkbox" align="top" width="14" height="14" border="0" VALUE="1"/>
+								<label>Catering</label>
+								
+								<input name="DELIVERYFLAG" type="checkbox" class="checkbox" align="top" width="14" height="14" border="0" VALUE="1" />
+								<label>Delivery</label>
+								<input id="inputaddress" type="text" size="40" name="addressline" value="" style="display:none;"/>
+                                                                                 
+								<input id="locator_submit" name="search" value="Go" style="vertical-align:middle;" src="images/search.png" type="image" />
+					
+								
+								<xml>
+								<root>
+									<inputform>
+										<formdata id="locatorsearch">
+											<dataview>store_default</dataview>
+											<geolocs>
+												<geoloc>
+													<addressline></addressline>
+													<longitude></longitude>	
+													<latitude></latitude>
+												</geoloc>
+											</geolocs>
+											<searchradius>50|100|150|300</searchradius>
+											
+											<where>
+												<or>
+												   
+												   <CATERINGFLAG><EQ></EQ></CATERINGFLAG>
+												   
+												   <CURBSIDEFLAG><EQ></EQ></CURBSIDEFLAG>
+												   
+												   <DELIVERYFLAG><EQ></EQ></DELIVERYFLAG>
+
+                                   				</or>
+											</where>
+										</formdata>						
+									</inputform>									
+								</root>					
+							</xml>		
+								
+							</form>
+							
+							
+							
+							<form id="driving_directions" autocomplete="off" style="float:left; display: none;">
+					<table style="width:420px;">
+						<tbody>
+							<tr>
+								<td style="vertical-align:middle;">
+									<span style="font-size:11px;color:#ffffff;">&nbsp;From</span> 
+								</td>
+								<td style="vertical-align:middle;">
+									<input id="startaddress" class="addressentry" type="text" size="28" name="addressline" value="Start address" onClick="clear_search_directions_box(this);"/>	
+									<img style="cursor: pointer;" width="10" height="14" src="/w2gi/images/ddirflip.png" title="Switch start and end address" alt="Switch start and end address"/>
+									<span style="font-size:11px;color:#ffffff">To</span>
+								</td>
+								<td style="vertical-align:middle;">	
+									<input id="endaddress" class="addressentry" type="text" size="28" name="addressline" value="End address" onClick="clear_search_directions_box(this);"/>
+									<input id="directions_submit" name="driving_directions" style="vertical-align:middle;" src="images/getdirctions.png" type="image" value="Go"/>
+									
+								</td>
+								<!-- <td><a class="search_toggle" href="javascript:void(0);">New Search</a></td>		-->							
+							</tr>
+						</tbody>
+					</table>
+					<xml>
+						<root>
+							<inputforms>							
+								<inputform>
+									<formdata id="drivingdirections">
+										<dataview>store_default</dataview>
+										<geolocs>
+											<geoloc>
+												<addressline></addressline>
+												<longitude></longitude>	
+												<latitude></latitude>
+											</geoloc>
+											<geoloc>
+												<addressline></addressline>
+												<longitude></longitude>	
+												<latitude></latitude>
+											</geoloc>
+										</geolocs>
+										<rid></rid>
+										<map>
+
+       <size>330,225</size>
+       <icons>
+         <start><path>icons/ddstartpin.png</path><size>2</size></start>
+
+         <end><path>icons/ddendpin.png</path></end>
+        </icons>
+</map>
+
+									</formdata>
+								</inputform>
+							</inputforms>	
+						</root>					
+					</xml>	
+				</form>	
+				
+									</div> <!-- end of form -->
+							
+					</div>
+						
+						
+<div class="locatorMap" >
+		<div class="c1"></div>
+           	 <div class="c2"></div>
+           	 <div class="c3"></div>
+           	 <div class="c4"></div>
+	<div id="map"></div>	
+</div>		
+							
+				</div>
+					
+					
+			<div id="panel" style="height:80px;"></div>
+					
+						
+						
+</div> <!-- end of locations div -->
+		
+		
+		
+		
+		<div id="footerw2gi">
+   			<script type="text/javascript">
+
+				var d = new Date()
+
+				document.write("Mapping Locator Powered by <a style='color:#666666;' href='http://www.where2getit.com' target='_new'>Where 2 Get It </a>")
+                                document.write("Copyright &copy; ")
+				document.write(d.getFullYear())
+
+				document.write(", All Rights Reserved.")
+                		document.write("")
+
+			</script>
+		</div>
+
+	        <div id="navteqfooter" >
+                      <script type="text/javascript">
+                        var d = new Date()
+                        document.write(" <img src=http://direct.where2getit.com/navteq/logo_navtech_large.gif> ")
+                        document.write(" &copy; Copyright ")
+                        document.write(d.getFullYear())
+                        document.write(" NAVTEQ Corp.  ")
+                        </script>
+                      <a href="http://www.where2getit.com/terms/terms.html" onClick="window.open(this.href,'_blank','width=476,height=350,scrollbars=yes,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes');return false;">Use Subject to Terms and Conditions</a>                
+					  
+	 </div>     
+
+	 <!-- <script type="text/javascript">
+supersleight.init();
+</script>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 <div class="addressBlock" style="float: none;">
+	
+            <p ><strong style="color:#45110A">LOCATION:</strong> Located in the Brea Mall on the corner of Imperial Highway and State College.</p>
+            <p><strong style="color:#45110A">PARKING:</strong> Ample self parking is available as well as Valet parking for your convenience.</p>
+            <p><strong style="color:#45110A">HOURS OF OPERATION:</strong></p>
+            <ul>
+              <li><span class="dates">Monday - Thursday</span> <span class="timeStamp">11:00am - 11:00pm</span></li>
+              <li><span class="dates">Friday &amp; Saturday </span> <span class="timeStamp">11:00am - 12:30am</span></li>
+              <li><span class="dates">Sunday</span> <span class="timeStamp">10:00am - 11:00pm</span></li>
+            </ul>
+          </div>
+	<div class="orgSep"></div>
+      	<div style="clear:both;">
+          <div class="tempBclear"></div>
+	<h3 class="subheading">Welcome to The Cheesecake Factory - Brea</h3>
+          <p> The Cheesecake Factory menu features more than 200 menu selections made fresh from scratch each day – using only the highest quality ingredients – which combines to create our remarkable tastes.</p>
+          <p> We will gladly honor requests to modify your order to suit specific health or dietary needs. The Cheesecake Factory is famous for our generous portions which are ideal for sharing or taking home for a second meal – but be sure to save room to enjoy one of 50 legendary cheesecakes and specialty desserts.</p>
+          <h3 class="subheading">You Can Have Your Cake... And Send It Too!</h3>
+          <p> A selection of our most popular Cheesecakes, as well as our Gift Cards, can be shipped almost anywhere in the U.S. via Federal Express! <a href="http://shop.thecheesecakefactory.com/webapp/wcs/stores/servlet/Home_-1_10251_10001" target="_blank" title="Shop Online" >Shop Online</a> or call 1-800-330-CAKE - 24 hours, 7 days a week. </p>
+	   <p> Made with only the finest ingredients, every Cheesecake is lovingly hand-packaged and delivered to your door by Federal Express. The Cheesecake Factory 10" Cheesecakes arrive pre-sliced and serve 12-16; our 7" Cheesecakes are whole and serve 6-8.</p>
+	   <p> The Cheesecake Factory gift cards make the perfect gift for any taste. They can be used for shopping online, by telephone or at any Cheesecake Factory restaurant.</p>
+
+          <h3 class="subheading">Stay Connected with The Cheesecake Factory</h3>
+          <p> Sign up for our <a class="mailto" href="http://www.thecheesecakefactory.com/shareit/eNewsletterSignUp/emailSignUp"  title="eNewsletter">eNewsletter</a> , become our fan on <a href="http://www.facebook.com/thecheesecakefactory">Facebook</a>, and follow us on <a  href="http://twitter.com/cheesecake">Twitter</a> so we can start sharing exciting news, celebrations, and special offers with you. It’s easy! Just click on any of the icons below to get started.</p>
+       </div>
+		<div class="communityIcons" style="float: right; padding: 10px 0 0 0; position: relative; top: -10px; left: -180px;"> 
+		<a class="mailto" href="http://www.thecheesecakefactory.com/shareit/eNewsletterSignUp/emailSignUp"  title="eNewsletter">eNewsletter</a> 
+		<a href="http://www.facebook.com/thecheesecakefactory" class="facebookLink" title="Facebook">Facebook</a> 
+		<a  href="http://twitter.com/cheesecake" class="twitterLink" title="Twitter">Twitter</a> 
+		</div>
+
+
+
+	 </div>
+      </div>
+      <!-- Oraganic Section  -->
+    </div>
+    <!--End add-->
+    <!--Here is new footer-->
+    <div id="mainFooterContainer">
+      <div id="footerBox" class="">
+        <div id="footer">&nbsp;</div>
+        <div class="footerContent">
+          <div class="floatLeft">
+            <ul>
+              <li><a href="http://www.thecheesecakefactory.com/aboutUs/contactUs/contactUs">Contact Us</a></li>
+              <li><a href="https://shop.thecheesecakefactory.com/webapp/wcs/stores/servlet/GiftCardLandingView?langId=-1&storeId=10251&catalogId=10001&krypto=BGoUsITCISNnRZj9r9G2gg==&ddkey=http:GiftCardLandingView">Gift Cards</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/charityLanding/charity">Charitable Giving</a></li>
+              <li><a href="http://investors.thecheesecakefactory.com">Investors</a></li>
+              <li><a href="http://investors.thecheesecakefactory.com/phoenix.zhtml?c=109258&p=irol-news&nyo=0">Press</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/policies/termsOfUse/termsOfUse">Terms of Use</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/policies/privacyPolicy/privacyPolicy">Privacy Policy</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/policies/employmentPolicy/employmentPolicy">Employment Policy</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/sitemap/sitemap">Site Map</a></li>
+            </ul>
+          </div>
+          <div class="floatRight footerRight">
+            <ul>
+              <li>
+                <script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=a860225f-f38f-4f10-ba25-c7109286d6f7&amp;type=website&amp;popup=true"></script>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tempBCopyright" id="legalTertiary"> © 2002-2009 The Cheesecake Factory Assets Co. LLC. All Rights Reserved. </div>
+</div>
+<script type="text/javascript">
+//To be put in prod only
+//var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+//document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+//To be put in prod only
+//try{
+//var pageTracker = _gat._getTracker("UA-2716955-1");
+//pageTracker._trackPageview();
+//} 
+//catch(err) {}
+</script>
+<!--End new footer-->
+</body>
+</html>

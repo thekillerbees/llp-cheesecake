@@ -1,0 +1,166 @@
+StoreNum	TextRestaurant	Patio	TextPatio	Banquets	Braille	LargePrint	Spanish	Japanese	Korean	Chinese
+1	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+2	Have your next event at The Cheesecake Factory!  Our Beachfront Cafe can host large parties and banquets of up to 200 guests.	1	This unique location offers outdoor seating with an unbelievable on-the-water view (seasonal umbrellas and heaters are plentiful). 	1	1	1	0	0	0	0
+3		1	Patio seating is available.	1	1	1	0	0	0	0
+4	Our indoor banquet facility can accommodate parties of up to 55 guests and parties of up to 120 guests can be accommodated on our patio	1	Patio seating is available.	1	1	1	0	0	0	0
+5	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+6	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+8	Have your next event at The Cheesecake Factory!  Banquet facilities are available and we can accommodate parties of up to 100 guests on our enclosed veranda.	1	Veranda seating is available.	1	1	1	0	0	0	0
+9	We can accomodate parties of up to 40. Please call the restaurant for available days and times.	0		0	1	1	0	0	0	0
+10	We can accommodate parties of up to 65 guests in our veranda area.	0		0	1	1	0	0	0	0
+11	We can accommodate parties of up to 50 guests.	0		0	1	1	0	0	0	0
+12	Have your next event at The Cheesecake Factory!  We offer our Cafe as a banquet facility at certain times and days of the year. For more information or to book a party please call 312-409-7187.	1	Patio seating is available.	1	1	1	0	0	0	0
+13	We can easily accommodate parties of up to 60 guests.	0		0	1	1	0	0	0	0
+14	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+15	Have your next event at The Cheesecake Factory!  We have banquet facilities available for parties of 25 to 40 guests.	0		1	1	1	0	0	0	0
+16	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+17	We can accommodate parties of up to 40 people.	1	Patio seating is available.	0	1	1	0	0	0	0
+18	We can easily accommodate parties up to 35 guests.	0		0	1	1	0	0	0	0
+19	Have your next event at The Cheesecake Factory!  We offer banquet facilities that can accommodate up to 90 guests.	1	Patio seating is available.	1	1	1	0	0	0	0
+20	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+21	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+22	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+23	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+24	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+25	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+26	We can accommodate parties of up to 24 people.	1	Patio seating is available.	0	1	1	0	0	0	0
+27	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+28	We can accommodate parties up to 40 people.	1	Patio seating is available.	0	1	1	0	0	0	0
+29	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+30	We can easily accommodate large parties.<br><br>Reservations are accepted for parties of 7 or more Mon - Fri from 11:30AM - 12:00PM.	1	Patio seating is available.	0	1	1	0	0	0	0
+31	We can easily accommodate large parties.	1	We offer beautiful patio dining that faces historic Pearl Street from late-March through Thanksgiving.	0	1	1	0	0	0	0
+32	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+33	We can easily accommodate parties up to 25 people.	1	Patio seating is available.	0	1	1	0	0	0	0
+34	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+35	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+36	Our dining room can easily accommodate parties up to 35 guests.	1	Patio seating is available.	0	1	1	0	0	0	0
+37	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+38	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+39	We can easily accommodate parties of up to 35 guests.	1	Patio seating is available.	0	1	1	0	0	0	0
+40	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+41	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+42	We can easily accommodate parties up to 50 guests.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+43	We can easily accommodate parties of up to 25 guests.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+44	We can accommodate your party of up to 35 guests on our enclosed patio or inside the restaurant.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+45	We can easily accommodate large parties.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+46	We can easily accommodate large parties.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+47	We can easily accommodate large parties.	1	"Patio seating is available with heaters music ceiling fans and """"misters"""" for those dry warm days and nights in the desert."	0	1	1	0	0	0	0
+48	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+49	We can easily accommodate large parties.	1	Beautiful outdoor patio seating is available.	0	1	1	0	0	0	0
+50	We are able to accommodate parties of up to 35 guests indoor and parties up to 65 on our outdoor patio.	1	Patio seating is available.	0	1	1	0	0	0	0
+51	Our dining room can easily accommodate parties of up to 30 guests.	1	Patio seating is available.	0	1	1	0	0	0	0
+52	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+53	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+54	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+55	We can easily accommodate large parties.	1	Outdoor patio seating is available.	0	1	1	0	0	0	0
+56	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+57	We can easily accommodate large parties.	1	Our 75-seat patio is open for outdoor dining from mid-April to mid-October.	0	1	1	0	0	0	0
+58	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+59	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+60	We can easily accommodate parties of up to 24 guests.	1	Patio dining is available.	0	1	1	0	0	0	0
+61	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+62	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+63	We can easily accommodate parties up to 25 guests.	1	Patio dining is available.	0	1	1	0	0	0	0
+64	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+65	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+66	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+67	Have your next party at The Cheesecake Factory!  We can easily accommodate parties up to 25 guests in our dining room.	1	Patio dining is available.	0	1	1	0	0	0	0
+68	Our banquet area can accommodate parties of 50 guests.	1	We have two beautiful patios for outdoor dining.	1	1	1	0	1	1	1
+69	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+70	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+71	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+72	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+73	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+74	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+75	We can easily accommodate large parties.	1	Enjoy picturesque dining on our fabulous patio complete with live music on weekends during the summer!	0	1	1	0	0	0	0
+76	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+77	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+78	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+79	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+80	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+81	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+82	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+83	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+84	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+85	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+86	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+87	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+88	We can easily accommodate large parties.	1	Two outdoor patios are available for seating.	0	1	1	0	0	0	0
+89	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+90	We can easily accommodate large parties.	1	Outdoor seating is available on our two beautiful patios.	0	1	1	0	0	0	0
+91	We can easily accommodate large parties.	1	Outdoor seating is available on our two beautiful patios.	0	1	1	0	0	0	0
+92	We can easily accommodate large parties.	1	Enjoy outdoor dining on our picturesque second story terrace.	0	1	1	0	0	0	0
+93	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+94	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+95	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+96	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+97	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+98	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+99	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+100	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+101	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+102	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+103	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+104	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+105	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+106	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+107	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+108	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+109	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+110	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+111	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+112	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+113	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+114	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+115	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+116	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+117	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+118	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+119	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+120	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+121	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+122	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+123	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+124	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+125	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+126	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+127	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+128	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+129	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+130	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+131	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+132	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+133	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+134	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+135	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+136	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+137	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+138	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+139	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+140	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+141	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+142	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+143	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+144	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+145	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+146	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+148	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+149	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+150	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+151	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+152	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+153	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+154	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+155	We can easily accommodate large parties.	1	Patio seating is available.	0	1	1	0	0	0	0
+156	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+157		1	Patio dining is available.	1	1	1	0	0	0	0
+158	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+159	We can easily accommodate large parties.	0		0	1	1	0	0	0	0
+160	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+161	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+162	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+163	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+164	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+166	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+167	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	0	0	0	0
+SJPLA-525FDRASJP	We can easily accommodate large parties.	1	Patio dining is available.	0	1	1	1	0	0	0

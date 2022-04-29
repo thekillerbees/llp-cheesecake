@@ -1,0 +1,73 @@
+/* ==========================================================================
+    BROWSER TWEAKS
+   ========================================================================== */
+
+// fixes input elements to have border-box great for percentages
+* , *:before , *:after {
+    @include box-sizing(border-box);
+}
+
+input[type="search"] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* 2 */
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+// set tranisition to all links and btns form fields
+a , .btn, button, input, select, textarea {
+    @include transition(all 0.5s ease-in-out);
+}
+
+// remove annoying dotted outline on links and form elements
+* {
+    outline: 0;
+}
+
+/* IE 10 Overrides */
+
+// removes annoying x on inputs
+*::-ms-clear {
+    display: none;
+}
+
+/* Firefox Overrides */
+
+/* Native select arrow can't be killed, so hide custom one */
+@-moz-document url-prefix() {
+    select {
+        background-image: none !important;
+    }
+}
+
+// fix scrollbar overlap
+body {
+    -ms-overflow-style: scrollbar !important;
+}
+
+// Browser Form overwrites
+input, textarea {
+    @include appearance(none);
+}
+select {
+    border-radius: 0;
+}
+textarea {
+    resize: none;
+}
+input[type=submit] {
+    cursor: pointer;
+}
+
+/* Mobile Overrides */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: none;
+}
+
+// disable user select on all items except form elements
+.touch {
+    *:not(input):not(textarea):not(select):not(object):not(embed):not(iframe):not(video):not(audio) {
+        @include user-select(none);
+    }
+}

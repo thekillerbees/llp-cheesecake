@@ -1,0 +1,135 @@
+* {
+	/* resets */
+	border: none;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-weight: inherit;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+a {
+	vertical-align: baseline;
+}
+
+a, a * {
+	/* color: inherit; */
+}
+
+table {
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	height: 0;
+}
+
+xml, #w2gi_hide, #lightwindow, #templates, #locator_search_submit, #ajax_activity, #icon_bar, #footer, #navteqfooter {
+    display: none;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+}
+
+.hide_if_00 {
+	display: none;
+}
+
+.show_if_01 {
+	display: none;
+}
+
+#locator_search {
+	display: block !important;
+}
+
+#driving_directions {
+	display: none !important;
+}
+
+.w2gi_all_locations .filterToggle {
+	display: none;
+}
+
+/* TEMPORARY MAP ICON STYLES */
+
+.icon {
+    position: relative;
+}
+
+.icon img {
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.w2gi_more_info .icon div {
+	display: none;
+}
+
+.icon div {
+    background: url("/w2gi/images/spacer.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    padding: 5px 0 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(6, 61, 50, 0.75);
+    top: 0;
+    width: 100%;
+}
+/* END TEMPORARY MAP ICON STYLES */
+
+#OpenLayers_Control_PanZoomBar_ZoombarOpenLayers_Map_6 {
+	/* height: 132px !important; */
+}
+
+#OpenLayers_Control_PanZoom_zoomout {/* top: 213px !important; */}
+
+
+#OpenLayers_Control_PanZoomBar_2 {left: 13px !important; top:14px !important;}
+	#OpenLayers_Control_PanZoom_panleft {left: 0px !important;}
+	#OpenLayers_Control_PanZoom_panright {left: 26px !important;}
+	#OpenLayers_Control_PanZoom_zoomin{top: 81px !important; left: 13px !important; z-index:99;}
+	#OpenLayers_Control_PanZoom_zoomout {top: 234px !important; left: 13px !important;}
+	#OpenLayers_Control_PanZoom_pandown{top: 37px !important;}
+	#OpenLayers_Control_PanZoom_panup{top: 7px !important;}
+	
+	
+	.nochange {color:#824d3b;}
+	.nochange:hover {color:#824d3b;}
+	
+	::-webkit-input-placeholder {
+	   color: #5d3327;
+	}
+	
+	::-moz-placeholder { /* Firefox 18- */
+	   color: #5d3327;  
+	}
+	
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: #5d3327;  
+	}
+	
+	:-ms-input-placeholder {  
+	   color: #5d3327;  
+	}
+
+#lightwindow_contents {font-size:14px; line-height:20px;}

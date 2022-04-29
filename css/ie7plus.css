@@ -1,0 +1,18 @@
+
+/*************************************************/
+
+/* CSS for Versions greater than or equal to IE7 */
+
+/*************************************************/
+	#bottomSiteTools ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
+	{
+		left:100px;
+		height:80px;
+	}
+
+
+	
+	
+	.footerRight {top:-3px; }
+
+

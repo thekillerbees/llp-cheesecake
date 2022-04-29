@@ -1,0 +1,161 @@
+/* ==========================================================================
+	 HEADER
+	========================================================================== */
+.header {
+	z-index: 200;
+	@if ($platform != mobile) {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		// variations
+		.fixed & {
+			position: fixed;
+			z-index: 9999;
+			height: 60px;
+			.main-header-controls {
+				margin: 22px 0 0;
+			}
+		}
+		.show-nav & {
+			@include transform(translateX(-250px));
+			// When scaling down desktop to below tablet, don't shift header
+			@include phone {
+				@include transform(none);
+			}
+		}
+		.full-screen-image & {
+			@include transform(translateY(-1000px));
+		}
+	} @else {
+		height: 50px;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		.container {
+			padding: 0 15px;
+			position: relative;
+		}
+	}
+	@include transition(background .4s ease, transform 0.5s $easeInOutCubic);
+	.fixed-color & {
+		background: $headerContentBgColor;
+		background: rgba($headerContentBgColor,0.92);
+	}
+	.fixed-always & {
+		background: $headerContentBgColor;
+	}
+}
+.main-header {
+	@if ($platform != mobile) {
+		@include transition(transform .5s $easeInOutCirc);
+		height: 100%;
+		max-width: 1000px;
+		min-width: 768px;
+		margin: 0 auto;
+		padding: 0 10px;
+		.on-load-animation & {
+			//@include transform(translate3d(0,0,0));
+		}
+	} @else {
+
+	}
+}
+.site-logo {
+	float: left;
+	text-indent: -9999px;
+	@if ($platform == mobile) {
+		background: url('/assets/images/global/logo-tcf-long.svg') no-repeat;
+		background-size: contain;
+		height: 30px;
+		margin: 10px 0;
+		width: 172px;
+		.navigation & {
+			background-image: url('/assets/images/global/logo-tcf-long-nav.svg');
+			margin-left: 15px;
+		}
+	} @else {
+		background: url('/assets/images/global/logo-tcf-desktop.png') no-repeat;
+		background-position: 0 0;
+		width: 198px;
+		height: 117px;
+		margin: 0;
+		@include transition(background-position .25s $easeInOutCubic, height .25s $easeInOutCubic);
+		.fixed & {
+			margin: -28px 0 0;
+			background-position: 0 -109px;
+			width: 198px;
+			height: 88px;
+		}
+	}
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+.main-header-controls {
+	float: right;
+	@if ($platform == mobile) {
+		margin: 0;
+		height: 50px;
+		> li {
+			a.head-more {
+				&:before {
+					font-size: 20px;
+					line-height: 50px;
+				}
+				span {
+					display: none;
+				}
+			}
+		}
+	} @else {
+		margin: 50px 0 0;
+	}
+	> li {
+		color: $mainTextColor;
+		float: left;
+		position: relative;
+		margin: 0 0 0 30px;
+		&:first-child {
+			margin: 0;
+		}
+		a {
+			color: inherit;
+			cursor: pointer;
+			display: block;
+			&:hover {
+				opacity: 0.8;
+			}
+			&:active {
+				opacity: 0.5;
+			}
+			&:before {
+				color: $mainTextColor;
+				font-size: 17px;
+			}
+			span {
+				font: $fontWeightRegular 17px/17px $themeFont;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+}
+
+.head-menu:before {
+	@extend .icon-menu;
+}
+.head-locations:before {
+	@extend .icon-locations;
+}
+.head-giftcards:before {
+	@extend .icon-giftcards;
+}
+.head-more:before {
+	@extend .icon-hamburger-nav;
+}

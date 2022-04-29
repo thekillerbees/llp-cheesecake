@@ -1,0 +1,7 @@
+// START : /modules/content-largeimage.html
+.content-largeimage
+	img(alt="",src="/assets/images/placeholders/img_640x360.png")
+	// TODO: We don't include .content-largeimage-caption if there is no caption
+	if largeImageCaption !== ""
+		.content-largeimage-caption #{largeImageCaption}
+// END : /modules/content-largeimage.html

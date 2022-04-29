@@ -1,0 +1,22 @@
+
+<!-- START : /global/header.html-->
+<div id="header" class="header">
+  <div id="mainHeader" class="main-header">
+    <div class="container">
+      <ul class="main-header-controls">
+        <!-- Only show these menu items on desktop/tablet-->
+        <li><a href="#" class="head-menu"><span>Menu</span></a></li>
+        <li><a href="/locations/" class="head-locations"><span>Locations</span></a></li>
+        <li><a href="/giftcards/" class="head-giftcards"><span>Gift Cards</span></a></li>
+        <li><a id="menuToggle" class="head-more"><span>More</span></a></li>
+      </ul>
+      <h1 class="site-logo"><a href="/home/">The Cheesecake Factory</a></h1>
+    </div>
+  </div>
+</div>
+<script>
+  require(["modules/fixedHeader"], function(FixedHeader) {
+   return new FixedHeader();
+  });
+</script>
+<!-- END : /global/header.html-->

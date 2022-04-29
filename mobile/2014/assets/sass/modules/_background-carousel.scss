@@ -1,0 +1,129 @@
+/* ==========================================================================
+    BACKGROUND CAROUSEL
+   ========================================================================== */
+
+.main-carousel {
+	background-color: #000;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	& ~ .main-content {
+		bottom: 160px;
+		height: auto;
+		min-height: 0;
+		position: absolute;
+		@include transition(transform 0.5s $easeInOutCubic);
+		.show-food-menu & {
+			bottom: 80px;
+		}
+		.menu-animating & {
+			@include transform(translateY(1000px));
+		}
+		.full-screen-image & {
+			@include transform(translateY(1000px));
+		}
+	}
+	.royalSlider {
+		display: none;
+		height: 100%;
+		position: relative;
+		width: 100%;
+		&.rsHor {
+			//rsHor is added when loaded
+			display: block;
+		}
+		&.animating {
+			.rsGCaption {
+				opacity: 0;
+			}
+		}
+	}
+	.rsContent {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: block;
+		height: 100%;
+		position: relative;
+		width: 100%;
+		&:before {
+			@include linear-gradient(rgba(#272727, 0.5) 0%, rgba(#000, 0) 20%, rgba(#000, 0) 48%, rgba(#040404, 0.65) 90%, $fallback: transparent);
+			content: "";
+			height: 100%;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 100;
+			@include transition(opacity 0.5s);
+			.full-screen-image & {
+				opacity: 0;
+			}
+		}
+	}
+	.rsText {
+		bottom: 60px;
+		color: #fff;
+		float: none;
+		font: $fontWeightRegular 17px/17px $themeFont;
+		letter-spacing: 0.025em;
+		position: absolute;
+		right: 60px;
+		text-align: right;
+		width: auto;
+		z-index: 120;
+		@include transition(transform 0.5s $easeInOutCubic);
+		.full-screen-image & {
+			@include transform(translateY(1000px));
+		}
+	}
+	.rsNav.rsBullets {
+		bottom: 120px;
+		height: 11px;
+		left: 0;
+		opacity: 0.65;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		z-index: 500;
+		.show-food-menu & {
+			display: none;
+		}
+	}
+	.rsBullet {
+		display: inline-block;
+		height: 11px;
+		margin: 0 5px;
+		position: relative;
+		width: 11px;
+		&.rsNavSelected {
+			span {
+				background: $mainCarouselBullets;
+			}
+		}
+		span {
+			border-radius: 50%;
+			border: 2px solid $mainCarouselBullets;
+			cursor: pointer;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			@include transition(background $transitionSpeed);
+			&:hover {
+				border-color: #fff;
+			}
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+}

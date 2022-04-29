@@ -1,0 +1,618 @@
+/* ==========================================================================
+	GLOBAL
+   ========================================================================== */
+
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	@include box-sizing(border-box);
+}
+body, html {
+	position: relative;
+	height: 100%;
+}
+html {
+	&.full-menu {
+		overflow: hidden;
+		body {
+			overflow: hidden;
+			// position: fixed;
+			width: 100%;
+		}
+	}
+}
+body {
+	color: $bodyCopyColor;
+	background-color: $bgSiteColor;
+	font: 10px Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+	@if ($platform == mobile) {
+		min-width: $phoneMin;
+	} @else {
+		min-width: $tablet;
+	}
+	@include phone {
+		overflow-x: auto;
+	}
+}
+a {
+	text-decoration: none;
+	color: $linkColor;
+	&:hover {
+		color: $linkHoverColor;
+	}
+	&:active {
+		color: $linkActiveColor;
+	}
+	@include transition(all $transitionSpeed);
+}
+
+button {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	@include appearance(none);
+	@include transition(all $transitionSpeed);
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+hr {
+	border: 0;
+	background-color: $borderColor;
+	height: 1px;
+	margin: 10px 0;
+}
+
+::selection { background: $tcfPurple; color: $mainTextColor; }
+::-moz-selection { background: $tcfPurple; color: $mainTextColor; }
+
+.outer-wrap {
+	box-shadow: none;
+	left: 0;
+	min-height: 100%;
+	position: relative;
+	z-index: 20;
+	@if ($platform != mobile) {
+		@include transition(transform 0.5s $easeInOutCubic, left 0.5s $easeInOutCubic, box-shadow 0.3s ease);
+		.show-nav & {
+			box-shadow: rgba(0, 0, 0, 0.12) 1px 0 9px 2px;
+			@include transform(translateX(-250px));
+			@include phone {
+				@include transform(none);
+			}
+		}
+	}
+}
+.wrapper {
+	@extend .clearfix;
+	background-color: $bgSiteColor;
+	left: 0;
+	min-height: 100%;
+	position: relative;
+	z-index: 100;
+	.fixed-always & {
+		@if ($platform == mobile) {
+			padding: 50px 0 0;
+		} @else {
+			padding: 60px 0 0;
+		}
+	}
+}
+.container {
+	@extend .clearfix;
+	margin: 0 auto;
+	@if ($platform != mobile) {
+		max-width: $desktop;
+	}
+}
+.main-container {
+	// @include transform(translateZ(0));
+	// > * {
+	// 	@include transform(translateZ(0));
+	// }
+}
+.main-content {
+	@extend .clearfix;
+	position: relative;
+	z-index: 1;
+}
+
+.fill-screen,
+.show-map {
+	.outer-wrap,
+	.wrapper,
+	.wrapper .container,
+	.main-container,
+	.main-content {
+		width: 100%;
+		height: 100%;
+	}
+	.wrapper {
+		overflow: hidden;
+		.container {
+			max-width: none;
+		}
+	}
+	.footer {
+		clear: both;
+	}
+	@if ($platform != mobile) {
+		.main-carousel,
+		.main-content {
+			min-height: 650px;
+		}
+	}
+}
+.show-map {
+	.footer {
+		display: none;
+	}
+}
+.full-screen-image {
+	cursor: url('/assets/images/global/cursor-x.png'), pointer;
+}
+
+.btn {
+	background-color: $linkColor;
+	border: 0;
+	border-radius: 3px;
+	color: $mainTextColor;
+	display: block;
+	font: $fontWeightSemibold 16px/40px $themeFont;
+	height: 40px;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	width: 300px;
+	@include appearance(none);
+	@include transition(all $transitionSpeed);
+	&:hover {
+		background-color: $linkHoverColor;
+		color: $mainTextColor;
+	}
+	&:active {
+		background-color: $linkActiveColor;
+		color: $mainTextColor;
+	}
+}
+
+.tab-switch {
+	@extend .clearfix;
+	position: relative;
+	li {
+		float: left;
+		width: 50%;
+		a {
+			background-color: $bgSiteColor;
+			border-radius: 0 3px 3px 0;
+			border: 2px solid $linkColor;
+			border-width: 2px 2px 2px 0;
+			color: $linkColor;
+			display: block;
+			font: $fontWeightSemibold 16px/40px $themeFont;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		&:hover {
+			a {
+				border-color: $linkActiveColor;
+				color: $linkActiveColor;
+			}
+		}
+		&.active {
+			a {
+				background-color: $linkActiveColor;
+				border-color: $linkActiveColor;
+				color: $bgSiteColor;
+			}
+		}
+		&:first-child {
+			a {
+				border-radius: 3px 0 0 3px;
+				border-width: 2px 0 2px 2px;
+			}
+		}
+	}
+}
+
+.toggle-switch {
+	@extend .clearfix;
+	position: relative;
+	li {
+		float: left;
+		width: 50%;
+		a {
+			background-color: $bgSiteColor;
+			border: 2px solid $linkColor;
+			color: $linkColor;
+			display: block;
+			font: $fontWeightSemibold 16px/36px $themeFont;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		&:hover {
+			a {
+				border-color: $linkActiveColor;
+				color: $linkActiveColor;
+			}
+		}
+		&.active {
+			a {
+				background-color: $linkActiveColor;
+				border-color: $linkActiveColor;
+				color: $bgSiteColor;
+			}
+		}
+	}
+}
+
+.text-submit-wrapper {
+	position: relative;
+	input {
+		padding-right: 50px;
+	}
+	button {
+		background-color: $linkColor;
+		border-radius: 0 3px 3px 0;
+		height: 40px;
+		position: absolute;
+		right: 0;
+		text-indent: -9999px;
+		top: 0;
+		width: 40px;
+		&:before {
+			@extend .icon-arrow-right;
+			color: $bgSiteColor;
+			position: absolute;
+			text-align: center;
+			font-size: 16px;
+			width: 40px;
+			top: 12px;
+			left: 0;
+			text-indent: 0;
+		}
+		@if ($platform != mobile) {
+			&:hover,
+			&:active {
+				background-color: $linkActiveColor;
+			}
+		} @else {
+			&.active {
+				background-color: $linkActiveColor;
+			}
+		}
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="search"],
+textarea,
+select {
+	background-color: $formBgColor;
+	border: 1px solid $formBgColor;
+	border-radius: 3px;
+	color: $formTextColor;
+	font: $fontWeightRegular 16px/40px $themeFont;
+	padding: 0 10px;
+	height: 40px;
+	width: 100%;
+	&:focus {
+		background-color: $formBgActiveColor;
+		border-color: $formBorderActiveColor;
+	}
+	&.disabled,
+	&:disabled {
+		background-color: $formBgDisabledColor;
+		border-color: $formBorderDisabledColor;
+		color: $formTextDisabledColor;
+	}
+}
+select {
+	background-image: url('/assets/images/global/sprite.png');
+	background-position: right 0; 
+	background-repeat: no-repeat;
+	border: 0;
+	padding: 0 50px 0 10px;
+	@include appearance(none);
+	&:focus {
+		background-position: right -40px; 
+		// font-weight: bold;
+	}
+	// Fixes to hide browser arrow and highlight color for IE
+	&::-ms-expand {
+		display: none;
+	}
+	&::-ms-value {
+		background: none;
+		color: $formTextColor;
+	}
+	.lt-ie10 & {
+		padding: 0 0 0 10px;
+		background-image: none;
+	}
+}
+textarea {
+	height: 160px;
+	line-height: 25px;
+	padding: 10px;
+}
+
+.choice-label {
+	color: $contentLinkTitle;
+	font: $fontWeightRegular 16px/16px $themeFont;
+}
+
+.accordion-item {
+	overflow: hidden;
+	@include transition(height 0.5s $easeInOutCubic);
+}
+
+.locations-frame {
+	height: 100%;
+	width: 100%;
+}
+
+.social-facebook:before {
+	@extend .icon-social-facebook;
+}
+.social-twitter:before {
+	@extend .icon-social-twitter;
+}
+.social-pinterest:before {
+	@extend .icon-social-pinterest;
+}
+.social-instagram:before {
+	@extend .icon-social-instagram;
+}
+.social-email:before {
+	@extend .icon-social-enewsletter;
+}
+
+/* ==========================================================================
+	RADIO / CHECKBOXES (IE9+)
+========================================================================== */
+
+input[type="radio"],
+input[type="checkbox"] {
+	// Hide default radio buttons, checkboxes
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	visibility: hidden;
+	.lt-ie9 & {
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		visibility: visible;
+		width: auto;
+		height: auto;
+		top: 0;
+		left: 0;
+	} 
+	& + .choice-label {
+		cursor: pointer;
+		height: 24px;
+		padding: 0 0 0 28px;
+		position: relative;
+		vertical-align: top;
+		.lt-ie9 & {
+			padding: 0;
+			&:before,
+			&:after {
+				content: none;
+			}
+		}
+		&:before {
+			content: "";
+			margin: 0;
+			width: 18px;
+			height: 18px;
+			margin-right: 10px;
+			position: absolute;
+			text-align: center;
+			vertical-align: top;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			@include transition(all 0.25s);
+		}
+		&:after {
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			z-index: 2;
+			@include transition(all 0.25s);
+		}
+	}
+	&:disabled {
+		& + .choice-label {
+			opacity: 0.5;
+		}
+	}
+}
+
+input[type="radio"] + .choice-label {
+	&:before {
+		background-color: none;
+		border: 2px solid $linkColor;
+		border-radius: 50%;
+	}
+	&:after {
+		background: $linkHoverColor;
+		border-radius: 50%;
+		content: "";
+		top: 9px;
+		left: 9px;
+	}
+	.form-dark & {
+		&:before {
+			border-color: $bgSiteColor;
+		}	
+		&:checked {
+			&:before {
+				border-color: $linkHoverColor;
+			}
+		}
+	}
+}
+input[type="radio"]:checked + .choice-label {
+	&:before {
+		border-color: $linkHoverColor;
+	}
+	&:after {
+		width: 8px;
+		height: 8px;
+		top: 5px;
+		left: 5px;
+	}
+}
+input[type="radio"]:hover:not(:disabled) + .choice-label:before {
+	border-color: $linkHoverColor;
+}
+
+input[type="checkbox"] + .choice-label {
+	&:before {
+		background-color: $formBgActiveColor;
+		border: 1px solid $formBorderActiveColor;
+		border-radius: 2px;
+	}
+	&:after {
+		@extend .icon-checkmark;
+		color: $bgSiteColor;
+		display: block;
+		font-size: 0;
+		text-align: center;
+		width: 11px;
+		height: 10px;
+		top: 9px;
+		left: 4px;
+	}
+	.form-dark & {
+		&:before {
+			background-color: $bgSiteColor;
+			border-color: $bgSiteColor;
+		}
+		&:checked {
+			&:before {
+				background-color: $linkHoverColor;
+				border-color: $linkHoverColor;
+			}
+		}
+	}
+}
+input[type="checkbox"]:checked + .choice-label {
+	&:before {
+		background-color: $linkHoverColor;
+		border-color: $linkHoverColor;
+	}
+	&:after {
+		font-size: 11px;
+		top: 4px;
+		left: 4px;
+	}
+}
+input[type="checkbox"]:hover:not(:disabled) + .choice-label:before {
+	background-color: $linkHoverColor;
+	border-color: $linkHoverColor;
+}
+
+.keepcase {
+	text-transform: none !important;
+}
+
+@if ($platform == tablet) {
+
+	/* ==========================================================================
+		IPAD FIXES FOR VIEWPORT
+	========================================================================== */
+
+	/* Commenting out for now
+	body, html {
+		min-width: 768px;
+		max-width: 1024px;
+		overflow-x: hidden;
+	} */
+
+}
+
+@media print {
+	/* ==========================================================================
+		PRINT VIEW FIXES
+	========================================================================== */
+
+	.header,
+	.navigation,
+	.content-navigation {
+		display: none;
+	}
+
+	.content-column {
+		border: 0 !important;
+		margin: 0  !important;
+		padding: 0  !important;
+	}
+
+}
+
+/* ==========================================================================
+	MODAL
+========================================================================== */
+
+.modal {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: #000;
+	@if ($platform == mobile) {
+		// 90px is height of fixed header
+		@include calc(height, '100% - 90px');
+	} @else {
+		@include calc(height, '100% - 130px');
+	}
+	// variations
+	.modal-on & {
+		display: block;
+	}
+
+}
+.modal-on {
+	overflow: hidden !important;
+	height: 100% !important;
+	body {
+		overflow: hidden !important;
+		padding: 0 !important;
+		height: 100% !important;
+	}
+}
+
+@if ($platform != desktop) {
+
+	/* ==========================================================================
+		DISABLE TRANSITIONS ON MOBILE
+	========================================================================== */
+
+	*:not(.rsContainer):not(.rsThumbsContainer):not(.force-transition):not(.force-transition *):not(.player-ranking-wrapper *):not(.head-to-head *):not(.button-ajax *):not(.button-ajax):not(.timeline-items):not(.timeline-items *):not(.animation-on):not(.animation-on *) {
+			-moz-transition: none !important;
+			-webkit-transition: none !important;
+			-o-transition: color 0 ease-in !important;
+			transition: none !important;
+	}
+
+}
+
+@if ($platform != mobile) {
+
+}

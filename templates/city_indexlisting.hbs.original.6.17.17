@@ -1,0 +1,305 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]--><!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+  <!-- START : /jade/partials/content-listing-alt.jade-->
+  <!-- TODO: the alternate class is needed when showing the listing modules in a grid-like fashion-->
+  <!-- END : /jade/partials/content-listing-alt.jade-->
+  <!-- START : /global/head.html-->
+  <head>
+    <title>The Cheesecake Factory Restaurant Locations in {{{city}}} {{{state_longname_pc}}} ({{{state}}}) </title>
+<meta name="description" content="Maps, driving directions and information for {{{city}}}, {{{state}}} restaurant locations." />
+<link rel="canonical" href="{{{cityindex_url_lc}}}" />
+ <meta name="msvalidate.01" content="2B443241B7FA43147AF4ED2878EE8B89" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <link rel="icon" href="http://locations.thecheesecakefactory.com/2014/assets/images/global/favicon2.ico">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <!-- Stylesheet changes based on "desktop", "mobile", "tablet"-->
+    <link rel="stylesheet" href="http://locations.thecheesecakefactory.com/2014/assets/css/w2gi_local.css">
+    <script src="//use.typekit.net/bxf4rjm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <script src="http://locations.thecheesecakefactory.com/2014/assets/js/vendor/require.js"></script>
+    <script src="http://locations.thecheesecakefactory.com/2014/assets/js/desktop.js"></script>
+    
+    
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15758575-1']);
+  _gaq.push(['_setDomainName', 'thecheesecakefactory.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{{topindex_url_lc}}}",
+          "name": "Index"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "{{{stateindex_url_lc}}}",
+          "name": "{{{state}}}"
+        }
+      }]
+    }
+    </script>
+
+    
+    <style type="text/css">
+      a {
+        /*color:#5d3327;*/
+        color: #876537;
+      }
+
+      .footer-links a, .footer-social a {
+        color:#bd945b;
+      }
+
+      .text-submit-wrapper button, .btn {
+        background:#5d3327;
+        color:#fff;
+      }
+      a:focus, input:focus, select:focus {
+        outline:2px dotted #ccc;
+      }
+      
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
+.btn-primary:focus {background:#000000; color:#FFF; }
+
+    </style>
+
+  </head>
+  <!-- END : /global/head.html-->
+  <!-- TODO: we need to specify a platform class on the body-->
+  <body class="is-desktop">
+  
+         <!-- Start XML data island  -->
+        <xml style="display:none;">
+            <root>
+                <ajaxurl>ajax?</ajaxurl>
+                <appkey>{{{appkey}}}</appkey>
+            </root>
+        </xml>
+        <!-- End XML data island -->
+        
+        
+    <!-- START : /global/header.html-->
+    <div id="header" class="header">
+      <div id="mainHeader" class="main-header">
+       <div class="container">
+          <ul class="main-header-controls">
+          
+            <a href="#main-content" class="sr-only sr-only-focusable btn-primary">Skip to main Content</a>
+      
+      
+            <!-- Only show these menu items on desktop/tablet-->
+            <li><a href="http://www.thecheesecakefactory.com/menu/" class="head-menu"><span>Menu</span></a></li>
+            <li><a href="http://www.thecheesecakefactory.com/locations" class="head-locations"><span>Locations</span></a></li>
+            <li><a href="https://shop.thecheesecakefactory.com/" class="head-giftcards"><span>Gift Cards</span></a></li>
+            <li><a id="menuToggle" class="head-more"><span>More</span></a></li>
+          </ul>
+          <h1 class="site-logo"><a href="http://www.thecheesecakefactory.com">The Cheesecake Factory</a></h1>
+        </div>
+      </div>
+    </div>
+    <script>
+      require(["modules/fixedHeader"], function(FixedHeader) {
+       return new FixedHeader();
+      });
+    </script>
+    <!-- END : /global/header.html-->
+    <!-- START : /global/menu.html-->
+    <div id="navigation" class="navigation">
+      <div class="navigation-inner">
+        <div id="closeNav" class="navigation-close"></div>
+       <ul class="navigation-social">                   
+            <li><a href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cheesecake" target="_blank" class="social-twitter">Twitter</a></li>
+            <li><a href="http://www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest">Pinterest</a></li>
+            <li><a href="http://instagram.com/cheesecakefactory#" target="_blank" class="social-instagram">Instagram</a></li>
+	          <li>
+	            <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email">Newsletter</a>
+	          </li>
+        </ul>
+        <ul class="navigation-list">
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>About Us</span></div>
+              <ul class="navigation-links">
+                <li><a href="http://www.thecheesecakefactory.com/about-us/">Our Story</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/about-us/awards/">Awards</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/about-us/our-recipes/">Our Recipes</a></li>                
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="navigation-list-name">
+              <a href="http://www.thecheesecakefactory.com/connect/got-questions/"><span>Got Questions?</span></a>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Connect</span></div>
+              <ul class="navigation-links">
+                <li><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" data-internal="17120">Email Sign-Up</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/connect/banquet-info" data-internal="14405">Banquet Information</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/connect" data-internal="27315">Contact Us</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Corporate Information</span></div>
+              <ul class="navigation-links">
+                <li><a href="http://www.thecheesecakefactory.com/corporate-information/" data-internal="26907">Global Development</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-information/press-room" data-internal="27123">Press Room</a></li>
+                <li><a href="http://investors.thecheesecakefactory.com/" target="_blank">Investors</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-information/employment-policy" data-internal="19103">Employment Policy</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-information/terms-of-use" data-internal="10941">Terms of Use</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-information/privacy-policy" data-internal="10945">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-item-wrap">
+              <div class="navigation-list-name accordion-item-title"><span>Corporate Social Responsibility</span></div>
+              <ul class="navigation-links">
+                <li><a href="http://www.thecheesecakefactory.com/corporate-social-responsibility/" data-internal="27343">Charitable Giving</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-social-responsibility/culture/" data-internal="27344">Culture</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-social-responsibility/sustainability/" data-internal="27345">Sustainability</a></li>
+                <li><a href="http://www.thecheesecakefactory.com/corporate-social-responsibility/sustainable-sourcing/" data-internal="27341">Sustainable Sourcing</a></li>
+              </ul>
+            </div>
+          </li>
+          <!--li style="display:none;">
+            <div class="navigation-list-name">
+              <a href="http://www.thecheesecakefactory.com/kitchen-speaks"><span>Kitchen Speaks™</span></a>
+            </div>
+          </li-->
+          <li>
+            <div class="navigation-list-name">
+              <a href="http://www.harryanddavid.com/h/bakery/cheesecake-factory?ref=TheCheesecakeFactory&amp;utm_medium=partnerships&amp;utm_source=cheesecake_factory" target="_blank"><span>Ship a Cheesecake</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      require(["modules/accordion"], function(Accordion) {
+       return new Accordion();
+      });
+      require(["modules/headerNav"], function(HeaderNav) {
+       return HeaderNav.get();
+      });
+    </script>
+    <!-- END : /global/menu.html-->
+    <div class="outer-wrap">
+      <!-- START : WRAPPER-->
+      <div class="wrapper">
+        <!-- START : /modules/content-header.html-->
+        <!-- TODO: Background color and image for CMS are specified here.-->
+        <!-- TODO: - Available classes for predefined backgrounds: -->
+        <!-- TODO:     .banner-pink, .banner-purple, .banner-gold, .banner-orange, .banner-brown, .banner-green-->
+        <!-- TODO: - Alternatively a CMS uploaded background (1920x380) can be specified on #contentHeader with:-->
+        <!-- TODO      "background-color: #fallback-hex; background-image: url('/image-path.jpg');"-->
+        <div id="contentHeader" class="content-header banner-purple">
+          <!-- TODO: Title is being passed in from templates-->
+          <h1 class="content-header-title">Restaurant Locations Directory</h1>
+        </div>
+        <!-- END : /modules/content-header.html-->
+        <div class="container" id="main-content">
+          <!-- START : MAIN CONTAINER-->
+          <div id="mainContainer" class="main-container">
+            <!-- START : PAGE CONTENT-->
+            <div id="mainContent" class="main-content">
+              <!-- TODO: Everything inside "#mainContent" will be repopulated by Backbone-->
+              <!-- TODO: Location listing page gets .narrow-column class for spanning full page-->
+              <div class="content-column narrow-column">
+                <h2 class="content-heading">Welcome</h2>
+                <!-- <h5>Select a location.</h5>
+                <ul>
+                  <li><a href="/location-details">520 N. Orlando Avenue, Suite 100, Winter Park, FL 32789</a></li>
+                </ul> -->
+                
+                
+                <ul class="breadcrumbs">
+                  <li><a href="http://locations.thecheesecakefactory.com/">Select a State</a></li>
+                  <li><a href="{{{stateindex_url}}}">{{{state_longname_pc}}} ({{{state}}})</a> </li>
+                  <li>{{{city}}}</li>
+                  
+                </ul>
+                
+                <h5>Select a location.</h5>
+                
+                 
+                    
+                    {{#each contentlist_pc}}
+						 <ul>                                           
+                              
+                           	<li style="width:100%;">
+                            	<a linktrack="City index page - {{{link_name}}}" href="{{{link}}}">{{{link_name}}}</a>
+                        	</li>                                  
+                        
+                        </ul>
+                        
+                    {{/each}}                               
+                    
+                    
+                    
+                
+                
+              </div>
+            </div>
+            <!-- END : PAGE CONTENT-->
+          </div>
+          <!-- END : MAIN CONTAINER-->
+        </div>
+      </div>
+      <!-- START : /global/footer.html-->
+      <div id="footer" class="footer">
+        <div class="container">
+          <ul class="footer-social">
+            <li><a href="https://www.facebook.com/thecheesecakefactory" target="_blank" class="social-facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cheesecake" target="_blank" class="social-twitter">Twitter</a></li>
+            <li><a href="http://www.pinterest.com/ccfactory/" target="_blank" class="social-pinterest">Pinterest</a></li>
+            <li><a href="http://instagram.com/cheesecakefactory#" target="_blank" class="social-instagram">Instagram</a></li>
+            <li>
+              <!-- TODO: This links to a Newsletter page. http://www.thecheesecakefactory.com/aboutUs/eNewsletterSignUp/emailSignUp--><a href="http://www.thecheesecakefactory.com/connect/email-sign-up" target="_blank" class="social-email">Newsletter</a>
+            </li>
+          </ul>
+          <div class="footer-text">
+            <ul class="footer-links">
+              <li><a href="http://www.thecheesecakefactory.com/connect">Contact Us</a></li>
+              <li><a href="http://investors.thecheesecakefactory.com/">Investors</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/terms-of-use">Terms of Use</a></li>
+              <li><a href="http://www.thecheesecakefactory.com/corporate-information/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://jobs.thecheesecakefactory.com/">Careers</a></li>
+            </ul>
+            <div class="copyright">
+              <p>&copy; 2002-2014 TCF Co. LLC. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END : /global/footer.html-->
+      <!-- END : WRAPPER-->
+    </div>
+  </body>
+</html>   

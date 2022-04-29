@@ -1,0 +1,32 @@
+#!/usr/bin/perl -w
+#
+# Rebuild messages.mo file for each .po file in the locale directory
+# that is out of date.
+#
+
+if (-d 'locale') {   # if we're in the client directory and there's a locale directory,
+    chdir 'locale';  #  change into it as a convience.
+}
+
+@poFiles = <*.po>;
+
+foreach my $poFile (@poFiles) {
+    (my $locale = $poFile) =~ s/\.po$//;
+    my $moDir = "$locale/LC_MESSAGES";
+    my $moPath = "$moDir/messages.mo";
+
+    # Check mtime and only rebuild if out of date
+    # The Perl fragment below strips the UTF Byte-order-Mark added by Notpad and other Windows
+    # programs when writing a file in UTF-8.
+    #
+    if (! -d $moDir || [stat($poFile)]->[9] > [stat($moPath)]->[9]) {
+        unless (-d $moPath) {
+            print  "mkdir -p $moDir\n";
+            system "mkdir -p $moDir";
+        }
+
+        print  "cat $poFile | perl -pe 's/^\xef\xbb\xbf//' | /usr/bin/msgfmt -o $moPath -\n";
+        system("cat $poFile | perl -pe 's/^\xef\xbb\xbf//' | /usr/bin/msgfmt -o $moPath -") == 0
+            or die sprintf ("\n/usr/bin/msgfmt  failed with status: %d", $?>>8);
+    }
+}

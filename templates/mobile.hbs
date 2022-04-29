@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>{{{account}}} Restaurant Locator</title>
+    </head>
+<body>
+
+<br /><br />
+
+    <h3>The following locations were found within {{{searchradius}}} {{{radiusuom}}}s of {{{inputaddress}}}</h3>
+
+    <table border=0>
+ {{#each locations}}
+    <tr>
+	<table border=0>
+		<tr><td><a accesskey="{{{add @index 1}}}" href="{{{host}}}/cheesecake/moreinfo?appkey=4EEBBA66-6D70-11DE-BC28-64B83B999D57&template=moreinfo&uid={{{uid}}}">{{{add @index 1}}}</a></td>
+			<td>{{{name}}}</td>
+    		</tr>
+    		<tr>
+        		<td></td><td>{{{address1}}}</td>
+    		</tr>
+    		<tr>
+			<td></td>
+			<td>{{{city}}}, {{{state}}}&nbsp;&nbsp;{{{postalcode}}}
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Distance: {{{_distance}}} {{{radiusuom}}}s</td>
+		</tr>
+	</table>
+    </tr>
+{{/each}}
+    </table>
+</body>
+</html>
+

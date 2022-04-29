@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NKGWSQ7');</script>
+		<!-- End Google Tag Manager -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+		<meta name='format-detection' content='telephone=no' />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="canonical" href="{{{stateindex_url}}}{{{lc city_for_url}}}-{{{clientkey}}}.html" />
+		<!-- BHODATA = '$hourslabel1 $hoursfromto1, $hourslabel2 $hoursfromto2, $hourslabel3 $hoursfromto3, $hourslabel4 $hoursfromto4'; -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+ 	    <title>The Cheesecake Factory Restaurant in {{#checkIf mallname}}{{{mallname}}}{{else}}{{{name}}}{{/checkIf}}</title>
+	  
+	    <meta name="description" content="Visit The Cheesecake Factory Restaurant in {{#checkIf mallname}}the {{{mallname}}}{{else}}{{{name}}}{{/checkIf}} for a great selection of Cheesecakes and Desserts, Appetizers, Salads, Pastas, Specialties, Flatbread Pizzas, Steaks and Seafood. With more than 250 items made fresh from scratch every day, you'll be sure to find your new favorite dish." />
+	  
+	    <link rel="icon" href="//locations.thecheesecakefactory.com/2014/assets/images/global/favicon2.ico">
+		<meta name="viewport" content="width=device-width">
+
+		<!--
+		Open Graph Tag IMPORTANT NOTE!
+		Use only one of the sets below.
+		Delete the other one not being used.
+		-->
+		<meta property="fb:app_id" content="146822132031277" />
+		<meta property="og:type" content="restaurant.restaurant" /> 
+		<meta property="og:url" content="{{{cityindex_url}}}{{{clientkey}}}" />
+		<meta property="og:title" content="The Cheesecake Factory" />
+		<meta property="og:description" content="Official Cheesecake Factory Maps and Information for {{{city}}}, {{{state}}} Location." />
+		<meta property="og:image" content="{{{imagename}}}" />
+		<meta property="restaurant:contact_info:street_address" content="{{{address1}}}" />
+		<meta property="restaurant:contact_info:locality" content="{{{city}}}" />
+		<meta property="restaurant:contact_info:region" content="{{{state}}}" />
+		<meta property="restaurant:contact_info:postal_code" content="{{{postalcode}}}" />
+		<meta property="restaurant:contact_info:country_name" content="{{{country}}}" />
+		<meta property="restaurant:contact_info:phone_number" content="{{{phone}}}" />
+		<meta property="restaurant:contact_info:website" content="{{{cityindex_url}}}{{{clientkey}}}" />
+		<meta property="place:location:latitude" content="{{{latitude}}}" />
+		<meta property="place:location:longitude" content="{{{longitude}}}" />
+
+	    <meta name="msvalidate.01" content="2B443241B7FA43147AF4ED2878EE8B89" />
+        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+
+		<link type="text/css" href="/w2gi/css/style.css" rel="stylesheet" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/2021/css/slick.css">
+		<link rel="stylesheet" type="text/css" href="/2021/css/header-footer-styles.2.css">
+		<link rel="stylesheet" type="text/css" href="/2021/css/custom-local.css">
+	    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet" />
+
+		<script type="text/javascript">
+            document.observe = document.fire = function () {
+            };
+		</script>		
+		
+		
+		<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "{{{topindex_url_lc}}}",
+          "name": "Index"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "{{{stateindex_url_lc}}}",
+          "name": "{{{state}}}"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "{{{cityindex_url_lc}}}",
+          "name": "{{{city}}}"
+        }
+      }]
+    }
+    </script>
+
+	<script type="application/ld+json">
+	{
+	  "@context":"http://schema.org",
+	  "@type":"Restaurant",
+	  "name": "The Cheesecake Factory",
+	  "address":{
+	    "@type":"PostalAddress",
+	    "streetAddress":"{{{address1}}}",
+	    "addressLocality":"{{{city}}}",
+	    "addressRegion":"{{{state}}}",
+	    "postalCode":"{{{postalcode}}}",
+	    "addressCountry":"{{{country}}}"
+	  },
+	"containedIn":"{{{mallname}}}",  
+	"geo":{
+	    "@type":"GeoCoordinates",
+	    "latitude":{{{latitude}}},
+	    "longitude":{{{longitude}}}
+	  },
+	"branchOf": {
+	    "name":"The Cheesecake Factory",
+	    "url": "https://www.thecheesecakefactory.com/"
+	  },
+	 "url":"{{{cityindex_url}}}{{{clientkey}}}",
+	  "telephone":"{{{phone}}}",
+	  "logo" : "https://hosted.where2getit.com/cheesecake/2014/assets/images/global/logo-tcf-desktop.png",
+	  {{#checkIf  '(' imagename '!=' '' ')' }}
+	  "image": "{{{imagename}}}",
+	  {{else}}
+	  "image": "//www.thecheesecakefactory.com/media/locationImages/locations_Default.jpg",
+	  {{/checkIf}}
+	  "openingHoursSpecification":[
+	    {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Monday"
+	      ],
+	      "opens":"{{{BHO_MON_OPEN}}}",
+	      "closes":"{{{BHO_MON_CLOSED}}}"
+	    },
+	    {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Tuesday"
+	      ],
+	      "opens":"{{{BHO_TUE_OPEN}}}",
+	      "closes":"{{{BHO_TUE_CLOSED}}}"
+	    },
+	    {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Wednesday"
+	      ],
+	      "opens":"{{{BHO_WED_OPEN}}}",
+	      "closes":"{{{BHO_WED_CLOSED}}}"
+	    },
+	    {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Thursday"
+	      ],
+	      "opens":"{{{BHO_THU_OPEN}}}",
+	      "closes":"{{{BHO_THU_CLOSED}}}"
+	    },
+	        {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Friday"
+	      ],
+	      "opens":"{{{BHO_FRI_OPEN}}}",
+	      "closes":"{{{BHO_FRI_CLOSED}}}"
+	    },    {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Saturday"
+	      ],
+	      "opens":"{{{BHO_SAT_OPEN}}}",
+	      "closes":"{{{BHO_SAT_CLOSED}}}"
+	    },
+	        {
+	      "@type":"OpeningHoursSpecification",
+	      "dayOfWeek":[
+	        "Sunday"
+	      ],
+	      "opens":"{{{BHO_SUN_OPEN}}}",
+	      "closes":"{{{BHO_SUN_CLOSED}}}"
+	    }
+	  ],
+	  "menu": "//www.thecheesecakefactory.com/menu/",
+	  "acceptsReservations":"True",
+	  "servesCuisine": [
+	      "American style"
+	   ]{{#checkIf doordashurl}},
+	  "potentialAction":{
+	    "@type":"OrderAction",
+	    "target":{
+	      "@type":"EntryPoint",
+	      "urlTemplate":"{{{doordashurl}}}",
+	      "inLanguage":"en-US",
+	      "actionPlatform":[
+	        "http://schema.org/DesktopWebPlatform"
+	      ]
+	    },
+	    "deliveryMethod": [
+	      "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+	            "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+	        ]   
+	    {{else}}
+	    {{/checkIf}}
+	     
+	  } 
+	}
+	</script>
+
+		<script type="text/javascript" src="/w2gi/javascript/backbone/bb/lib/jquery.js"></script>
+		<script src="/2021/js/slick.min.js"></script>
+		<script>
+            var W2GI = {
+                collection : {},
+                config : {
+                    appkey : '{{{appkey}}}',
+                    pageObserve : ['linktrack'],
+                    autoStart : false,
+                    locator : {
+                        cgeo : false,
+                        theme : null,
+                        cdirections : false,
+                        formdata : {
+                            geoip : true,
+                            dataview : 'store_default',
+                            limit : 250,
+                            geolocs : {
+                                geoloc : [{
+                                    addressline : '',
+                                    country : '',
+                                    latitude : '',
+                                    longitude : ''
+                                }]
+                            },
+                            searchradius : '20|50|75|100|500'
+                        },
+                        drivingdirections : {
+                            disableDynamicRoutes : false,
+                            formdata : {
+                                dataview : 'store_default',
+                                geolocs : {
+                                    geoloc : [{
+                                        address1 : '',
+                                        city : '',
+                                        state : '',
+                                        province : '',
+                                        postalcode : '',
+                                        addressline : '',
+                                        country : '',
+                                        latitude : '',
+                                        longitude : ''
+                                    }]
+                                }
+                            }
+                        },
+                        imgPath : '/w2gi/images/zoombar/',
+                        controls : [{
+                            name : 'panZoom', // use panZoomBar if needs the full
+                            // bar
+                            options : {
+                                zoomWheelEnabled : false
+                            }
+                        }],
+                        //noZoomOnPan: true,
+                        //zoom: 15,
+                        dynamicSearch : false,
+                        routeStyle : {
+                            strokeWidth : 8,
+                            strokeOpacity : 0.5,
+                            strokeColor : '#0000FF'
+                        },
+                       sources : [{
+							name : 'SlippyMap W2GI',
+							imageurl : '//st1.slippymap.com/tiles, //st2.slippymap.com/tiles',
+							options : {
+								map : 'smap-01'
+							}
+						}, {
+							name : 'SlippyMap Navteq',
+							imageurl : '//st1.slippymap.com/tiles, //st2.slippymap.com/tiles',
+							options : {
+								map : 'smap-02'
+							}
+						}]
+
+                    }
+                }
+            };
+            W2GI.collection.poi = [
+            {{#checkIf pois}}
+            {{#each pois}} {
+                poinum : '{{poinum}}',
+                icon : '{{icon}}',
+                name : '{{name}}',
+                address1 : '{{address1}}',
+                address2 : '{{address2}}',
+                city : '{{city}}',
+                state : '{{state}}',
+                province : '{{province}}',
+                postalcode : '{{postalcode}}',
+                country : '{{country}}',
+                latitude : '{{latitude}}',
+                longitude : '{{longitude}}',
+                phone : '{{phone}}',
+                mon_sat : '{{mon_sat}}',
+                sun : '{{sun}}',
+                monfrihours : '{{monfrihours}}',
+                sathours : '{{sathours}}',
+                sunhour : '{{sunhour}}',
+                specialhours : '{{{specialhours}}}',
+                showshour : '{{showshour}}',
+                clientkey : '{{clientkey}}',
+                uid : {{uid}},
+                main_loc : '{{main_loc}}',
+                loc_url : '{{loc_url}}'
+            } {{#checkUnless @last}},{{/checkUnless}}{{/each}}
+            {{else}}
+            {
+            poinum : '{{poinum}}',
+            icon : '{{icon}}',
+            name : '{{name}}',
+            address1 : '{{address1}}',
+            address2 : '{{address2}}',
+            city : '{{city}}',
+            state : '{{state}}',
+            province : '{{province}}',
+            postalcode : '{{postalcode}}',
+            country : '{{country}}',
+            latitude : '{{latitude}}',
+            longitude : '{{longitude}}',
+            phone : '{{phone}}',
+            mon_sat : '{{mon_sat}}',
+            sun : '{{sun}}',
+            monfrihours : '{{monfrihours}}',
+            sathours : '{{sathours}}',
+            sunhour : '{{sunhour}}',
+            specialhours : '{{{specialhours}}}',
+            showshour : '{{showshour}}',
+            clientkey : '{{clientkey}}',
+            uid : '{{uid}}',
+            main_loc : '{{main_loc}}',
+            loc_url : '{{loc_url}}'
+            }
+            {{/checkIf}}
+            ]
+
+		</script>
+		<script data-main="/w2gi/javascript/backbone/bb/dist/bones.min" src="/w2gi/javascript/backbone/bb/lib/require.js"></script>
+
+		<script type="text/javascript">
+            //document.observe('w2gi:bubbleOpen', function() {
+            jQuery(document).on("w2gi:locatorloaded", function () {
+                //console.log("loaded");
+
+                $('#btn-external').on('click', function (event, element) {
+                    
+                    $('li.poi-item').first().find('.open_bubble')[0].click();
+                })
+
+                ace.util.Event.on("popup:loaded", function () {
+                    $('#bubble_hours').html($('#all_hours_table').html());
+                    $("#map form.bubble_form_2").on("submit", function (evt) {
+                        evt.preventDefault();
+                    });
+                    //$('#map .bubble_form_2 .bubble_input')[0].focus();
+
+                    $('#map .bubble_form_2 .bubble_go2').on("click", function (event) {
+                        generate_directions($('#map .bubble_form_2 .bubble_input').val(), $('#map .bubble_form_2 .bubble_endaddress').val());
+                    });
+
+                });
+            });
+
+            function generate_directions (startaddress, endaddress) {
+
+                endaddress = endaddress.replace("#", "poundsign");
+
+                if (bubbleValidate(startaddress)) {
+                    $('#directions_url').data('url', '' + startaddress + '&addressline=' + '{{{latitude}}},{{{longitude}}}' + '&addresslineDisplay=' + endaddress);
+                    ace.util.alertExternal($('#directions_url'));
+                    //$('#directions_url').click();
+                    //performClick($('#directions_url'));
+                }
+            }
+
+            function bubbleValidate (bubbleInput) {
+                if (bubbleInput.length > 0 && bubbleInput.length < 5 && !isNaN(bubbleInput)) {
+                    ace.util.alert("Please enter a valid ZIP code.");
+                    return false;
+                }
+
+                if (bubbleInput.length == 0) {
+                    ace.util.alert("Please enter a starting address.");
+                    return false;
+                }
+
+                return true;
+            }
+
+            function performClick (node) {
+                if ((navigator.userAgent.match(/Safari/i))) {
+                    var evObj = document.createEvent('MouseEvents');
+                    evObj.initMouseEvent('click', true, true, window);
+                    node.dispatchEvent(evObj);
+                } else {
+                    node.click();
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', function() {
+			    var collectionPoi = W2GI.collection.poi;
+			    var staticMap = document.getElementById('staticMap');
+			    var mapUrl;
+			    var dimensions = '1880x600';
+			    // mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?language=en&amp;key=AIzaSyC_poY9u57toWlNmTpIQmEjM7dw2zUJjh4&amp;channel=cheesecakelocalPage&amp;center={{{latitude}}},{{{longitude}}}&zoom=17&scale=1&size=' + dimensions + '&maptype=roadmap&format=png&visual_refresh=true';
+
+			    mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC_poY9u57toWlNmTpIQmEjM7dw2zUJjh4&center={{{latitude}}},{{{longitude}}}&zoom=17&format=png&maptype=roadmap&style=feature:administrative%7Cvisibility:off&style=feature:administrative%7Celement:geometry.fill%7Ccolor:0xfefefe%7Clightness:20%7Cgamma:1.00&style=feature:administrative%7Celement:geometry.stroke%7Ccolor:0xfefefe%7Clightness:17%7Cgamma:1%7Cweight:1.2&style=feature:administrative%7Celement:labels.icon%7Cvisibility:off&style=feature:administrative%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:administrative.country%7Celement:geometry.fill%7Cgamma:1.74&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0xf5f5f5%7Clightness:20%7Cgamma:1.00&style=feature:landscape%7Celement:labels.icon%7Cvisibility:off&style=feature:poi%7Celement:geometry.fill%7Ccolor:0xf5f5f5%7Clightness:21%7Cgamma:1.00&style=feature:poi%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.attraction%7Celement:labels.text.stroke%7Chue:0xff0000&style=feature:poi.business%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry.fill%7Chue:0xff0000%7Clightness:21%7Cgamma:1.00&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:poi.school%7Celement:geometry.fill%7Chue:0xff0000&style=feature:poi.school%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0xffffff%7Clightness:18%7Cgamma:1.00&style=feature:road.arterial%7Celement:labels.icon%7Cvisibility:off&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0xebd8ae%7Clightness:30%7Cweight:8&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0xb3a17b&style=feature:road.highway%7Celement:labels.icon%7Cvisibility:off&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:road.highway%7Celement:labels.text.stroke%7Chue:0xff0000&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0xffffff%7Clightness:16%7Cgamma:1.00&style=feature:road.local%7Celement:labels.icon%7Cvisibility:off&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:water%7Celement:geometry.fill%7Ccolor:0xe9e9e9%7Clightness:17&style=feature:water%7Celement:geometry.stroke%7Ccolor:0xff0000&style=feature:water%7Celement:labels.text.fill%7Ccolor:0xb3a17b&style=feature:water%7Celement:labels.text.stroke%7Ccolor:0xb3a17b&style=feature:transit%7Cvisibility:off&size=' + dimensions;
+			    staticMap.style.background = "center url('"+mapUrl+"')";
+			});
+
+		</script>
+
+		<style>
+			.hidefirst0 {
+				display: none !important;
+			}
+			.hideit {
+				display: none;
+			}
+		</style>
+
+		<style>
+			.hours ul div:first-of-type {
+				display: inline-block;
+				width: 113px;
+			}
+			.hours ul div:nth-of-type(2) {
+				display: inline-block;
+			}
+		</style>
+
+	</head>
+
+	<body class="path-frontpage">
+	    <!-- Google Tag Manager (noscript) -->
+	    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGWSQ7"
+	    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	    <!-- End Google Tag Manager (noscript) -->
+		{{> 'header-include.2'}}
+		<div id="templates" style="display: none;">
+			<script id="locator_addressline" type="text/x-handlebars-template">
+				^((#if address1^))^((address1^))^((else^))^((#if addressline^))^((addressline^))^((/if^))^(( city ^)) ^(( county ^)) ^(( state ^)) ^((postalcode^))^((/if^))
+			</script>
+		   	<script id="directions_addressline" type="text/x-handlebars-template">
+                ^((#if address1^))^((address1^)) ^(( city ^)) ^(( state ^)) ^((postalcode^)) ^((else^)) ^((#if addressline^))^((addressline^))^((/if^)) ^(( city ^)) ^(( state ^)) ^((postalcode^))^((/if^))
+            </script>
+			<script id="collection_multiple_address" type="text/x-handlebars-template">
+				<h3>Please select your location</h3>
+				<ul class="content-list address-suggestions">
+				^((#each this^))
+				<li data-id=^((@index^))><strong>^((address1^)) ^(( city ^)) ^(( county ^))</strong>^(( state ^)) ^((postalcode^))</li>
+				^((/each^))
+				</ul>
+			</script>
+
+			<!-- icon template start  -->
+			<script id="default" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="30" data-height="27" data-offsetx="-15" data-offsety="-27">
+				<img class="alpha" src="http://hosted.where2getit.com/w2gi/images/icons/pin1.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			<script id="main_icon" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble"  data-width="30" data-height="30" data-offsetx="-15" data-offsety="-30" data-labeloffsetx="-1" data-labeloffsety="15" data-fontcolor="#ffffff" data-fontsize="10" data-fontweight="bold" data-display="true">
+				<img class="alpha" src="http://hosted.where2getit.com/w2gi/images/icons/pin1.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			<script id="other_icon" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="33" data-height="40" data-offsetx="-17" data-offsety="-40" data-labeloffsetx="-1" data-labeloffsety="28" data-fontcolor="#ffffff" data-fontsize="10" data-fontweight="bold" data-display="true">
+				<img class="alpha" src="http://hosted.where2getit.com/w2gi/images/icons/gray-pin-shadow.png" alt="icon" />
+				<div action="open_bubble">
+				^((poinum^))
+				</div>
+				</div>
+			</script>
+			<script id="center_marker" type="text/x-handlebars-template">
+				<div class="icon" data-bubbleid="bubble" data-width="30" data-height="28"  data-offsetx="-11" data-offsety="-33">
+				<img class="alpha" alt="redstar" src="http://hosted.where2getit.com/w2gi/images/zoombar/blank.gif"/>
+				</div>
+			</script>
+			<script id="ddstarticon" type="text/x-handlebars-template">
+				<div class="end_icon" data-width="27" data-height="38" data-offsetx="-16" data-offsety="-28">
+				<img class="alpha" alt="start" src="http://static.where2getit.com/w2gi/images/icons/ddstartpin.png"/>
+				</div>
+			</script>
+			<script id="ddendicon" type="text/x-handlebars-template">
+				<div class="end_icon" data-width="27" data-height="38" data-offsetx="-16" data-offsety="-28">
+				<img class="alpha" alt="end" src="http://static.where2getit.com/w2gi/images/icons/ddendpin.png"/>
+				</div>
+			</script>
+			<!-- icon template end -->
+
+			<!-- bubble template start -->
+			<script id="bubble" data-offsetx="15" data-offsety="-18" {{#checkIf is_wireless_device}}data-width="1" data-height="1"{{else}}data-width="220" data-height="180" {{/checkIf}} type="text/x-handlebars-template">
+         
+         		<ul class="tabs" style="display:none;">
+				<li class="active" data-tab="tab1">Address</li>
+				<li data-tab="tab2">Hours</li>
+				<li data-tab="tab3">Amenities</li>
+				</ul>
+				<div class="tab-content active" data-tab="tab1">
+				<b>^((name^))</b>
+				<ul>
+				<li>^((address1^))</li>
+				<li>^((city^)), ^((state^)) ^((postalcode^))</li>
+				</ul>
+
+				<div class="dd-wrapper">
+				<div class="origin-select">
+				Directions:&nbsp; <a href="#" data-action="to" class="">To</a> | <a href="#" data-action="from">From</a> Here
+				</div>
+				<form id="dd" autocomplete="off" style="margin-top:5px;">
+				<span>From:</span> <br/>
+				<input size="19" type="text" name="addressline" value="^((addressline^))" style="width: 130px;"/>
+				<select id="bubble_country" name="country" class="country_selection" style="display:none;">
+				<option value="^((country^))">^((country^))</option>
+				</select>
+				<input type="submit" value="Go" style="width:30px;"/>
+				</form>
+				</div>
+				</div>
+				<div class="tab-content" data-tab="tab2">tab2</div>
+				<div class="tab-content" data-tab="tab3">
+				<div class="gboxDiv">
+				<a class="gs" data-action="show">Street View</a>
+				</div>
+				</div>
+			</script>
+			<!-- bubble template end -->
+
+			<!-- POI table template start -->
+			<script id="collection_poi" type="text/x-handlebars-template">
+
+				<ul class="content-list poi-result"> 
+
+				^((#each pois^))
+				<li data-id=^((@index^)) data-uid=^((uid^)) class="poi-item hidefirst^((@index^))" style="float: left; margin-right:10px; margin-bottom:10px;">
+
+				<div class="nearby_icon">
+				<span class="poinum"> 
+				<div>
+				<a data-action="open_bubble" style="cursor:pointer;color:#fff;">^((incIndex @index^))</a>
+				</div>
+				</span>
+				</div>
+
+				<div class="nearby_details">  
+				<div>
+				<span style="font-weight:bold;">^((name^))</span>
+				<a data-action="open_bubble" data-linktrack="view-on-map-click" class="open_bubble">View on map </a>
+
+				</div>
+
+				<div class="address1">
+				^((address1^))
+				</div>
+
+				<div class="address2">
+				^((city^)), ^((state^))^((province^)) ^((postalcode^))
+				<br />
+				Phone: ^((phone^))
+				</div>
+
+				</div>
+
+				</li>
+
+				^((/each^))
+				</ul>
+			</script>
+			<!-- POI table template end -->
+
+			<!-- More Info table template start -->
+			<script id="collection_more_info" type="text/x-handlebars-template">
+				<table odd_row_class="odd" even_row_class="even" active_row_class="active" slice_size="5">
+				<thead>
+				<tr>
+				<td></td>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+				<td></td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<tr recnum="#{POINUM}">
+				<td width="33px" valign="top">
+				<div templateid="#{ICON}"></div>
+				</td>
+				<td width="310px">
+				<a action="open_bubble" class="store_name" recnum="#{POINUM}" href="javascript:void(0);">#{NAME}</a>
+				<br/>
+				#{ADDRESS1}
+				<br/>
+				#{CITY}, #{STATE}#{PROVINCE} #{POSTALCODE}
+				<br/>
+				<strong>#{PHONE}</strong>
+				</td>
+				</tr>
+				<tr>
+				<td colspan="2">
+				<a action="show_all" recnum="#{POINUM}" href="javascript:void(0);">Show All Locations</a>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+			</script>
+			<!-- More Info table template end -->
+
+			<!-- Ambiguous address table template start -->
+			<!--script id="collection_multiple_address" type="text/x-handlebars-template">
+				<table odd_row_class="odd" even_row_class="even" active_row_class="active">
+				<thead>
+				<tr>
+				<th>Did you mean:</th>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+				<td></td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<tr recnum="#{POINUM}">
+				<td width="250px">
+				<a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE}#{PROVINCE} #{POSTALCODE}</a>
+				<br/>
+				#{COUNTY}
+				</td>
+				</tr>
+				</tbody>
+				</table>
+			</script-->
+			<!-- Ambiguous address table template end -->
+
+			<!-- driving directions panel template end -->
+			<script id="collection_maneuvers" type="text/x-handlebars-template">
+				<p>
+				<a class="search_again" href="javascript:void(0);" target="_parent" onclick="window.location.reload()">Back to Store Details</a>
+				</p>
+
+				<h3>Driving Directions</h3>
+				<p><strong>Distance: ^((total_distance^)) miles.         Drive time: ^((total_time^)) minutes</strong></p>
+				<p class="maneuver_start">
+				From (A): <strong>^((#if fromAddress.address1^))^((fromAddress.address1^))^((else^))^((#if fromAddress.addressline^))^((fromAddress.addressline^))^((/if^)) ^(( fromAddress.city ^)) ^(( fromAddress.county ^)) ^(( fromAddress.state ^)) ^((fromAddress.postalcode^))^((/if^)) </strong>
+				</p>
+				<ul class="content-list maneuver-result">
+				^((#each maneuverlist^))
+				<li data-id=^((@index^)) data-uid=^((uid^))>
+				<strong>^((incIndex @index^)) </strong>^((text^)) ^((distance^)) ^((distanceuom^))
+				</li>
+				^((/each^))
+				</ul>
+				<p class="maneuver_end">
+				To (B): <strong>^((#if toAddress.address1^))^((toAddress.address1^))^((else^))^((#if toAddress.addressline^))^((toAddress.addressline^))^((/if^)) ^(( toAddress.city ^)) ^(( toAddress.county ^)) ^(( toAddress.state ^)) ^((toAddress.postalcode^))^((/if^)) </strong>
+				</p>
+
+			</script>
+
+			<!-- Maneuvers table template end -->
+			<div id="lightwindow_cache" params="lightwindow_width=400, lightwindow_height=300, lightwindow_loading_animation=false">
+				<span id="lightwindow_cache_data" style="line-height: auto;
+				overflow: visible,
+				position: relative;float: left;width: 100%;"></span>
+			</div>
+		</div>
+		<!-- End Locator Map/POI List Templates -->
+
+		<main data-w2gi="locator" id="w2gilocalmain" class="local">
+			
+			<div id="form">
+
+				<form id="locator_search" autocomplete="off"></form>
+				<form id="driving_directions" autocomplete="off" style="display: none;">
+
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									From:
+								</td>
+								<td>
+									<input class="addressentry" id="startaddress" type="text" size="28" name="addressline" value="Start address" onClick="clear_search_directions_box(this);"/>
+									To:
+								</td>
+								<td>
+									<input class="addressentry" id="endaddress" type="text" size="28" name="addressline" value="End address" onClick="clear_search_directions_box(this);"/>
+									<input id="driving_directions_button" type="submit" value="Get Directions" name="driving_directions"/>
+								</td>
+								<td>
+									<a class="search_toggle" href="javascript:void(0);" style="font-size:12px;">Search Again</a>
+								</td>
+							</tr>
+
+							<!-- <tr><td colspan="3" style="text-align:right;"></td></tr> -->
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<!-- end of form -->
+
+			<section class="map_panel">
+				<div id="map" class="map">
+					<div id="staticMap">
+					    <div id="googleAttribution">
+					        <img src="/2021/images/google.jpg" alt="Google">
+					    </div>
+					    <div id="googleDate">
+					        <script type="text/javascript">
+					            var d = new Date ()
+					            document.write("Map data @")
+					            document.write(d.getFullYear());
+					            document.write(" Google")
+					        </script>
+					    </div>
+					</div>
+				</div>
+				<section class="addressBlock">
+					<div class="addressBlock-inner">
+						<h1> 
+							<span>The Cheesecake Factory</span>
+							{{#checkIf mallname}}
+								{{{mallname}}}
+							{{else}}
+								{{{name}}}
+							{{/checkIf}}
+						</h1>
+						<div class="address">
+							{{{address1}}}<br />
+							{{{city_pc}}}, {{{state}}} {{{postalcode}}}
+							{{#checkIf address2}}
+								<br/>{{{address2}}}
+							{{/checkIf}}
+						</div>
+						{{#checkIf phone '!=' ''}}
+						<div class="phone">
+							<a href="tel:{{{phone}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_Call">{{{phone}}}</a>
+						</div>
+						{{/checkIf}}
+						<ul>
+							{{#checkIf onlineorderingurl}}
+								<li>
+									<a href="{{{onlineorderingurl}}}" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderPickup">Order Pickup</a>
+								</li>
+							{{/checkIf}}
+							<li>
+								
+									<a href="http://maps.google.com/maps?q=" locnumber="The Cheesecake Factory,{{{address1_pc}}},{{{city_pc}}} {{{state}}} {{{postalcode}}}" onmouseover="this.href=this.getAttribute('url')+this.getAttribute('locnumber');" url="http://maps.google.com/maps?q=" target="_blank" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_GetDirections">Get Directions</a>
+
+							</li>
+						</ul>
+					</div>
+				</section>
+				<div id="panel" class="poi panel" style="display: none;">
+				</div>
+
+			</section>
+			
+
+			<div class="main-inner">
+			<section class="hours card">
+				<div class="section-inner">
+					<div class="card-content">
+						{{#checkIf mask}}
+						<div class="covid-msg">
+							<!-- <img src="/2021/images/warning.pink.svg" alt="" /> We are continuing to follow CDC guidelines and are maintaining our mask requirement for guests except when seated at their table. -->
+							<img src="/2021/images/warning.pink.svg" alt="" /> {{{mask}}}
+						</div>
+						{{/checkIf}}
+						<div class="card-row">
+							<div class="card-col">
+								<h2>Hours</h2>
+								<div class="regular-hours">
+									{{#checkIf  '('  '(' doordashflag '==' '1' ')'   '&&'   '(' onlineordering '==' '1' ')'  ')' }}
+										Open for dine-in, takeout and delivery.
+									{{else}}
+										{{#checkIf doordashflag '==' '1'}}
+											Open for dine-in and delivery.
+										{{else}}
+											{{#checkIf onlineordering '==' '1'}}
+												Open for dine-in and takeout.
+											{{else}}
+												Open for dine-in.
+											{{/checkIf}}
+										{{/checkIf}}
+									{{/checkIf}}
+									<ul>
+										<li><span>Mon - Thu:</span><span>{{{hoursfromto1}}}</span></li>
+										<li><span>Fri:</span><span>{{{hoursfromto2}}}</span></li>
+										<li><span>Sat:</span><span>{{{hoursfromto3}}}</span></li>
+										<li><span>Sun:</span><span>{{{hoursfromto4}}}</span></li>
+									</ul>
+								</div>
+								{{#checkIf brunch}}
+								<h3>Brunch</h3>
+								<ul class="brunch-hours">
+									<li><div>Sat - Sun:</div><div>Until 2:00 pm</div></li> 
+								</ul>
+								
+								{{/checkIf}}
+							</div>
+
+							<div class="card-col">
+								{{#checkIf happyhourmenu}}
+								<div class="happy-hour">
+									<h3>Happy Hour</h3>
+									<ul>
+										<li><span>Mon - Fri:</span><span>{{{happyhour}}}</li>
+									</ul>
+								</div>
+								{{/checkIf}}
+								{{#checkIf textlocation}}
+								<div class="find-us">
+									<h3>Where to find us</h3>
+									{{{textlocation}}}
+								</div>
+								{{/checkIf}}
+								{{#checkIf  '('  '(' freeselfparking '==' '1' ')'   '||'   '(' paidselfparking '==' '1' ')'   '||'   '(' parkingvalidation '==' '1' ')'   '||'   '(' selfparking '==' '1' ')'   '||'   '(' valetparking '==' '1' ')'   '||'   '(' compvaletparking '==' '1' ')'   '||'   '(' seasonalvaletparking '==' '1' ')'   '||'   '(' meteredstreetparking '==' '1' ')'   '||'   '(' valetparking '==' '1' ')'   '||'   '(' curbsidetogoparking '==' '1' ')'  ')' }}
+									<div class="parking">
+										<h3>Parking</h3>
+										<ul>
+											{{#checkIf selfparking '==' '1'}}<li>Self Parking</li>{{/checkIf}}
+											{{#checkIf freeselfparking '==' '1'}}<li>Free Self Parking</li>{{/checkIf}}
+											{{#checkIf paidselfparking '==' '1'}}<li>Paid Parking</li>{{/checkIf}}
+											{{#checkIf parkingvalidation '==' '1'}}<li>Self Parking</li>{{/checkIf}}
+											{{#checkIf valetparking '==' '1'}}<li>Valet Parking</li>{{/checkIf}}
+											{{#checkIf compvaletparking '==' '1'}}<li>Complimentary Valet Parking</li>{{/checkIf}}
+											{{#checkIf seasonalvaletparking '==' '1'}}<li>Seasonal Valet Parking</li>{{/checkIf}}
+											{{#checkIf meteredstreetparking '==' '1'}}<li>Metered Street Parking</li>{{/checkIf}}
+											{{#checkIf curbsidetogoparking '==' '1'}}<li>Curbside To-Go Spots</li>{{/checkIf}}
+										</ul>
+									</div>
+								{{/checkIf}}
+								<!-- {{#checkIf menu_url}}
+									<a class="btn2 ga_w2gi_lp" href="{{{menu_url}}}" target="_blank" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_ViewMenu">View Menu</a>
+								{{/checkIf}} -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			{{#checkIf yelpreservation}}
+				<section class="reservations card">
+					<div class="section-inner">
+						<div class="card-content">
+							<h2>Reservations</h2>
+							<p>We reserve much of the dining room for walk-in guests and serve a full menu at the bar. If you do not see your desired reservation time, please walk-in anytime!</p>
+							<a class="btn2 ga_w2gi_lp" href="{{{yelpreservation}}}" target="_blank" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_MakeReservation">Make a reservation</a>
+						</div>
+					</div>
+				</section>
+			
+			{{/checkIf}}
+			{{#checkIf  '('  '(' onlineordering '==' '1' ')'   '||'   '(' doordashflag '!=' '' ')'  ')' }}
+				<section class="order-now card">
+					<div class="section-inner">
+						<div class="card-content">
+							<h2>Order Now</h2>
+							<p>Our entire menu is available for pickup and delivery.</p>
+							{{#checkIf onlineordering '==' '1'}}
+								<a class="btn2 ga_w2gi_lp" href="{{{onlineorderingurl}}}" target="_blank" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderPickup">Order Pickup</a>
+							{{/checkIf}}
+							{{#checkIf doordashurl '!=' ''}}
+								<a class="btn2 ghost ga_w2gi_lp" href="{{{doordashurl}}}" target="_blank" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_OrderDelivery">Order Delivery</a>
+							{{/checkIf}}
+						</div>
+					</div>
+				</section>
+			{{/checkIf}}
+
+			{{#checkIf curbsideflag '==' '1'}}
+			<section class="curbside card">
+				<div class="section-inner">
+					<div class="card-content">
+						<h2>Curbside</h2>
+						<p>Try our contactless Curbside To-Go Service! It’s as easy as 1, 2, 3!</p>
+						<p>{{{curbsidedesc}}}</p>
+					</div>
+				</div>
+			</section>
+			{{/checkIf}}
+			{{#checkIf  '('  '(' rewards '==' '1' ')'  '||'  '(' rewards '==' 'Yes' ')'  '||'  '(' rewards '==' '1' ')'  ')' }}
+			<section class="rewards card">
+				<div class="section-inner">
+					<div class="card-content">
+						<h2>Rewards</h2>
+						<p>Introducing Cheesecake Rewards&trade; &mdash; Our exciting new program debuting first in Dallas-Fort Worth! With exclusive access to reservations, complimentary slices of cheesecake and no points to track, why wouldn’t you sign-up?</p>
+						<a class="btn2-white ga_w2gi_lp" href="{{{rewards_url}}}" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_JoinNow" target="_blank">Join Now</a>
+
+					</div>
+				</div>
+			</section>
+			{{/checkIf}}
+			<!-- main location info -->
+			
+			{{#checkIf menu_url}}
+				<style>
+					.menu-new h2:before {
+					    content: url(/2021/images/menu.2.svg);
+					    height: 70px;
+					    width: auto;
+					}
+
+					.main-inner > section.menu-new {
+						background-color: #fff;
+						color: #573B34;
+					}
+
+					/*section.menu-new a {
+					    background-color: #B43257;
+					    color: #fff;
+					}*/
+					section.menu-new p:first-of-type {
+						margin: 0 0 24px;
+					}
+					section.menu-new p:last-of-type {
+					    margin: 0 0 48px;
+					}
+
+					main section.menu-new .card-content a.btn2 {
+						padding: 16px 30px;
+					}
+
+					section.menu-new a:nth-of-type(2) {
+					    background-color: #fff;
+					    border: 1px solid #8f6724;
+					    color: #8f6724;
+					    margin-left: 48px;
+					}
+
+					@media (max-width: 1270px) and (min-width: 1181px){
+						section.menu-new a:nth-of-type(2) {
+							display: table;
+							margin-left: 0;
+						}	
+					}
+
+					@media (max-width: 653px) {
+						section.menu-new a:nth-of-type(2) {
+							display: table;
+							margin-left: 0;
+						}
+					}
+
+					section.menu-new a:nth-of-type(2):hover {
+					    background-color: #8f6724;
+					    color: #fff;
+					}
+
+					@media (max-width: 621px) {
+						section.menu-new a:nth-of-type(2) {
+							margin-top: 24px;
+						}
+					}
+				</style>
+			<section class="menu-new card">
+				<div class="section-inner">
+					<div class="card-content">
+						<h2>Menu</h2>
+						<p>Choose from more than 250 dishes made fresh from scratch every day and more than 40 legendary cheesecakes and desserts.</p>
+						{{#checkIf happyhourmenu}}
+						<p>Happy Hour is served in our bar area Mon – Fri from 4:00 – 6:00 PM.</p>
+						{{/checkIf}}
+						<a class="btn2 ga_w2gi_lp" href="{{{menu_url}}}" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_ViewMenu" target="_blank"><span class="sr-only">View </span>Restaurant Menu</a>
+						{{#checkIf happyhourmenu}}
+							<a class="btn2 ga_w2gi_lp" href="{{{happyhourmenu}}}" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_JoinNow" target="_blank"><span class="sr-only">View </span>Happy Hour Menu</a>
+						{{/checkIf}}
+					</div>
+				</div>
+			</section>
+			{{/checkIf}}
+			<!-- close of outer address div -->
+
+			</div>
+			{{#checkIf  '('  '(' store_image_01 '!=' '' ')'  '||'  '(' store_image_02 '!=' '' ')'  '||'  '(' store_image_03 '!=' '' ')'  '||'  '(' store_image_04 '!=' '' ')'  '||'  '(' store_image_05 '!=' '' ')'  '||'  '(' store_image_06 '!=' '' ')'  '||'  '(' store_image_07 '!=' '' ')'  '||'  '(' store_image_08 '!=' '' ')'  '||'  '(' store_image_09 '!=' '' ')'  '||'  '(' store_image_10 '!=' '' ')'  ')' }}
+				<section class="gallery">
+					
+					{{#checkIf store_image_05}}
+						<div><img src="{{{store_image_05}}}" alt="The Cheesecake Factory location in {{{name}}} store image five" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_06}}
+						<div><img src="{{{store_image_06}}}" alt="The Cheesecake Factory location in {{{name}}} store image six" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_07}}
+						<div><img src="{{{store_image_07}}}" alt="The Cheesecake Factory location in {{{name}}} store image seven" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_08}}
+						<div><img src="{{{store_image_08}}}" alt="The Cheesecake Factory location in {{{name}}} store image eight" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_09}}
+						<div><img src="{{{store_image_09}}}" alt="The Cheesecake Factory location in {{{name}}} store image nine" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_10}}
+						<div><img src="{{{store_image_10}}}" alt="The Cheesecake Factory location in {{{name}}} store image ten" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_01}}
+						<div><img src="{{{store_image_01}}}" alt="The Cheesecake Factory location in {{{name}}} store image one" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_02}}
+						<div><img src="{{{store_image_02}}}" alt="The Cheesecake Factory location in {{{name}}} store image two" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_03}}
+						<div><img src="{{{store_image_03}}}" alt="The Cheesecake Factory location in {{{name}}} store image three" /></div>
+					{{/checkIf}}
+					{{#checkIf store_image_04}}
+						<div><img src="{{{store_image_04}}}" alt="The Cheesecake Factory location in {{{name}}} store image four" /></div>
+					{{/checkIf}}
+				</section>
+			{{/checkIf}}
+			<div class="overlay"></div>
+
+			<div class="modal">
+				<a href="#" class="closeBtn">Close</a>
+				<div id="lightwindow_title_bar" style="position:absolute; left:0px; top:0px; padding-top:2px; height:28px; width: 366px;">
+					<div id="lightwindow_title_bar_inner" style="">
+						<span id="lightwindow_title_bar_title">Send to Phone</span>
+					</div>
+				</div>
+				<div class="bottom_bar"></div>
+				<p></p>
+			</div>
+
+
+
+			<div class="w2gi-footer" style="display: none; height: 0; overflow: hidden; width:0; margin:0;">
+
+				<div id="w2gifooter">
+			    	<script type="text/javascript">
+			
+						var d = new Date()
+			
+						document.write("<a href='http://www.meetsoci.com' target='_new'>Store Locator Software</a> Powered by SOCi ")
+			                            document.write("Copyright &copy; ")
+						document.write(d.getFullYear())
+			
+						document.write(", All Rights Reserved.<br/>")                		
+			
+					</script>
+			   
+			    </div>
+			    
+				<div id="navteqfooter" style="display: none;">
+					<script type="text/javascript">
+                        var d = new Date ()
+                        document.write(" <img src=/w2gi/images/logo_navteq_large.gif> ")
+                        document.write(" &copy; Copyright ")
+                        document.write(d.getFullYear())
+                        document.write(" NAVTEQ Corp.  ")
+					</script>
+					<a href="http://www.brandify.com/company/terms/" onClick="window.open(this.href,'_blank','width=988,height=600,scrollbars=yes,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes');return false;">Use Subject to and Conditions</a>
+				</div>
+
+			</div>
+		
+			<nav aria-label="Desktop Breadcrumb" class="breadcrumb" style="display:none;">
+				<ul class="breadcrumbs linkmenu">
+                	<li>
+                		<a href="{{{topindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_StateIndex" linktrack="LocalPage - Click_to_StateIndex">Select a State</a>
+                		<span aria-hidden="true">&gt;</span>
+                	</li>
+                	<li>
+                		<a href="{{{stateindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_State" linktrack="LocalPage - Click_to_State">{{{state_longname_pc}}} {{#checkIf state}}({{{province}}}{{{state}}}){{/checkIf}}</a>
+                		<span aria-hidden="true">&gt;</span>
+                	</li>
+                	<li>
+                		<a href="{{{cityindex_url}}}" class="ga_w2gi_lp" data-galoc="Cheesecake Factory - LocalPage" data-gaact="Click_to_CityIndex" linktrack="LocalPage - Click_to_CityIndex">{{{city}}}</a>
+                		<span aria-hidden="true">&gt;</span>
+                	</li>
+                	<li>
+                		{{{address1}}}
+                	</li>
+                </ul>
+			</nav>	
+	
+		</main><!-- end w2gilocalmain  -->
+		{{> 'footer-include.2'}}
+		{{#checkIf  '('  '(' store_image_01 '!=' '' ')'  '||'  '(' store_image_02 '!=' '' ')'  '||'  '(' store_image_03 '!=' '' ')'  '||'  '(' store_image_04 '!=' '' ')'  '||'  '(' store_image_05 '!=' '' ')'  '||'  '(' store_image_06 '!=' '' ')'  '||'  '(' store_image_07 '!=' '' ')'  '||'  '(' store_image_08 '!=' '' ')'  '||'  '(' store_image_09 '!=' '' ')'  '||'  '(' store_image_10 '!=' '' ')'  ')' }}
+		<script>
+			$(function(){
+				// if($(window).width() < 1281){
+					$('.gallery').slick({  
+	                    
+	                  arrows: true,
+	                  dots: false,
+	                  prevArrow:"<button class=\'slick-prev\'><span class=\'sr-only\'>See Previous Slide</span>",    
+	                  nextArrow:"<button class=\'slick-next\'><span class=\'sr-only\'>See Next Slide</span>",    
+	                  // speed: 300,
+	                  // infinite: false,
+	                  // slide: 'li';
+	                 infinite: true,
+	                 accessibility: false,
+	                  slidesToScroll: 1,
+	                  slidesToShow: 4,
+	                  responsive: [
+					    {
+					      breakpoint: 1280,
+					      settings: {
+					      	accessibility: true,
+					      	arrows: true,
+					      	infinite: true,
+					        slidesToShow: 2,
+					        slidesToScroll: 1,
+					      }
+					    },
+					    {
+					      breakpoint: 768,
+					      settings: {
+					      	accessibility: true,
+					      	arrows: true,
+					      	infinite: true,
+					        slidesToShow: 1,
+					        slidesToScroll: 1
+					      }
+					    }
+				      ]
+	                });
+				// }
+			});
+		</script>
+		{{/checkIf}}
+		<script>
+			$(function(){
+				$('.hours ul span:nth-of-type(2)').each(function(){
+					var a = $(this).html().replace(/ /g,'').replace('-',' - ');
+					$(this).html(a);
+				});
+
+				$('header span.burger').click(function (){
+					$('body').addClass('mobile-menu-open');
+				});
+				$('header span.burger-close').click(function (){
+					$('body').removeClass('mobile-menu-open');
+				});
+			})
+		</script>
+	</body>
+</html>

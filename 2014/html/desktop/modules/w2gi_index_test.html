@@ -1,0 +1,464 @@
+<!-- START : /modules/locations-content.html--><!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"> <![endif]--><!--[if IE 9]><html class="no-js lt-ie10"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+<title>The Cheesecake Factory</title> 
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+<link rel="icon" href="/cheesecake/2014/assets/images/global/favicon2.ico">
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+
+
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<link rel="stylesheet" href="/cheesecake/2014/assets/css/w2gi_desktop2015.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//use.typekit.net/bxf4rjm.js"></script> 
+<script>try{Typekit.load();}catch(e){}</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Store and Dealer locator" />
+<meta name='format-detection' content='telephone=no' /> 
+
+<link type="text/css" href="http://static.where2getit.com/w2gi/css/style210.css" rel="stylesheet" media="all"/>
+<link type="text/css" href="http://static.where2getit.com/w2gi/css/lightwindow.css" rel="stylesheet" media="all"/>
+<link type="text/css" href="w2gi/css/w2gi_styles.Final.css" rel="stylesheet" media="all"/>
+
+
+	<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/2.1/prototype.js"></script> 
+	<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/2.1/W2GI_core.js"></script>			
+	<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/2.1/W2GI_maps.js"></script>	
+	<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/2.1/W2GI_slippymap.js"></script>
+		
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.37&sensor=false&key=AIzaSyABNyZK7U8Dbt6_grtNUWqEfcFBBl_vWEY&channel=cheesecake"></script>
+<script type="text/javascript" src="w2gi/js/helper2015_3.js"></script>
+
+<style>
+	#lightwindow_contents {min-height: 200px !important; height:auto !important;}
+	
+	.hide_if_0 {display:none !important;}
+	.hide_if_00 {display:none !important;}
+	.hide_if_11 {display:none !important;}
+	
+	.show_if_01 {display:none;}
+	.show_if_0 {display:inline !important;} 
+	.show_if_00 {display:inline !important;}
+	
+	.hideit {display:none;}
+</style>
+
+</head>
+<body>
+
+<xml><root><ajaxurl>ajax?lang=fr_FR</ajaxurl><appkey>320C479E-6D70-11DE-9D8B-E57E37ABAA09</appkey><inputforms><inputform><formdata id="reversegeocoder"><geolocs><geoloc><latitude></latitude><longitude></longitude><country></country></geoloc></geolocs></formdata></inputform></inputforms><sources><layer><name>Google Normal</name><options>{'projection': 'EPSG:900913', 'type': google.maps.MapTypeId.ROADMAP, 'maxZoomLevel':18}</options></layer></sources></root></xml>
+
+ 	<!-- templates start -->
+    <div id="templates">
+
+        <!-- icon template start  -->
+        <div id="default" class="icon" bubbleid="bubble" width="30" height="40" offsetx="-15" offsety="-40">
+			<img class="alpha" src="/cheesecake/2014/assets/images/global/map-pin-inactive.png" recnum="#{POINUM}" />
+			<div recnum="#{POINUM}" onclick="more_info_from_icon('#{POINUM}')">#{POINUM}</div>
+        </div>
+
+        <div id="center_marker" class="icon" width="30" height="28"  offsetx="-15" offsety="-28">
+            <img class="alpha" src="/w2gi/images/icons/red-star.png"/>
+        </div>
+        <!-- icon template end  -->
+
+        <div id="ddstarticon" class="end_icon" width="30" height="40" offsetx="-15" offsety="-40">
+            <img class="alpha" src="/cheesecake/2014/assets/images/global/map-pin-A.png"/>
+            <div recnum="#{POINUM}"></div>
+        </div>
+
+        <div id="ddendicon" class="end_icon" width="30" height="40" offsetx="-15" offsety="-40">
+            <img class="alpha" src="/cheesecake/2014/assets/images/global/map-pin-B.png"/>
+            <div recnum="#{POINUM}"></div>
+        </div>
+
+        <!-- bubble template start  -->
+        <div id="bubble" offsetx="0" offsety="0" style="width: 0; height: 0;"> <!-- -->
+
+        </div>
+        <!-- bubble template end -->
+
+        <!-- POI table template start -->
+        <div id="collection_poi">
+			<div class="div_head">
+				<div class="location-sidebar-title">
+					<span>#{COUNT}</span> Restaurants Found
+				</div>
+			</div>
+			<div class="div_body">
+				<div class="div_row" >
+					<a class="result-title" id="more_info_#{POINUM}" recnum="#{POINUM}" href="javascript:void(0);" action="more_info"><span>#{POINUM}.</span> #{NAME}</a>
+					<div class="result-address" >
+						<p>
+						  <!-- TODO: Spans are to separate address lines on mobile-->
+						  <a recnum="#{POINUM}" href="javascript:void(0);" action="more_info" class="nochange"><span class="hideit#{MALLNAME}">#{MALLNAME}<br/></span>#{ADDRESS1}<br/> #{CITY}, #{STATE} #{POSTALCODE}</a>
+						</p>
+						<p><a recnum="#{POINUM}" href="javascript:void(0);" action="more_info" class="nochange">#{PHONE}</a></p>
+					</div><!-- result-address -->
+
+					<div class="result-links">Send To: <a href="javascript:void(0);" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=emaillocatorstart&template=emaillocatorstart2014&uid=#{UID}','EMAIL','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">Email</a> | <a href="javascript:void(0);" onclick="window.open('http://hosted.where2getit.com/lite?appkey=320C479E-6D70-11DE-9D8B-E57E37ABAA09&action=smslocatorstart&template=smslocatorstart2014&uid=#{UID}','MOBILE','width=730,height=450,status=yes,toolbar=no,menubar=no,location=no');">Mobile</a></div>
+
+				</div><!-- end div_row -->
+			</div><!-- end div_body -->
+		</div>
+        <!-- POI table template end -->
+
+         <!-- POI table template start -->
+        <div id="collection_more_info">
+
+			<div class="div_body">
+				<div class="div_row">
+					<div class="location-sidebar-title" action="show_all">#{NAME}</div>
+					<div class="detail-address">
+						<p>
+						  <!-- TODO: Spans are to separate address lines on mobile--><span><span class="hideit#{MALLNAME}">#{MALLNAME}<br/></span>#{ADDRESS1}</span><br/><span>#{CITY}, #{STATE} #{POSTALCODE}</span>
+						</p>
+						<p>#{PHONE}</p>
+					</div><!-- end detail-address -->
+					<div class="detail-directions">
+						<!-- TODO: On desktop, show Get Directions--><strong class="small-title">Get directions from:</strong>
+						<div class="text-submit-wrapper">
+						<form id="driving_directions_mask" onsubmit="get_directions_from_more_info();">
+						  <input type="text" placeholder="Enter starting address" value="">
+						  <button id="getDirections"  onclick="get_directions_from_more_info();">Go</button>
+						</form>
+						</div>
+					</div><!-- end detail-directions -->
+					<div class="detail-content">
+						<!-- TODO: View Details links to external page--><a class="btn" href="http://locations.thecheesecakefactory.com/#{STATE_URLENC}/#{CITY_URLENC}-#{CLIENTKEY}">View Details</a>
+						<div class="tab-container">
+						  <!-- TODO: .active class denotes the currently selected .detail-tabs li-->
+						  <ul class="detail-tabs tab-switch">
+							<li data-name="restaurant-info" class="active">
+							  <!-- TODO: anchor links on these .tab-switch li's correspond to data-name on .tab-panes-->
+							  <!-- TODO: Button title is "Restaurant" on mobile, but "Restaurant Info" not mobile--><a href="javascript:void(0);" data-name="restaurant-info">Restaurant Info</a>
+							</li>
+							<li data-name="to-go"><a href="javascript:void(0);" data-name="to-go">To Go</a></li>
+						  </ul>
+						  <!-- TODO: .active class denotes the currently visible .detail-pane-->
+						  <div class="tab-panes">
+							<div class="tab-pane active" data-name="restaurant-info"><strong>HOURS OF OPERATION</strong>
+							  <p><strong>#{HOURSLABEL1}</strong><br>#{HOURSFROMTO1}<br><strong>#{HOURSLABEL2}</strong><br>#{HOURSFROMTO2}<br><strong>#{HOURSLABEL3}</strong><br>#{HOURSFROMTO3}
+							  <br><strong>#{HOURSLABEL4}</strong><br>#{HOURSFROMTO4}</p>
+							  <hr>
+							  <p><strong>LOCATION:</strong><br>#{TEXTLOCATION}</p>
+							  <p><strong>PARKING:</strong><br>#{TEXTPARKING}</p>
+							  <p class="hide_if_0#{PATIO}"><strong>PATIO SEATING:</strong><br>#{TEXTPATIO}</p>
+							  <p><strong>SPECIAL MENUS:</strong>
+								</p><ul>
+								  <li class="special_menu hide_if_0#{BRAILLE}">Braille Menu</li>
+								  <li class="special_menu hide_if_0#{LARGEPRINT}">Large Print Menu</li>
+								  <li class="special_menu hide_if_0#{SPANISH}">Spanish</li>
+								  <li class="special_menu hide_if_0#{JAPANESE}">Japanese</li>
+								  <li class="special_menu hide_if_0#{KOREAN}">Korean</li>
+								  <li class="special_menu hide_if_0#{CHINESE}">Chinese</li>
+								</ul>
+							  <p class="hide_if_0#{LARGEPARTIES_flag}"><strong>LARGE PARTIES:</strong><br/>
+							  	#{LARGEPARTIES}
+							  </p>
+							  <div class="btn-grid"><a class="btn hide_if_0#{TAKEOUTLINK}" href="#{TAKEOUTLINK}">Takeout Menu</a><a class="btn hide_if_0#{CATERINGFLAG}" href="#{CATERINGLINK}">Catering Menu</a><a class="btn hide_if_0#{GIFTCARD}" href="#{GIFTCARD}">Gift Cards</a><a class="btn" href="http://www.thecheesecakefactory.com/careersLanding/careersLanding">Careers</a></div>
+							</div>
+							<div class="tab-pane" data-name="to-go">
+								<p><strong>TO GO:</strong><br>
+									<span class="hide_if_0#{CURBSIDEFLAG}">#{CURBSIDEDESC}</span>
+									<span class="show_if_0#{CURBSIDEFLAG}">Curbside-To-Go not available at this location.</span>
+								</p>
+
+							  <p><strong>TAKE OUT:</strong><br>
+								<span class="hide_if_0#{TAKEOUTFLAG}">For your convenience our entire menu of more than 200 selections is available for Take Out! You may place and pick up Take Out orders at our Bakery counter.</span>
+								<span class="hide_if_1#{TAKEOUTFLAG}">Take out not available at this location.</span>
+							  </p><a class="btn hide_if_0#{TAKEOUTFLAG}" href="#{TAKEOUTLINK}">Take Out Menu</a>
+							  <p><strong>CATERING:</strong><br><span class="hide_if_0#{CATERINGFLAG}">#{CATERINGDESC}</span>
+								<span class="hide_if_1#{CATERINGFLAG}">Catering not available at this location.</span>
+							  </p>
+							  <a class="btn hide_if_0#{CATERINGFLAG}" href="#{CATERINGLINK}">Catering Menu</a>
+							</div>
+						  </div>
+						</div>
+					</div><!-- end detail_content -->
+				</div><!-- end div_row -->
+			</div><!-- end div_body -->
+		</div>
+        <!-- POI table template end -->
+
+        <!-- Ambiguous address table template start -->
+        <table id="collection_multiple_address" odd_row_class="odd" even_row_class="even" active_row_class="active">
+			<thead>
+                <tr>
+                    <td>
+                    	<div id="multiple_addreses_header" class="collection_header">
+                       		Did you mean:
+                        </div>
+                        <!-- end #multiple_addreses_header -->
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr recnum="#{POINUM}">
+                    <td>
+                    	<div class="more_info_row">
+                        <a action="search_address" recnum="#{POINUM}" href="javascript:void(0);">#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}</a>
+
+                        </div>
+                        <!-- end .more_info_row -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Ambiguous address table template end -->
+
+		<!-- Maneuvers table template start -->
+		<div id="collection_maneuvers">
+			<div class="div_head">
+				<div class="location-sidebar-title">Directions to Your Restaurant<span class="subtitle">Send Directions To: <a href="javascript: void(0);" onclick="window.open(SlippyMap.locator.iconBar.ddSendEmail('emaildirectionstart2014'),'EMAIL','width=720,height=800,status=yes,toolbar=no,scrollbars=1,menubar=no,location=no');">Email</a></span>
+					<br/>
+					<a onClick="javascript:location.reload(true)" href="javascript:void(0);">Back to locations</a>
+
+				</div>
+
+
+				<div class="location-sidebar-subtitle">From (A):<br><span class="addressline"><span class="address_line1"></span> <span><span class="address_city"></span> <span class="address_state"></span> <span class="address_zip"></span></span></span><br>Total distance: #{TOTAL_DISTANCE} miles<br>Total time: #{TOTAL_TIME} #{TIME_UNIT}
+				</div>
+			</div>
+			<div class="div_body">
+				<div class="div_row">
+					#{TEXT} #{DISTANCE} #{DISTANCEUOM}
+
+				</div><!-- end div_row -->
+			</div><!-- end div_body -->
+			<div class="div_foot">
+				<div class="location-sidebar-subtitle">To (B):<br><span class="addressline"><span class="address_line1"></span> <span><span class="address_city"></span> <span class="address_state"></span> <span class="address_zip"></span></span></span></div>
+			</div>
+		</div>
+        <!-- Maneuvers table template end -->
+
+        <!-- Lightwindow template start -->
+        <div id="lightwindow_cache" params="lightwindow_width=366, lightwindow_height=200, lightwindow_loading_animation=false,lightwindow_open_animation=false">
+            <div id="lightwindow_cache_data"></div>
+
+            <span id="close_text" style="display:none">Close</span>
+            <span id="title_text" style="display:none">Notice</span>
+        </div>
+        <!-- Lightwindow table template end -->
+
+        <div id='linktopage'>
+             <div>Link to this page:</div>
+             <input type="text" onClick="Form.Element.activate(this)" size="60" value="#{URL}" />
+        </div>
+        <!--- end linktopage -->
+
+        <!-- Use with alertError in SlippyMap options -->
+        <div id="panel_error_message"><div style="padding:10px; font-size:14px;">No locations found nearby.</div></div>
+
+    </div>
+    <!--#templates end-->
+
+    <!-- MAIN LAYOUT BELOW -->
+
+    <!-- wrapper start -->
+    <div id="w2gi_hide">
+
+       <div id="icon_bar" style="display: none;">
+			<a id="page_prints" href="javascript:void(0);" onClick="window.open(SlippyMap.locator.iconBar.printURL('printlocator.html'), 'print', 'toolbar=no, resizable=yes, scrollbars=yes, menubar=yes');">
+			</a>
+			<a id="page_email" subject="Location Information" href="javascript:void(0);">
+			</a>
+			<a id="page_link" href="javascript:void(0);">
+			</a>
+		</div>
+        <!-- end print_email_link -->
+
+		<form id="driving_directions" autocomplete="off" style="display: none;">
+			<input id="start_address" type="text" name="addressline" />
+			<input id="orig_country" type="text" name="country" value="">
+			<input id="end_address" type="text" name="addressline" />
+			<input id="dest_country" type="text" name="country" value="">
+			<input id="driving_directions_button" type="submit" />
+
+		   <xml><root><inputforms><inputform><formdata id="drivingdirections"><dataview>store_default</dataview><geolocs><geoloc><address1></address1><city></city><state></state><country></country><postalcode></postalcode><addressline></addressline><longitude></longitude><latitude></latitude></geoloc><geoloc><address1></address1><city></city><state></state><country></country><postalcode></postalcode><addressline></addressline><longitude></longitude><latitude></latitude></geoloc></geolocs><map><size>330,225</size><icons><start><path>icons/ddstartpin.png</path><size>2</size></start><end><path>icons/ddendpin.png</path></end></icons></map><rid></rid><route><atw><radius>1.0</radius><radiusuom>mile</radiusuom></atw></route></formdata></inputform></inputforms></root></xml>
+		</form>
+		<!-- end driving_directions -->
+
+		<form id="getlist_search" autocomplete="off">
+
+		<input type="hidden" id="COMINGSOON" name="COMINGSOON"/>
+		<xml>
+			<root>
+				<inputform>
+					<formdata id="getlist">
+						<objectname>StoreLocator</objectname>
+						<order>STATE, CITY</order>
+						<where>
+							<uid><eq></eq></uid>
+							<state><eq></eq></state>
+							<store><in></in></store>
+							<COMINGSOON><eq></eq></COMINGSOON>
+							<or>
+							   <CATERINGFLAG><EQ></EQ></CATERINGFLAG>
+							   <CURBSIDEFLAG><EQ></EQ></CURBSIDEFLAG>
+							   <DELIVERYFLAG><EQ></EQ></DELIVERYFLAG>
+							   <BANQUETS><eq></eq></BANQUETS>
+							   <PATIO><eq></eq></PATIO>
+							</or>
+						</where>
+					</formdata>
+				</inputform>
+			</root>
+		</xml>
+
+
+		</form><!-- end getlist_search -->
+
+
+
+
+    </div><!-- end #w2gi_hide -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- TODO: On mobile, .location-map is hidden by default, and shows when .show-map class is added to body-->
+    <div id="locationMap" class="location-map">
+
+		<div id="map"></div>
+
+    </div>
+    <!-- TODO: Only include one class below at a time-->
+    <!-- TODO: .show-filter on .location-sidebar drops down the Search Filter-->
+    <!-- TODO: .show-detail on .location-sidebar slides over from Results (which is shown on load) to a result detail page-->
+    <!-- TODO: .show-directions on .location-sidebar shows directions list. Remove class to hide directions-->
+
+	<div class="location-sidebar">
+
+	<form id="locator_search" class="form-dark" autocomplete="off" onsubmit="$('printTEXT').style.display = 'inline';">
+
+
+	<fieldset class="location-sidebar-search"><a id="printTEXT" class="print" href="javascript:void(0);" onKeyPress="$('printTEXT').style.display = 'inline';" onclick="performClick($('page_prints'));">Print</a><a class="email" href="javascript:void(0);" onclick="performClick($('page_email'));">Email</a>
+		<!-- TODO: #locationSearch input box will return search results-->
+		<!-- <div class="headerTXT">Find Nearest:</div> -->
+		<input type="text" placeholder="Enter your city, state or ZIP code" id="locationSearch"  name="addressline" onfocus="clear_field(this)">
+		<input type="hidden" name="country" value="US">
+
+		<!-- TODO: clicking .filterToggle toggles the class .show-filter on .location-sidebar-->
+		<a class="filterToggle">Search Filter</a>
+		<xml><root><inputform><formdata id="locatorsearch"><dataview>store_default</dataview><geolocs><geoloc><addressline></addressline><longitude></longitude><latitude></latitude><country></country></geoloc></geolocs><searchradius>50|100|150|300|500|750|1000</searchradius><where><or><CATERINGFLAG><EQ></EQ></CATERINGFLAG><CURBSIDEFLAG><EQ></EQ></CURBSIDEFLAG><DELIVERYFLAG><EQ></EQ></DELIVERYFLAG><BANQUETS><eq></eq></BANQUETS><PATIO><eq></eq></PATIO></or></where><nobf>1</nobf><stateonly>1</stateonly></formdata></inputform></root></xml>
+	</fieldset>
+
+
+	<fieldset class="location-sidebar-filter">
+	<div class="filter-toggles"><strong class="small-title">Search Only Locations With:</strong>
+	  <div class="filter-grid">
+		<input id="filterCurbside" type="checkbox" name="CURBSIDEFLAG" value="1">
+		<label for="filterCurbside" class="choice-label">Curbside To-Go</label>
+		<input id="filterCatering" type="checkbox" name="CATERINGFLAG" value="1">
+		<label for="filterCatering" class="choice-label">Catering</label>
+		<input id="filterBanquets" type="checkbox" name="BANQUETS" value="1">
+		<label for="filterBanquets" class="choice-label">Banquets</label>
+		<input id="filterPatio" type="checkbox" name="PATIO" value="1">
+		<label for="filterPatio" class="choice-label">Patio</label>
+	  </div>
+	  <input type="submit" id="filterSubmit" class="btn" value="Apply Filter" onclick=" $('printTEXT').style.display = 'inline'; return false;">
+	</div>
+	<div class="filter-select">
+	  <select id="filterStates" onchange="search_by_state();">
+		<!-- TODO: Populate with list of all TCF location states-->
+		<option value="">List By State</option>
+	  </select>
+	</div>
+	</fieldset> 
+	</form>
+
+
+
+    
+      <!-- TODO: Mobile does not get Coming Soon/All Locations links here - it's in the search filter-->
+      <ul class="location-sidebar-bottom">
+        <!-- TODO: These links will populate search results-->
+       
+        
+        <li class="selected" id="nearbyTAB" style="text-align:center;">
+          <a href="javascript:void(0);" onclick="window.location.reload();">NEARBY</a>
+        </li>
+        
+         <li id="comingsoonTAB" style="border-left:1px solid #FFFFFF; text-align:center;">
+          <!-- TODO: Coming Soon will populate search results, but each li will have the class '.no-page' to indicate it can't be clicked-->
+          <a href="javascript:void(0);" onclick="show_comingsoon();">Coming Soon</a>
+        </li>
+        
+        <!-- <li>
+          <a href="javascript:void(0);" onclick="show_all_locations();">All Locations</a>
+        </li> -->
+        
+      </ul>
+      
+      <div id="panel" class="location-sidebar-wrapper">
+      </div>
+      
+      
+	 </div><!-- end location-sidebar -->
+
+    <!-- jQuery included inline for Where2GetIt-->
+
+
+<div id="footer">
+	<script type="text/javascript">
+		var d = new Date()
+		document.write("<a href='http://www.brandify.com' target='_new'>Mapping Locator</a> Powered by Brandify ")
+		document.write("Copyright &copy; ")
+		document.write(d.getFullYear())
+		document.write(", All Rights Reserved.")
+	</script>
+</div>
+<!-- end footer -->
+
+<div id="navteqfooter">
+	<script type="text/javascript">
+		var d = new Date()
+		document.write(" <img src=/w2gi/images/logo_navteq_large.gif> ")
+		document.write(" &copy; Copyright ")
+		document.write(d.getFullYear())
+		document.write(" NAVTEQ Corp. ")
+	</script>
+	<a href="http://www.where2getit.com/terms/terms.html" onClick="window.open(this.href,'_blank','width=988,height=600,scrollbars=yes,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes');return false;">Use Subject to and Conditions</a>
+</div>
+<!-- end navteqfooter -->
+
+
+</body>
+</html>
+<!-- END : /modules/locations-content.html-->

@@ -1,0 +1,84 @@
+/* Organic Section */
+#organicCont { background:#decdaf url(../../images/organicBg.jpg) no-repeat left bottom; padding:28px 38px 28px 48px; text-align:left; font: normal 13px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:16px; color:#45110a; float:left; width:938px }
+#organicCont .orgHeading { background:url(../../images/orgHeadingBg.gif) no-repeat left 25px; text-align:left; margin:0; padding:20px 0 22px 40px; font-size:30px; color:#45110a }
+#organicCont .leftCol { float:left; width:556px; }
+#organicCont .rightCol { float:right; width:340px; }
+#organicCont .orgHeaderImg { margin:0 0 0 3px; float:left; display:inline }
+#organicCont .locatorMap {border: 3px solid #723f2A; margin:0 0 12px 1px; float:left; display:inline }
+#organicCont .subheading { margin:31px 0 12px; font: bold 18px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:18px; color:#45110a; }
+#organicCont .rightCol  .subheading { margin:5px 0 15px 0; font: bold 16px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:16px; color:#45110a; }
+#organicCont p { font: normal 15px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:19px; color:#45110a; }
+#organicCont a { color:#002cff; text-decoration:underline }
+#organicCont .communityIcons { text-align:center; padding:0 138px; float:left }
+#organicCont .communityIcons a { display:block; height:74px; float:left; text-indent:-5000px }
+#organicCont .communityIcons a.mailto { display:inline; background:url(../../images/mailIcon.png) no-repeat left center; width:73px }
+#organicCont .communityIcons a.facebookLink { display:inline; background:url(../../images/facebookIcon.png) no-repeat left center; width:73px }
+#organicCont .communityIcons a.twitterLink { display:inline; background:url(../../images/twitterIcon.png) no-repeat left center; width:73px }
+#organicCont .rightCol p { font: normal 13px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:16px; color:#45110a; }
+#organicCont .rightCol strong { font-weight:bold; color:#45110a; }
+#organicCont .orgSep { background:transparent url(../../images/horizontal_five_colors.gif) no-repeat scroll left top; border-top:1px solid #260602; display:inline; float:left; height:4px; margin:10px 0 15px; width:340px; overflow:hidden}
+.addressBlock, .dinningBlock,.citiesBlock, .zipBlock { float:left; width:340px;  }
+.addressBlock h4 { font: normal 30px "Trebuchet MS", Arial, Helvitica, sans-serif; line-height:30px; color:#45110a;  }
+.dinningBlock ul{ list-style:none; padding: 0; margin:10px 0 }
+.dinningBlock ul li{ list-style:none; padding: 0; margin:10px 0 }
+.addressBlock ul{ list-style:none; padding: 0; margin:10px 0 }
+.addressBlock ul li{ list-style:none; padding: 0; margin:0 0 5px; width:250px; float:left}
+.addressBlock ul li .dates{ float:left }
+.addressBlock ul li .timeStamp{ float:right }
+input.locationSearch {
+		width:194px;  
+		-moz-border-radius-bottomleft:5px !important;
+		-moz-border-radius-bottomright:5px !important;
+		-moz-border-radius-topleft:5px !important;
+		-moz-border-radius-topright:5px !important;
+		-x-system-font:none;
+		background:transparent url(../../images/INPUT_search.gif) no-repeat scroll left center !important;
+		border-style:none;
+		color:#713F29;
+		font-family:"Times New Roman",Times,serif;
+		font-size:12px;
+		font-size-adjust:none;
+		font-stretch:normal;
+		font-style:normal;
+		font-variant:normal;
+		font-weight:normal;
+		line-height:normal;
+		padding:3px 8px 4px;
+	}
+#contentArea {
+		margin: 0;
+		padding: 80px 0 30px 0;
+		width: 1024px;
+		overflow:hidden; 
+		background-color:#210101;
+	}
+#rightContent {
+		width:800px;
+		float:right;
+		background-color:#F2ECDF;
+		padding:20px 10px 10px 20px; 
+	}
+#leftHeader {
+		font-size:23px;
+		padding-bottom:5px;
+		padding-left:20px;
+		padding-top:20px;
+		text-align:left; 
+	}
+.floatLeft{
+		margin-top: 2px;
+	}
+.contenttitle {
+		color:#5A1805;
+		font-size:23px;
+		font-family: "Times New Roman",Time,serif;
+		font-weight: normal;
+	}
+input {
+		-moz-border-radius-bottomleft:0px !important;
+		-moz-border-radius-bottomright:0px !important;
+		-moz-border-radius-topleft:0px !important;
+		-moz-border-radius-topright:0px !important;
+		background: #FFFFFF !important;
+	}
+#locList{ padding-left: 45px; }

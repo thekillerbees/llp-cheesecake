@@ -1,0 +1,98 @@
+doctype html
+!= "<!--[if lt IE 7]>      <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->"
+!= "<!--[if IE 7]>         <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\"> <![endif]-->"
+!= "<!--[if IE 8]>         <html class=\"no-js lt-ie10 lt-ie9\"> <![endif]-->"
+!= "<!--[if IE 9]>         <html class=\"no-js lt-ie10\"> <![endif]-->"
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	include ../global/head
+	// TODO: we need to specify a platform class on the body
+	body(class="is-#{platform}")
+		include ../global/header
+		include ../global/menu
+		.outer-wrap
+			// START : WRAPPER
+			.wrapper
+				- contentHeaderTitle = "404 - Page Not Found"
+				include ../modules/content-header
+				.container
+					// START : MAIN CONTAINER
+					#mainContainer.main-container
+						// START : PAGE CONTENT
+						#mainContent.main-content
+							// TODO: Everything inside "#mainContent" will be repopulated by Backbone
+							// TODO: 404 page gets .narrow-column class for spanning full page
+							.content-column.narrow-column
+								// TODO: .keepcase preserves original capitalization rather than forcing upper
+								h2.content-heading.keepcase Sorry, the page you requested cannot be found.
+								ul
+									li
+										|We have redesigned our website and many URLs have changed. Please visit our 
+										a(href="#") Home Page 
+										|to access more information about The Cheesecake Factory.
+									li.
+										If you typed the URL, please check the spelling.
+									li
+										|If you suspect a site problem, kindly 
+										a(href="#") report the problem
+										|. We appreciate your support.
+
+								// TODO: Below is a sandbox for checkboxes/radio buttons
+								style.
+									label { display: block; }
+									form { padding: 10px; float: left; width: 50%; }
+									.form-dark { background-color: #d6ba8c; }
+								form
+									input(id="inp1",type="checkbox")
+									label.choice-label(for="inp1") Unchecked
+
+									input(id="inp2",type="checkbox",checked)
+									label.choice-label(for="inp2") Checked
+
+									input(id="inp3",type="checkbox",disabled)
+									label.choice-label(for="inp3") Disabled
+
+									input(id="inp4",type="checkbox",disabled,checked)
+									label.choice-label(for="inp4") Disabled check
+
+									input(id="inp5",name="hi",type="radio")
+									label.choice-label(for="inp5") Unchecked
+
+									input(id="inp6",name="hi",type="radio",checked)
+									label.choice-label(for="inp6") Checked
+
+									input(id="inp7",type="radio",disabled)
+									label.choice-label(for="inp7") Disabled
+
+									input(id="inp8",type="radio",disabled,checked)
+									label.choice-label(for="inp8") Disabled check
+								form.form-dark
+									input(id="ind1",type="checkbox")
+									label.choice-label(for="ind1") Unchecked
+
+									input(id="ind2",type="checkbox",checked)
+									label.choice-label(for="ind2") Checked
+
+									input(id="ind3",type="checkbox",disabled)
+									label.choice-label(for="ind3") Disabled
+
+									input(id="ind4",type="checkbox",disabled,checked)
+									label.choice-label(for="ind4") Disabled check
+
+									input(id="ind5",name="hi",type="radio")
+									label.choice-label(for="ind5") Unchecked
+
+									input(id="ind6",name="hi",type="radio",checked)
+									label.choice-label(for="ind6") Checked
+
+									input(id="ind7",type="radio",disabled)
+									label.choice-label(for="ind7") Disabled
+
+									input(id="ind8",type="radio",disabled,checked)
+									label.choice-label(for="ind8") Disabled check
+
+						// END : PAGE CONTENT
+					// END : MAIN CONTAINER
+			include ../global/footer
+			// END : WRAPPER

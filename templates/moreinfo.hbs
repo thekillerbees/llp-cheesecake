@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>{{{account}}} Restaurant Location</title>
+    </head>
+<body>
+<br />
+
+    <table border=0>
+    <tr>
+	<table border=0>
+		<tr>
+        		<td><img
+                src="http://direct.where2getit.com/liteapi/map.fcgi?account=cheesecake&locator=dealer&zoomlevel={{{zoomlevel}}}&height=130&width=130&latitude={{{latitude}}}&longitude={{{longitude}}}" /></td>
+    		</tr>
+		<tr>
+			<td><a accesskey="1" href="{{{host}}}/cheesecake/moreinfo?appkey=4EEBBA66-6D70-11DE-BC28-64B83B999D57&template=moreinfo&uid={{{uid}}}&zoomlevel={{{zoomin}}}">Zoom -</a>&nbsp;&nbsp;
+			<a accesskey="2" href="{{{host}}}/cheesecake/moreinfo?appkey=4EEBBA66-6D70-11DE-BC28-64B83B999D57&template=moreinfo&uid={{{uid}}}&zoomlevel={{{zoomout}}}">Zoom +</a></td>
+		</tr>
+		<tr>
+			<td>{{{name}}}</td>
+    		<tr>
+        		<td>{{{address}}}</td>
+    		</tr>
+    		<tr>
+			<td>{{{city}}}, {{{state}}}&nbsp;&nbsp;{{{postalcode}}}
+			</td>
+		</tr>
+		<tr>
+			<td><a href="+tel">{{{phone}}}</a></td>
+		</tr>
+		<tr>
+			<td>{{{hours}}}</td>
+		</tr>
+		
+	</table>
+    </tr>
+    </table>
+</body>
+</html>
+

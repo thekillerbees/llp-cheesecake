@@ -1,0 +1,81 @@
+/* ==========================================================================
+    CONTENT NAVIGATION
+   ========================================================================== */
+
+.content-navigation {
+	@if ($platform != mobile) {
+		position: absolute;
+		padding: 60px 40px 0 0;
+		text-align: right;
+		width: 300px;
+		top: 0;
+	} @else {
+		border-top: 1px solid #f6ede0;
+		height: 42px;
+		overflow: hidden;
+		z-index: 500;
+		&.navigation-anchors-only {
+			display: none;
+		}
+	}
+	ul {
+		li {
+			@if ($platform != mobile) {
+				margin: 0 0 20px;
+			} @else {
+				background-color: #fdf7ee;
+				border-bottom: 1px solid #f3e7d5;
+				&:first-child {
+					background-color: $bgSiteColor;
+					border-color: $borderColor;
+					a {
+						color: $linkActiveColor;
+						font-weight: $fontWeightSemibold;
+						position: relative;
+						&:before {
+							@extend .icon-arrow-down;
+							color: $linkColor;
+							font-size: 15px;
+							right: 15px;
+							position: absolute;
+							top: 13px;
+						}
+					}
+				}
+				a {
+					display: block;
+					padding: 12px 15px;
+				}
+			}
+
+			a {
+				font: $fontWeightRegular 16px/16px $themeFont;
+				text-transform: uppercase;
+				&.active {
+					color: $linkActiveColor;
+					font-weight: $fontWeightSemibold;
+				}
+			}
+		}
+	}
+	.fixed-navigation & {
+		position: fixed;
+		@if ($platform != mobile) {
+			top: 60px;
+		} @else {
+			top: 50px;
+			width: 100%;
+		}
+	}
+	@if ($platform != mobile) {
+		.active & {
+			overflow: visible;
+		}
+	}
+}
+	
+@if ($platform == mobile) {
+	.fixed-navigation .content-column {
+		padding-top: 72px;
+	}
+}

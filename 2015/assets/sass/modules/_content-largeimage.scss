@@ -1,0 +1,19 @@
+/* ==========================================================================
+    CONTENT - LARGE IMAGE
+   ========================================================================== */
+
+.content-largeimage {
+	margin: 40px 0 0;
+	&:first-child {
+		margin: 0;
+	}
+	img {
+		width: 100%;
+	}
+}
+.content-largeimage-caption {
+	border-bottom: 1px solid $borderColorDark;
+	color: $tcfPurple;
+	font: $fontWeightRegular 14px/20px $themeFont;
+	padding: 20px 0;
+}

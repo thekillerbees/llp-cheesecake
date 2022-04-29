@@ -1,0 +1,218 @@
+/* ==========================================================================
+		NAVIGATION
+		========================================================================== */
+
+/* Start : Main Nav */
+.navigation {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+	top: 0px;
+	@include user-select(none);
+	@if ($platform != mobile) {
+		background: $navigationBgColor url('/assets/images/global/right-side-nav.jpg') no-repeat 0 0;
+		display: none;
+		font: $fontWeightRegular 16px/20px $themeFont;
+		padding: 55px 0 0;
+		right: 0px;
+		width: 250px;
+		z-index: 1;
+		@include phone {
+			display: block !important;
+			right: -250px;
+			opacity: 0.98;
+			z-index: 50000;
+			@include transition(transform 0.5s, box-shadow 0.5s);
+			.show-nav & {
+				@include transform(translateX(-250px));
+				box-shadow: rgba(0, 0, 0, 0.15) -2px 0 3px 2px;
+			}
+		}
+		.lt-ie9 & {
+			display: block;
+			right: -250px;
+			z-index: 50000;
+		}
+		.lt-ie9 .show-nav & {
+			right: 0;
+		}
+	} @else {
+		font: $fontWeightRegular 16px/20px $themeFont;
+		min-width: $phoneMin;
+		right: -100%;
+		width: 100%;
+		z-index: 50000;
+		@include transition(transform 0.5s);
+		@include linear-gradient(#fefbf7 0%, #faf4ec 100%);
+		.show-nav & {
+			@include transform(translateX(-100%));
+		}
+	}
+}
+@if ($platform != mobile) {
+	$navigationPadding: 20px;
+} @else {
+	$navigationPadding: 15px;
+}
+.navigation-close {
+	color: $navigationColor;
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	position: absolute;
+	top: 20px;
+	right: $navigationPadding;
+	&:before {
+		@extend .icon-exit;
+		font-size: 12px;
+		height: 12px;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 12px;
+	}
+	&:hover,
+	&:active {
+		color: $linkActiveColor;
+	}
+}
+.navigation-social {
+	border-bottom: 1px solid #ead6c5;
+	@if ($platform != mobile) {
+		height: 51px;
+		padding: 0 20px;
+		width: 250px;
+	} @else { 
+		clear: both;
+		height: 62px;
+		margin: 0 15px;
+		padding: 15px 0 16px;
+		text-align: center;
+	}
+	a {
+		position: relative;
+		text-indent: -9999px;
+		width: 30px;
+		height: 30px;
+		@if ($platform != mobile) {
+			display: block;
+			float: left;
+			margin: 0 0 0 15px;
+		} @else {
+			display: inline-block;
+			margin: 0 0 0 29px;
+		}
+		&:before {
+			position: absolute;
+			font-size: 30px;
+			text-indent: 0;
+			top: 0;
+			left: 0;
+		}
+	}
+	li {
+		@if ($platform == mobile) {
+			display: inline-block;
+		}
+		&:first-child {
+			a {
+				margin-left: 0;
+			}
+		}
+	}
+}
+.navigation-list {
+	> li {
+		height: 50px;
+		overflow: hidden;
+		&.active {
+			.navigation-list-name {
+				background-color: #f1e2d2;
+				background-color: rgba($borderColorDark, .25);
+			}
+		}
+	}
+	a {
+		color: $navigationColor;
+		&:hover,
+		&:active {
+			color: $linkActiveColor;
+		}
+	}
+}
+.navigation-list-name {
+	color: $navigationColor;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	&.accordion-item-title {
+		&:before {
+			@extend .icon-plus;
+		}
+		.active & {
+			&:before {
+				@extend .icon-minus;
+			}
+		}
+	}
+	&.navigation-menu-item {
+		a {
+			color: $listCopyColor;
+		}
+		&:before {
+			color: $listCopyColor;
+			font-size: 20px;
+			top: 15px;
+		}
+	}
+	&:before {
+		float: right;
+		position: relative;
+		right: $navigationPadding;
+		@if ($platform != mobile) {
+			font-size: 12px;
+			top: 19px;
+		} @else {
+			font-size: 15px;
+			top: 17px;
+		}
+	}
+	&:after {
+		content: ".";
+		display: inline-block;
+		line-height: 50px;
+		text-indent: -9999px;
+	}
+	a {
+		display: block;
+		height: 100%;
+		&:after {
+			content: ".";
+			display: inline-block;
+			line-height: 50px;
+			text-indent: -9999px;
+		}
+	}
+	span {
+		display: inline-block;
+		padding: 0 0 0 $navigationPadding;
+		vertical-align: middle;
+		width: 180px;
+	}
+	&:hover {
+		background-color: #f1e2d2;
+		background-color: rgba($borderColorDark, .25);
+	}
+}
+.navigation-links {
+	padding: 10px 0;
+	li {
+		@if ($platform != mobile) {
+			padding: 4px $navigationPadding;
+		} @else {
+			padding: 8px $navigationPadding;
+		}
+	}
+}

@@ -1,0 +1,152 @@
+<!--***
+
+Local Landing Pages - Icon Bar Include
+
+This file is meant to be used as a starting template only, branding and final
+design structures need to be hand coded in.
+
+There are instructional comments placed throughout the template
+(such as this one) which are easily designated by a triple asterix(***)
+at the start and at the end of the comment code (see this particular comment
+block as an example).  Once the instructions in the comment have been
+completed as they pertain to the Local Pages you are working on please
+delete the instructional comment afterwards.
+
+JW 12/23/2009 ***-->
+                                                <div id="icon_bar" style="float:right">
+                                                    <!-- Print Page -->
+                                                    <div  id="print_page" class="util_links" style="float:left;padding-right:5px">
+                                                        <script language="javascript" type="text/javascript">
+                                                            var NS = (navigator.appName == "Netscape");
+                                                            var VERSION = parseInt(navigator.appVersion);
+                                                            if (VERSION > 3) {
+                                                                document.write('<a linktrack="Print Page" href="javascript:void(0);" onclick="printit();"><img alt="Print" src="http://static.where2getit.com/w2gi/w2gi/images/iconbar/print_icon.gif" style="display:inline" /> Print</a>');
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                    <!-- Email Page -->
+                                                    <div id="email_page" class="util_links" style="float:left;padding-right:5px">
+                                                        <script language="javascript" type="text/javascript">
+                                                            document.write('<a linktrack="Email Page" id="page_email" href="mailto:?subject=beefobradys Locations&amp;body=' + window.location + '"><img alt="Email" src="http://static.where2getit.com/w2gi/w2gi/images/iconbar/email_icon.gif" style="display:inline" /> Email </a>');
+                                                        </script>
+                                                    </div>
+                                                    <!-- Link Page -->
+                                                    <div id="link_page" class="util_links" style="float:left;padding-right:5px">
+                                                        <script language="javascript" type="text/javascript">
+                                                            document.write('<a linktrack="Link to Page" id="page_link" href="javascript:linkPage(\'beefobradys Locations\', \'' + window.location + '\')"><img alt="Link to this page" src="http://static.where2getit.com/w2gi/w2gi/images/iconbar/link_icon.gif" style="display:inline" /> Link to this page </a>');
+                                                        </script>
+                                                    </div>
+                                                    <div style="clear:both"></div>
+                                                    <!-- Share Page -->
+                                                    <div id="share_page" class="util_links" style="float:right;">
+                                                        <div id="share_cont">
+                                                            <a href="#" onclick="return false;"><div id="share_toggle"><img src="http://static.where2getit.com/w2gi/w2gi/images/social/share_button.gif" alt="click to share" linktrack="Share Page"/></div></a>
+                                                            <div id="social" style="display:none;">
+                                                                <div>
+                                                                    <ul class="share_left">
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/delicious.png" alt="ADD TO DEL.ICIO.US" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://del.icio.us/post?url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Delicious' target='_new' >Del.icio.us</a>")
+                                                                            </script>
+                                                                       </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/digg.png" alt="ADD TO DIGG" />
+                                                                                <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://digg.com/submit?phase=2&amp;url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Digg' target='_new' >Digg</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/furl.gif" alt="ADD TO FURL" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://www.furl.net/store?s=f&amp;to=0&amp;u=" + document.location.href + "&amp;ti=" + document.title + "' linktrack='Bookmark Furl' target='_new' >Furl</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/newsvine.png" alt="ADD TO NEWSVINE" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                               document.write("<a href='http://www.newsvine.com/_tools/seed&amp;save?u=" + document.location.href + "&amp;T=" + document.title + "' linktrack='Bookmark Newsvine' target='_new' >Newsvine</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/netscape.png" alt="ADD TO NETSCAPE" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://www.netscape.com/submit/?U=" + document.location.href + "&amp;T=" + document.title + "' linktrack='Bookmark Netscape' target='_new' >Netscape</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/reddit.gif" alt="ADD TO REDDIT" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://reddit.com/submit?url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Reddit' target='_new' >Reddit</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                       <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/stumble1.gif" alt="ADD TO STUMBLEUPON" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://www.stumbleupon.com/submit?url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Stumbleupon' target='_new' >StumbleUpon</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/technorati.png" alt="ADD TO TECHNORATI FAVORITES" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://technorati.com/faves?add=" + document.location.href + "' linktrack='Bookmark Technorati' target='_new' >Technorati</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/squidoo.png" alt="ADD TO SQUIDOO" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://www.squidoo.com/lensmaster/bookmark?" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Squidoo' target='_new' >Squidoo</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/live.png" alt="ADD TO WINDOWS LIVE" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='https://favorites.live.com/quickadd.aspx?marklet=1&amp;mkt=en-us&amp;url=" + document.location.href + "&amp;title=" + document.title + "&amp;top=1' linktrack='Bookmark Windows Live' target='_new' >Windows Live</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/ask.png" alt="ADD TO ASK" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://myjeeves.ask.com/mysearch/BookmarkIt?v=1.2&amp;t=webpages&amp;url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Ask' target='_new' >Ask</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/google.png" alt="ADD TO GOOGLE" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Google' target='_new' >Google</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                        <li>
+                                                                            <img src="http://static.where2getit.com/w2gi/w2gi/images/social/twitter.gif" alt="ADD TO TWITTER" />
+                                                                            <script language="javascript" type="text/javascript">
+                                                                                document.write("<a href='http://twitthis.com/twit?url=" + document.location.href + "&amp;title=" + document.title + "' linktrack='Bookmark Twitter' target='_new' >Twitter</a>")
+                                                                            </script>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <script language="javascript" type="text/javascript">
+                                                                        $('share_toggle').observe('click', function(e){
+                                                                            var display = $('social').getStyle('display');
+
+                                                                            if(display == 'none'){
+                                                                                //$('').show();
+                                                                                Effect.SlideDown('social', { duration: 1.0 });
+
+                                                                                //$('share_toggle').innerHTML = 'share [-]';
+                                                                            }else{
+                                                                                //$('social').hide();
+                                                                                Effect.SlideUp('social', { duration: 1.0 });
+                                                                                //$('share_toggle').innerHTML = 'share [+]';
+                                                                            }
+
+                                                                        });
+
+                                                                        ace.click.elementObserve('social', ['linktrack']);
+                                                                    </script>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div style="clear:both"></div>
+                                                </div>
+                                                <div style="clear:both"></div>
+                                                <!-- End Utilities -->

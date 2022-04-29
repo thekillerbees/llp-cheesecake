@@ -1,0 +1,511 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 62.50%; /* Resets 1em to 10px */
+	color: #F6D39A;
+	}
+	body.font-small		{ font-size: 65%; }
+	body.font-medium	{ font-size: 75%; }  
+	body.font-large		{ font-size: 85%; }
+  
+/* Headings
+***************************************************************************** */
+h1,h2,h3,h4,h5,h6 {
+	color: #F6D39A;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	line-height: 1.2em;
+}
+	
+h1 { font-size: 2.7em; }
+h2 { font-size: 2.3em; }
+h3 { font-size: 1.9em; }
+h4 { font-size: 1.6em; }
+	
+h5 { 
+	font-size: 1.3em;
+	font-weight: bold; }
+	
+h6 { 
+	font-size: 1.2em;
+	font-weight: bold; }
+
+
+/* General elements
+***************************************************************************** */
+p {
+	margin: 0.5em 0 1em 0;
+	line-height: 1.2em;
+}
+	p.last { margin-bottom: 0!important; }
+	p img {
+		/* margin: 0 15px 10px 0; */
+		padding: 0; }
+
+div.hr {
+	background: url(http://hosted.where2getit.com/cheesecake/images/hr.gif) repeat-x scroll left top;
+	height:1px;
+	margin-top:18px;
+	margin-bottom: 35px;
+}div.hr hr {display: none}
+
+div.hrBrown {
+	border:none;
+	border-top:#3F2114 1px solid;
+	border-bottom:#000 1px solid;
+	color:#3F2114;
+	background-color:#3F2114;
+	width:100%;
+	margin:0;
+	padding:0;
+}div.hrBrown hr {display:none;}
+	
+div.hrGray {
+	border:none;
+	border-top:#ccc 1px solid;
+	border-bottom:#999 1px solid;
+	color:#ccc;
+	background-color:#ccc;
+	width:100%;
+	margin:0;
+	padding:0;
+}div.hrGray hr {display: none}
+
+strong { 
+	color:#F6D39A;
+	font-weight: bold;
+}
+	
+em { font-style: italic; }
+
+.small { font-size: 1em;}
+.medium { font-size: 1.2em;}
+.large { font-size: 1.4em; }
+
+.fontsize14 {font-size:1.4em;}
+.fontsize15 {font-size:1.5em;}
+.fontsize24 {font-size:2.4em;}
+.fontsize26 {font-size:2.6em;}
+
+.font_TrebuchetMS {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif}
+
+.center { text-align: center;}
+
+.hidden {	display: none; }
+
+.underlined { border-bottom: 1px solid #cdd; }
+
+.color_5A1805 {color:#5A1805}
+.color_F6D39A {color:#F6D39A}
+
+.width_80percent {width:80%}
+
+.padding-top7 {padding-top:7px;}
+.padding-top10 {padding-top:10px;}
+.padding-bottom5 {padding-bottom:5px;}
+.padding-bottom10 {padding-bottom:10px;}
+
+.margin-top10 {margin-top:10px;}
+
+/* INPUT General elements
+***************************************************************************** */
+
+/* input {
+	padding: 3px 8px;
+	border: 1px solid #A88E3D;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #efe4c8;
+} */
+input.locationSearch {
+	color: #713F29;
+	background: url(http://hosted.where2getit.com/cheesecake/images/INPUT_search.gif) no-repeat scroll left center;
+	width: 180px;
+	border-style: none;
+	padding: 3px 8px 4px 8px;
+	font: 12px "Times New Roman", Times, serif;
+}
+
+input.locationSearch_short {
+	color: #713F29;
+	background: url(http://hosted.where2getit.com/cheesecake/images/INPUT_search_short.gif) no-repeat scroll left center;
+	border-style: none;
+	padding: 4px 8px 4px 8px;
+	font: 12px "Times New Roman", Times, serif;
+}
+
+
+input.button {
+	float: right;
+	padding: 4px 8px;
+	border: 1px solid #A88E3D;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #efe4c8;
+	color: #efe4c8;
+}
+input.button:hover {
+	background: #be261e;
+	color: #fff;
+}
+input.button:active {
+	background: #333;
+	color: #fff;
+}
+
+label {
+	padding: 0 10px;
+	font-size: 0.8em;
+	color: #666;
+}
+
+textarea {
+	padding: 9px;
+	border: 1px solid #cdd;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #f9ffff;
+}
+
+/* Links
+***************************************************************************** */
+
+/*
+a {	text-decoration: none; }
+	a:link    { color: #fff; }
+	a:visited { color: #fff; }
+	a:hover   { color: #F6D39A; }
+	a:active  { color: #fff; }   */
+
+a img {	border: none;	}
+
+.secondaryLink  a {	text-decoration: none; font-weight:bold; }
+	.secondaryLink  a:link    { color: #F6D39A; }
+	.secondaryLink  a:visited   { color: #F6D39A; }
+	.secondaryLink  a:hover  { color: #fff; }
+	.secondaryLink  a:active { color: #F6D39A; }
+
+ul.MenuBarHorizontal li.siteTools a.MenuBarItemSubmenu {	text-decoration: none; font-weight:bold; font-size:1.5em !important; padding-left:0 !important; }
+	ul.MenuBarHorizontal li.siteTools a.MenuBarItemSubmenu:link    { color: #F6D39A !important; }
+	ul.MenuBarHorizontal li.siteTools a.MenuBarItemSubmenu:visited   { color: #F6D39A !important; }
+	ul.MenuBarHorizontal li.siteTools a.MenuBarItemSubmenu:hover  { color: #fff !important; }
+	ul.MenuBarHorizontal li.siteTools a.MenuBarItemSubmenu:active { color: #F6D39A !important; }
+	
+.footerContent a {	text-decoration: none; }
+	.footerContent a:link    { color: #F6D39A; }
+	.footerContent a:visited   { color: #F6D39A; }
+	.footerContent a:hover  { color: #fff; }
+	.footerContent a:active { color: #F6D39A; }
+
+/*Left Navs */
+#leftNav_levelOne .alpha_content ul li a {text-decoration: none; color: #EFE4C8;}
+	#leftNav_levelOne .alpha_content ul li a:link    { color: #F6D39A; }
+	#leftNav_levelOne .alpha_content ul li a:visited   { color: #F6D39A; }
+	#leftNav_levelOne .alpha_content ul li a:hover  { color: #F2F2F2; font-weight:bold;}
+	#leftNav_levelOne .alpha_content ul li a:active { color: #F6D39A; }
+	
+#leftNav_levelTwo .alpha_content ul li a {	text-decoration: none;color: #EFE4C8;}
+	#leftNav_levelTwo .alpha_content ul li a:link    { color: #F6D39A; }
+	#leftNav_levelTwo .alpha_content ul li a:visited   { color: #F6D39A; }
+	#leftNav_levelTwo .alpha_content ul li a:hover  { color: #F2F2F2; font-weight:bold;}
+	#leftNav_levelTwo .alpha_content ul li a:active { color: #F6D39A; }
+
+
+/* Left Nav Level One Selected Link Style*/
+#leftNav_levelOne .alpha_content ul li.selected a {
+		color: #F2F2F2 !important;
+}
+	/*#leftNav_levelOne .alpha_content ul li.selected a:hover  { 
+			border-top:0px solid #260602;
+			border-bottom:0px solid #260602;
+	}*/
+#leftNav_levelOne .alpha_content ul li.selectedHover a {
+		color: #F2F2F2 !important;
+}
+
+#leftNav_levelTwo .alpha_content ul li.selected a {
+		color: #F2F2F2 !important;
+}
+/*Recipe Menu */
+.recipe_nutritionInfo a {	text-decoration: none; }
+	.recipe_nutritionInfo a:link    { color: #666; }
+	.recipe_nutritionInfo a:visited   { color: #666; }
+	.recipe_nutritionInfo a:hover  { color: #5A1805; }
+	.recipe_nutritionInfo a:active { color: #666; }
+	
+
+/*.list_yellowArrow link */
+.list_yellowArrow a { color: #5A1805 !important; text-decoration: underline;}
+	.list_yellowArrow a:link    { text-decoration: underline; }
+	.list_yellowArrow a:visited   { text-decoration: underline; }
+	.list_yellowArrow a:hover  { text-decoration: none; }
+	.list_yellowArrow a:active { text-decoration: underline; }
+
+/* Site Map Link Style*/
+#sitemap ul li a:link {color: #45110A;text-decoration:none}
+#sitemap ul li a:visited {text-decoration:none}
+#sitemap ul li a:hover { text-decoration: underline; }
+#sitemap ul li a:active  {text-decoration:none}
+	
+	ul.ul_levelOne li a { color:#260602 !important; }
+		
+	/*ul.ul_levelTwo_1 li a, 
+	ul.ul_levelTwo_2 li a,
+	ul.ul_levelThree_1 li a,  
+	ul.ul_levelThree_2 li a,  
+	ul.ul_levelFour li a {color: #45110A !important;}*/
+	
+/* Locations */	
+.leftNav_Locations a {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #EFE4C8;
+}
+
+
+
+
+/* List Style
+***************************************************************************** */
+.footerContent ul { margin:0; padding:0;}
+.footerContent ul li {
+	display: inline;
+	padding-right: 15px;
+	list-style-type: none;
+	vertical-align:top;
+}
+
+/* Left Navs */
+#leftNav_levelOne .alpha_content ul, #leftNav_levelTwo .alpha_content ul {
+	list-style-type: none;
+	margin:0;
+	border:0;
+}
+
+#leftNav_levelOne .alpha_content ul li { padding:  3px 0 3px 15px;}
+#leftNav_levelTwo .alpha_content ul li { padding: 5px 0 0 10px;}
+
+
+/* Left Nav Selected Style*/
+#leftNav_levelOne .alpha_content ul li.selected {
+	color: #F2F2F2;
+	font-size:1.2em;
+	font-weight:bold;
+	background: transparent url(http://hosted.where2getit.com/cheesecake/images/LEFTNAV_selectBGimg.png) no-repeat scroll left top;
+	border-top:1px solid #260602;
+	border-bottom:1px solid #260602;
+	width:141px; 
+	overflow:hidden;
+	cursor:pointer;
+}
+	#leftNav_levelOne .alpha_content ul li.selectedHover {
+		color: #F2F2F2;
+		font-weight:bold;
+		background: transparent url(http://hosted.where2getit.com/cheesecake/images/LEFTNAV_selectBGimg.png) no-repeat scroll left top;
+		border-top:1px solid #260602;
+		border-bottom:1px solid #260602;
+		width:141px; 
+		overflow:hidden;
+		cursor:pointer;
+	}
+
+#leftNav_levelTwo .alpha_content ul li.selected {
+	font-weight:bold;
+	background: transparent url(http://hosted.where2getit.com/cheesecake/images/LEFTNAV_selectBGimg.png) no-repeat scroll left top;
+	border-top:1px solid #2F1C0F;
+	border-bottom:1px solid #2F1C0F;
+	width:202px; 
+	overflow:hidden;
+	cursor:pointer;
+}
+
+ul.list_yellowArrow  {
+	margin: 0px;
+	padding: 0 0 0 16px;
+	display:block;
+	vertical-align:text-top;
+	list-style-position: outside;
+	list-style-image: url(http://hosted.where2getit.com/cheesecake/images/LIST_yellowArrow.gif);
+}
+ul.list_yellowArrow li {
+	width: 600px;
+	text-align:left;
+	margin:20px auto;
+}
+
+
+/*Site Map List Style */
+#sitemap ul {
+	font: normal "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #45110A;
+	text-align: left;
+	vertical-align: text-top;
+	padding: 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+/********* LEVEL 1 *********/
+ul.ul_levelOne {margin: 0 15px 20px 0;float:left; width:15%;}
+	ul.ul_levelOne li { font-weight:bold; text-transform:uppercase;}
+	/********* LEVEL 2 *********/
+	/* ul.ul_levelTwo_1 li applies to 
+		EXPERIENCE, MENU, LOCATIONS, SHOP
+		Level 2 list style*/	
+		ul.ul_levelTwo_1 li {text-transform: capitalize; padding-top:10px}
+	
+	/* ul.ul_levelTwo_2 li applies to   
+		ABOUT US, CAREERS 
+		Level 2 list style*/
+		ul.ul_levelTwo_2 li {text-transform: capitalize; padding-top:0px; padding-bottom:10px; line-height:12px;}
+		
+		
+	/********* LEVEL 3 *********/	
+	/* ul.ul_levelThree_1 li applies to 
+		EXPERIENCE & MENU 
+		Level 3 list style*/	
+		ul.ul_levelThree_1 li { text-transform: capitalize; font-weight:normal;  padding-top:10px; padding-left:10px;}
+	
+	/* ul.ul_levelThree_2 li applies to 
+		SHOP, & ABOUT US 
+		Level 3 list style*/	
+		ul.ul_levelThree_2 li { text-transform: capitalize; font-weight:normal; line-height:12px;  padding-top:1px; padding-left:10px; padding-bottom:10px;}
+
+	/* ul.ul_levelThree_Locations li applies to 
+		LOCATIONS
+		Level 3 list style*/	
+		ul.ul_levelThree_Locations li { text-transform: capitalize; font-weight:normal; line-height:12px;  padding-top:0px; padding-left:10px; padding-bottom:6px;}
+
+
+	/********* LEVEL 4 *********/	
+	ul.ul_levelFour li { line-height:12px; text-transform: capitalize; font-size:0.9em; padding-top:0px; padding-bottom:6px; padding-left:20px; }
+
+	.lastUl {margin-right:0 !important;}
+
+/* Font Style
+***************************************************************************** */
+.footerContent {
+	margin-top: 6px;
+	height: 30px;
+	margin-left: 15px;
+	text-align: left;
+	vertical-align: middle;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height: 29px;
+	font-size: 1.2em;
+}
+.footerRight {
+	font-size:1.3em;
+	text-align:left;
+	position:relative;
+	top:-1px; 
+	right:0;
+}
+
+#leftNav_levelOne {
+	font: 1.3em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #EFE4C8;
+	text-align: left;
+}
+#leftNav_levelTwo {
+	font: 1.2em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #EFE4C8;
+	text-align: left;
+}
+
+
+/*Right Content Box Layout*/
+#rightContentBox {
+	color: #666666;
+	text-align:left;
+	font: 1.2em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+
+/*Recipe Menu Font Style*/
+#receiptMenu {
+	color: #666666;
+	text-align:left;
+	font: 1.2em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.recipe_title h1 {
+	color: #5A1805;
+	text-align: left;
+	padding-left: 21px;
+	line-height:0.9em;
+	padding-top:10px;
+	font-size: 2.1em;
+	padding-right: 5px;
+}
+.recipe_description { padding:5px 0}
+.recipe_substitutions h6 {color: #5A1805; text-align: left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; padding-top:8px;}
+.recipe_nutritionInfo {line-height:0.8em; margin-right:10px;}
+
+/*Site Map Font Style*/
+#sitemap {
+	font: 1.2em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* Sotore Locator Style (font, links)
+***************************************************************************** */
+/* Font Styles */
+#leftNav_Locations, .leftNav_Locations h4, #locationMap_top h4 {
+	font: "Times New Roman", Times, serif;
+	color: #FFF;
+	font-size:16px;
+}
+.leftNav_Locations .alpha_content ul li { padding:  3px 0 3px 0px !important; width:170px !important}
+
+#locator_search label {
+	font: 1.1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #EFE4C8;
+	height:15px;
+	padding:0 15px 0 3px;
+}
+
+#locationResults h2, #locationResults h3, #locationResults h4 {
+	font-family: "Times New Roman", Times, serif;
+	color: #713F29;
+	line-height:52px; vertical-align:middle;
+}
+	#locationResults h2 {font-size:36px;}
+	#locationResults h3 {font-size:18px; padding-left:4px; }
+	
+	#locationListing table {
+		font:1.1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+		color:#666
+	}
+	#locationListing table th {color:#260602;}
+	
+#locationInfo h1 { color:#260602; font-size:2.1em; padding-bottom:0; margin-bottom:0}
+#locationInfo p, #locationInfo table { color:#666; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+#locationInfo p strong { color:#C69B32; display:block;}
+#locationInfo p { line-height:1.05em; margin:0.5em 0 0.8em;}
+
+#directions_summary, #directions_summary h5 { color:#FFF; font-size:1.1em;}
+	#directions_summary h5 { font-weight:normal; padding-bottom:5px}
+	#directions_summary span {display:block;}
+
+/* Link Styles */
+#locationALL a {color: #F6D39A; text-decoration:none;}
+	#locationALL a:link    { color: #F6D39A; }
+	#locationALL a:visited   { color: #F6D39A; }
+	#locationALL a:hover  { color: #fff; }
+	#locationALL a:active { color: #F6D39A; }
+	
+#locationListing table th a {color:#260602; text-decoration:none;}
+	#locationListing table th a:link {color:#260602; text-decoration:none;}
+	#locationListing table th a:visited {color:#260602; text-decoration:none;}
+	#locationListing table th a:hover {color:#260602; text-decoration:none;}
+	#locationListing table th a:active {color:#260602; text-decoration:none;}
+	
+#locationListing table a {color:#260602; text-decoration:underline;}
+	#locationListing table a:link {color:#260602; text-decoration:underline;}
+	#locationListing table a:visited {color:#260602; text-decoration:underline;}
+	#locationListing table a:hover {color:#260602; text-decoration:none;}
+	#locationListing table a:active {color:#260602; text-decoration:underline;}
+	
+#locationInfo p a {color:#260602; text-decoration: underline;}
+	#locationInfo p a:link {color:#260602; text-decoration:underline;}
+	#locationInfo p a:visited {color:#260602; text-decoration:underline;}
+	#locationInfo p a:hover {color:#260602; text-decoration:none;}
+	#locationInfo p a:active {color:#260602; text-decoration:underline;}

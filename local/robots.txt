@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow:  
+Sitemap: https://locations.thecheesecakefactory.com/sitemap.xml.gz

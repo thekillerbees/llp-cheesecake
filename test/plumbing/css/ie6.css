@@ -1,0 +1,66 @@
+#bottomSiteTools ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
+{
+	left:100px;
+	height:80px;
+}
+
+
+
+ul.MenuBarHorizontal ul
+{
+	background: url(../images/TOPNAV_DDMENU_IE6.gif) no-repeat scroll left bottom;
+}
+
+#footer {
+	background: url(../images/FOOTER_BGIMG-ie6.png) no-repeat scroll left bottom;
+	bottom:-1px;
+}
+.footerRight {
+	top:3px;
+}
+
+a.stbutton {top:5px !important;}
+
+
+/* alpha background */
+	#leftNav_levelOne .alpha_BG60, #leftNav_levelTwo .alpha_BG40 {
+	  height: 625px;
+	}
+
+#buttom_down {	bottom:6px;}
+
+
+
+.recipe_substitutions {	height: 88px; }
+.recipe_nutritionInfo_Box { margin-top:0; }
+
+/*
+Location IE 6 postion fix 
+******************************************************************************/
+#main { position:absolute; left:170px;}
+
+
+/*
+fix for #rightContent width problem on Investor/About Us pages
+******************************************************************************/
+#rightContent {width:800px;}
+
+
+/*
+fix Locations iFrame Position issue
+******************************************************************************/
+#rightContent #main {
+	left: 20px; position: relative; top: -625px; background-color: transparent;
+}
+
+#legal {
+	left: 5px !important; 
+}
+
+#popup {
+	margin-right: 30px !important;
+}
+
+
+
+

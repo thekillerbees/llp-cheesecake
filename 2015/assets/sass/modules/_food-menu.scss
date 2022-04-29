@@ -1,0 +1,406 @@
+/* ==========================================================================
+    FOOD MENU
+   ========================================================================== */
+
+.menu-splash {
+	bottom: 0;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	width: 650px;
+	.show-food-menu & {
+		display: none;
+	}
+}
+.menu-splash-title {
+	color: $mainTextColor;
+	cursor: default;
+	font: $fontWeightBold 46px/50px $themeFont;
+	text-align: center;
+	text-transform: uppercase;
+}
+.menu-splash-description {
+	color: $mainTextColor;
+	cursor: default;
+	font: $fontWeightSemibold 19px/23px $themeFont;
+	margin: 20px 0 0;
+	text-align: center;
+}
+.menu-splash-button {
+	background-color: $mainTextColor;
+	background-color: rgba($mainTextColor,0.74);
+	color: $headingColor;
+	display: block;
+	font-size: 18px;
+	margin: 40px auto 0;
+	&:hover,
+	&:active {
+		background-color: $headingColor;
+		background-color: rgba($headingColor,0.74);
+		color: $mainTextColor;
+	}
+}
+
+.food-menu {
+	border-radius: 3px;
+	bottom: 0;
+	box-shadow: 0px 0px 5.58px 0.42px rgba(37, 37, 37, 0.2);
+	display: none;
+	height: 610px;
+	left: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	width: 470px;
+	@include transform(translateZ(0));
+	.show-food-menu & {
+		display: block;
+	}
+}
+.food-menu-search {
+	background-color: $menuSearchColor;
+	background-color: rgba($menuSearchColor,0.89);
+	box-shadow: rgba($menuSearchColor,0.5) 0 0 5px;
+	height: 60px;
+	overflow: hidden;
+	position: relative;
+	width: 150%;
+	z-index: 5;
+	input[type="text"],
+	input[type="search"] {
+		background: none;
+		border: none;
+		color: $mainTextColor;
+		float: left;
+		font: $fontWeightRegular 19px/60px $themeFont;
+		height: 60px;
+		padding: 0 75px 0 20px;
+		margin-right: -55px;
+		width: 470px;
+		@include transition(width 0.5s $easeInOutCubic);
+		@include transform(translateZ(0));
+		@include placeholder {
+			color: $mainTextColor;
+		}
+		.show-listings &,
+		.show-detail & {
+			width: 235px;
+		}
+	}
+	.search-button {
+		float: left;
+		width: 55px;
+		@include transform(translateZ(0));
+		&:before {
+			@extend .icon-search;
+			color: $mainTextColor;
+			font-size: 15px;
+			line-height: 60px;
+			text-align: center;
+		}
+		&:hover {
+			background-color: rgba(255,255,255,0.1);
+		}
+		&:active {
+			background-color: rgba(255,255,255,0);
+		}
+	}
+	.search-view-all {
+		background-color: #a17036;
+		background-color: rgba(#a17036,0.45);
+		color: $mainTextColor;
+		font: $fontWeightRegular 19px/60px $themeFont;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 235px;
+	}
+}
+.food-menu-wrapper {
+	$panelWidth: 470px;
+	height: 510px;
+	overflow: hidden;
+	width: $panelWidth * 3;
+	@include transition(transform 0.5s $easeInOutCubic, height 0.5s $easeInOutCubic);
+	.food-menu-panel {
+		float: left;
+		height: 100%;
+		position: relative;
+		width: $panelWidth;
+	}
+	.food-menu-category-wrapper & {
+		height: auto;
+		.food-menu-animating & {
+			@include animation(fade-out-in .5s);
+		}
+	}
+	.show-categories & {
+	}
+	.show-listings & {
+		@include transform(translateX($panelWidth * -1));
+		.lt-ie9 & {
+			left: $panelWidth * -1;
+			position: relative;
+		}
+	}
+	.show-detail & {
+		@include transform(translateX($panelWidth * -2));
+		.lt-ie9 & {
+			left: $panelWidth * -2;
+			position: relative;
+		}
+	}
+}
+.food-menu-category {
+	background-color: $menuCategoryColor;
+	background-color: rgba($menuCategoryColor,0.95);
+	color: $mainTextColor;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	@include transform(translateZ(0));
+	@include transition(height 0.5s $easeInOutCubic);
+}
+.food-menu-category-title {
+	cursor: default;
+	font: $fontWeightRegular 19px/40px $themeFont;
+	height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.food-menu-category-back,
+.food-menu-category-info {
+	color: $mainTextColor;
+	position: absolute;
+	z-index: 100;
+	@include transform(translateX(0));
+	@include transition(transform 0.5s $easeInOutCubic);
+	&:hover,
+	&:active {
+		color: $tcfBrown;
+		opacity: 1;
+	}
+}
+.food-menu-category-back {
+	left: 20px;
+	top: 12px;
+	&:before {
+		@extend .icon-arrow-left;
+		font-size: 15px;
+	}
+	.show-categories & {
+		@include transform(translateX(-50px));
+		.lt-ie9 & {
+			display: none;
+		}
+	}
+}
+.food-menu-category-info {
+	right: 20px;
+	top: 10px;
+	&:before {
+		@extend .icon-info;
+		font-size: 20px;
+	}
+	.show-categories &,
+	.show-detail & {
+		@include transform(translateX(50px));
+		.lt-ie9 & {
+			display: none;
+		}
+	}
+}
+.food-menu-category-description {
+	font: $fontWeightRegular 16px/23px $themeFont;
+	padding: 8px 20px 20px;
+}
+.food-menu-content {
+	height: 100%;
+	overflow: auto;
+	&::-webkit-scrollbar {
+		background-color: $mainTextColor;
+		background-color: rgba($mainTextColor,0.7);
+		border-top: 1px solid $tcfStraw;
+		width: 12px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $tcfStraw50;
+		background-color: rgba($tcfStraw,0.6);
+	}
+	&::-webkit-scrollbar-thumb{
+		background-clip: content-box;
+		background-color: $tcfGold;
+		border-radius: 10px;
+		border: 4px solid transparent;
+	}
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+	.food-panel-detail & {
+		background-color: $bgSiteColor;
+		background-color: rgba($bgSiteColor,0.9);
+	}
+	@include text-gradient($color: rgba($bgSiteColor, 0.5), $height: 60px, $width: -webkit-calc(470px - 12px));
+}
+.food-menu-list {
+	li {
+		background-color: $bgSiteColor;
+		background-color: rgba($bgSiteColor,0.9);
+		border-top: 1px solid $tcfStraw50;
+		border-top: 1px solid rgba($tcfStraw,0.5);
+		&:first-child {
+			border-top: 1px solid $tcfStraw;
+		}
+		&:last-child {
+			a {
+				// padding for gradient
+				padding-bottom: 50px;
+			}
+		}
+		&.has-photo {
+			a:after {
+				@extend .icon-camera;
+				font-size: 18px;
+				position: absolute;
+				right: 35px;
+				top: 20px;
+			}
+		}
+	}
+	a {
+		color: $contentLinkTitle;
+		display: block;
+		font: $fontWeightRegular 19px/22px $themeFont;
+		padding: 19px 40px 19px 20px;
+		position: relative;
+		&:before {
+			@extend .icon-arrow-right;
+			font-size: 15px;
+			position: absolute;
+			right: 8px;
+			top: 22px;
+		}
+		&:hover,
+		&:active {
+			background-color: $tcfStraw50;
+			background-color: rgba($tcfStraw,0.25);
+		}
+		.item-title {
+			display: block;
+			font-weight: $fontWeightSemibold;
+			padding: 0 25px 4px 0;
+			text-transform: uppercase;
+		}
+		.item-description {
+			display: block;
+			font: $fontWeightRegular 16px/22px $themeFont;
+		}
+	}
+	.food-panel-categories & {
+		li {
+			min-height: 60px;
+			&.special {
+				a {
+					background-color: #dbd887;
+					background-color: rgba($menuSpecialColor,0.4);
+					&:hover,
+					&:active {
+						background-color: rgba($menuSpecialColor,0.45);
+					}
+				}
+				& + .special {
+					border-top: 1px solid $tcfGold;
+					border-top: 1px solid rgba($tcfGold,0.6);
+				}
+			}
+		}
+		a {
+			font-weight: $fontWeightSemibold;
+			text-transform: uppercase;
+		}
+	}
+	.food-panel-listings & {
+		li, a {
+			min-height: 109px;
+		}
+	}
+}
+.food-menu-item-photo {
+	height: 265px;
+	overflow: hidden;
+	position: relative;
+	img {
+		// negative margin to vertically center and crop photo
+		margin-top: -40px;
+		width: 100%;
+	}
+	.share-this {
+		position: absolute;
+		top: 16px;
+		right: 20px;
+		&.share-active {
+			.share-social {
+				@include transform(translateY(126px));
+			}
+		}
+	}
+	.share-action,
+	.share-enlarge {
+		background-color: $tcfStraw;
+		background-color: rgba($tcfStraw,0.95);
+		border-radius: 3px;
+		color: $mainTextColor;
+		height: 32px;
+		width: 32px;
+		@include user-select(none);
+	}
+	.share-action {
+		&:before,
+		&:after {
+			color: $mainTextColor;
+			font-size: 20px;
+			left: 6px;
+			top: 6px;
+		}
+	}
+	.share-enlarge {
+		display: block;
+		right: 42px;
+		&:before {
+			font-size: 18px;
+			left: 7px;
+			top: 7px;
+		}
+	}
+	.share-social-wrapper {
+		bottom: auto;
+		height: 126px;
+		top: 32px;
+		width: 32px;
+	}
+	.share-social {
+		top: -116px;
+		li {
+			margin: 0 0 10px;
+		}
+	}
+}
+.food-menu-item-content {
+	padding: 0 20px 50px;
+}
+.food-menu-item-name {
+	border-bottom: 1px solid $borderColorDark;
+	font: $fontWeightSemibold 19px/23px $themeFont;
+	min-height: 51px;
+	padding: 13px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+.food-menu-item-description {
+	font: $fontWeightRegular 16px/22px $themeFont;
+	p {
+		margin: 20px 0 0;
+	}
+}

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+      <!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN'
+        'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+      <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<head>
+    <title>The Cheesecake Factory</title>
+
+            <style type="text/css" media="screen">
+            @import url('css/iphone.css');
+        </style>
+        <script type="text/javascript" src="js/iphone.js"> </script>
+
+	<link type="text/css" href="/w2gi/css/lightwindow.css" rel="stylesheet" media="all"/>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3&client=gme-where2getit"></script>
+<script type="text/javascript" src="//static.where2getit.com/w2gi/javascript/ace/2.1/prototype.js"></script>
+	<script type="text/javascript" src="http://static.where2getit.com/w2gi/javascript/ace/2.1/W2GI_core.js"></script>
+
+
+
+        <meta http-equiv="Cache-Control" content="max-age-600" />
+    
+    	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=0.6667">
+
+   
+ <script>
+	function states(){
+		var params={country:'US'};
+		var options = {objectName:'Address',formdataID:'getlist',tagName:'where',distinct:'1',columns:'state'};
+		
+		ace.request(params, function(xml){
+			var data=ace.xml.parse(xml);
+			data.each(function(e){
+				$('state').innerHTML+='<option value="'+e.STATE+'" >'+e.STATE+' </option>';
+			}.bind(this));
+		},options);
+			
+	}
+	
+	 function loadStates() {
+            ace.collection.appendOptions('state_pulldown', 'Account::State', {country: {eq:'US'}}, 'account_state', 'name', 'description');
+  
+        }
+    </script>
+</head>
+
+<body id="body" onload="ace.template.initialize();loadStates();">
+   <xml id="application_data" style="display: none;">
+		<root>
+		       <appkey>4EEBBA66-6D70-11DE-BC28-64B83B999D57</appkey>
+		       <!--<ajaxurl>http://mobile.where2getit.com/ajax?</ajaxurl> -->
+		       <ajaxurl>ajax?</ajaxurl>
+
+		</root>
+   </xml>
+ 
+    <div id="container-home">
+                <div id="header">
+            <a href="">Home</a>
+
+        </div>
+                    
+    <div id="search">
+    <img id="ajax_activity" style="display: none; " src="images/indicator.gif"/>
+    <form name="form1" onsubmit="return false;">
+				
+		<p><label for="search"> Select your state from the pull down menu.</p> 
+		<p><label for="search">Select State:</label>
+
+			<SELECT name="state" id="state_pulldown" style="color:#888888; font-size:12px;">
+			</SELECT></p>
+					<p><input class="submit" type="button" name="submit" value="Find!" onclick="ace.table.update('panel',this.form); return false;"/></p>
+					
+					<p style="margin: 20px;"><a href="index.html">Find by Address ></a></p>
+
+				
+<xml style="display: none;">
+	<root>
+
+		<inputform>
+			<formdata id="getlist">
+
+				<objectname>StoreLocator</objectname>
+				<where>
+				<state><eq></eq></state>
+				</where>
+				<order>city</order>
+			</formdata>
+		</inputform>									
+	</root>					
+
+
+</xml>
+</form>
+	 
+
+<div id="templates" style="display: none;">
+
+<table id="collection_poi" class="resulttable" style="background:#FFFFFF none repeat scroll 0 0; border-collapse:collapse; color:#000000; margin-bottom:15px; width:100%;">
+		<tr recnum="#{POINUM}">
+				<td valign="top">
+					<a href="http://maps.google.com/maps?q=" locnumber="#{ADDRESS1} #{CITY}, #{STATE} #{POSTALCODE}" onmouseover="this.href=this.getAttribute('url')+this.getAttribute('locnumber');" url="http://maps.google.com/maps?q=">#{NAME}</a><br />
+							#{ADDRESS1}<br/>
+							#{CITY}, #{STATE} #{POSTALCODE}<br />
+							<a href=tel:+1#{PHONE}>#{PHONE}</a><br/><br/>
+			<div>#{HOURSLABEL1}</div>
+			<div class="hourroom">#{HOURSFROMTO1}</div>
+
+			<div>#{HOURSLABEL2}</div>
+			<div class="hourroom">#{HOURSFROMTO2}</div>
+
+			<div>#{HOURSLABEL3}</div>
+			<div class="hourroom">#{HOURSFROMTO3}</div>
+
+			<div>#{HOURSLABEL4}</div>
+			<div class="hourroom">#{HOURSFROMTO4}</div>
+
+			<a href="javascript: void(0);" onclick="window.location.href = '#{TAKEOUTLINK}'">View Menu</a><br/><br/>											 
+
+				</td>
+		</tr>
+</table>
+				<div id="lightwindow_cache" params="lightwindow_width=250, lightwindow_height=200, lightwindow_loading_animation=false">
+					<span id="lightwindow_cache_data" style="line-height: auto; overflow: visible; position: relative;float: left;width: 100%;"></span>
+				</div>
+</div>
+<!-- panel start -->
+
+<div id="panel">
+</div>	
+<!-- panel end -->
+    <div id="footer">
+        <div id="navigation">
+        	<a href="http://www.thecheesecakefactory.com/?fullsite=true">View Full Site</a>
+        </div>
+		<div id="copyright">
+		  <br/>
+        		<script type="text/javascript">
+				var d = new Date()
+                        document.write("&copy; ")
+				document.write(d.getFullYear())
+				document.write("<a href='http://www.brandify.com' target='_new'> Brandify</a>")
+                		document.write("")
+			</script>
+		</div>
+    
+    
+    </div>      
+    
+    
+    
+    
+</body>
+    
+</html>

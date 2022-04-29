@@ -1,0 +1,11 @@
+templates/locallocator.12.09.14.tmpl
+templates/old_files/locallocator.07.22.14.tmpl
+templates/old_files/locallocator.09.27.13.tmpl
+templates/old_files/locallocator.102111.tmpl
+templates/old_files/locallocator.test.tmpl
+templates/old_files/locallocator11-29-10.tmpl
+templates/old_files/locallocator11-4-10.tmpl
+templates/old_files/locallocator12-1-10.tmpl
+templates/old_files/locallocator121712.tmpl
+templates/old_files/locallocatorNEW.tmpl
+templates/old_files/locallocator-test.tmpl
